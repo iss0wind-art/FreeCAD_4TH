@@ -1,13 +1,19 @@
 """
-BOQ 자동화 시스템 FastAPI 앱 (Phase 5)
+BOQ 자동화 시스템 FastAPI 앱
 
 실행: uvicorn api.main:app --reload
+뷰어: http://localhost:8000/
 """
 
 from contextlib import asynccontextmanager
+from pathlib import Path
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from api.routes.boq import router as boq_router
 from api.database import init_db
+
+FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
 
 
 @asynccontextmanager
@@ -24,6 +30,15 @@ app = FastAPI(
 )
 
 app.include_router(boq_router)
+
+# Three.js 뷰어 정적 파일 서빙
+if FRONTEND_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(FRONTEND_DIR)), name="static")
+
+
+@app.get("/", include_in_schema=False)
+def serve_viewer() -> FileResponse:
+    return FileResponse(str(FRONTEND_DIR / "index.html"))
 
 
 @app.get("/health")

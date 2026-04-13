@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BOQ 자동화 시스템 — 3D 뷰어</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f0f1a;
+      color: #e0e0f0;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      grid-template-rows: 56px 1fr;
+      height: 100dvh;
+      overflow: hidden;
+    }
+
+    /* ── 헤더 ── */
+    header {
+      grid-column: 1 / -1;
+      background: #16213e;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 12px;
+      border-bottom: 1px solid #2a2a5a;
+    }
+    header h1 { font-size: 1rem; font-weight: 600; letter-spacing: 0.03em; }
+    header .badge {
+      font-size: 0.7rem;
+      background: #1565c0;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+
+    /* ── 사이드패널 ── */
+    #panel {
+      background: #12122a;
+      border-right: 1px solid #2a2a5a;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #7070c0;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 180px;
+      background: #0c0c20;
+      color: #c8d8ff;
+      border: 1px solid #2a2a5a;
+      border-radius: 6px;
+      padding: 10px;
+      font-family: 'Consolas', monospace;
+      font-size: 0.78rem;
+      resize: vertical;
+    }
+    textarea:focus { outline: 1px solid #3d5afe; }
+
+    input[type="text"] {
+      width: 100%;
+      background: #0c0c20;
+      color: #c8d8ff;
+      border: 1px solid #2a2a5a;
+      border-radius: 6px;
+      padding: 8px 10px;
+      font-size: 0.85rem;
+    }
+    input[type="text"]:focus { outline: 1px solid #3d5afe; }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    button:hover { opacity: 0.85; }
+    button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    #btn-calculate { background: #3d5afe; color: #fff; }
+    #btn-load-job  { background: #00897b; color: #fff; margin-top: 4px; }
+
+    /* ── 결과 카드 ── */
+    #result-card {
+      background: #0c0c20;
+      border: 1px solid #2a2a5a;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      display: none;
+    }
+    #result-card.visible { display: block; }
+    .stat-row { display: flex; justify-content: space-between; }
+    .stat-label { color: #7070c0; }
+    .stat-value { font-weight: 600; color: #c8d8ff; }
+
+    /* ── 범례 ── */
+    .legend { display: flex; flex-direction: column; gap: 6px; }
+    .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; }
+    .legend-dot {
+      width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0;
+    }
+
+    /* ── 상태 메시지 ── */
+    #status-msg {
+      font-size: 0.78rem;
+      color: #ff8c00;
+      min-height: 20px;
+      text-align: center;
+    }
+    #status-msg.ok { color: #43a047; }
+    #status-msg.err { color: #e53935; }
+
+    /* ── 3D 캔버스 ── */
+    #canvas-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    #boq-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* ── 오버레이 툴팁 ── */
+    #overlay {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(0,0,0,0.55);
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 0.73rem;
+      color: #aaa;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BOQ 자동화 시스템</h1>
+  <span class="badge">Agentic AI + 2D/3D Hybrid</span>
+</header>
+
+<!-- 사이드패널 -->
+<aside id="panel">
+
+  <!-- 프로젝트 ID -->
+  <div>
+    <div class="section-title">프로젝트 ID</div>
+    <input type="text" id="project-id" value="PROJ-001" />
+  </div>
+
+  <!-- 부재 JSON 입력 -->
+  <div>
+    <div class="section-title">부재 입력 (JSON)</div>
+    <textarea id="members-json">[
+  {
+    "member_id": "C1",
+    "member_type": "COLUMN",
+    "vertices_2d": [[-300,-300],[300,-300],[300,300],[-300,300]],
+    "height": 3000,
+    "z_base": 0
+  },
+  {
+    "member_id": "B1",
+    "member_type": "BEAM",
+    "vertices_2d": [[-1000,-150],[1000,-150],[1000,150],[-1000,150]],
+    "height": 500,
+    "z_base": 0
+  }
+]</textarea>
+  </div>
+
+  <button id="btn-calculate">산출 실행</button>
+
+  <!-- Job ID 직접 조회 -->
+  <div>
+    <div class="section-title">Job ID 조회</div>
+    <input type="text" id="job-id-input" placeholder="UUID..." />
+    <button id="btn-load-job">조회</button>
+  </div>
+
+  <!-- 결과 카드 -->
+  <div id="result-card">
+    <div class="section-title">산출 결과</div>
+    <div class="stat-row">
+      <span class="stat-label">Job ID</span>
+      <span class="stat-value" id="r-job-id">—</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">상태</span>
+      <span class="stat-value" id="r-status">—</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">총 체적</span>
+      <span class="stat-value" id="r-volume">—</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">순 거푸집</span>
+      <span class="stat-value" id="r-formwork">—</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">부재 수</span>
+      <span class="stat-value" id="r-count">—</span>
+    </div>
+  </div>
+
+  <!-- 범례 -->
+  <div>
+    <div class="section-title">재질 범례</div>
+    <div class="legend">
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#9e9e9e"></div>
+        <span>콘크리트 본체 (CONCRETE)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#ff8c00"></div>
+        <span>거푸집 산출 (FORMWORK)</span>
+      </div>
+      <div class="legend-item">
+        <div class="legend-dot" style="background:#1565c0; opacity:0.6"></div>
+        <span>은폐면 공제 (CONCRETE_JOINT)</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="status-msg"></div>
+
+</aside>
+
+<!-- 3D 뷰어 -->
+<div id="canvas-wrap">
+  <canvas id="boq-canvas"></canvas>
+  <div id="overlay">🖱 드래그: 회전 &nbsp;|&nbsp; 휠: 줌 &nbsp;|&nbsp; 우클릭: 패닝</div>
+</div>
+
+<script type="module">
+  import { initViewer } from "./viewer.js";
+  import { calculateBOQ, getBOQJob } from "./api.js";
+
+  const canvas  = document.getElementById("boq-canvas");
+  const viewer  = initViewer(canvas);
+  const statusEl = document.getElementById("status-msg");
+
+  function setStatus(msg, type = "") {
+    statusEl.textContent = msg;
+    statusEl.className = type;
+  }
+
+  function showResult(data) {
+    document.getElementById("r-job-id").textContent =
+      data.job_id.slice(0, 8) + "…";
+    document.getElementById("r-status").textContent  = data.status;
+    document.getElementById("r-volume").textContent  =
+      (data.total_volume_m3).toFixed(4) + " m³";
+    document.getElementById("r-formwork").textContent =
+      (data.total_formwork_m2).toFixed(4) + " m²";
+    document.getElementById("r-count").textContent   =
+      data.boq_items.length + "개";
+    document.getElementById("result-card").classList.add("visible");
+  }
+
+  async function runCalculate() {
+    const projectId = document.getElementById("project-id").value.trim();
+    const membersRaw = document.getElementById("members-json").value;
+
+    let members;
+    try {
+      members = JSON.parse(membersRaw);
+    } catch {
+      setStatus("JSON 파싱 오류 — 형식을 확인하세요.", "err");
+      return;
+    }
+
+    document.getElementById("btn-calculate").disabled = true;
+    setStatus("산출 중...");
+
+    try {
+      const data = await calculateBOQ(projectId, members);
+      showResult(data);
+      setStatus(`완료: ${data.boq_items.length}개 부재 산출`, "ok");
+
+      // glTF가 있으면 로드
+      const gltfUrl = data.boq_items[0]?.gltf_url;
+      if (gltfUrl) {
+        setStatus("3D 모델 로딩 중...");
+        await viewer.loadGltf(gltfUrl);
+        setStatus("3D 뷰어 로드 완료", "ok");
+      }
+    } catch (err) {
+      setStatus(err.message, "err");
+    } finally {
+      document.getElementById("btn-calculate").disabled = false;
+    }
+  }
+
+  async function runLoadJob() {
+    const jobId = document.getElementById("job-id-input").value.trim();
+    if (!jobId) { setStatus("Job ID를 입력하세요.", "err"); return; }
+
+    setStatus("조회 중...");
+    try {
+      const data = await getBOQJob(jobId);
+      showResult(data);
+      setStatus("조회 완료", "ok");
+    } catch (err) {
+      setStatus(err.message, "err");
+    }
+  }
+
+  document.getElementById("btn-calculate").addEventListener("click", runCalculate);
+  document.getElementById("btn-load-job").addEventListener("click", runLoadJob);
+</script>
+
+</body>
+</html>
