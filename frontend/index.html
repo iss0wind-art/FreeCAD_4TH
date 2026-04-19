@@ -255,16 +255,32 @@
 </div>
 
 <script type="module">
-  import { initViewer } from "./viewer.js";
-  import { calculateBOQ, getBOQJob } from "./api.js";
+  import { initViewer } from "/static/viewer.js";
+  import { calculateBOQ, getBOQJob } from "/static/api.js";
+
+  console.log("BOQ System: Initializing...");
 
   const canvas  = document.getElementById("boq-canvas");
-  const viewer  = initViewer(canvas);
   const statusEl = document.getElementById("status-msg");
 
   function setStatus(msg, type = "") {
+    console.log(`[Status] ${msg}`);
     statusEl.textContent = msg;
     statusEl.className = type;
+  }
+
+  // 버튼 리스너를 최상단으로 이동하여 즉시 연결
+  document.getElementById("btn-calculate").addEventListener("click", runCalculate);
+  document.getElementById("btn-load-job").addEventListener("click", runLoadJob);
+  console.log("BOQ System: Event listeners attached.");
+
+  let viewer = null;
+  try {
+    viewer = initViewer(canvas);
+    console.log("BOQ System: Viewer initialized successfully.");
+  } catch (err) {
+    console.error("BOQ System: Viewer initialization failed:", err);
+    setStatus("3D 뷰어 초기화 실패. (계산은 가능합니다)", "err");
   }
 
   function showResult(data) {
@@ -281,6 +297,7 @@
   }
 
   async function runCalculate() {
+    console.log("Btn Click: Calculate");
     const projectId = document.getElementById("project-id").value.trim();
     const membersRaw = document.getElementById("members-json").value;
 
@@ -302,12 +319,13 @@
 
       // glTF가 있으면 로드
       const gltfUrl = data.boq_items[0]?.gltf_url;
-      if (gltfUrl) {
+      if (gltfUrl && viewer) {
         setStatus("3D 모델 로딩 중...");
         await viewer.loadGltf(gltfUrl);
         setStatus("3D 뷰어 로드 완료", "ok");
       }
     } catch (err) {
+      console.error("Calculation Error:", err);
       setStatus(err.message, "err");
     } finally {
       document.getElementById("btn-calculate").disabled = false;
@@ -315,6 +333,7 @@
   }
 
   async function runLoadJob() {
+    console.log("Btn Click: Load Job");
     const jobId = document.getElementById("job-id-input").value.trim();
     if (!jobId) { setStatus("Job ID를 입력하세요.", "err"); return; }
 
@@ -324,12 +343,10 @@
       showResult(data);
       setStatus("조회 완료", "ok");
     } catch (err) {
+      console.error("Load Job Error:", err);
       setStatus(err.message, "err");
     }
   }
-
-  document.getElementById("btn-calculate").addEventListener("click", runCalculate);
-  document.getElementById("btn-load-job").addEventListener("click", runLoadJob);
 </script>
 
 </body>

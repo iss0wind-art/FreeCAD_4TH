@@ -13,7 +13,7 @@ from fastapi.responses import FileResponse
 from api.routes.boq import router as boq_router
 from api.database import init_db
 
-FRONTEND_DIR = Path(__file__).parent.parent / "frontend"
+FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
 
 
 @asynccontextmanager
