@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "dangun": {
+      "command": "D:/GIT/BOQ-workspace/venv/Scripts/python.exe",
+      "args": ["-m", "dangun.mcp.mcp_server"],
+      "env": {
+        "PYTHONPATH": "D:/GIT/BOQ-workspace"
+      }
+    }
+  }
+}

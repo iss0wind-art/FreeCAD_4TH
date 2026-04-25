@@ -1,0 +1,30 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "Agentic",
+    "AprilTag",
+    "BOQ",
+    "Drizzle",
+    "exceljs",
+    "FreeCAD",
+    "gltf",
+    "LibSQL",
+    "Markmap",
+    "Nextjs",
+    "pygltflib",
+    "SketchUp",
+    "threejs",
+    "Turso",
+    "xlsx",
+    "Zustand",
+    "n8n",
+    "antigravity",
+    "popeyes"
+  ],
+  "ignorePaths": [
+    "node_modules",
+    ".git",
+    "*.log"
+  ]
+}

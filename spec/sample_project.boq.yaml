@@ -1,0 +1,85 @@
+# Member Manifest 샘플 — Phase 1 검증용
+# 시나리오: 1층 사무동, 2×2 그리드, 기둥 4개 + 보 4개
+
+$schema: "https://boq.local/schemas/manifest/v1"
+version: "1.0"
+
+project:
+  id: "SAMPLE-001"
+  name: "Phase 1 검증 샘플"
+  units: mm
+
+grid:
+  origin: [0, 0]
+  rotation: 0
+  x_lines:
+    A: 0
+    B: 6000
+  y_lines:
+    "1": 0
+    "2": 8000
+
+floors:
+  - id: "1F"
+    z_base: 0
+    height: 4500
+
+members:
+  # 기둥 4개 (모서리)
+  - id: "C-A1-1F"
+    spec: "TC1"
+    type: column
+    floor: "1F"
+    at: { grid: ["A", "1"] }
+
+  - id: "C-B1-1F"
+    spec: "TC1"
+    type: column
+    floor: "1F"
+    at: { grid: ["B", "1"] }
+
+  - id: "C-A2-1F"
+    spec: "TC1"
+    type: column
+    floor: "1F"
+    at: { grid: ["A", "2"] }
+
+  - id: "C-B2-1F"
+    spec: "TC1"
+    type: column
+    floor: "1F"
+    at: { grid: ["B", "2"] }
+
+  # X방향 보 2개 (상부, 하부)
+  - id: "B-A1-B1-1F"
+    spec: "RG1"
+    type: beam
+    floor: "1F"
+    from: { grid: ["A", "1"] }
+    to: { grid: ["B", "1"] }
+    z_offset: -100   # 천장에서 100mm 내림
+
+  - id: "B-A2-B2-1F"
+    spec: "RG1"
+    type: beam
+    floor: "1F"
+    from: { grid: ["A", "2"] }
+    to: { grid: ["B", "2"] }
+    z_offset: -100
+
+  # Y방향 보 2개 (좌측, 우측)
+  - id: "B-A1-A2-1F"
+    spec: "RG1"
+    type: beam
+    floor: "1F"
+    from: { grid: ["A", "1"] }
+    to: { grid: ["A", "2"] }
+    z_offset: -100
+
+  - id: "B-B1-B2-1F"
+    spec: "RG1"
+    type: beam
+    floor: "1F"
+    from: { grid: ["B", "1"] }
+    to: { grid: ["B", "2"] }
+    z_offset: -100
