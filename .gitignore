@@ -10,3 +10,7 @@ build/
 .env
 *.glb
 *.gltf
+
+# 런타임 자국·로컬 설정
+output/*.db
+.claude/
