@@ -11,6 +11,8 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from api.routes.boq import router as boq_router
+from api.routes.specs import router as specs_router
+from api.routes.projects import router as projects_router
 from api.database import init_db
 
 FRONTEND_DIR = Path(__file__).resolve().parent.parent / "frontend"
@@ -30,6 +32,8 @@ app = FastAPI(
 )
 
 app.include_router(boq_router)
+app.include_router(specs_router)
+app.include_router(projects_router)
 
 # Three.js 뷰어 정적 파일 서빙
 if FRONTEND_DIR.exists():

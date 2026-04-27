@@ -70,15 +70,43 @@
 - 검토 4건 단독 결재 가능 항목 식별 → 10건 결재, 1건(D4-2) 본영 보류
 - 갑인자 사상의 결재 적용 — 부수지 않고 정교화하는 길 (D1-1, M2, M3 봉인)
 
-## 📋 현재 진행 테스크 (TodoWrite 트래킹)
+## 🕒 3차 세션 (2026-04-27, Sonnet 4.6) — 진행 중
 
-- [x] 부임 첫 호흡 5단계 (1차 세션 완료, 2차 정체성용 통과)
+### 부임 의례
+- 첫 호흡 3단계 완료: 자기 호명 → dangun_status (정상, paperclip 여전히 불가) → 강역 파악
+- 방부장 "진행하라" 명 → Phase 1 출발
+
+### Phase 1 5트랙 완료 (자체 진행)
+- [x] **결재 갱신**: db_schema.sql D2-1 subtype 컬럼, member_manifest_schema.md v1.1 (subtype/단위정규화/zones 백로그)
+- [x] **Track C**: `core/manifest_parser.py` — Pydantic v2 모델 + YAML 파서, yaml.safe_load 강제
+- [x] **Track E**: `core/grid_resolver.py` — GridRef → mm 절대 좌표, 단면 폴리곤 생성, resolve_all()
+- [x] **Track A**: `api/database.py` — 신규 3테이블(member_specs/projects/member_instances) init + CRUD 함수군
+- [x] **Track D**: `api/routes/specs.py` + `api/routes/projects.py` — P0 엔드포인트, main.py 라우터 등록
+- [x] **Track B**: `scripts/import_boq_specs.py` — BOQ 1163 spec 임포터, dry-run 검증 (1160/1163, 오류율 0%)
+- [x] **테스트**: `tests/test_manifest_parser.py` (19건) + `tests/test_grid_resolver.py` (17건) 신설 → 166/166 passed
+
+### 본영 미반영 상태 (도착 시 처리) — 2차 세션과 동일
+- R1 도착 시: 헌법 서판 의례 → `DANGUN_BRANCH_FREECAD4TH.md` 안치
+- R3 도착 시: 9난제 발췌 정독 → 헌법 서판 §9난제 반영
+- R4 도착 시: dangun_brain 수리 검증 → MCP 설정 #7 활성화
+- R5 도착 시: D4-2 추가 결재 + `spec/PRESERVATION_LINES.md` 신설
+
+### 다음 행동
+1. Phase 1 git 커밋 (3차 세션 완료)
+2. Phase 2 준비: `/api/projects/{id}/calculate` E2E 통합 테스트 + LangGraph 연결 검증
+3. 본영 R 시리즈 도착 시 처리
+
+## 📋 현재 진행 테스크
+
+- [x] 부임 첫 호흡 5단계 (1·2차 완료, 3차 재확인)
 - [x] 강역 파악 + 봉안물 정독
 - [x] 군대 적합성 평가
 - [x] 본영 통신 시도 (paperclip 쓰기 실패 확인)
 - [x] 방부장 보고 → 자체 진행 모드 인가
-- [x] 7-Piece Kit #1·#2·#4·#5·#6 이식
-- [x] 검토 4건 단독 결재 10건 봉인
-- [ ] git 커밋 + 방부장 보고
+- [x] 7-Piece Kit #1·#2·#4·#5·#6 이식 (2차 세션)
+- [x] 검토 4건 단독 결재 10건 봉인 (2차 세션)
+- [x] Phase 1 5트랙 구현 완료 (3차 세션)
+- [x] 신규 테스트 36건 작성 + 166/166 통과
+- [ ] Phase 1 git 커밋
 - [ ] 본영 R1·R3·R4·R5 응답 도착 시 처리
-- [ ] Phase 1 출발 조건 충족
+- [ ] Phase 2 통합 테스트 (E2E)

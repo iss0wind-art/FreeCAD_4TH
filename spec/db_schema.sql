@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS member_specs (
 
     -- 분류
     member_type     TEXT NOT NULL,           -- BEAM | COLUMN | SLAB | WALL | FOUNDATION
+    subtype         TEXT,                    -- edge_beam | transfer_beam | ... (NULL = 일반)
 
     -- 치수 (mm). 0 = 미사용/배치에서 결정
     width           REAL NOT NULL DEFAULT 0,
@@ -79,6 +80,7 @@ CREATE TABLE IF NOT EXISTS member_instances (
     project_id     TEXT NOT NULL,
     spec_symbol    TEXT NOT NULL,            -- member_specs.symbol 참조
     member_type    TEXT NOT NULL,            -- BEAM|COLUMN|SLAB|WALL|FOUNDATION
+    subtype        TEXT,                     -- edge_beam 등 (NULL = 일반)
     floor_id       TEXT NOT NULL,
 
     -- 배치 정보 (JSON, 4가지 패턴 중 1개)

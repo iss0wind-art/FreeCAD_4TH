@@ -119,8 +119,17 @@ floors:
   to:
     grid: ["A", "2"]
   z_offset: -100           # 슬래브 아래로 100mm
+  subtype: edge_beam       # 선택. 테두리보 등 (D2-1 결재). 미입력 시 NULL
   # 보의 폭/춤은 spec(RG1)에서 자동 조회
 ```
+
+**subtype 허용 값** (D2-1 결재, 2026-04-26):
+
+| subtype | 설명 |
+|---------|------|
+| `edge_beam` | 테두리보 — 슬래브 경계, BOQ 1163 중 3개 (0.3%) |
+| `transfer_beam` | 전이보 (Phase 2) |
+| `cantilever_beam` | 캔틸레버보 (Phase 2) |
 
 ### 4.3 Polygon 배치 (슬래브, 벽 — Phase 2+)
 
@@ -163,6 +172,7 @@ floors:
 | `at` / `from`+`to` / `polygon` / `vertices_2d` | 정확히 1개 사용 |
 | `grid: [x, y]` | `grid.x_lines`와 `grid.y_lines`에 존재 |
 | `z_offset` | -10000 ~ +10000 (mm) |
+| `subtype` | 선택. `edge_beam` \| `transfer_beam` \| `cantilever_beam` (Phase 2 확장 예정) |
 
 ---
 
@@ -199,8 +209,45 @@ z = floor.z_base + member.z_offset
 
 ---
 
-## 7. 변경 이력
+## 7. 단위 정규화 규칙 (D2-2 결재, 2026-04-26)
+
+- **DB 저장**: 항상 mm (정수 또는 0.01mm 정밀도 부동소수)
+- **YAML 입력**: mm 또는 m 허용 — 파서가 자동 변환
+- **변환 규칙**: 수치 < 10이면 m 단위로 간주 → ×1000
+- **폭주 가드**: 변환 후 값이 허용 범위 초과 시 `HUMAN_REQUIRED` 발동, 임포트 거부
+- **로그**: 모든 단위 변환은 `import_log` 테이블에 기록 (변환 전·후·근거값)
+
+## 8. Phase 2+ 백로그
+
+### zones[] — 다중 그리드 (D3-1 결재, 2026-04-26)
+
+Phase 2에서 아파트 단지 등 동별 그리드를 지원하기 위한 예약 구조:
+
+```yaml
+# Phase 2 예정 (현재 미구현)
+zones:
+  - id: "101동"
+    origin: [0, 0]
+    rotation: 0
+    x_lines: { A: 0, B: 6000 }
+    y_lines: { "1": 0, "2": 8000 }
+  - id: "102동"
+    origin: [20000, 0]
+    ...
+```
+
+멤버에서 `zone_id` 참조:
+```yaml
+- id: "C-A1-1F-101"
+  zone_id: "101동"   # Phase 2 예정
+  ...
+```
+
+> Phase 1에서는 단일 `grid:` 사용. 다중 건물은 `project_id`를 동별로 분리하여 대응.
+
+## 9. 변경 이력
 
 | 버전 | 날짜 | 변경 |
 |------|------|------|
 | 1.0 | 2026-04-25 | 초안 (Phase 0) |
+| 1.1 | 2026-04-27 | D2-1 subtype 추가, D2-2 단위 정규화 §7, D3-1 zones 백로그 §8 (이천 결재 반영) |
