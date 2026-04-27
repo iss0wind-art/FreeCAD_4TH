@@ -131,7 +131,8 @@ def _resolve_column(
     z_base: float,
     grid: Optional[GridConfig],
 ) -> dict:
-    assert inst.at is not None
+    if inst.at is None:
+        raise ValueError(f"기둥 {inst.id!r}: at 배치 정보 없음")
     cx, cy = resolve_at(inst.at, grid)
     width = float(spec.get("width") or _COLUMN_SPEC_DEFAULTS["width"])
     depth = float(spec.get("height") or _COLUMN_SPEC_DEFAULTS["height"])
@@ -155,7 +156,8 @@ def _resolve_beam(
     grid: Optional[GridConfig],
     floor: FloorDef,
 ) -> dict:
-    assert inst.from_ is not None and inst.to is not None
+    if inst.from_ is None or inst.to is None:
+        raise ValueError(f"보 {inst.id!r}: from/to 배치 정보 없음")
     x0, y0 = resolve_at(inst.from_, grid)
     x1, y1 = resolve_at(inst.to, grid)
     width = float(spec.get("width") or _BEAM_SPEC_DEFAULTS["width"])

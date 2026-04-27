@@ -232,9 +232,14 @@ def upsert_member_spec(spec: dict) -> None:
             remark=excluded.remark, source=excluded.source,
             updated_at=excluded.updated_at
     """
+    symbol = spec.get("symbol") or ""
+    member_type = spec.get("member_type") or ""
+    if not symbol or not member_type:
+        raise ValueError(f"upsert_member_spec: symbol 과 member_type 은 필수입니다 (got {spec!r})")
+
     params = (
-        spec["symbol"], spec.get("project_scope", "global"),
-        spec["member_type"], spec.get("subtype"),
+        symbol, spec.get("project_scope", "global"),
+        member_type, spec.get("subtype"),
         spec.get("width", 0), spec.get("height", 0),
         spec.get("depth", 0), spec.get("thickness", 0),
         spec.get("length", 0), spec.get("wall_thickness", 0),
