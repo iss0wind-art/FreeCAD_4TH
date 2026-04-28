@@ -254,9 +254,10 @@
   <div id="overlay">🖱 드래그: 회전 &nbsp;|&nbsp; 휠: 줌 &nbsp;|&nbsp; 우클릭: 패닝</div>
 </div>
 
+<script src="./_env.js"></script>
 <script type="module">
-  import { initViewer } from "/static/viewer.js";
-  import { calculateBOQ, getBOQJob } from "/static/api.js";
+  import { initViewer } from "./viewer.js";
+  import { calculateBOQ, getBOQJob } from "./api.js";
 
   console.log("BOQ System: Initializing...");
 
