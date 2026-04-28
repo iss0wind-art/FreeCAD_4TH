@@ -3,7 +3,6 @@ name: Deploy FreeCAD_4TH Frontend to Cloudflare Pages
 on:
   push:
     branches: [master]
-    paths: ['frontend/**']
 
 jobs:
   deploy:
@@ -11,9 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install wrangler
+        run: npm install -g wrangler
+
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy frontend --project-name=freecad4th-frontend
+        run: wrangler pages deploy frontend --project-name=freecad4th-frontend --commit-dirty=true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
