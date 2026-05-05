@@ -1,0 +1,938 @@
+{
+  "강역": "부산 에코델타 24BL",
+  "부재_종류": "COLUMN",
+  "소스_도면_수": 3,
+  "통합_법전_부재_수": 91,
+  "소스별_통계": [
+    {
+      "label": "101~112동",
+      "total_text": 3001,
+      "classified": 613,
+      "unique": 20
+    },
+    {
+      "label": "113~116동",
+      "total_text": 2382,
+      "classified": 670,
+      "unique": 64
+    },
+    {
+      "label": "지하주차장",
+      "total_text": 406,
+      "classified": 112,
+      "unique": 7
+    }
+  ],
+  "부재_법전": [
+    {
+      "source": "101~112동",
+      "symbol": "TC2",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC4",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC1",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1500,
+      "main_bar": "20-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC3",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1500,
+      "main_bar": "20-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC7",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC9",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC6",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1300,
+      "main_bar": "28-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC8",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1300,
+      "main_bar": "28-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC11",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 800,
+      "height": 1700,
+      "main_bar": "30-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC10",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1400,
+      "main_bar": "30-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC5",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1500,
+      "main_bar": "20-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC12",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 700,
+      "height": 2000,
+      "main_bar": "52-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC14",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1500,
+      "main_bar": "30-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC13",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 800,
+      "height": 1500,
+      "main_bar": "24-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC16",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 1500,
+      "height": 800,
+      "main_bar": "32-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC15",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 1500,
+      "height": 800,
+      "main_bar": "26-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC22",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "46-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "TC19",
+      "floor_from": -2,
+      "floor_to": 1,
+      "width": 600,
+      "height": 1100,
+      "main_bar": "22-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "C1",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 400,
+      "height": 800,
+      "main_bar": "16-D19",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "101~112동",
+      "symbol": "C2",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 400,
+      "height": 800,
+      "main_bar": "16-D19",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC1",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC2",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC3",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC4",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC5",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1100,
+      "main_bar": "22-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC6",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1400,
+      "main_bar": "32-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC7",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "18-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC8",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1800,
+      "main_bar": "18-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC9",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "18-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC10",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "24-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC11",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1800,
+      "main_bar": "40-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC12",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC13",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "18-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC14",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC15",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "18-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC16",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 2600,
+      "main_bar": "86-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC17",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "42-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC18",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1300,
+      "main_bar": "44-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC19",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "42-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC20",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1300,
+      "main_bar": "44-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC21",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1300,
+      "main_bar": "44-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC22",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1400,
+      "main_bar": "44-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC23",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "40-D25",
+      "hoop": "D10@100"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC24",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1300,
+      "main_bar": "40-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC25",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "40-D25",
+      "hoop": "D10@100"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC26",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1300,
+      "main_bar": "40-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC33",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1100,
+      "main_bar": "32-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC34",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1100,
+      "main_bar": "32-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC31",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1500,
+      "height": 600,
+      "main_bar": "46-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC32",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1500,
+      "height": 600,
+      "main_bar": "46-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC35",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1500,
+      "height": 600,
+      "main_bar": "46-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC36",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1000,
+      "height": 600,
+      "main_bar": "16-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC37",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 2300,
+      "main_bar": "76-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC38",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "36-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC39",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "40-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC40",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "36-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC52",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1200,
+      "main_bar": "40-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC54",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "32-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC55",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1000,
+      "height": 600,
+      "main_bar": "24-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC56",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1200,
+      "height": 600,
+      "main_bar": "42-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC57",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1400,
+      "height": 600,
+      "main_bar": "48-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC58",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1200,
+      "height": 600,
+      "main_bar": "42-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC59",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1400,
+      "height": 600,
+      "main_bar": "48-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC60",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1200,
+      "height": 600,
+      "main_bar": "34-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC72",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1000,
+      "height": 600,
+      "main_bar": "32-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC51",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 2700,
+      "height": 700,
+      "main_bar": "92-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC53",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 2700,
+      "height": 700,
+      "main_bar": "92-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC71",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 2400,
+      "height": 600,
+      "main_bar": "80-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC73",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 2400,
+      "height": 600,
+      "main_bar": "80-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC74",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1100,
+      "height": 600,
+      "main_bar": "36-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC75",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1100,
+      "height": 900,
+      "main_bar": "26-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC76",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1100,
+      "height": 600,
+      "main_bar": "36-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC81",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1100,
+      "height": 900,
+      "main_bar": "26-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC82",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1400,
+      "height": 600,
+      "main_bar": "48-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC83",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1100,
+      "height": 600,
+      "main_bar": "36-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC84",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1200,
+      "height": 600,
+      "main_bar": "42-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC85",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1400,
+      "height": 600,
+      "main_bar": "38-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC27",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1200,
+      "height": 600,
+      "main_bar": "44-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC28",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1400,
+      "height": 600,
+      "main_bar": "48-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC29",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1000,
+      "height": 600,
+      "main_bar": "34-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC30",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1200,
+      "height": 600,
+      "main_bar": "44-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC61",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1000,
+      "height": 600,
+      "main_bar": "30-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC62",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 600,
+      "height": 1000,
+      "main_bar": "30-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "113~116동",
+      "symbol": "TC63",
+      "floor_from": null,
+      "floor_to": null,
+      "width": 1200,
+      "height": 600,
+      "main_bar": "38-D25",
+      "hoop": "D10@150"
+    },
+    {
+      "source": "지하주차장",
+      "symbol": "C1",
+      "floor_from": -2,
+      "floor_to": -1,
+      "width": 400,
+      "height": 800,
+      "main_bar": "12-D22",
+      "hoop": "D10@200"
+    },
+    {
+      "source": "지하주차장",
+      "symbol": "C1A",
+      "floor_from": -2,
+      "floor_to": -1,
+      "width": 400,
+      "height": 800,
+      "main_bar": "12-D22",
+      "hoop": "D10@200"
+    },
+    {
+      "source": "지하주차장",
+      "symbol": "C2",
+      "floor_from": -2,
+      "floor_to": -1,
+      "width": 400,
+      "height": 800,
+      "main_bar": "12-D22",
+      "hoop": "D10@200"
+    },
+    {
+      "source": "지하주차장",
+      "symbol": "C2A",
+      "floor_from": -2,
+      "floor_to": -1,
+      "width": 400,
+      "height": 800,
+      "main_bar": "12-D22",
+      "hoop": "D10@200"
+    },
+    {
+      "source": "지하주차장",
+      "symbol": "C3",
+      "floor_from": -2,
+      "floor_to": -1,
+      "width": 400,
+      "height": 800,
+      "main_bar": "10-D22",
+      "hoop": "D10@200"
+    },
+    {
+      "source": "지하주차장",
+      "symbol": "C4",
+      "floor_from": -2,
+      "floor_to": -1,
+      "width": 400,
+      "height": 800,
+      "main_bar": "20-D22",
+      "hoop": "D10@200"
+    },
+    {
+      "source": "지하주차장",
+      "symbol": "C5",
+      "floor_from": -2,
+      "floor_to": -1,
+      "width": 400,
+      "height": 900,
+      "main_bar": "26-D22",
+      "hoop": "D10@200"
+    }
+  ]
+}

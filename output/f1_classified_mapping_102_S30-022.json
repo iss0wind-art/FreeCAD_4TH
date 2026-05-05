@@ -1,0 +1,3992 @@
+{
+  "sheet_id": "S30-022",
+  "dong": "102",
+  "floor_hint": -1,
+  "anchor": {
+    "core1_sw_norm": [
+      73040.0,
+      52178.0
+    ],
+    "core1_w": 4307.0,
+    "core1_h": 4860.0
+  },
+  "core_regions": [
+    {
+      "sw": [
+        0.0,
+        0.0
+      ],
+      "ne": [
+        4307.0,
+        4860.0
+      ],
+      "margin": 300
+    },
+    {
+      "sw": [
+        14719.5,
+        -28298.5
+      ],
+      "ne": [
+        19298.5,
+        -23459.5
+      ],
+      "margin": 300
+    }
+  ],
+  "grid": {
+    "x_lines": [
+      -66332.2,
+      -62308.6,
+      -59094.6,
+      -58172.9,
+      -56448.0,
+      -54791.5,
+      -53617.1,
+      -53031.7,
+      -51806.8,
+      -50639.9,
+      -48427.5,
+      -46662.3,
+      -45625.6,
+      -40159.4,
+      -38814.1,
+      -37283.4,
+      -36814.2,
+      -34657.3,
+      -34237.4,
+      -33178.2,
+      -28982.3,
+      -26730.9,
+      -26072.9,
+      -24984.4,
+      -23979.6,
+      -23458.7,
+      -20746.6,
+      -17797.0,
+      -16766.5,
+      -12543.1,
+      -11952.6,
+      -9778.6,
+      -8581.9,
+      -6020.0,
+      -919.4,
+      -323.8,
+      944.2,
+      1304.9,
+      3119.3,
+      6830.8,
+      7359.2
+    ],
+    "y_lines": [
+      -42246.1,
+      -33950.3,
+      -25831.8,
+      -24101.9,
+      -23154.7,
+      -22541.4,
+      -22221.4,
+      -21091.4,
+      -15466.8,
+      -13803.3,
+      -12541.4,
+      -8722.1,
+      -8364.6,
+      -264.1,
+      4847.5,
+      13250.8,
+      20511.1,
+      21778.6,
+      27350.2,
+      30473.8,
+      31949.8,
+      35620.8,
+      36473.6,
+      45671.1,
+      56772.5,
+      58067.9,
+      93446.3,
+      94872.5,
+      110653.0
+    ],
+    "tol": 200.0
+  },
+  "box_count": 429,
+  "classification_summary": {
+    "column": 424,
+    "wall_segment": 5
+  },
+  "classifications": [
+    {
+      "box_id": "102_S30-022_box_000",
+      "kind": "column",
+      "aspect_ratio": 2.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_001",
+      "kind": "column",
+      "aspect_ratio": 1.11,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_002",
+      "kind": "column",
+      "aspect_ratio": 1.26,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.26)"
+    },
+    {
+      "box_id": "102_S30-022_box_003",
+      "kind": "column",
+      "aspect_ratio": 1.66,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_004",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_005",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_006",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_007",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_008",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.35)"
+    },
+    {
+      "box_id": "102_S30-022_box_009",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_010",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_011",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_012",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_013",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_014",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_015",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_016",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_017",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_018",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_019",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_020",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_021",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_022",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_023",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_024",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_025",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_026",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_027",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_028",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_029",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_030",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_031",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_032",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_033",
+      "kind": "column",
+      "aspect_ratio": 1.2,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_034",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_035",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_036",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_037",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_038",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_039",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_040",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_041",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_042",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_043",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_044",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_045",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_046",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_047",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_048",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.35)"
+    },
+    {
+      "box_id": "102_S30-022_box_049",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_050",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_051",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_052",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_053",
+      "kind": "column",
+      "aspect_ratio": 1.38,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_054",
+      "kind": "column",
+      "aspect_ratio": 1.38,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_055",
+      "kind": "column",
+      "aspect_ratio": 1.44,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_056",
+      "kind": "column",
+      "aspect_ratio": 1.44,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_057",
+      "kind": "column",
+      "aspect_ratio": 1.89,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_058",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_059",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_060",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_061",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_062",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_063",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_064",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_065",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_066",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_067",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_068",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_069",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_070",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_071",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_072",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_073",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_074",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_075",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_076",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_077",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_078",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_079",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_080",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_081",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_082",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_083",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_084",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_085",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_086",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_087",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_088",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_089",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_090",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_091",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.18)"
+    },
+    {
+      "box_id": "102_S30-022_box_092",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_093",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_094",
+      "kind": "column",
+      "aspect_ratio": 1.18,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_095",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_096",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_097",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.94)"
+    },
+    {
+      "box_id": "102_S30-022_box_098",
+      "kind": "column",
+      "aspect_ratio": 1.35,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_099",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_100",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_101",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_102",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_103",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_104",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_105",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_106",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_107",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_108",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_109",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_110",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_111",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_112",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_113",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_114",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_115",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_116",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_117",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_118",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_119",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_120",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_121",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_122",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_123",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_124",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_125",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_126",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_127",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_128",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_129",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_130",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_131",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_132",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_133",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_134",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_135",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_136",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_137",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_138",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_139",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_140",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_141",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_142",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_143",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_144",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_145",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_146",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_147",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_148",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_149",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_150",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_151",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_152",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_153",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_154",
+      "kind": "column",
+      "aspect_ratio": 1.25,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_155",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_156",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_157",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_158",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_159",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_160",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_161",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_162",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_163",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_164",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.50)"
+    },
+    {
+      "box_id": "102_S30-022_box_165",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_166",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_167",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_168",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_169",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_170",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_171",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_172",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_173",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_174",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_175",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_176",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_177",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_178",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_179",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_180",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_181",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_182",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_183",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_184",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_185",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_186",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_187",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_188",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_189",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_190",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_191",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_192",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_193",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_194",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_195",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_196",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_197",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_198",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_199",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_200",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_201",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_202",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_203",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_204",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_205",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_206",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_207",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_208",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_209",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_210",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_211",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_212",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_213",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_214",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_215",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_216",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_217",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_218",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_219",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_220",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_221",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_222",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_223",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_224",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_225",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_226",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_227",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_228",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_229",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_230",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_231",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_232",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_233",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_234",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_235",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_236",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_237",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_238",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_239",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_240",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_241",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_242",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_243",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_244",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_245",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_246",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_247",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_248",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_249",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_250",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_251",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_252",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_253",
+      "kind": "column",
+      "aspect_ratio": 1.86,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_254",
+      "kind": "column",
+      "aspect_ratio": 1.86,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_255",
+      "kind": "column",
+      "aspect_ratio": 1.26,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.26)"
+    },
+    {
+      "box_id": "102_S30-022_box_256",
+      "kind": "column",
+      "aspect_ratio": 1.26,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.26)"
+    },
+    {
+      "box_id": "102_S30-022_box_257",
+      "kind": "column",
+      "aspect_ratio": 1.26,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_258",
+      "kind": "column",
+      "aspect_ratio": 1.26,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_259",
+      "kind": "column",
+      "aspect_ratio": 1.66,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_260",
+      "kind": "column",
+      "aspect_ratio": 1.66,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_261",
+      "kind": "column",
+      "aspect_ratio": 1.94,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_262",
+      "kind": "column",
+      "aspect_ratio": 2.5,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.50)"
+    },
+    {
+      "box_id": "102_S30-022_box_263",
+      "kind": "wall_segment",
+      "aspect_ratio": 4.75,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.8,
+      "reason": "aspect_ratio 4.75 > 3.0 (slender)"
+    },
+    {
+      "box_id": "102_S30-022_box_264",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_265",
+      "kind": "column",
+      "aspect_ratio": 2.67,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.67)"
+    },
+    {
+      "box_id": "102_S30-022_box_266",
+      "kind": "column",
+      "aspect_ratio": 3.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_267",
+      "kind": "column",
+      "aspect_ratio": 1.1,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_268",
+      "kind": "column",
+      "aspect_ratio": 1.13,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_269",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_270",
+      "kind": "column",
+      "aspect_ratio": 1.67,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.67)"
+    },
+    {
+      "box_id": "102_S30-022_box_271",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_272",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_273",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_274",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_275",
+      "kind": "column",
+      "aspect_ratio": 2.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_276",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_277",
+      "kind": "column",
+      "aspect_ratio": 1.2,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.20)"
+    },
+    {
+      "box_id": "102_S30-022_box_278",
+      "kind": "column",
+      "aspect_ratio": 1.13,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_279",
+      "kind": "column",
+      "aspect_ratio": 1.13,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.13)"
+    },
+    {
+      "box_id": "102_S30-022_box_280",
+      "kind": "column",
+      "aspect_ratio": 1.11,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_281",
+      "kind": "column",
+      "aspect_ratio": 2.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_282",
+      "kind": "column",
+      "aspect_ratio": 2.71,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.71)"
+    },
+    {
+      "box_id": "102_S30-022_box_283",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_284",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_285",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.03)"
+    },
+    {
+      "box_id": "102_S30-022_box_286",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_287",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_288",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_289",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.22)"
+    },
+    {
+      "box_id": "102_S30-022_box_290",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_291",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_292",
+      "kind": "column",
+      "aspect_ratio": 1.1,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_293",
+      "kind": "column",
+      "aspect_ratio": 1.25,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_294",
+      "kind": "column",
+      "aspect_ratio": 1.07,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_295",
+      "kind": "column",
+      "aspect_ratio": 1.07,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_296",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_297",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_298",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.22)"
+    },
+    {
+      "box_id": "102_S30-022_box_299",
+      "kind": "column",
+      "aspect_ratio": 2.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_300",
+      "kind": "wall_segment",
+      "aspect_ratio": 4.75,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.8,
+      "reason": "aspect_ratio 4.75 > 3.0 (slender)"
+    },
+    {
+      "box_id": "102_S30-022_box_301",
+      "kind": "column",
+      "aspect_ratio": 2.67,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.67)"
+    },
+    {
+      "box_id": "102_S30-022_box_302",
+      "kind": "column",
+      "aspect_ratio": 3.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_303",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_304",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_305",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_306",
+      "kind": "column",
+      "aspect_ratio": 1.2,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.20)"
+    },
+    {
+      "box_id": "102_S30-022_box_307",
+      "kind": "column",
+      "aspect_ratio": 1.1,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_308",
+      "kind": "column",
+      "aspect_ratio": 1.1,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_309",
+      "kind": "column",
+      "aspect_ratio": 1.13,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_310",
+      "kind": "column",
+      "aspect_ratio": 2.5,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.50)"
+    },
+    {
+      "box_id": "102_S30-022_box_311",
+      "kind": "column",
+      "aspect_ratio": 1.67,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.67)"
+    },
+    {
+      "box_id": "102_S30-022_box_312",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_313",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_314",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_315",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_316",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_317",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_318",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_319",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_320",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_321",
+      "kind": "column",
+      "aspect_ratio": 1.03,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.03)"
+    },
+    {
+      "box_id": "102_S30-022_box_322",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_323",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_324",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_325",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_326",
+      "kind": "column",
+      "aspect_ratio": 1.01,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_327",
+      "kind": "column",
+      "aspect_ratio": 1.22,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_328",
+      "kind": "column",
+      "aspect_ratio": 1.13,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.13)"
+    },
+    {
+      "box_id": "102_S30-022_box_329",
+      "kind": "column",
+      "aspect_ratio": 1.13,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_330",
+      "kind": "column",
+      "aspect_ratio": 2.71,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.71)"
+    },
+    {
+      "box_id": "102_S30-022_box_331",
+      "kind": "column",
+      "aspect_ratio": 2.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_332",
+      "kind": "column",
+      "aspect_ratio": 1.11,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_333",
+      "kind": "column",
+      "aspect_ratio": 1.4,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.40)"
+    },
+    {
+      "box_id": "102_S30-022_box_334",
+      "kind": "column",
+      "aspect_ratio": 1.4,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.40)"
+    },
+    {
+      "box_id": "102_S30-022_box_335",
+      "kind": "column",
+      "aspect_ratio": 1.4,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.40)"
+    },
+    {
+      "box_id": "102_S30-022_box_336",
+      "kind": "column",
+      "aspect_ratio": 1.4,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.40)"
+    },
+    {
+      "box_id": "102_S30-022_box_337",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_338",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_339",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_340",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_341",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_342",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_343",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_344",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_345",
+      "kind": "column",
+      "aspect_ratio": 1.27,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_346",
+      "kind": "column",
+      "aspect_ratio": 1.27,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_347",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_348",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_349",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_350",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_351",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_352",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_353",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_354",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_355",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_356",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_357",
+      "kind": "column",
+      "aspect_ratio": 1.91,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_358",
+      "kind": "column",
+      "aspect_ratio": 1.91,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_359",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_360",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_361",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_362",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_363",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_364",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_365",
+      "kind": "column",
+      "aspect_ratio": 1.07,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_366",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_367",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_368",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_369",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_370",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_371",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_372",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_373",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_374",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": true,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_375",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": true,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_376",
+      "kind": "column",
+      "aspect_ratio": 1.47,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_377",
+      "kind": "wall_segment",
+      "aspect_ratio": 7.17,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.8,
+      "reason": "aspect_ratio 7.17 > 3.0 (slender)"
+    },
+    {
+      "box_id": "102_S30-022_box_378",
+      "kind": "wall_segment",
+      "aspect_ratio": 7.17,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.8,
+      "reason": "aspect_ratio 7.17 > 3.0 (slender)"
+    },
+    {
+      "box_id": "102_S30-022_box_379",
+      "kind": "column",
+      "aspect_ratio": 1.07,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_380",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_381",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_382",
+      "kind": "column",
+      "aspect_ratio": 1.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_383",
+      "kind": "column",
+      "aspect_ratio": 1.07,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_384",
+      "kind": "column",
+      "aspect_ratio": 1.04,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_385",
+      "kind": "column",
+      "aspect_ratio": 1.05,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_386",
+      "kind": "column",
+      "aspect_ratio": 1.45,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_387",
+      "kind": "column",
+      "aspect_ratio": 1.45,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_388",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_389",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_390",
+      "kind": "column",
+      "aspect_ratio": 1.56,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_391",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_392",
+      "kind": "column",
+      "aspect_ratio": 1.69,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_393",
+      "kind": "column",
+      "aspect_ratio": 1.57,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_394",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_395",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.50)"
+    },
+    {
+      "box_id": "102_S30-022_box_396",
+      "kind": "column",
+      "aspect_ratio": 1.87,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_397",
+      "kind": "column",
+      "aspect_ratio": 1.87,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_398",
+      "kind": "wall_segment",
+      "aspect_ratio": 3.33,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.8,
+      "reason": "aspect_ratio 3.33 > 3.0 (slender)"
+    },
+    {
+      "box_id": "102_S30-022_box_399",
+      "kind": "column",
+      "aspect_ratio": 1.88,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_400",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_401",
+      "kind": "column",
+      "aspect_ratio": 1.08,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_402",
+      "kind": "column",
+      "aspect_ratio": 1.08,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_403",
+      "kind": "column",
+      "aspect_ratio": 1.08,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_404",
+      "kind": "column",
+      "aspect_ratio": 1.08,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_405",
+      "kind": "column",
+      "aspect_ratio": 1.33,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.33)"
+    },
+    {
+      "box_id": "102_S30-022_box_406",
+      "kind": "column",
+      "aspect_ratio": 1.33,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_407",
+      "kind": "column",
+      "aspect_ratio": 1.33,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_408",
+      "kind": "column",
+      "aspect_ratio": 1.33,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=1.33)"
+    },
+    {
+      "box_id": "102_S30-022_box_409",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_410",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_411",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_412",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_413",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_414",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_415",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_416",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_417",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_418",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_419",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_420",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_421",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_422",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_423",
+      "kind": "column",
+      "aspect_ratio": 1.5,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_424",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": true,
+      "confidence": 1.0,
+      "reason": "column on grid intersection (ar=2.00)"
+    },
+    {
+      "box_id": "102_S30-022_box_425",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_426",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_427",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    },
+    {
+      "box_id": "102_S30-022_box_428",
+      "kind": "column",
+      "aspect_ratio": 2.0,
+      "in_core": false,
+      "on_grid_intersection": false,
+      "confidence": 0.4,
+      "reason": "column candidate but off grid — verify"
+    }
+  ],
+  "mapping_summary": {
+    "matched": 93,
+    "unmatched": 57,
+    "symbols": {
+      "C1": 85,
+      "TC1": 2,
+      "TC2": 4,
+      "TC75": 2
+    }
+  }
+}
