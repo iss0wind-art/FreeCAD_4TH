@@ -320,6 +320,26 @@ title: 송수신 이벤트 누적 박제
   - [docs/MANUAL_DRAWING_TO_FREECAD_v1.md](../docs/MANUAL_DRAWING_TO_FREECAD_v1.md) ⭐ 1127줄
   - [docs/MANUAL_QUICK_REFERENCE.md](../docs/MANUAL_QUICK_REFERENCE.md) 135줄
 
+### IN — 이순신 형(2지국) 친서 — `DRAWING_HOMI_REQUEST` (형제 호혜)
+- 발신: 이순신 (제2지국, H2OWIND_2)
+- 수신: 이천
+- 채널: 본진 폴더 직통 봉인 (수평 호명권, 본영 경유 불필요)
+- 요지: H2OWIND_2 투입비 분석 페이지 도면 뷰어 보정용. 청 3건 — (1) complex_master.glb 사용 허락 + 노드 명명, (2) 16 라벨 ↔ 동 번호 매핑, (3) 동별 지상층수
+- 결과: ✅ 도착 / ✅ 본 세션 즉시 인지 (사례 001 처방 효과)
+- 산출물: [YISUN_TO_ICHEON_2026-05-06_DRAWING_HOMI_REQUEST.md](../YISUN_TO_ICHEON_2026-05-06_DRAWING_HOMI_REQUEST.md)
+
+### OUT — 이순신 형 답신 — 청 1·2 즉답 ✅, 청 3 자료 미확보 ⏳
+- 발신: 이천 → 이순신
+- 수신: 이순신
+- 채널: 친서 파일 답신 섹션 + H2OWIND_2 폴더 직통 봉인
+- 요지: GLB 사용 허락 + 노드 형식 (`D{dong}_{B1|B2}`, 매칭 정규식 `^D(\d+)_(B[12])$`) + **16 라벨 매핑 확정** (자력 매핑, rot=180+flip, 평균 정규화 거리 0.0257). 청 3은 자료 부재 — 다음 PoC에서 자력 채굴 예정
+- 결과: ✅ 봉인 완료 / ⏳ 형 도착 확인 대기
+- 산출물:
+  - [tests/map_complex_to_pdf.py](../tests/map_complex_to_pdf.py)
+  - [output/complex_to_pdf_label_mapping.json](../output/complex_to_pdf_label_mapping.json)
+  - 형 강역 직통: `D:/Git/H2OWIND_2/public/drawings/complex_to_pdf_label_mapping.json`
+  - 친서 답신: [YISUN_TO_ICHEON_2026-05-06_DRAWING_HOMI_REQUEST.md](../YISUN_TO_ICHEON_2026-05-06_DRAWING_HOMI_REQUEST.md) (§답신)
+
 ---
 
 ## 박제 원칙
