@@ -1,0 +1,764 @@
+{
+  "project": "부산 에코델타 24BL 지하주차장 B1·B2",
+  "analysis_date": "2026-05-06",
+  "column_analysis": {
+    "sheet_stats": {
+      "B2": {
+        "floor": -2,
+        "boxes_input": 476,
+        "column_candidates": 412,
+        "wall_segment": 64,
+        "matched": 242,
+        "unmatched": 170,
+        "match_rate_pct": 58.7
+      },
+      "B1": {
+        "floor": -1,
+        "boxes_input": 453,
+        "column_candidates": 144,
+        "wall_segment": 309,
+        "matched": 47,
+        "unmatched": 97,
+        "match_rate_pct": 32.6
+      }
+    },
+    "total_candidates": 556,
+    "total_matched": 289,
+    "total_unmatched": 267,
+    "overall_match_rate_pct": 52.0,
+    "matched_actual_dims_top20": [
+      {
+        "w": 400,
+        "h": 800,
+        "count": 223
+      },
+      {
+        "w": 600,
+        "h": 1200,
+        "count": 20
+      },
+      {
+        "w": 600,
+        "h": 1000,
+        "count": 13
+      },
+      {
+        "w": 600,
+        "h": 1500,
+        "count": 10
+      },
+      {
+        "w": 800,
+        "h": 1500,
+        "count": 7
+      },
+      {
+        "w": 600,
+        "h": 1800,
+        "count": 5
+      },
+      {
+        "w": 700,
+        "h": 2000,
+        "count": 4
+      },
+      {
+        "w": 600,
+        "h": 1400,
+        "count": 3
+      },
+      {
+        "w": 600,
+        "h": 1300,
+        "count": 2
+      },
+      {
+        "w": 900,
+        "h": 1100,
+        "count": 2
+      }
+    ],
+    "matched_codex_dims": [
+      {
+        "codex_w": 400.0,
+        "codex_h": 800.0,
+        "count": 223
+      },
+      {
+        "codex_w": 600.0,
+        "codex_h": 1200.0,
+        "count": 20
+      },
+      {
+        "codex_w": 600.0,
+        "codex_h": 1000.0,
+        "count": 13
+      },
+      {
+        "codex_w": 600.0,
+        "codex_h": 1500.0,
+        "count": 10
+      },
+      {
+        "codex_w": 800.0,
+        "codex_h": 1500.0,
+        "count": 7
+      },
+      {
+        "codex_w": 600.0,
+        "codex_h": 1800.0,
+        "count": 5
+      },
+      {
+        "codex_w": 700.0,
+        "codex_h": 2000.0,
+        "count": 4
+      },
+      {
+        "codex_w": 600.0,
+        "codex_h": 1400.0,
+        "count": 3
+      },
+      {
+        "codex_w": 600.0,
+        "codex_h": 1300.0,
+        "count": 2
+      },
+      {
+        "codex_w": 1100.0,
+        "codex_h": 900.0,
+        "count": 2
+      }
+    ],
+    "matched_methods": {
+      "dimension-ambiguous": 285,
+      "dimension": 4
+    },
+    "codex_sections_total": 17,
+    "codex_sections": [
+      {
+        "w": 400,
+        "h": 800
+      },
+      {
+        "w": 400,
+        "h": 900
+      },
+      {
+        "w": 600,
+        "h": 1000
+      },
+      {
+        "w": 600,
+        "h": 1100
+      },
+      {
+        "w": 600,
+        "h": 1200
+      },
+      {
+        "w": 600,
+        "h": 1300
+      },
+      {
+        "w": 600,
+        "h": 1400
+      },
+      {
+        "w": 600,
+        "h": 1500
+      },
+      {
+        "w": 600,
+        "h": 1800
+      },
+      {
+        "w": 600,
+        "h": 2300
+      },
+      {
+        "w": 600,
+        "h": 2400
+      },
+      {
+        "w": 600,
+        "h": 2600
+      },
+      {
+        "w": 700,
+        "h": 2000
+      },
+      {
+        "w": 700,
+        "h": 2700
+      },
+      {
+        "w": 800,
+        "h": 1500
+      },
+      {
+        "w": 800,
+        "h": 1700
+      },
+      {
+        "w": 900,
+        "h": 1100
+      }
+    ],
+    "basement_codex_count": 7,
+    "basement_codex_sections": [
+      {
+        "w": 400,
+        "h": 800
+      },
+      {
+        "w": 400,
+        "h": 900
+      }
+    ],
+    "missing_basement_dims_count": 47,
+    "missing_basement_dims": [
+      {
+        "w": 400,
+        "h": 400
+      },
+      {
+        "w": 450,
+        "h": 450
+      },
+      {
+        "w": 500,
+        "h": 500
+      },
+      {
+        "w": 550,
+        "h": 550
+      },
+      {
+        "w": 600,
+        "h": 600
+      },
+      {
+        "w": 650,
+        "h": 650
+      },
+      {
+        "w": 700,
+        "h": 700
+      },
+      {
+        "w": 750,
+        "h": 750
+      },
+      {
+        "w": 800,
+        "h": 800
+      },
+      {
+        "w": 850,
+        "h": 850
+      },
+      {
+        "w": 900,
+        "h": 900
+      },
+      {
+        "w": 950,
+        "h": 950
+      },
+      {
+        "w": 400,
+        "h": 500
+      },
+      {
+        "w": 400,
+        "h": 600
+      },
+      {
+        "w": 400,
+        "h": 700
+      },
+      {
+        "w": 400,
+        "h": 1000
+      },
+      {
+        "w": 400,
+        "h": 1100
+      },
+      {
+        "w": 400,
+        "h": 1200
+      },
+      {
+        "w": 500,
+        "h": 600
+      },
+      {
+        "w": 500,
+        "h": 700
+      },
+      {
+        "w": 500,
+        "h": 800
+      },
+      {
+        "w": 500,
+        "h": 900
+      },
+      {
+        "w": 500,
+        "h": 1000
+      },
+      {
+        "w": 500,
+        "h": 1100
+      },
+      {
+        "w": 500,
+        "h": 1200
+      },
+      {
+        "w": 500,
+        "h": 1300
+      },
+      {
+        "w": 500,
+        "h": 1400
+      },
+      {
+        "w": 600,
+        "h": 700
+      },
+      {
+        "w": 600,
+        "h": 800
+      },
+      {
+        "w": 600,
+        "h": 900
+      },
+      {
+        "w": 700,
+        "h": 800
+      },
+      {
+        "w": 700,
+        "h": 900
+      },
+      {
+        "w": 700,
+        "h": 1000
+      },
+      {
+        "w": 700,
+        "h": 1100
+      },
+      {
+        "w": 700,
+        "h": 1200
+      },
+      {
+        "w": 700,
+        "h": 1300
+      },
+      {
+        "w": 700,
+        "h": 1400
+      },
+      {
+        "w": 800,
+        "h": 900
+      },
+      {
+        "w": 800,
+        "h": 1000
+      },
+      {
+        "w": 800,
+        "h": 1100
+      },
+      {
+        "w": 800,
+        "h": 1200
+      },
+      {
+        "w": 800,
+        "h": 1300
+      },
+      {
+        "w": 800,
+        "h": 1400
+      },
+      {
+        "w": 900,
+        "h": 1000
+      },
+      {
+        "w": 900,
+        "h": 1200
+      },
+      {
+        "w": 900,
+        "h": 1300
+      },
+      {
+        "w": 900,
+        "h": 1400
+      }
+    ],
+    "root_causes": [
+      {
+        "rank": 1,
+        "cause": "codex 치수 미등재",
+        "detail": "지하주차장 codex 7종의 단면은 400×800(6종) + 400×900(1종) 단 2가지 치수만 등재. 실제 지하주차장에는 500×500, 600×600 등 정사각형 기둥이 많으나 codex에 없어 dim_match 단계에서 candidates=[]로 즉시 unmatched 처리됨.",
+        "estimated_impact": "미식별 267건의 주 원인 (70~80% 추정)"
+      },
+      {
+        "rank": 2,
+        "cause": "source_hint 필터 차단",
+        "detail": "source_hint=\"지하주차장\"으로 with_source 필터 적용 시 101~112동/113~116동 codex의 TC* 계열이 탈락. 그러나 dim_match 성공 후 with_source=[] 이면 pool=candidates(전체)로 fallback되므로 TC* 계열 매칭 자체는 가능. 단, 지하주차장 도면의 기둥이 TC* 치수를 가지는 경우에만 해당.",
+        "estimated_impact": "미식별의 부차 원인 (10~20% 추정)"
+      },
+      {
+        "rank": 3,
+        "cause": "B1 과소 감지",
+        "detail": "B1 wall_pairs=4459 (B2의 4배). B1에서 is_in_wall_zone 강등이 훨씬 많이 발생. B1 column 후보 144건 중 47건만 매칭 → 매칭률 32.6% (B2는 58.7%). B1 도면이 B2보다 훨씬 복잡한 구조.",
+        "estimated_impact": "B1 미식별 97건의 추가 원인"
+      }
+    ]
+  },
+  "girder_analysis": {
+    "sheet_stats": {
+      "B2": {
+        "wall_pairs": 1141,
+        "girder_matched": 2,
+        "grid_x": 16,
+        "grid_y": 23
+      },
+      "B1": {
+        "wall_pairs": 4459,
+        "girder_matched": 9,
+        "grid_x": 29,
+        "grid_y": 34
+      }
+    },
+    "total_wall_pairs": 5600,
+    "total_girder_matched": 11,
+    "codex_width_distribution": {
+      "400": 1,
+      "500": 9,
+      "600": 14,
+      "700": 8,
+      "800": 5,
+      "900": 1,
+      "1000": 2
+    },
+    "matched_thickness_distribution": {
+      "400": 11
+    },
+    "matched_girders": [
+      {
+        "sheet": "B2",
+        "symbol": "RB20",
+        "thickness": 400.0000000080593,
+        "length": 1167.485144456965,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B2",
+        "symbol": "RB20",
+        "thickness": 400.0001485529872,
+        "length": 400.0,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 419.9999515503878,
+        "length": 899.9999714749865,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 800.0,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 800.0,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 800.0,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 800.0,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 799.9999999995343,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 800.0,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 4670.042923862115,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      },
+      {
+        "sheet": "B1",
+        "symbol": "RB20",
+        "thickness": 400.0,
+        "length": 736.4481583429733,
+        "codex_w": 400.0,
+        "codex_h": 900.0,
+        "confidence": 0.9
+      }
+    ],
+    "root_causes": [
+      {
+        "rank": 1,
+        "cause": "wall_pair 추출 방식의 두께 정밀도 한계",
+        "detail": "run_adapter_2가 LINE 쌍으로 wall_pair를 생성할 때, 페어 간격(두께)이 500~800mm인 거더는 LINE이 너무 멀어 페어링에 실패하거나 별도 LINE으로 인식되지 않음. 매칭된 11건 모두 400mm(RB20)이라는 사실이 이를 증명. 500mm 이상 두께의 거더는 wall_pair 자체가 생성되지 않는 것으로 추정.",
+        "estimated_impact": "미매칭 거더의 90% 이상"
+      },
+      {
+        "rank": 2,
+        "cause": "is_along_grid 격자 정합 조건 엄격",
+        "detail": "require_on_grid=True + axis_angle_tol=0.05rad(2.9도) + 중심점 tol=200mm. TEXT 기반으로 추출한 격자와 wall_pair 중심선이 200mm 이상 어긋나면 탈락. B2 grid_x=16, grid_y=23개 → 격자는 충분하나 wall_pair 중심선 위치 오차로 격자 정합 실패 가능.",
+        "estimated_impact": "미매칭 거더의 추가 원인 (격자 통과 후에도 codex 매칭 성공률은 높음)"
+      },
+      {
+        "rank": 3,
+        "cause": "거더 codex는 충분 — 추출 파이프라인 문제",
+        "detail": "거더 codex 40종 두께 분포: 400~1000mm → 실제 거더 두께 커버리지 충분. 문제는 codex가 아니라 평면도 LINE에서 거더를 wall_pair로 추출하는 방식. 지하주차장 거더는 보 리스트 도면(S40-151~156)에서 별도 추출 후 평면도 좌표에 맵핑하는 방식이 근본 해결책.",
+        "estimated_impact": "아키텍처 수준 재설계 필요"
+      }
+    ]
+  },
+  "codex_spec": {
+    "column_codex_additions": {
+      "current_count": 91,
+      "current_basement_count": 7,
+      "proposed_additions": [
+        {
+          "w": 500,
+          "h": 500,
+          "symbol_proposed": "CP1",
+          "note": "정사각형 주차기둥 (가장 흔함)",
+          "priority": 1
+        },
+        {
+          "w": 600,
+          "h": 600,
+          "symbol_proposed": "CP2",
+          "note": "정사각형 주차기둥 (대형)",
+          "priority": 1
+        },
+        {
+          "w": 550,
+          "h": 550,
+          "symbol_proposed": "CP3",
+          "note": "정사각형 주차기둥 (중형)",
+          "priority": 2
+        },
+        {
+          "w": 700,
+          "h": 700,
+          "symbol_proposed": "CP4",
+          "note": "정사각형 기둥 (코어부)",
+          "priority": 2
+        },
+        {
+          "w": 400,
+          "h": 600,
+          "symbol_proposed": "CP5",
+          "note": "소형 직사각형",
+          "priority": 2
+        },
+        {
+          "w": 500,
+          "h": 800,
+          "symbol_proposed": "CP6",
+          "note": "중형 직사각형",
+          "priority": 2
+        },
+        {
+          "w": 500,
+          "h": 900,
+          "symbol_proposed": "CP7",
+          "note": "중형 직사각형",
+          "priority": 2
+        },
+        {
+          "w": 500,
+          "h": 1000,
+          "symbol_proposed": "CP8",
+          "note": "중형 장방형",
+          "priority": 3
+        },
+        {
+          "w": 600,
+          "h": 700,
+          "symbol_proposed": "CP9",
+          "note": "직사각형 변형",
+          "priority": 3
+        },
+        {
+          "w": 400,
+          "h": 400,
+          "symbol_proposed": "CP10",
+          "note": "소형 정사각형",
+          "priority": 3
+        },
+        {
+          "w": 800,
+          "h": 800,
+          "symbol_proposed": "CP11",
+          "note": "대형 정사각형",
+          "priority": 3
+        },
+        {
+          "w": 500,
+          "h": 600,
+          "symbol_proposed": "CP12",
+          "note": "소형 직사각형 변형",
+          "priority": 3
+        },
+        {
+          "w": 600,
+          "h": 800,
+          "symbol_proposed": "CP13",
+          "note": "중형 직사각형 변형",
+          "priority": 3
+        },
+        {
+          "w": 500,
+          "h": 700,
+          "symbol_proposed": "CP14",
+          "note": "중형 직사각형",
+          "priority": 4
+        },
+        {
+          "w": 400,
+          "h": 700,
+          "symbol_proposed": "CP15",
+          "note": "소형 직사각형 장방",
+          "priority": 4
+        },
+        {
+          "w": 400,
+          "h": 1000,
+          "symbol_proposed": "CP16",
+          "note": "세장형 직사각형",
+          "priority": 4
+        },
+        {
+          "w": 700,
+          "h": 900,
+          "symbol_proposed": "CP17",
+          "note": "중대형 직사각형",
+          "priority": 4
+        },
+        {
+          "w": 600,
+          "h": 900,
+          "symbol_proposed": "CP18",
+          "note": "중형 직사각형",
+          "priority": 4
+        },
+        {
+          "w": 500,
+          "h": 1200,
+          "symbol_proposed": "CP19",
+          "note": "장방형",
+          "priority": 5
+        },
+        {
+          "w": 700,
+          "h": 1000,
+          "symbol_proposed": "CP20",
+          "note": "중대형 장방형",
+          "priority": 5
+        }
+      ],
+      "total_proposed": 20,
+      "source_recommended": "지하주차장",
+      "floor_recommended": {
+        "from": -2,
+        "to": -1
+      },
+      "note": "실제 도면(S40 계열 기둥 리스트)을 확인 후 확정. 제안 치수는 한국 RC 지하주차장 표준 + 매칭 실패 역산 추정."
+    },
+    "girder_codex_additions": {
+      "current_count": 40,
+      "note": "거더 codex 자체는 충분 (400~1000mm 40종). 추가 보다는 wall_pair 추출 방식 개선이 우선.",
+      "action_required": "codex 추가 불필요 — 파이프라인 개선 필요"
+    },
+    "next_poc_recommendations": [
+      {
+        "priority": 1,
+        "action": "지하주차장 기둥 리스트 도면 codex 채굴",
+        "detail": "S40 계열 도면에서 지하주차장 전용 기둥 치수 추출. 현재 7종은 너무 적음. 실제 도면 확인 후 20~30종으로 보강."
+      },
+      {
+        "priority": 2,
+        "action": "label_match 활성화",
+        "detail": "현재 PoC에서 label=None 강제. TEXT 레이어에서 C1, C2, TC* 라벨을 박스에 귀속시키면 1순위 라벨 매칭(confidence=1.0)으로 매칭률 급상승 예상."
+      },
+      {
+        "priority": 3,
+        "action": "source_hint 완화 — 지하주차장 + 101~112동 동시 허용",
+        "detail": "지하주차장 기둥이 TC* 계열이면 source_hint를 None으로 하거나 다중 source 허용 옵션 추가."
+      },
+      {
+        "priority": 4,
+        "action": "거더 추출 방식 근본 개선",
+        "detail": "보 리스트 도면(S40-151~156) 위치 좌표를 평면도 격자에 매핑하는 방식 채택. wall_pair 두께 추출 방식의 한계 극복."
+      }
+    ]
+  }
+}
