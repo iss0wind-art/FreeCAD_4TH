@@ -1,0 +1,215 @@
+{
+  "dong": "102",
+  "sheet_count": 9,
+  "totals": {
+    "lines": 38505,
+    "boxes": 2431,
+    "wall_pairs": 6562,
+    "columns_mapped": 55,
+    "girders_mapped": 32
+  },
+  "sheets": [
+    {
+      "sheet_id": "S30-021",
+      "floor_hint": -2,
+      "lines": 12256,
+      "boxes": 782,
+      "wall_pairs": 1968,
+      "grid_x": 76,
+      "grid_y": 85,
+      "classification": {
+        "column": 656,
+        "wall_segment": 126
+      },
+      "wall_zone_demoted": 121,
+      "column_high_conf": 33,
+      "column_mapped": 21,
+      "column_symbols": {
+        "C1": 8,
+        "TC2": 8,
+        "TC1": 4,
+        "TC8": 1
+      },
+      "girder_candidates": 33,
+      "girder_matched": 23,
+      "girder_symbols": {
+        "RB20": 1
+      },
+      "elapsed_s": 35.7
+    },
+    {
+      "sheet_id": "S30-022",
+      "floor_hint": -1,
+      "lines": 6248,
+      "boxes": 429,
+      "wall_pairs": 1042,
+      "grid_x": 30,
+      "grid_y": 17,
+      "classification": {
+        "column": 381,
+        "wall_segment": 48
+      },
+      "wall_zone_demoted": 43,
+      "column_high_conf": 3,
+      "column_mapped": 2,
+      "column_symbols": {
+        "C1": 2
+      },
+      "girder_candidates": 2,
+      "girder_matched": 1,
+      "girder_symbols": {
+        "RB20": 1
+      },
+      "elapsed_s": 19.2
+    },
+    {
+      "sheet_id": "S30-023",
+      "floor_hint": 0,
+      "lines": 4,
+      "boxes": 0,
+      "wall_pairs": 0,
+      "grid_x": 1,
+      "grid_y": 0,
+      "classification": {},
+      "wall_zone_demoted": 0,
+      "column_high_conf": 0,
+      "column_mapped": 0,
+      "column_symbols": {},
+      "girder_candidates": 0,
+      "girder_matched": 0,
+      "girder_symbols": {},
+      "elapsed_s": 12.7
+    },
+    {
+      "sheet_id": "S30-024",
+      "floor_hint": 1,
+      "lines": 10016,
+      "boxes": 861,
+      "wall_pairs": 1790,
+      "grid_x": 96,
+      "grid_y": 85,
+      "classification": {
+        "wall_segment": 134,
+        "column": 727
+      },
+      "wall_zone_demoted": 124,
+      "column_high_conf": 40,
+      "column_mapped": 24,
+      "column_symbols": {
+        "C1": 23,
+        "TC2": 1
+      },
+      "girder_candidates": 12,
+      "girder_matched": 7,
+      "girder_symbols": {
+        "RB20": 1
+      },
+      "elapsed_s": 29.0
+    },
+    {
+      "sheet_id": "S30-025",
+      "floor_hint": 2,
+      "lines": 5173,
+      "boxes": 329,
+      "wall_pairs": 946,
+      "grid_x": 72,
+      "grid_y": 69,
+      "classification": {
+        "column": 285,
+        "wall_segment": 44
+      },
+      "wall_zone_demoted": 34,
+      "column_high_conf": 15,
+      "column_mapped": 8,
+      "column_symbols": {
+        "C1": 6,
+        "TC1": 2
+      },
+      "girder_candidates": 3,
+      "girder_matched": 1,
+      "girder_symbols": {
+        "RB20": 1
+      },
+      "elapsed_s": 17.5
+    },
+    {
+      "sheet_id": "S30-026",
+      "floor_hint": 3,
+      "lines": 2403,
+      "boxes": 16,
+      "wall_pairs": 408,
+      "grid_x": 21,
+      "grid_y": 9,
+      "classification": {
+        "wall_segment": 4,
+        "column": 12
+      },
+      "wall_zone_demoted": 2,
+      "column_high_conf": 0,
+      "column_mapped": 0,
+      "column_symbols": {},
+      "girder_candidates": 0,
+      "girder_matched": 0,
+      "girder_symbols": {},
+      "elapsed_s": 13.3
+    },
+    {
+      "sheet_id": "S30-027",
+      "floor_hint": 4,
+      "lines": 2397,
+      "boxes": 14,
+      "wall_pairs": 408,
+      "grid_x": 21,
+      "grid_y": 9,
+      "classification": {
+        "wall_segment": 3,
+        "column": 11
+      },
+      "wall_zone_demoted": 2,
+      "column_high_conf": 0,
+      "column_mapped": 0,
+      "column_symbols": {},
+      "girder_candidates": 0,
+      "girder_matched": 0,
+      "girder_symbols": {},
+      "elapsed_s": 13.3
+    },
+    {
+      "sheet_id": "S30-028",
+      "floor_hint": 5,
+      "lines": 4,
+      "boxes": 0,
+      "wall_pairs": 0,
+      "grid_x": 1,
+      "grid_y": 0,
+      "classification": {},
+      "wall_zone_demoted": 0,
+      "column_high_conf": 0,
+      "column_mapped": 0,
+      "column_symbols": {},
+      "girder_candidates": 0,
+      "girder_matched": 0,
+      "girder_symbols": {},
+      "elapsed_s": 12.6
+    },
+    {
+      "sheet_id": "S30-029",
+      "floor_hint": 6,
+      "lines": 4,
+      "boxes": 0,
+      "wall_pairs": 0,
+      "grid_x": 1,
+      "grid_y": 0,
+      "classification": {},
+      "wall_zone_demoted": 0,
+      "column_high_conf": 0,
+      "column_mapped": 0,
+      "column_symbols": {},
+      "girder_candidates": 0,
+      "girder_matched": 0,
+      "girder_symbols": {},
+      "elapsed_s": 12.5
+    }
+  ],
+  "elapsed_total_s": 178.0
+}

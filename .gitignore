@@ -14,3 +14,9 @@ build/
 # 런타임 자국·로컬 설정
 output/*.db
 .claude/
+
+# 테스트 픽스처 (로컬 전용)
+tests/fixtures/
+
+# 분석 임시 (대용량 OLE 추출, 원본 도면 이진)
+tmp_analysis/

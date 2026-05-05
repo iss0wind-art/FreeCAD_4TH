@@ -1,0 +1,2271 @@
+{
+  "강역": "부산 에코델타 24BL",
+  "색인일시": "2026-05-05T13:25:47",
+  "총_도면수": 170,
+  "도면목록": [
+    {
+      "filename": "A00-001~014 도면목록표.dxf",
+      "name": "A00-001~014 도면목록표",
+      "page_code": "00-001~014",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "INDEX",
+          "label": "도면목록"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 2885254
+    },
+    {
+      "filename": "A00-021 건축일반사항.dxf",
+      "name": "A00-021 건축일반사항",
+      "page_code": "00-021",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "GENERAL_NOTES_A",
+          "label": "건축 일반사항"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 1642178
+    },
+    {
+      "filename": "A01-013 지구단위계획결정도 및 시행지침.dxf",
+      "name": "A01-013 지구단위계획결정도 및 시행지침",
+      "page_code": "01-013",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "DISTRICT_UNIT",
+          "label": "지구단위계획"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 4629145
+    },
+    {
+      "filename": "A01-014 지구단위 시행지침 이행근거.dxf",
+      "name": "A01-014 지구단위 시행지침 이행근거",
+      "page_code": "01-014",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "DISTRICT_UNIT",
+          "label": "지구단위계획"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 1523954
+    },
+    {
+      "filename": "A01-015~016 대지구적도,기부채납 면적검토.dxf",
+      "name": "A01-015~016 대지구적도,기부채납 면적검토",
+      "page_code": "01-015~016",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 2018214
+    },
+    {
+      "filename": "A01-023 단지배치도.dxf",
+      "name": "A01-023 단지배치도",
+      "page_code": "01-023",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "COMPLEX_PLAN",
+          "label": "단지 배치도"
+        },
+        {
+          "code": "LAYOUT",
+          "label": "배치도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 136887492
+    },
+    {
+      "filename": "A01-024 지반층배치도.dxf",
+      "name": "A01-024 지반층배치도",
+      "page_code": "01-024",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "GROUND_PLAN",
+          "label": "지반층 배치도"
+        },
+        {
+          "code": "LAYOUT",
+          "label": "배치도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 176323195
+    },
+    {
+      "filename": "A01-025~027 대지 종,횡단면도-1,2,3.dxf",
+      "name": "A01-025~027 대지 종,횡단면도-1,2,3",
+      "page_code": "01-025~027",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 5600327
+    },
+    {
+      "filename": "A01-031~033 사선검토 배치도, 사선검토도(24-1014)-근생층고1m확보.dxf",
+      "name": "A01-031~033 사선검토 배치도, 사선검토도(24-1014)-근생층고1m확보",
+      "page_code": "01-031~033",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "LAYOUT",
+          "label": "배치도"
+        },
+        {
+          "code": "SUNLIGHT",
+          "label": "사선검토"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 3996725
+    },
+    {
+      "filename": "A01-034~035 입면적 산출근거.dxf",
+      "name": "A01-034~035 입면적 산출근거",
+      "page_code": "01-034~035",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "ELEVATION_AREA",
+          "label": "입면적 산출"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 1729557
+    },
+    {
+      "filename": "A01-042 비상차량동선도.dxf",
+      "name": "A01-042 비상차량동선도",
+      "page_code": "01-042",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "TRAFFIC",
+          "label": "동선·교통체계"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 147107817
+    },
+    {
+      "filename": "A01-043~044 지하2~1층 교통 체계도.dxf",
+      "name": "A01-043~044 지하2~1층 교통 체계도",
+      "page_code": "01-043~044",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "TRAFFIC",
+          "label": "동선·교통체계"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 16041720
+    },
+    {
+      "filename": "A01-051 단지내 시설물 배치도.dxf",
+      "name": "A01-051 단지내 시설물 배치도",
+      "page_code": "01-051",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "LAYOUT",
+          "label": "배치도"
+        },
+        {
+          "code": "FACILITY",
+          "label": "시설물"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 135209477
+    },
+    {
+      "filename": "A01-052 폐기물 보관시설 배치도.dxf",
+      "name": "A01-052 폐기물 보관시설 배치도",
+      "page_code": "01-052",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "LAYOUT",
+          "label": "배치도"
+        },
+        {
+          "code": "WASTE",
+          "label": "폐기물 보관시설"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 134970982
+    },
+    {
+      "filename": "A01-053 자전거주차 설치 계획도.dxf",
+      "name": "A01-053 자전거주차 설치 계획도",
+      "page_code": "01-053",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "BICYCLE",
+          "label": "자전거 주차"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 174590544
+    },
+    {
+      "filename": "A01-054 캐노피 설치계획도.dxf",
+      "name": "A01-054 캐노피 설치계획도",
+      "page_code": "01-054",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "CANOPY",
+          "label": "캐노피"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 176032699
+    },
+    {
+      "filename": "A01-055~057 난간 및 트렌치 설치계획도.dxf",
+      "name": "A01-055~057 난간 및 트렌치 설치계획도",
+      "page_code": "01-055~057",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "RAILING",
+          "label": "난간·트렌치"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 191675121
+    },
+    {
+      "filename": "A01-061~062 장애인편의시설 설치계획도(지상,지하).dxf",
+      "name": "A01-061~062 장애인편의시설 설치계획도(지상,지하)",
+      "page_code": "01-061~062",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "ACCESSIBLE",
+          "label": "장애인 편의시설"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 196812823
+    },
+    {
+      "filename": "A01-063~102 장애인 주출입구 상세도.dxf",
+      "name": "A01-063~102 장애인 주출입구 상세도",
+      "page_code": "01-063~102",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 208350959
+    },
+    {
+      "filename": "A01-111~115 장애인 편의시설 상세도.dxf",
+      "name": "A01-111~115 장애인 편의시설 상세도",
+      "page_code": "01-111~115",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "ACCESSIBLE",
+          "label": "장애인 편의시설"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 30723052
+    },
+    {
+      "filename": "A01-121~122 지하2~1층 주차장 방화구획도.dxf",
+      "name": "A01-121~122 지하2~1층 주차장 방화구획도",
+      "page_code": "01-121~122",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "FIRE_DIVISION",
+          "label": "방화구획"
+        },
+        {
+          "code": "PARKING_FIRE",
+          "label": "주차장 방화구획"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 17493006
+    },
+    {
+      "filename": "A01-131~133 지하층 방수계획도.dxf",
+      "name": "A01-131~133 지하층 방수계획도",
+      "page_code": "01-131~133",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "WATERPROOF",
+          "label": "방수계획"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 151957647
+    },
+    {
+      "filename": "A01-141~167,171 바닥단열계획도,상세도(101동~116동).dxf",
+      "name": "A01-141~167,171 바닥단열계획도,상세도(101동~116동)",
+      "page_code": "01-141~167",
+      "dongs": [
+        101,
+        116
+      ],
+      "categories": [
+        {
+          "code": "INSULATION",
+          "label": "단열계획"
+        },
+        {
+          "code": "FLOOR_INSULATION",
+          "label": "바닥 단열"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 209904245
+    },
+    {
+      "filename": "A10-001~009 단위세대 면적산출근거표.dxf",
+      "name": "A10-001~009 단위세대 면적산출근거표",
+      "page_code": "10-001~009",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "AREA_CALC",
+          "label": "면적 산출"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 3654736
+    },
+    {
+      "filename": "A10-011~035 코어면적산출근거표.dxf",
+      "name": "A10-011~035 코어면적산출근거표",
+      "page_code": "10-011~035",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "AREA_CALC",
+          "label": "면적 산출"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 7482032
+    },
+    {
+      "filename": "A10-041~056 동별 면적산출근거표.dxf",
+      "name": "A10-041~056 동별 면적산출근거표",
+      "page_code": "10-041~056",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "AREA_CALC",
+          "label": "면적 산출"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 3162101
+    },
+    {
+      "filename": "A10-061~062 지하1~2층 주차장 면적산출근거표.dxf",
+      "name": "A10-061~062 지하1~2층 주차장 면적산출근거표",
+      "page_code": "10-061~062",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "AREA_CALC",
+          "label": "면적 산출"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 2412409
+    },
+    {
+      "filename": "A10-071~076 부대시설 면적산출근거표.dxf",
+      "name": "A10-071~076 부대시설 면적산출근거표",
+      "page_code": "10-071~076",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "AREA_CALC",
+          "label": "면적 산출"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 2673373
+    },
+    {
+      "filename": "A100-001~020 화장실 확대평면도 및 전개도.dxf",
+      "name": "A100-001~020 화장실 확대평면도 및 전개도",
+      "page_code": "00-001~020",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 43211353
+    },
+    {
+      "filename": "A100-031~032 자전거 보관대 상세도-1,2.dxf",
+      "name": "A100-031~032 자전거 보관대 상세도-1,2",
+      "page_code": "00-031~032",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "BICYCLE",
+          "label": "자전거 주차"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 23288110
+    },
+    {
+      "filename": "A100-033~035 폐기물 보관시설 평면도.dxf",
+      "name": "A100-033~035 폐기물 보관시설 평면도",
+      "page_code": "00-033~035",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "WASTE",
+          "label": "폐기물 보관시설"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 1361030
+    },
+    {
+      "filename": "A100-036 우편물수취함, 폐건전기함 상세도.dxf",
+      "name": "A100-036 우편물수취함, 폐건전기함 상세도",
+      "page_code": "00-036",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 1691975
+    },
+    {
+      "filename": "A100-041 방화문 상세도.dxf",
+      "name": "A100-041 방화문 상세도",
+      "page_code": "00-041",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 1600129
+    },
+    {
+      "filename": "A100-042 점검구 상세도.dxf",
+      "name": "A100-042 점검구 상세도",
+      "page_code": "00-042",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 1172997
+    },
+    {
+      "filename": "A100-043 주계단 난간 상세도.dxf",
+      "name": "A100-043 주계단 난간 상세도",
+      "page_code": "00-043",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "RAILING",
+          "label": "난간·트렌치"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 3137089
+    },
+    {
+      "filename": "A100-044 무인택배 상세도.dxf",
+      "name": "A100-044 무인택배 상세도",
+      "page_code": "00-044",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 2886091
+    },
+    {
+      "filename": "A100-045 하향식 피난구 상세도.dxf",
+      "name": "A100-045 하향식 피난구 상세도",
+      "page_code": "00-045",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 3307894
+    },
+    {
+      "filename": "A100-047~048 잡상세도-1,-2.dxf",
+      "name": "A100-047~048 잡상세도-1,-2",
+      "page_code": "00-047~048",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 2924164
+    },
+    {
+      "filename": "A100-049 단위세대 이중창 상세도.dxf",
+      "name": "A100-049 단위세대 이중창 상세도",
+      "page_code": "00-049",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 1496980
+    },
+    {
+      "filename": "A100-050 자동문 상세도.dxf",
+      "name": "A100-050 자동문 상세도",
+      "page_code": "00-050",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 1591333
+    },
+    {
+      "filename": "A100-051 투시형난간 상세도.dxf",
+      "name": "A100-051 투시형난간 상세도",
+      "page_code": "00-051",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "RAILING",
+          "label": "난간·트렌치"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 892139
+    },
+    {
+      "filename": "A100-061~063 지하층 폐기물 보관창고 상세도-1~3.dxf",
+      "name": "A100-061~063 지하층 폐기물 보관창고 상세도-1~3",
+      "page_code": "00-061~063",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "WASTE",
+          "label": "폐기물 보관시설"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 17608121
+    },
+    {
+      "filename": "A100-086~088 집광채광루버 일반상세도, 요약도.dxf",
+      "name": "A100-086~088 집광채광루버 일반상세도, 요약도",
+      "page_code": "00-086~088",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 16342090
+    },
+    {
+      "filename": "A100-091~098 부분 3D뷰 상세도.dxf",
+      "name": "A100-091~098 부분 3D뷰 상세도",
+      "page_code": "00-091~098",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 148538364
+    },
+    {
+      "filename": "A20-001~003, A60-001~006 실내,외 재료 마감표 (아파트,부대복리시설).dxf",
+      "name": "A20-001~003, A60-001~006 실내,외 재료 마감표 (아파트,부대복리시설)",
+      "page_code": "20-001~003",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 10062510
+    },
+    {
+      "filename": "A20-011~014, A60-011~016 형별성능관계내역.dxf",
+      "name": "A20-011~014, A60-011~016 형별성능관계내역",
+      "page_code": "20-011~014",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 3098369
+    },
+    {
+      "filename": "A30-001~018 단위세대평면도.dxf",
+      "name": "A30-001~018 단위세대평면도",
+      "page_code": "30-001~018",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 45064307
+    },
+    {
+      "filename": "A30-019 단위세대평면도(59A 주거약자세대).dxf",
+      "name": "A30-019 단위세대평면도(59A 주거약자세대)",
+      "page_code": "30-019",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 171837126
+    },
+    {
+      "filename": "A30-021~038 단위세대 주단면도.dxf",
+      "name": "A30-021~038 단위세대 주단면도",
+      "page_code": "30-021~038",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 44222436
+    },
+    {
+      "filename": "A30-041~049 단위세대 MC 중심선도.dxf",
+      "name": "A30-041~049 단위세대 MC 중심선도",
+      "page_code": "30-041~049",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 24417655
+    },
+    {
+      "filename": "A30-051~068 단위세대 방수,단열,결로방지계획도.dxf",
+      "name": "A30-051~068 단위세대 방수,단열,결로방지계획도",
+      "page_code": "30-051~068",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 37905528
+    },
+    {
+      "filename": "A30-071~095 단위세대 부분 단면도.dxf",
+      "name": "A30-071~095 단위세대 부분 단면도",
+      "page_code": "30-071~095",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 48695018
+    },
+    {
+      "filename": "A30-101~118 단위세대 발코니 평,입,단면도.dxf",
+      "name": "A30-101~118 단위세대 발코니 평,입,단면도",
+      "page_code": "30-101~118",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 95247141
+    },
+    {
+      "filename": "A30-201~210 단위세대 벽체기준도, 벽체일람표.dxf",
+      "name": "A30-201~210 단위세대 벽체기준도, 벽체일람표",
+      "page_code": "30-201~210",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "WALL_LIST",
+          "label": "벽체 일람표"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 25923770
+    },
+    {
+      "filename": "A40-003~237 101동~108동 평면도.dxf",
+      "name": "A40-003~237 101동~108동 평면도",
+      "page_code": "40-003~237",
+      "dongs": [
+        101,
+        108
+      ],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 232215406
+    },
+    {
+      "filename": "A40-003~237 109동~116동 평면도.dxf",
+      "name": "A40-003~237 109동~116동 평면도",
+      "page_code": "40-003~237",
+      "dongs": [
+        109,
+        116
+      ],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 233929023
+    },
+    {
+      "filename": "A40-010~240 동단면도.dxf",
+      "name": "A40-010~240 동단면도",
+      "page_code": "40-010~240",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 16153403
+    },
+    {
+      "filename": "A40-301~568 101동~104동 코어평,단면도.dxf",
+      "name": "A40-301~568 101동~104동 코어평,단면도",
+      "page_code": "40-301~568",
+      "dongs": [
+        101,
+        104
+      ],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 87889053
+    },
+    {
+      "filename": "A40-301~568 105동~108동 코어평,단면도.dxf",
+      "name": "A40-301~568 105동~108동 코어평,단면도",
+      "page_code": "40-301~568",
+      "dongs": [
+        105,
+        108
+      ],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 68294311
+    },
+    {
+      "filename": "A40-301~568 105동~108동 코어평,단면도_recover.dxf",
+      "name": "A40-301~568 105동~108동 코어평,단면도_recover",
+      "page_code": "40-301~568",
+      "dongs": [
+        105,
+        108
+      ],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 68162014
+    },
+    {
+      "filename": "A40-301~568 109동~112동 코어평,단면도.dxf",
+      "name": "A40-301~568 109동~112동 코어평,단면도",
+      "page_code": "40-301~568",
+      "dongs": [
+        109,
+        112
+      ],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 75161283
+    },
+    {
+      "filename": "A40-301~568 113동~116동 코어평,단면도.dxf",
+      "name": "A40-301~568 113동~116동 코어평,단면도",
+      "page_code": "40-301~568",
+      "dongs": [
+        113,
+        116
+      ],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 62847940
+    },
+    {
+      "filename": "A40-701~852 주출입구 상세도.dxf",
+      "name": "A40-701~852 주출입구 상세도",
+      "page_code": "40-701~852",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 225322896
+    },
+    {
+      "filename": "A40-901~902 층단차 상세도.dxf",
+      "name": "A40-901~902 층단차 상세도",
+      "page_code": "40-901~902",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 14122711
+    },
+    {
+      "filename": "A40-911~949 101,103,104,106동 지붕구조물 상세도.dxf",
+      "name": "A40-911~949 101,103,104,106동 지붕구조물 상세도",
+      "page_code": "40-911~949",
+      "dongs": [
+        106
+      ],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 20188497
+    },
+    {
+      "filename": "A50-001~018 단위세대 창호일람표.dxf",
+      "name": "A50-001~018 단위세대 창호일람표",
+      "page_code": "50-001~018",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 4978768
+    },
+    {
+      "filename": "A50-021 아파트 공통 창호일람표.dxf",
+      "name": "A50-021 아파트 공통 창호일람표",
+      "page_code": "50-021",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 1400070
+    },
+    {
+      "filename": "A70-001~002 지하주차장 평면도.dxf",
+      "name": "A70-001~002 지하주차장 평면도",
+      "page_code": "70-001~002",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 17566421
+    },
+    {
+      "filename": "A70-011~017 지하2층 주차장 확대 평면도.dxf",
+      "name": "A70-011~017 지하2층 주차장 확대 평면도",
+      "page_code": "70-011~017",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 10216227
+    },
+    {
+      "filename": "A70-021~030 지하1층 주차장 확대 평면도.dxf",
+      "name": "A70-021~030 지하1층 주차장 확대 평면도",
+      "page_code": "70-021~030",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 20492954
+    },
+    {
+      "filename": "A70-031~035 지하주차장 단면도.dxf",
+      "name": "A70-031~035 지하주차장 단면도",
+      "page_code": "70-031~035",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 4251259
+    },
+    {
+      "filename": "A70-041~042 기계실,지하수조,전기실,발전기실 평,단면도.dxf",
+      "name": "A70-041~042 기계실,지하수조,전기실,발전기실 평,단면도",
+      "page_code": "70-041~042",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 6688741
+    },
+    {
+      "filename": "A70-043~044 우수조 평,단면도.dxf",
+      "name": "A70-043~044 우수조 평,단면도",
+      "page_code": "70-043~044",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 30245356
+    },
+    {
+      "filename": "A70-051~056 램프평단면도.dxf",
+      "name": "A70-051~056 램프평단면도",
+      "page_code": "70-051~056",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 164225749
+    },
+    {
+      "filename": "A70-061~062 지하주차장 창호도, 창호일람표.dxf",
+      "name": "A70-061~062 지하주차장 창호도, 창호일람표",
+      "page_code": "70-061~062",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 18336948
+    },
+    {
+      "filename": "A70-101~158 제연휀룸 DA 상세도(101~108).dxf",
+      "name": "A70-101~158 제연휀룸 DA 상세도(101~108)",
+      "page_code": "70-101~158",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 177326467
+    },
+    {
+      "filename": "A70-101~158 제연휀룸 DA 상세도(109~116).dxf",
+      "name": "A70-101~158 제연휀룸 DA 상세도(109~116)",
+      "page_code": "70-101~158",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 173473214
+    },
+    {
+      "filename": "A70-201~223 주차장휀룸, 환기휀룸 DA 상세도.dxf",
+      "name": "A70-201~223 주차장휀룸, 환기휀룸 DA 상세도",
+      "page_code": "70-201~223",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 172932923
+    },
+    {
+      "filename": "A70-301~306 외부계단 평,단면도.dxf",
+      "name": "A70-301~306 외부계단 평,단면도",
+      "page_code": "70-301~306",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 37056686
+    },
+    {
+      "filename": "A80-001~008 경로당, 어린이집, 공동육아시설, 다함께돌봄센터 평,입,단면도, 창호일람표.dxf",
+      "name": "A80-001~008 경로당, 어린이집, 공동육아시설, 다함께돌봄센터 평,입,단면도, 창호일람표",
+      "page_code": "80-001~008",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 155836325
+    },
+    {
+      "filename": "A80-011~015 스카이라운지, 게스트하우스 평,입,단면도, 창호일람표.dxf",
+      "name": "A80-011~015 스카이라운지, 게스트하우스 평,입,단면도, 창호일람표",
+      "page_code": "80-011~015",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 173073454
+    },
+    {
+      "filename": "A80-021~030 주민편의시설 평,입,단면도.dxf",
+      "name": "A80-021~030 주민편의시설 평,입,단면도",
+      "page_code": "80-021~030",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 45908117
+    },
+    {
+      "filename": "A80-041~046 맘스 스테이션, 경비실 평,입,단면도, 창호일람표.dxf",
+      "name": "A80-041~046 맘스 스테이션, 경비실 평,입,단면도, 창호일람표",
+      "page_code": "80-041~046",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 139978160
+    },
+    {
+      "filename": "A80-051~055 썬큰광장 외부계단 평,단면도.dxf",
+      "name": "A80-051~055 썬큰광장 외부계단 평,단면도",
+      "page_code": "80-051~055",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "01_건축",
+      "size_bytes": 154294563
+    },
+    {
+      "filename": "A90-001~010 근린생활시설 평면도, 창호일람표.dxf",
+      "name": "A90-001~010 근린생활시설 평면도, 창호일람표",
+      "page_code": "90-001~010",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "01_건축",
+      "size_bytes": 158912889
+    },
+    {
+      "filename": "20260127 기초판 확장 검토 문의.dxf",
+      "name": "20260127 기초판 확장 검토 문의",
+      "page_code": null,
+      "dongs": [],
+      "categories": [
+        {
+          "code": "FOUNDATION_EXT",
+          "label": "기초판 확장 검토"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 191642483
+    },
+    {
+      "filename": "260119_부산 에코델타 24BL 지하주차장 구조평면도23.dxf",
+      "name": "260119_부산 에코델타 24BL 지하주차장 구조평면도23",
+      "page_code": null,
+      "dongs": [],
+      "categories": [
+        {
+          "code": "BASEMENT_PARKING",
+          "label": "지하주차장 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 15759891
+    },
+    {
+      "filename": "260119_부산에코델타 공동주택 24BL 지하주차장 보 리스트_07.dxf",
+      "name": "260119_부산에코델타 공동주택 24BL 지하주차장 보 리스트_07",
+      "page_code": null,
+      "dongs": [],
+      "categories": [
+        {
+          "code": "BEAM_LIST",
+          "label": "지하주차장 보 리스트"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 8453426
+    },
+    {
+      "filename": "S10-001~033 구조일반사항.dxf",
+      "name": "S10-001~033 구조일반사항",
+      "page_code": "S10-001~033",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "GENERAL_NOTES_S",
+          "label": "구조 일반사항"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 50213770
+    },
+    {
+      "filename": "S20-001~049 단위세대구조평면도.dxf",
+      "name": "S20-001~049 단위세대구조평면도",
+      "page_code": "S20-001~049",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "UNIT_PLAN",
+          "label": "단위세대 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 16174973
+    },
+    {
+      "filename": "S30-001~010-101동 구조평면도.dxf",
+      "name": "S30-001~010-101동 구조평면도",
+      "page_code": "S30-001~010",
+      "dongs": [
+        101
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 40759871
+    },
+    {
+      "filename": "S30-021~029-102동 구조평면도.dxf",
+      "name": "S30-021~029-102동 구조평면도",
+      "page_code": "S30-021~029",
+      "dongs": [
+        102
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 35842718
+    },
+    {
+      "filename": "S30-041~050-103동 구조평면도.dxf",
+      "name": "S30-041~050-103동 구조평면도",
+      "page_code": "S30-041~050",
+      "dongs": [
+        103
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 36316669
+    },
+    {
+      "filename": "S30-061~070-104동 구조평면도.dxf",
+      "name": "S30-061~070-104동 구조평면도",
+      "page_code": "S30-061~070",
+      "dongs": [
+        104
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 29010775
+    },
+    {
+      "filename": "S30-081~089-105동 구조평면도.dxf",
+      "name": "S30-081~089-105동 구조평면도",
+      "page_code": "S30-081~089",
+      "dongs": [
+        105
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 34959474
+    },
+    {
+      "filename": "S30-101~110-106동 구조평면도.dxf",
+      "name": "S30-101~110-106동 구조평면도",
+      "page_code": "S30-101~110",
+      "dongs": [
+        106
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 35446887
+    },
+    {
+      "filename": "S30-121~128-107동 구조평면도.dxf",
+      "name": "S30-121~128-107동 구조평면도",
+      "page_code": "S30-121~128",
+      "dongs": [
+        107
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 27368908
+    },
+    {
+      "filename": "S30-131~140-108동 구조평면도.dxf",
+      "name": "S30-131~140-108동 구조평면도",
+      "page_code": "S30-131~140",
+      "dongs": [
+        108
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 27106979
+    },
+    {
+      "filename": "S30-151~161-109동 구조평면도.dxf",
+      "name": "S30-151~161-109동 구조평면도",
+      "page_code": "S30-151~161",
+      "dongs": [
+        109
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 29396050
+    },
+    {
+      "filename": "S30-171~180-110동 구조평면도.dxf",
+      "name": "S30-171~180-110동 구조평면도",
+      "page_code": "S30-171~180",
+      "dongs": [
+        110
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 30360948
+    },
+    {
+      "filename": "S30-191~202-111동 구조평면도.dxf",
+      "name": "S30-191~202-111동 구조평면도",
+      "page_code": "S30-191~202",
+      "dongs": [
+        111
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 28961017
+    },
+    {
+      "filename": "S30-211~219-112동 구조평면도.dxf",
+      "name": "S30-211~219-112동 구조평면도",
+      "page_code": "S30-211~219",
+      "dongs": [
+        112
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 22424073
+    },
+    {
+      "filename": "S30-231~237-113동 구조평면도.dxf",
+      "name": "S30-231~237-113동 구조평면도",
+      "page_code": "S30-231~237",
+      "dongs": [
+        113
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 22044798
+    },
+    {
+      "filename": "S30-241~248-114동 구조평면도.dxf",
+      "name": "S30-241~248-114동 구조평면도",
+      "page_code": "S30-241~248",
+      "dongs": [
+        114
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 22207287
+    },
+    {
+      "filename": "S30-251~259-115동 구조평면도.dxf",
+      "name": "S30-251~259-115동 구조평면도",
+      "page_code": "S30-251~259",
+      "dongs": [
+        115
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 22675333
+    },
+    {
+      "filename": "S30-271~279-116동 구조평면도.dxf",
+      "name": "S30-271~279-116동 구조평면도",
+      "page_code": "S30-271~279",
+      "dongs": [
+        116
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 162769915
+    },
+    {
+      "filename": "S30-301~305 주동 주출입구 구조평면도.dxf",
+      "name": "S30-301~305 주동 주출입구 구조평면도",
+      "page_code": "S30-301~305",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "MAIN_ENTRANCE",
+          "label": "주동 주출입구"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 1240552
+    },
+    {
+      "filename": "S30-311~359 101~105동 벽체 일람표.dxf",
+      "name": "S30-311~359 101~105동 벽체 일람표",
+      "page_code": "S30-311~359",
+      "dongs": [
+        105
+      ],
+      "categories": [
+        {
+          "code": "WALL_LIST",
+          "label": "벽체 일람표"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 377563643
+    },
+    {
+      "filename": "S30-361~406 106~110동 벽체 일람표.dxf",
+      "name": "S30-361~406 106~110동 벽체 일람표",
+      "page_code": "S30-361~406",
+      "dongs": [
+        110
+      ],
+      "categories": [
+        {
+          "code": "WALL_LIST",
+          "label": "벽체 일람표"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 227499973
+    },
+    {
+      "filename": "S30-411~463 111~116동 벽체 일람표.dxf",
+      "name": "S30-411~463 111~116동 벽체 일람표",
+      "page_code": "S30-411~463",
+      "dongs": [
+        116
+      ],
+      "categories": [
+        {
+          "code": "WALL_LIST",
+          "label": "벽체 일람표"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 273680944
+    },
+    {
+      "filename": "S30-471~491 101~112동 기둥리스트.dxf",
+      "name": "S30-471~491 101~112동 기둥리스트",
+      "page_code": "S30-471~491",
+      "dongs": [
+        112
+      ],
+      "categories": [
+        {
+          "code": "COLUMN_LIST",
+          "label": "기둥 리스트"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 5697395
+    },
+    {
+      "filename": "S30-492~507 113~116동 기둥리스트.dxf",
+      "name": "S30-492~507 113~116동 기둥리스트",
+      "page_code": "S30-492~507",
+      "dongs": [
+        116
+      ],
+      "categories": [
+        {
+          "code": "COLUMN_LIST",
+          "label": "기둥 리스트"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 6176331
+    },
+    {
+      "filename": "S30-521~525 101~116동 저층부 보 리스트.dxf",
+      "name": "S30-521~525 101~116동 저층부 보 리스트",
+      "page_code": "S30-521~525",
+      "dongs": [
+        116
+      ],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 3849163
+    },
+    {
+      "filename": "S30-531~551 주동 전이보 리스트.dxf",
+      "name": "S30-531~551 주동 전이보 리스트",
+      "page_code": "S30-531~551",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 8574605
+    },
+    {
+      "filename": "S30-561 주동 인방보 및 테두리보 리스트.dxf",
+      "name": "S30-561 주동 인방보 및 테두리보 리스트",
+      "page_code": "S30-561",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 642233
+    },
+    {
+      "filename": "S30-571~575 주동 지하외벽 리스트.dxf",
+      "name": "S30-571~575 주동 지하외벽 리스트",
+      "page_code": "S30-571~575",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 1442599
+    },
+    {
+      "filename": "S30-581 주동 슬라브 배근일람표.dxf",
+      "name": "S30-581 주동 슬라브 배근일람표",
+      "page_code": "S30-581",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 933318
+    },
+    {
+      "filename": "S30-591 주동 주출입구 부재리스트.dxf",
+      "name": "S30-591 주동 주출입구 부재리스트",
+      "page_code": "S30-591",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "MAIN_ENTRANCE",
+          "label": "주동 주출입구"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 1147047
+    },
+    {
+      "filename": "S30-601~606 주동 기타배근도.dxf",
+      "name": "S30-601~606 주동 기타배근도",
+      "page_code": "S30-601~606",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 2300026
+    },
+    {
+      "filename": "S40-001~009-지하구조평면도(26.02.04).dxf",
+      "name": "S40-001~009-지하구조평면도(26.02.04)",
+      "page_code": "S40-001~009",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 173814282
+    },
+    {
+      "filename": "S40-001~009-지하구조평면도(합벽검토).dxf",
+      "name": "S40-001~009-지하구조평면도(합벽검토)",
+      "page_code": "S40-001~009",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 191420183
+    },
+    {
+      "filename": "S40-001~009-지하구조평면도.dxf",
+      "name": "S40-001~009-지하구조평면도",
+      "page_code": "S40-001~009",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 173559214
+    },
+    {
+      "filename": "S40-011~020 주차장 확대 주심도.dxf",
+      "name": "S40-011~020 주차장 확대 주심도",
+      "page_code": "S40-011~020",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 41407235
+    },
+    {
+      "filename": "S40-021~027-지하2층 주차장 확대 기초평면도.dxf",
+      "name": "S40-021~027-지하2층 주차장 확대 기초평면도",
+      "page_code": "S40-021~027",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 12762396
+    },
+    {
+      "filename": "S40-031~040-지하1층 주차장 확대 기초평면도.dxf",
+      "name": "S40-031~040-지하1층 주차장 확대 기초평면도",
+      "page_code": "S40-031~040",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 23410471
+    },
+    {
+      "filename": "S40-051~057-지하2층 주차장 보,벽체,슬라브 확대 평면도.dxf",
+      "name": "S40-051~057-지하2층 주차장 보,벽체,슬라브 확대 평면도",
+      "page_code": "S40-051~057",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 10171469
+    },
+    {
+      "filename": "S40-061~070-지하1층 주차장 보,벽체,슬라브 확대 평면도.dxf",
+      "name": "S40-061~070-지하1층 주차장 보,벽체,슬라브 확대 평면도",
+      "page_code": "S40-061~070",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 28091924
+    },
+    {
+      "filename": "S40-071~080 지하 지붕층 주차장 확대 평면도.dxf",
+      "name": "S40-071~080 지하 지붕층 주차장 확대 평면도",
+      "page_code": "S40-071~080",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 33289729
+    },
+    {
+      "filename": "S40-101~102 지하주차장 기초 리스트.dxf",
+      "name": "S40-101~102 지하주차장 기초 리스트",
+      "page_code": "S40-101~102",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 1143977
+    },
+    {
+      "filename": "S40-111~112 지하주차장 기둥 리스트.dxf",
+      "name": "S40-111~112 지하주차장 기둥 리스트",
+      "page_code": "S40-111~112",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "COLUMN_LIST",
+          "label": "기둥 리스트"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 1231061
+    },
+    {
+      "filename": "S40-121~124 지하주차장 슬래브 리스트.dxf",
+      "name": "S40-121~124 지하주차장 슬래브 리스트",
+      "page_code": "S40-121~124",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 1188705
+    },
+    {
+      "filename": "S40-131~143- 지하주차장 벽체 리스트.dxf",
+      "name": "S40-131~143- 지하주차장 벽체 리스트",
+      "page_code": "S40-131~143",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 1273303
+    },
+    {
+      "filename": "S40-151~156 지하주차장 보 리스트.dxf",
+      "name": "S40-151~156 지하주차장 보 리스트",
+      "page_code": "S40-151~156",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "BEAM_LIST",
+          "label": "지하주차장 보 리스트"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 6610440
+    },
+    {
+      "filename": "S40-151~156 지하주차장 보 리스트_260202 이오스 수정.dxf",
+      "name": "S40-151~156 지하주차장 보 리스트_260202 이오스 수정",
+      "page_code": "S40-151~156",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "BEAM_LIST",
+          "label": "지하주차장 보 리스트"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 6529690
+    },
+    {
+      "filename": "S40-161~230 지하주차장 PC부재 리스트.dxf",
+      "name": "S40-161~230 지하주차장 PC부재 리스트",
+      "page_code": "S40-161~230",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 8195649
+    },
+    {
+      "filename": "S40-241 지하주차장 잡배근상세도(파라펫난간,계단, 썬큰계단, 탑라이트).dxf",
+      "name": "S40-241 지하주차장 잡배근상세도(파라펫난간,계단, 썬큰계단, 탑라이트)",
+      "page_code": "S40-241",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "RAILING",
+          "label": "난간·트렌치"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 2215371
+    },
+    {
+      "filename": "S50-001~002 맘스 스테이션 구조.dxf",
+      "name": "S50-001~002 맘스 스테이션 구조",
+      "page_code": "S50-001~002",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 33848819
+    },
+    {
+      "filename": "S50-011~012, 015~017 경비실 및 문주 구조평면도, 철골 접합 상세도.dxf",
+      "name": "S50-011~012, 015~017 경비실 및 문주 구조평면도, 철골 접합 상세도",
+      "page_code": "S50-011~012",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 5665806
+    },
+    {
+      "filename": "S50-013~014 경비실 및 문주#1,2 슬래브,벽체,보,기둥 일람표.dxf",
+      "name": "S50-013~014 경비실 및 문주#1,2 슬래브,벽체,보,기둥 일람표",
+      "page_code": "S50-013~014",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조",
+      "size_bytes": 1199058
+    },
+    {
+      "filename": "S50-031~036 램프 구조평단면도.dxf",
+      "name": "S50-031~036 램프 구조평단면도",
+      "page_code": "S50-031~036",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "SECTION",
+          "label": "단면도"
+        }
+      ],
+      "source_dir": "02_구조",
+      "size_bytes": 31032535
+    },
+    {
+      "filename": "S20-001~049 단위세대구조평면도.dxf",
+      "name": "S20-001~049 단위세대구조평면도",
+      "page_code": "S20-001~049",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "UNIT_PLAN",
+          "label": "단위세대 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 16174976
+    },
+    {
+      "filename": "S30-001~010-101동 구조평면도.dxf",
+      "name": "S30-001~010-101동 구조평면도",
+      "page_code": "S30-001~010",
+      "dongs": [
+        101
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 40755590
+    },
+    {
+      "filename": "S30-021~029-102동 구조평면도.dxf",
+      "name": "S30-021~029-102동 구조평면도",
+      "page_code": "S30-021~029",
+      "dongs": [
+        102
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 35832744
+    },
+    {
+      "filename": "S30-041~050-103동 구조평면도.dxf",
+      "name": "S30-041~050-103동 구조평면도",
+      "page_code": "S30-041~050",
+      "dongs": [
+        103
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 36326945
+    },
+    {
+      "filename": "S30-061~070-104동 구조평면도.dxf",
+      "name": "S30-061~070-104동 구조평면도",
+      "page_code": "S30-061~070",
+      "dongs": [
+        104
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 28982881
+    },
+    {
+      "filename": "S30-081~089-105동 구조평면도.dxf",
+      "name": "S30-081~089-105동 구조평면도",
+      "page_code": "S30-081~089",
+      "dongs": [
+        105
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 34959900
+    },
+    {
+      "filename": "S30-101~110-106동 구조평면도.dxf",
+      "name": "S30-101~110-106동 구조평면도",
+      "page_code": "S30-101~110",
+      "dongs": [
+        106
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 35843780
+    },
+    {
+      "filename": "S30-121~128-107동 구조평면도.dxf",
+      "name": "S30-121~128-107동 구조평면도",
+      "page_code": "S30-121~128",
+      "dongs": [
+        107
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 27367928
+    },
+    {
+      "filename": "S30-131~140-108동 구조평면도.dxf",
+      "name": "S30-131~140-108동 구조평면도",
+      "page_code": "S30-131~140",
+      "dongs": [
+        108
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 27108814
+    },
+    {
+      "filename": "S30-151~161-109동 구조평면도.dxf",
+      "name": "S30-151~161-109동 구조평면도",
+      "page_code": "S30-151~161",
+      "dongs": [
+        109
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 29408198
+    },
+    {
+      "filename": "S30-171~180-110동 구조평면도.dxf",
+      "name": "S30-171~180-110동 구조평면도",
+      "page_code": "S30-171~180",
+      "dongs": [
+        110
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 30353911
+    },
+    {
+      "filename": "S30-191~202-111동 구조평면도.dxf",
+      "name": "S30-191~202-111동 구조평면도",
+      "page_code": "S30-191~202",
+      "dongs": [
+        111
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 28881911
+    },
+    {
+      "filename": "S30-211~219-112동 구조평면도.dxf",
+      "name": "S30-211~219-112동 구조평면도",
+      "page_code": "S30-211~219",
+      "dongs": [
+        112
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 22481740
+    },
+    {
+      "filename": "S30-231~237-113동 구조평면도.dxf",
+      "name": "S30-231~237-113동 구조평면도",
+      "page_code": "S30-231~237",
+      "dongs": [
+        113
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 22094690
+    },
+    {
+      "filename": "S30-241~248-114동 구조평면도.dxf",
+      "name": "S30-241~248-114동 구조평면도",
+      "page_code": "S30-241~248",
+      "dongs": [
+        114
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 26917477
+    },
+    {
+      "filename": "S30-251~259-115동 구조평면도.dxf",
+      "name": "S30-251~259-115동 구조평면도",
+      "page_code": "S30-251~259",
+      "dongs": [
+        115
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 25555760
+    },
+    {
+      "filename": "S30-271~279-116동 구조평면도.dxf",
+      "name": "S30-271~279-116동 구조평면도",
+      "page_code": "S30-271~279",
+      "dongs": [
+        116
+      ],
+      "categories": [
+        {
+          "code": "STRUCTURE_PLAN_DONG",
+          "label": "동별 구조평면도"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 162825247
+    },
+    {
+      "filename": "S30-301~305 주동 주출입구 구조평면도.dxf",
+      "name": "S30-301~305 주동 주출입구 구조평면도",
+      "page_code": "S30-301~305",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "MAIN_ENTRANCE",
+          "label": "주동 주출입구"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 1238351
+    },
+    {
+      "filename": "S30-311~359 101~105동 벽체 일람표.dxf",
+      "name": "S30-311~359 101~105동 벽체 일람표",
+      "page_code": "S30-311~359",
+      "dongs": [
+        105
+      ],
+      "categories": [
+        {
+          "code": "WALL_LIST",
+          "label": "벽체 일람표"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 376990183
+    },
+    {
+      "filename": "S30-361~406 106~110동 벽체 일람표.dxf",
+      "name": "S30-361~406 106~110동 벽체 일람표",
+      "page_code": "S30-361~406",
+      "dongs": [
+        110
+      ],
+      "categories": [
+        {
+          "code": "WALL_LIST",
+          "label": "벽체 일람표"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 226799448
+    },
+    {
+      "filename": "S30-411~463 111~116동 벽체 일람표.dxf",
+      "name": "S30-411~463 111~116동 벽체 일람표",
+      "page_code": "S30-411~463",
+      "dongs": [
+        116
+      ],
+      "categories": [
+        {
+          "code": "WALL_LIST",
+          "label": "벽체 일람표"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 273372679
+    },
+    {
+      "filename": "S30-471~491 101~112동 기둥리스트.dxf",
+      "name": "S30-471~491 101~112동 기둥리스트",
+      "page_code": "S30-471~491",
+      "dongs": [
+        112
+      ],
+      "categories": [
+        {
+          "code": "COLUMN_LIST",
+          "label": "기둥 리스트"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 5592897
+    },
+    {
+      "filename": "S30-492~507 113~116동 기둥리스트.dxf",
+      "name": "S30-492~507 113~116동 기둥리스트",
+      "page_code": "S30-492~507",
+      "dongs": [
+        116
+      ],
+      "categories": [
+        {
+          "code": "COLUMN_LIST",
+          "label": "기둥 리스트"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 6176858
+    },
+    {
+      "filename": "S30-521~525 101~116동 저층부 보 리스트.dxf",
+      "name": "S30-521~525 101~116동 저층부 보 리스트",
+      "page_code": "S30-521~525",
+      "dongs": [
+        116
+      ],
+      "categories": [],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 3826731
+    },
+    {
+      "filename": "S30-531~551 주동 전이보 리스트.dxf",
+      "name": "S30-531~551 주동 전이보 리스트",
+      "page_code": "S30-531~551",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 8568247
+    },
+    {
+      "filename": "S30-561 주동 인방보 및 테두리보 리스트.dxf",
+      "name": "S30-561 주동 인방보 및 테두리보 리스트",
+      "page_code": "S30-561",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 640503
+    },
+    {
+      "filename": "S30-571~575 주동 지하외벽 리스트.dxf",
+      "name": "S30-571~575 주동 지하외벽 리스트",
+      "page_code": "S30-571~575",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 1440842
+    },
+    {
+      "filename": "S30-581 주동 슬라브 배근일람표.dxf",
+      "name": "S30-581 주동 슬라브 배근일람표",
+      "page_code": "S30-581",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 931255
+    },
+    {
+      "filename": "S30-591 주동 주출입구 부재리스트.dxf",
+      "name": "S30-591 주동 주출입구 부재리스트",
+      "page_code": "S30-591",
+      "dongs": [],
+      "categories": [
+        {
+          "code": "MAIN_ENTRANCE",
+          "label": "주동 주출입구"
+        }
+      ],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 1147574
+    },
+    {
+      "filename": "S30-601~606 주동 기타배근도.dxf",
+      "name": "S30-601~606 주동 기타배근도",
+      "page_code": "S30-601~606",
+      "dongs": [],
+      "categories": [],
+      "source_dir": "02_구조_260121",
+      "size_bytes": 2294855
+    }
+  ],
+  "카테고리별": {
+    "INDEX": 1,
+    "GENERAL_NOTES_A": 1,
+    "DISTRICT_UNIT": 2,
+    "COMPLEX_PLAN": 1,
+    "LAYOUT": 5,
+    "GROUND_PLAN": 1,
+    "SECTION": 21,
+    "SUNLIGHT": 1,
+    "ELEVATION_AREA": 1,
+    "TRAFFIC": 2,
+    "FACILITY": 1,
+    "WASTE": 3,
+    "BICYCLE": 2,
+    "CANOPY": 1,
+    "RAILING": 4,
+    "ACCESSIBLE": 2,
+    "FIRE_DIVISION": 1,
+    "PARKING_FIRE": 1,
+    "WATERPROOF": 1,
+    "INSULATION": 1,
+    "FLOOR_INSULATION": 1,
+    "AREA_CALC": 5,
+    "WALL_LIST": 7,
+    "FOUNDATION_EXT": 1,
+    "BASEMENT_PARKING": 1,
+    "BEAM_LIST": 3,
+    "GENERAL_NOTES_S": 1,
+    "UNIT_PLAN": 2,
+    "STRUCTURE_PLAN_DONG": 32,
+    "MAIN_ENTRANCE": 4,
+    "COLUMN_LIST": 5
+  },
+  "동별": {
+    "101": 5,
+    "102": 2,
+    "103": 2,
+    "104": 3,
+    "105": 6,
+    "106": 3,
+    "107": 2,
+    "108": 5,
+    "109": 4,
+    "110": 4,
+    "111": 2,
+    "112": 5,
+    "113": 3,
+    "114": 2,
+    "115": 2,
+    "116": 11,
+    "공통": 117
+  }
+}
