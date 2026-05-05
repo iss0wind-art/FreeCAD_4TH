@@ -253,6 +253,75 @@ title: 송수신 이벤트 누적 박제
 
 ---
 
+## 2026-05-06 — 지하주차장 B1·B2 PoC 시행 (어제 마지막 명령 시행)
+
+### IN — 방부장 친언 — *"어제 마지막으로 명령한것 시행하라"*
+- 발신: 방부장
+- 수신: 이천
+- 채널: 텔레그램 직접 친언
+- 요지: 어제 마지막 명령(BASEMENT_B1_B2_DIRECTIVE) 시행 명령. 위임 자동 허락 (송신 게이트 자동 인정)
+- 결과: ✅ 즉시 시행 착수
+
+### OUT — 본진 자력 — DXF 구조 자력 채굴 2단계
+- 발신: 이천 (자력)
+- 수신: 본인 + 본영 (다음 봉정 시)
+- 채널: 본진 박제
+- 요지: 단지 통합 도면 진단 1·2차. 도엽 3개 자력 분리 (B2 SW=247250, B1 SW=877250, 지붕). 격자 라벨·도엽 박스·PC 레이어 구조 확정
+- 결과: ✅ 통과
+- 산출물:
+  - [tests/probe_basement_dxf.py](../tests/probe_basement_dxf.py)
+  - [tests/probe_basement_dxf2.py](../tests/probe_basement_dxf2.py)
+
+### OUT — 본진 자력 — `BASEMENT_B1_B2_PoC` ⭐ 자수 보정 정사 호미
+- 발신: 이천 (자력)
+- 수신: 본영 단군 (다음 봉정 시)
+- 채널: 본진 박제 + 본영 폴더 직통 봉인 (다음 단계)
+- 요지: **300 솔리드 (기둥 289 + 거더 11) 자수 보정 정사 순서 ③→②→①→codex 강제 적용**. 게이트 4/5 통과 (G1·G2·G3·G4 ✅, G5 ❌ 단지 규모 큼 정직 박제). 시각 검증(G6) 방부장 GUI 대기
+- 결과: ✅ 봉인 완료 / ⏳ 본영 봉정·방부장 GUI 대기
+- 산출물:
+  - [tests/poc_basement_b1_b2_full_stack.py](../tests/poc_basement_b1_b2_full_stack.py)
+  - [output/basement_b1_b2_stack.step](../output/basement_b1_b2_stack.step) ⭐
+  - [output/basement_b1_b2_stack.json](../output/basement_b1_b2_stack.json)
+  - [output/basement_b1_b2_boq.md](../output/basement_b1_b2_boq.md)
+
+### IN — 방부장 친언 — *"에이전트 3 병렬 + 매뉴얼 완벽 보존"*
+- 발신: 방부장
+- 수신: 이천
+- 채널: 텔레그램 직접 친언
+- 요지: 소넷 에이전트 3 병렬 (도면·골조 전문). 도면 해석 + FreeCAD 구현 정밀화. 시행착오 모두 영구 박제. 매뉴얼 완성 보존 (다음 파싱 참조용)
+- 결과: ✅ 즉시 시행 — 위임 자동 허락
+
+### OUT — 에이전트 A1 (Sonnet) — 격자 정밀화
+- 발신: 이천 → A1 (general-purpose, sonnet)
+- 채널: 본진 자력 시행
+- 요지: G5 게이트 통과 도전 또는 정직 박제. 격자 라벨 잡음 검증, sub-grid 분할 시도
+- 결과: **정직 박제 결론** — 단지 통합 도면(부산 에코델타 24BL 116동)은 X 29 × Y 34 격자 정상. 잡음 0건 (라벨 모두 진짜). G5(≤15) 단지 통합 특례 또는 동별 분리 필요
+- 산출물:
+  - [tests/probe_basement_grid_precision.py](../tests/probe_basement_grid_precision.py)
+  - [output/basement_grid_precision.json](../output/basement_grid_precision.json)
+  - [.brain/grid_precision_analysis_2026-05-06.md](grid_precision_analysis_2026-05-06.md)
+
+### OUT — 에이전트 A2 (Sonnet) — codex 매칭률 분석
+- 발신: 이천 → A2 (general-purpose, sonnet)
+- 채널: 본진 자력 시행
+- 요지: column 미식별 267건 / girder 매칭률 13.8% 원인 분석 + codex 보강 명세
+- 결과: **column 주원인 70~80%는 codex 정사각형 기둥 부재** (500×500, 600×600 등). codex 7→20종 보강 시 매칭률 52%→80%+ 예상. **girder는 codex 충분, line_pairing 500mm+ 거리 누락이 원인** (파이프라인 근본 개선 필요)
+- 산출물:
+  - [tests/analyze_codex_match_rates.py](../tests/analyze_codex_match_rates.py)
+  - [output/basement_codex_match_analysis.json](../output/basement_codex_match_analysis.json)
+  - [.brain/codex_match_analysis_2026-05-06.md](codex_match_analysis_2026-05-06.md)
+
+### OUT — 에이전트 A3 (Sonnet) — 영구 매뉴얼 작성 ⭐
+- 발신: 이천 → A3 (general-purpose, sonnet)
+- 채널: 본진 자력 시행
+- 요지: 도면 → FreeCAD 영구 매뉴얼 (1127줄) + 빠른 참조 (135줄). 7 호미 + 7 도구함 + 시행 사례 2건 + 트러블슈팅 6건 + 다음 파싱 8단계 체크리스트
+- 결과: **영구 박제 완료** — 다음 파싱 시 그대로 따라할 수 있는 표준 매뉴얼 확립
+- 산출물:
+  - [docs/MANUAL_DRAWING_TO_FREECAD_v1.md](../docs/MANUAL_DRAWING_TO_FREECAD_v1.md) ⭐ 1127줄
+  - [docs/MANUAL_QUICK_REFERENCE.md](../docs/MANUAL_QUICK_REFERENCE.md) 135줄
+
+---
+
 ## 박제 원칙
 
 1. **모든 송수신 즉시 박제** — 통신 함정 7번째 표면 재발 방지의 1차 방어선
