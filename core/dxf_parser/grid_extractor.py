@@ -37,14 +37,16 @@ from core.dxf_parser.entity_scanner import iter_all
 # 패턴
 # ─────────────────────────────────────────────────────────────
 
-# X 격자 라벨: X1, X2, X12, X13a, A, B, C, 가, 나, ①, ②
+# X 격자 라벨: X1, X2, X12, X13a, X16a (명시적 X 접두사 필수)
+# A, B, C... (알파벳 단일 문자) 또는 가나다...
 _GRID_X_PAT = re.compile(
-    r'^(?:X\s*\d+[a-z]?|[A-Z]|[가나다라마바사아자차카타파하]\s*)$',
+    r'^(?:X\s*\d+[a-z]?|[A-Z]\s*$|[가나다라마바사아자차카타파하]\s*)$',
     re.IGNORECASE | re.UNICODE,
 )
-# Y 격자 라벨: Y1, Y2, Y13, 1, 2, 3, ①
+# Y 격자 라벨: Y1, Y2, Y13, Y16a (명시적 Y 접두사 필수)
+# 순수 숫자 제외 (세대번호·동번호와 혼동)
 _GRID_Y_PAT = re.compile(
-    r'^(?:Y\s*\d+[a-z]?|[①②③④⑤⑥⑦⑧⑨⑩]|\d{1,2}\s*)$',
+    r'^(?:Y\s*\d+[a-z]?|[①②③④⑤⑥⑦⑧⑨⑩])$',
     re.IGNORECASE | re.UNICODE,
 )
 
@@ -113,7 +115,8 @@ class StructuralGrid:
 
 def extract_grid(doc,
                  clip: Optional[Tuple[float,float,float,float]] = None,
-                 label_search_radius: float = 50000.0) -> StructuralGrid:
+                 label_search_radius: float = 50000.0,
+                 full_doc_labels: bool = True) -> StructuralGrid:
     """구조 격자 추출.
 
     Args:
@@ -126,6 +129,7 @@ def extract_grid(doc,
     y_labels: List[Tuple[str, float, float]] = []
 
     # 1단계: TEXT 라벨 수집
+    # full_doc_labels=True: 격자 라벨은 도면 전체 탐색 (클립 경계 밖에도 있음)
     for e in iter_all(msp):
         if e.dxftype() not in ('TEXT', 'MTEXT'):
             continue
@@ -134,45 +138,52 @@ def extract_grid(doc,
             if not txt or len(txt) > 10:
                 continue
             pos = e.dxf.insert
-            if clip and not (clip[0] <= pos.x <= clip[2] and
-                             clip[1] <= pos.y <= clip[3]):
-                continue
+            # 클립 Y 범위만 적용 (X 격자 라벨은 Y 축 상단/하단에 있어 X clip 불필요)
+            if clip and not full_doc_labels:
+                if not (clip[0] <= pos.x <= clip[2] and
+                        clip[1] <= pos.y <= clip[3]):
+                    continue
             if _GRID_X_PAT.match(txt):
                 x_labels.append((txt, pos.x, pos.y))
             elif _GRID_Y_PAT.match(txt):
-                y_labels.append((txt, pos.y, pos.x))  # y-coord stored in position
+                y_labels.append((txt, pos.y, pos.x))
         except Exception:
             pass
 
-    # 2단계: LINE에서 격자선 위치 정밀화 (TEXT 근처 긴 LINE)
-    # 간단화: TEXT 위치를 격자선 위치로 직접 사용
+    # 2단계: 격자선 위치 확정 (TEXT 위치 = 격자선 좌표)
     grid = StructuralGrid()
 
-    # X 격자선: TEXT X 좌표가 격자선 X 좌표
+    # X 격자선: TEXT X 좌표가 격자선 X 좌표 — 클립 X 범위 필터
     seen_x: set = set()
     for label, tx, ty in x_labels:
+        if clip and not (clip[0] <= tx <= clip[2]):
+            continue
         rounded = round(tx / 100) * 100
-        if rounded not in seen_x:
-            seen_x.add(rounded)
-            grid.x_lines.append(GridLine(
-                label=label, direction='X',
-                position=float(rounded),
-                label_pos=(tx, ty),
-            ))
+        # 기존 격자선과 500mm 이내면 중복 제거
+        if any(abs(rounded - ex) < 500 for ex in seen_x):
+            continue
+        seen_x.add(rounded)
+        grid.x_lines.append(GridLine(
+            label=label, direction='X',
+            position=float(rounded),
+            label_pos=(tx, ty),
+        ))
 
-    # Y 격자선: TEXT Y 좌표가 격자선 Y 좌표
+    # Y 격자선: TEXT Y 좌표가 격자선 Y 좌표 — 클립 Y 범위 필터
     seen_y: set = set()
     for label, ty_pos, tx in y_labels:
-        # ty_pos = TEXT Y 좌표 (we stored y coord in position field)
-        # Actually, we stored pos.y in y_labels[1] (position)
+        if clip and not (clip[1] <= ty_pos <= clip[3]):
+            continue
         rounded = round(ty_pos / 100) * 100
-        if rounded not in seen_y:
-            seen_y.add(rounded)
-            grid.y_lines.append(GridLine(
-                label=label, direction='Y',
-                position=float(rounded),
-                label_pos=(tx, ty_pos),
-            ))
+        # 기존 격자선과 500mm 이내면 중복 제거
+        if any(abs(rounded - ey) < 500 for ey in seen_y):
+            continue
+        seen_y.add(rounded)
+        grid.y_lines.append(GridLine(
+            label=label, direction='Y',
+            position=float(rounded),
+            label_pos=(tx, ty_pos),
+        ))
 
     # 격자선 정렬
     grid.x_lines.sort(key=lambda g: g.position)
