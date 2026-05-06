@@ -6,24 +6,39 @@
 
 ---
 
-## 📌 현재 추진 상태 (Status) — 2026-05-06 갱신
+## 📌 현재 추진 상태 (Status) — 2026-05-06 야간 갱신
 
-- **단계**: v4~v5 시스템 개발 완료. 골조 전용 DXF 파서 완성.
-- **방부장 기준 2026-05-06**: 골조(콘크리트 프레임)만. 조적·마감·창호·설비 무시.
+- **단계**: v9 빌드 완성. 부재별 개별 솔리드 + BOQ. 좌표 정합 70%.
+- **방부장 기준 2026-05-06**: 골조(콘크리트 프레임)만. 부재 하나하나 개별 ID.
 - **완성 모듈** (`core/dxf_parser/`):
-  - `entity_scanner.py` — 전수 엔티티 스캔
-  - `ev_detector.py` — E/V 코어 기준점
+  - `entity_scanner.py` — 전수 엔티티 스캔 (iter_all = 모델공간 좌표 반환 확인)
+  - `ev_detector.py` — E/V 코어 기준점 ← **다음 세션 핵심**
   - `coord_unifier.py` — 다중 도면 좌표 통일
-  - `full_extractor.py` — 기둥·슬라브·벽 완전 추출
-  - `level_parser.py` — SL/GL 표고 파싱
-  - `step_zone.py` — 단차 구역
-  - `wall_extractor.py` — 벽체 페어링
-  - `structural_filter.py` — 골조 레이어 필터 (핵심)
-  - `structural_extractor.py` — 골조 전용 추출기
+  - `structural_extractor.py` — S-GIRDER LINE + 기둥 추출
   - `grid_extractor.py` — 격자선·기준점
-  - `pipeline.py` — 단일 진입점 (다음 사람용)
-- **단위 테스트**: 30 + 45 = **75건 전체 PASS**
-- **3D 모델**: v5 — 3465 솔리드, 9640 m³, DXF 직접 추출
+  - `pipeline.py` — 단일 진입점
+- **단위 테스트**: 75건 전체 PASS
+- **최신 3D 모델**: v9 — **7,411 솔리드, 15,464 m³, 부재별 ID**
+- **BOQ**: `output/v9_boq.json` (기둥 C1/TC1, 보 400X800/500X600 등 도면 원래 이름)
+- **미완성**: DONG↔PKG 정밀 정합 (E/V 코어로 교체 필요), 주차장 보, 슬라브
+
+---
+
+### 🔑 검증된 오프셋 (씨앗)
+```
+DONG_B1F_DX = -126000mm  (에이전트 160쌍 거리 0mm 확인)
+PKG_B1F_DX  = -630000mm  (Y1 기준점 검증)
+TX_PKG      = -448000mm  (미흡, E/V 코어로 교체 필요)
+TY_PKG      = +3622000mm
+```
+
+### 🔑 다음 세션 즉시 실행
+```python
+from core.dxf_parser.ev_detector import TextLabelEVDetector
+ev_dong  = TextLabelEVDetector().detect(doc_dong,  clip=DONG_CLIP)
+ev_bsmnt = TextLabelEVDetector().detect(doc_bsmnt, clip=PKG_B2F_CLIP)
+TX_EXACT = ev_dong.cx - ev_bsmnt.cx  # 추측 없는 도면 직독
+```
 
 ---
 
