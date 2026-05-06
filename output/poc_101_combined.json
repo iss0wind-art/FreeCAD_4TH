@@ -5,18 +5,18 @@
     "A1": {
       "label": "101동 동체 B1·B2",
       "step": "output/poc_101_b1_b2_dong.step",
-      "solids": 419,
+      "solids": 4433,
       "columns": 399,
       "girders": 20,
-      "volume_m3": 746.819
+      "volume_m3": 19135.858
     },
     "A2": {
       "label": "101동 주변 지하주차장 B1·B2",
       "step": "output/poc_101_around_parking.step",
-      "solids": 99,
+      "solids": 883,
       "columns": 86,
       "girders": 13,
-      "volume_m3": 175.032
+      "volume_m3": 4059.732
     }
   },
   "coordinate_alignment": {
@@ -36,26 +36,26 @@
     ]
   },
   "totals": {
-    "solids": 518,
+    "solids": 5316,
     "columns": 485,
     "girders": 33,
-    "volume_m3": 921.851,
+    "volume_m3": 23195.59,
     "invalid_solids": 0
   },
   "bounding_box_mm": {
-    "x_min": 5765.8,
-    "x_max": 123235.8,
-    "y_min": 5567.7,
-    "y_max": 168644.6,
+    "x_min": -126991.9,
+    "x_max": 132299.8,
+    "y_min": 1467.5,
+    "y_max": 178723.7,
     "z_min": -8800.0,
     "z_max": 0.0,
-    "width_m": 117.47,
-    "height_m": 163.08
+    "width_m": 259.29,
+    "height_m": 177.26
   },
   "validation": {
-    "bbox_reasonable": true,
+    "bbox_reasonable": false,
     "invalid_solids": 0,
     "note": "BoundBox 폭·높이 ≤ 200m이면 좌표 정렬 합리적. 두 모델이 겹치거나 110m×107m 범위 내에 있어야 함."
   },
-  "elapsed_s": 2.7
+  "elapsed_s": 26.0
 }

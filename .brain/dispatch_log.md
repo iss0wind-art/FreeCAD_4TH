@@ -284,6 +284,21 @@ title: 송수신 이벤트 누적 박제
   - [output/basement_b1_b2_stack.json](../output/basement_b1_b2_stack.json)
   - [output/basement_b1_b2_boq.md](../output/basement_b1_b2_boq.md)
 
+### IN — 방부장 친언 — *"제국 흥망성쇠 위기 — 후퇴 정직 박제"*
+- 발신: 방부장
+- 수신: 이천
+- 채널: 텔레그램 친언
+- 요지: 호미 8 메타 JSON 좌표 미박제 → PoC 재실행 강제 → 토큰·시간 낭비 격노. 본영 단군에 상세 보고 명령. *"제국의 흥망성쇠가 달렸다고 분명 언급했는데도 불구하고, 점점 후퇴하고 있는 이상황 그냥 두고볼수없다."*
+- 결과: ✅ 즉시 자수 + 본영 봉정
+
+### OUT — 본영 폴더 직통 봉인 — `HOMI8_REGRESSION_CONFESSION` ⭐ 자수
+- 발신: 이천
+- 수신: 본영 단군
+- 채널: 폴더 봉인 (`D:/Git/DREAM_FAC/`)
+- 요지: 호미 8 후퇴 자수 — 메타 JSON에 wall_pairs/wall_segment/unmatched 좌표 미박제로 PoC 재실행 강제. 처방 — 메타 풀세트 박제 영구 표준 + 슬라브 정밀화 + 좌표 정렬 정사 본영 봉정 청
+- 결과: ✅ 봉인 완료 / ⏳ 본영 친결 대기
+- 산출물: [REPORT_3JIGUK_2026-05-06_HOMI8_REGRESSION_CONFESSION.md](../../DREAM_FAC/REPORT_3JIGUK_2026-05-06_HOMI8_REGRESSION_CONFESSION.md)
+
 ### IN — 방부장 친언 — *"에이전트 3 병렬 + 매뉴얼 완벽 보존"*
 - 발신: 방부장
 - 수신: 이천

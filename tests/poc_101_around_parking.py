@@ -378,6 +378,7 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
         })
 
     girders_3d = []
+    girder_keys = set()
     for g in girders_raw:
         if not g.matched_symbol:
             continue
@@ -388,6 +389,55 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
             'codex_w': g.matched_section[0], 'codex_h': g.matched_section[1],
             'length': g.length, 'confidence': g.confidence,
         })
+        girder_keys.add((tuple(g.centerline_p1), tuple(g.centerline_p2)))
+
+    # 호미 8 — 일반 벽 (wall_pair 거더 매칭 안된 것, 두께 100~500mm)
+    walls_3d = []
+    for wp in wall_pairs:
+        key = (tuple(wp.centerline_p1), tuple(wp.centerline_p2))
+        if key in girder_keys:
+            continue
+        if wp.thickness < 100 or wp.thickness > 500:
+            continue
+        if wp.overlap_length < 500:
+            continue
+        walls_3d.append({
+            'p1': list(wp.centerline_p1), 'p2': list(wp.centerline_p2),
+            'thickness': wp.thickness, 'length': wp.overlap_length,
+        })
+
+    # 호미 8 — wall_segment 박스
+    walls_segment_3d = []
+    for c in classifications:
+        if c.kind != BoxKind.WALL_SEGMENT:
+            continue
+        b = box_by_id.get(c.box_id)
+        if not b:
+            continue
+        walls_segment_3d.append({
+            'cx': b['cx'], 'cy': b['cy'],
+            'w': b['w'], 'h': b['h'],
+        })
+
+    # 호미 8 — unmatched column
+    unmatched_columns_3d = []
+    unmatched_box_ids = {u.box_id for u in unmatched}
+    for c in classifications:
+        if c.kind != BoxKind.COLUMN:
+            continue
+        if c.confidence < 0.4:
+            continue
+        if c.box_id not in unmatched_box_ids:
+            continue
+        b = box_by_id.get(c.box_id)
+        if not b:
+            continue
+        unmatched_columns_3d.append({
+            'cx': b['cx'], 'cy': b['cy'],
+            'w': b['w'], 'h': b['h'],
+        })
+
+    print(f'      [호미 8] 벽 {len(walls_3d)}, wall_segment {len(walls_segment_3d)}, unmatched col {len(unmatched_columns_3d)}')
 
     kind_count = Counter(c.kind.value for c in classifications)
 
@@ -396,6 +446,8 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
         'clip': {'x_min': xmin, 'y_min': ymin, 'x_max': xmax, 'y_max': ymax},
         'center_text_abs': list(sheet['center_text']),
         'columns': columns_3d, 'girders': girders_3d,
+        'walls': walls_3d, 'wall_segments': walls_segment_3d,
+        'unmatched_columns': unmatched_columns_3d,
         'pc_stats': pc_summary,
         'grid_source': grid_source,
         'grid_unique_x': grid_label['unique_x'],
@@ -409,7 +461,10 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
         'classification_stats': dict(kind_count),
         'n_girders_detected': len(girders_raw),
         'n_girders_codex_matched': len(girders_3d),
-        'unmatched_columns': len(unmatched),
+        'n_unmatched_columns': len(unmatched),
+        'n_walls_3d': len(walls_3d),
+        'n_wall_segments_3d': len(walls_segment_3d),
+        'n_unmatched_columns_3d': len(unmatched_columns_3d),
     }
 
 
@@ -417,62 +472,144 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
 # 3D STEP 빌드
 # ───────────────────────────────────────────────
 
+SLAB_THICKNESS = 200
+GIRDER_HEIGHT_BUILD = GIRDER_H_DEFAULT  # 800
+
 def build_3d(sheet_results):
+    """방부장 정사 — 슬라브 → 보 (수평) → 기둥/벽 (수직, 슬라브 하부까지)."""
     import FreeCAD, Part
     shapes = []
 
     for r in sheet_results:
-        floor  = r['floor']
-        z_base = floor * FLOOR_HEIGHT   # B2F=-8800, B1F=-4400
+        floor = r['floor']
+        z_floor_bottom = floor * FLOOR_HEIGHT
+        z_floor_top = z_floor_bottom + FLOOR_HEIGHT
+        z_slab_bottom = z_floor_top - SLAB_THICKNESS
+        z_girder_bottom = z_floor_top - GIRDER_HEIGHT_BUILD
+        col_height = z_slab_bottom - z_floor_bottom  # 4200
+        gh_extrude = z_slab_bottom - z_girder_bottom  # 600
 
-        # 기둥
-        for col in r['columns']:
-            cx, cy = col['cx'], col['cy']
-            bw, bh = col['w'], col['h']
-            x0, y0 = cx - bw / 2, cy - bh / 2
+        # ===== 1) 슬라브 (이 층 천장) — 기둥만 (동체 footprint 근사) =====
+        all_x, all_y = [], []
+        for c_ in r.get('columns', []) + r.get('unmatched_columns', []):
+            cx, cy = c_['cx'], c_['cy']; bw, bh = c_['w'], c_['h']
+            all_x += [cx-bw/2, cx+bw/2]; all_y += [cy-bh/2, cy+bh/2]
+
+        if all_x:
+            margin = 1500
+            xmin = min(all_x) - margin; xmax = max(all_x) + margin
+            ymin = min(all_y) - margin; ymax = max(all_y) + margin
             try:
                 pts = [
-                    FreeCAD.Vector(x0,      y0,      z_base),
-                    FreeCAD.Vector(x0 + bw, y0,      z_base),
-                    FreeCAD.Vector(x0 + bw, y0 + bh, z_base),
-                    FreeCAD.Vector(x0,      y0 + bh, z_base),
+                    FreeCAD.Vector(xmin, ymin, z_slab_bottom),
+                    FreeCAD.Vector(xmax, ymin, z_slab_bottom),
+                    FreeCAD.Vector(xmax, ymax, z_slab_bottom),
+                    FreeCAD.Vector(xmin, ymax, z_slab_bottom),
                 ]
                 edges = [Part.makeLine(pts[i], pts[(i + 1) % 4]) for i in range(4)]
-                wire  = Part.Wire(edges)
-                face  = Part.Face(wire)
-                solid = face.extrude(FreeCAD.Vector(0, 0, FLOOR_HEIGHT))
-                shapes.append((f'{r["sheet_id"]}_col_{col["symbol"]}', solid, 'column'))
-            except Exception as ex:
-                print(f'    [경고] 기둥 솔리드 실패: {ex}')
+                wire = Part.Wire(edges); face = Part.Face(wire)
+                solid = face.extrude(FreeCAD.Vector(0, 0, SLAB_THICKNESS))
+                shapes.append((f'{r["sheet_id"]}_slab', solid, 'slab'))
+            except Exception as e:
+                print(f'    [슬라브 실패] {r["sheet_id"]}: {e}')
 
-        # 거더
-        gh = GIRDER_H_DEFAULT
-        gh_z_base = z_base + FLOOR_HEIGHT - gh
-        for g in r['girders']:
-            p1, p2 = g['p1'], g['p2']
-            t = g['thickness']
+        # ===== 2) 보 =====
+        for g in r.get('girders', []):
+            p1, p2 = g['p1'], g['p2']; t = g['thickness']
             dx = p2[0] - p1[0]; dy = p2[1] - p1[1]
             L = math.hypot(dx, dy)
-            if L < 100:
-                continue
-            ux, uy = dx / L, dy / L
-            nx, ny = -uy, ux
-            half_t = t / 2
+            if L < 100: continue
+            ux, uy = dx/L, dy/L; nx, ny = -uy, ux; half_t = t/2
             corners = [
-                (p1[0] + nx * half_t, p1[1] + ny * half_t),
-                (p1[0] - nx * half_t, p1[1] - ny * half_t),
-                (p2[0] - nx * half_t, p2[1] - ny * half_t),
-                (p2[0] + nx * half_t, p2[1] + ny * half_t),
+                (p1[0]+nx*half_t, p1[1]+ny*half_t),
+                (p1[0]-nx*half_t, p1[1]-ny*half_t),
+                (p2[0]-nx*half_t, p2[1]-ny*half_t),
+                (p2[0]+nx*half_t, p2[1]+ny*half_t),
             ]
             try:
-                pts = [FreeCAD.Vector(c[0], c[1], gh_z_base) for c in corners]
+                pts = [FreeCAD.Vector(c[0], c[1], z_girder_bottom) for c in corners]
                 edges = [Part.makeLine(pts[i], pts[(i + 1) % 4]) for i in range(4)]
-                wire  = Part.Wire(edges)
-                face  = Part.Face(wire)
-                solid = face.extrude(FreeCAD.Vector(0, 0, gh))
+                wire = Part.Wire(edges); face = Part.Face(wire)
+                solid = face.extrude(FreeCAD.Vector(0, 0, gh_extrude))
                 shapes.append((f'{r["sheet_id"]}_gir_{g["symbol"]}', solid, 'girder'))
-            except Exception as ex:
-                print(f'    [경고] 거더 솔리드 실패: {ex}')
+            except Exception:
+                pass
+
+        # ===== 3) 기둥 (수직, z_floor_bottom ~ z_slab_bottom) =====
+        for col in r.get('columns', []):
+            cx, cy = col['cx'], col['cy']; bw, bh = col['w'], col['h']
+            x0, y0 = cx-bw/2, cy-bh/2
+            try:
+                pts = [
+                    FreeCAD.Vector(x0, y0, z_floor_bottom),
+                    FreeCAD.Vector(x0+bw, y0, z_floor_bottom),
+                    FreeCAD.Vector(x0+bw, y0+bh, z_floor_bottom),
+                    FreeCAD.Vector(x0, y0+bh, z_floor_bottom),
+                ]
+                edges = [Part.makeLine(pts[i], pts[(i + 1) % 4]) for i in range(4)]
+                wire = Part.Wire(edges); face = Part.Face(wire)
+                solid = face.extrude(FreeCAD.Vector(0, 0, col_height))
+                shapes.append((f'{r["sheet_id"]}_col_{col["symbol"]}', solid, 'column'))
+            except Exception:
+                pass
+
+        # ===== 4) unmatched column =====
+        for i, uc in enumerate(r.get('unmatched_columns', [])):
+            cx, cy = uc['cx'], uc['cy']; bw, bh = uc['w'], uc['h']
+            x0, y0 = cx-bw/2, cy-bh/2
+            try:
+                pts = [
+                    FreeCAD.Vector(x0, y0, z_floor_bottom),
+                    FreeCAD.Vector(x0+bw, y0, z_floor_bottom),
+                    FreeCAD.Vector(x0+bw, y0+bh, z_floor_bottom),
+                    FreeCAD.Vector(x0, y0+bh, z_floor_bottom),
+                ]
+                edges = [Part.makeLine(pts[i_], pts[(i_ + 1) % 4]) for i_ in range(4)]
+                wire = Part.Wire(edges); face = Part.Face(wire)
+                solid = face.extrude(FreeCAD.Vector(0, 0, col_height))
+                shapes.append((f'{r["sheet_id"]}_unmcol_{i:04d}', solid, 'unmatched_column'))
+            except Exception:
+                pass
+
+        # ===== 5) 일반 벽 =====
+        for i, w in enumerate(r.get('walls', [])):
+            p1, p2 = w['p1'], w['p2']; t = w['thickness']
+            dx = p2[0] - p1[0]; dy = p2[1] - p1[1]
+            L = math.hypot(dx, dy)
+            if L < 100: continue
+            ux, uy = dx/L, dy/L; nx, ny = -uy, ux; half_t = t/2
+            corners = [
+                (p1[0]+nx*half_t, p1[1]+ny*half_t),
+                (p1[0]-nx*half_t, p1[1]-ny*half_t),
+                (p2[0]-nx*half_t, p2[1]-ny*half_t),
+                (p2[0]+nx*half_t, p2[1]+ny*half_t),
+            ]
+            try:
+                pts = [FreeCAD.Vector(c[0], c[1], z_floor_bottom) for c in corners]
+                edges = [Part.makeLine(pts[i_], pts[(i_ + 1) % 4]) for i_ in range(4)]
+                wire = Part.Wire(edges); face = Part.Face(wire)
+                solid = face.extrude(FreeCAD.Vector(0, 0, col_height))
+                shapes.append((f'{r["sheet_id"]}_wall_{i:04d}', solid, 'wall'))
+            except Exception:
+                pass
+
+        # ===== 6) wall_segment =====
+        for i, ws in enumerate(r.get('wall_segments', [])):
+            cx, cy = ws['cx'], ws['cy']; bw, bh = ws['w'], ws['h']
+            x0, y0 = cx-bw/2, cy-bh/2
+            try:
+                pts = [
+                    FreeCAD.Vector(x0, y0, z_floor_bottom),
+                    FreeCAD.Vector(x0+bw, y0, z_floor_bottom),
+                    FreeCAD.Vector(x0+bw, y0+bh, z_floor_bottom),
+                    FreeCAD.Vector(x0, y0+bh, z_floor_bottom),
+                ]
+                edges = [Part.makeLine(pts[i_], pts[(i_ + 1) % 4]) for i_ in range(4)]
+                wire = Part.Wire(edges); face = Part.Face(wire)
+                solid = face.extrude(FreeCAD.Vector(0, 0, col_height))
+                shapes.append((f'{r["sheet_id"]}_wseg_{i:04d}', solid, 'wall_segment'))
+            except Exception:
+                pass
 
     return shapes
 
