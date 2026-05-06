@@ -37,6 +37,7 @@ from core.dxf_parser.entity_scanner import scan, quick_text_grep
 from core.dxf_parser.ev_detector import TextLabelEVDetector, GridAnchorDetector
 from core.dxf_parser.level_parser import parse_dxf as parse_levels
 from core.dxf_parser.full_extractor import FullExtractor
+from core.dxf_parser.step_zone import parse_step_zones
 
 
 def parse_clip(s: str):
@@ -56,6 +57,7 @@ def main():
     parser.add_argument('--grid', action='store_true', help='격자 라벨 수집')
     parser.add_argument('--slab-outline', action='store_true', help='슬라브 외곽 추출')
     parser.add_argument('--levels', action='store_true', help='표고·단차 파싱')
+    parser.add_argument('--steps', action='store_true', help='단차 구역 파싱')
     parser.add_argument('--all', action='store_true', help='전체 검사')
     parser.add_argument('--output-dir', default='output')
     args = parser.parse_args()
@@ -193,6 +195,26 @@ def main():
                 for s in ext_result.slab_outlines[:3]
             ],
             'column_count': len(ext_result.columns),
+        }
+
+    # ── 7. 단차 구역 ─────────────────────────────────────────
+    if args.steps or do_all:
+        print('\n[7] 단차 구역 파싱...')
+        zone_map = parse_step_zones(dxf_path, encoding=encoding, clip=clip)
+        print(zone_map.summary())
+        if zone_map.zones:
+            print('  단차 상위 10:')
+            for z in zone_map.zones[:10]:
+                abs_sl = z.absolute_sl(zone_map.base_sl)
+                print(f'    ({z.x:.0f},{z.y:.0f}) {z.floor_label} delta={z.delta_mm:.0f}mm '
+                      f'abs={abs_sl:.0f}mm  "{z.text[:40]}"')
+        report['sections']['step_zones'] = {
+            'count': len(zone_map.zones),
+            'zones': [
+                {'x': z.x, 'y': z.y, 'floor': z.floor_label,
+                 'delta_mm': z.delta_mm, 'text': z.text[:60]}
+                for z in zone_map.zones[:20]
+            ],
         }
 
     # ── 저장 ────────────────────────────────────────────────
