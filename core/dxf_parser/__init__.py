@@ -15,6 +15,7 @@ from core.dxf_parser.ev_detector import TextLabelEVDetector, GridAnchorDetector
 from core.dxf_parser.coord_unifier import CoordUnifier, DrawingTransform
 from core.dxf_parser.full_extractor import FullExtractor, ExtractResult
 from core.dxf_parser.level_parser import parse_dxf as parse_levels, LevelSet, merge_level_sets
+from core.dxf_parser.step_zone import parse_step_zones, StepZone, StepZoneMap
 
 __all__ = [
     'scan', 'iter_all', 'ScanResult',
@@ -22,4 +23,5 @@ __all__ = [
     'CoordUnifier', 'DrawingTransform',
     'FullExtractor', 'ExtractResult',
     'parse_levels', 'LevelSet', 'merge_level_sets',
+    'parse_step_zones', 'StepZone', 'StepZoneMap',
 ]

@@ -65,18 +65,38 @@ slab_candidates = sorted(closed_polys, key=lambda p: p.area, reverse=True)[:3]
 
 ```
 core/dxf_parser/
-  __init__.py          — 패키지 노출
+  __init__.py          — 패키지 노출 (8개 모듈)
   entity_scanner.py    — 전수 스캔 (INSERT 재귀, 레이어 인벤토리)
   ev_detector.py       — E/V 코어 + 격자 앵커 검출 (F-1 구현체)
   coord_unifier.py     — 다중 도면 좌표 통일 (E/V→격자→수동 폴백)
   full_extractor.py    — 기둥·슬라브·벽 완전 추출 (HATCH+INSERT+LWPOLY)
-  level_parser.py      — SL/GL/단차 완전 파싱 (GL. -9.05 형식 포함)
+  level_parser.py      — SL/GL 표고 파싱 (GL. -9.05 형식 포함)
+  step_zone.py         — 단차 구역 파싱 (B2F SL +1600 등) + StepZoneMap
 tools/
   inspect_drawing.py   — 다음 사람용 도면 검사 도구 (CLI)
 tests/
   poc_v4_coord_unified.py  — v4 통합 PoC (좌표통일+완전파싱)
+  poc_v4_build_3d.py       — v4 3D 빌드 (시트별 오프셋)
   probe_coord_align.py     — 좌표 정렬 프로브 (투표법)
+output/
+  poc_v4b_101.step   — v4b STEP (좌표통일, 596 솔리드)
+  poc_v4c_101.step   — v4c STEP (실제슬라브외곽, 596 솔리드, 9537m³)
+  poc_v4c_101_iso.png — ISO 렌더 (B2F/B1F 슬라브 적층 확인)
 ```
+
+## v4 검증 결과 (최종 — 2026-05-06)
+
+| v3 결함 | 처리 | v4 확인 결과 |
+|---------|------|------------|
+| B1F 슬라브 두께 | B2F 한 장 참조 (150mm) | S40-061~070 직독 → 150mm ✓ |
+| 단차 무시 | 균일 처리 | 101동 클립 내 단차 0건 → 균일이 맞음 ✓ |
+| 슬라브 형태 | BBox 사각형 | LWPOLYLINE 외곽 추출 (126m×89m) ✓ |
+| 좌표 정렬 | 분리 | 시트별 centroid 오프셋 적용 ✓ |
+
+**결론**: v3 결함 4개 중 3개는 실제로도 올바른 값이었다.
+1은 과정이 틀렸으나(B1F 미독) 결과값이 우연히 맞았다.
+3은 BBox → LWPOLYLINE으로 실질적으로 개선됨.
+4는 v4b/c에서 시트별 오프셋으로 완전 해소됨.
 
 ## 도면 채굴 결과 (영구 박제)
 
