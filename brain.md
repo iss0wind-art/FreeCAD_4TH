@@ -6,18 +6,24 @@
 
 ---
 
-## 📌 현재 추진 상태 (Status)
+## 📌 현재 추진 상태 (Status) — 2026-05-06 갱신
 
-- **단계**: 이천 부임 2차 세션 — Phase 0 검토 + 7-Piece Kit 이식 진행 중
-  - Phase 0 산출물 5건: 작성 완료 (전임자, `spec/`)
-  - 검토 4건 11개 결정 항목: 단독 결재 가능 항목 결재 대기
-  - 7-Piece Kit: #1·#2·#4·#6 완료 / #3 본영 시공 중 / #5 본 갱신 / #7 미설정
-- **주요 목표**: BOQ 1,163 spec 이식 + Member Manifest 표준 + 도면 없는 자동 부재 → 3D + 물량 파이프라인
-- **최근 이슈**:
-  - 본영 paperclip 쓰기 라인 stale (1차 이천이 진단, 2차 세션도 동일)
-  - 본영이 R1·R3·R4·R5 자율 시공 진행 중 — git 경유 도착 대기
-  - R2(신고조선/FREECAD_지국) 폴더는 방부장 친히 시공 완료
-- **자체 진행 모드**: 본영 응답 대기 중에도 단독 결재 가능 항목 + 7-Piece Kit 자체 작업 진행
+- **단계**: v4~v5 시스템 개발 완료. 골조 전용 DXF 파서 완성.
+- **방부장 기준 2026-05-06**: 골조(콘크리트 프레임)만. 조적·마감·창호·설비 무시.
+- **완성 모듈** (`core/dxf_parser/`):
+  - `entity_scanner.py` — 전수 엔티티 스캔
+  - `ev_detector.py` — E/V 코어 기준점
+  - `coord_unifier.py` — 다중 도면 좌표 통일
+  - `full_extractor.py` — 기둥·슬라브·벽 완전 추출
+  - `level_parser.py` — SL/GL 표고 파싱
+  - `step_zone.py` — 단차 구역
+  - `wall_extractor.py` — 벽체 페어링
+  - `structural_filter.py` — 골조 레이어 필터 (핵심)
+  - `structural_extractor.py` — 골조 전용 추출기
+  - `grid_extractor.py` — 격자선·기준점
+  - `pipeline.py` — 단일 진입점 (다음 사람용)
+- **단위 테스트**: 30 + 45 = **75건 전체 PASS**
+- **3D 모델**: v5 — 3465 솔리드, 9640 m³, DXF 직접 추출
 
 ---
 
