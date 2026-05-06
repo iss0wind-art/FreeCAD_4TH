@@ -1,0 +1,9 @@
+시작
+완료: 596 솔리드, 10471 m3
+V shape: (0,), F shape: (0, 3)
+V shape: (0,), F shape: (0, 3)
+v4 재빌드: col=592 slab=4 vol=10471m3
+PNG iso: output/poc_v4_101_iso.png
+PNG top: output/poc_v4_101_top.png
+PNG front: output/poc_v4_101_front.png
+v4b: 596 shapes 10471m3 stats={'S30-001': 260, 'S30-002': 139, 'PKG-B2': 167, 'PKG-B1': 26}
