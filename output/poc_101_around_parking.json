@@ -1,0 +1,1341 @@
+{
+  "project": "부산 에코델타 24BL 101동 주변 지하주차장 B1·B2",
+  "coordinate_matching": {
+    "method": "option_a_text_search",
+    "description": "지하주차장 DXF 내 \"101\" 텍스트 직접 발견",
+    "dong_101_b2_abs": [
+      632082.0,
+      -1296738.0
+    ],
+    "dong_101_b1_abs": [
+      1262269.0,
+      -1296807.0
+    ],
+    "b2_relative": [
+      384832.0,
+      93939.0
+    ],
+    "b1_relative": [
+      385019.0,
+      93870.0
+    ],
+    "confidence": "HIGH",
+    "note": "B2·B1 상대 좌표 0.1mm 이내 일치"
+  },
+  "clip_region_mm": {
+    "footprint_w": 50000.0,
+    "footprint_h": 47000.0,
+    "margin": 30000.0,
+    "total_w": 110000.0,
+    "total_h": 107000.0,
+    "B2": {
+      "x_min": 577082.0,
+      "y_min": -1350238.0,
+      "x_max": 687082.0,
+      "y_max": -1243238.0
+    },
+    "B1": {
+      "x_min": 1207269.0,
+      "y_min": -1350307.0,
+      "x_max": 1317269.0,
+      "y_max": -1243307.0
+    }
+  },
+  "totals": {
+    "columns": 86,
+    "girders": 13,
+    "solids": 99,
+    "volume_m3": 175.032
+  },
+  "sheets": [
+    {
+      "sheet_id": "B2",
+      "floor": -2,
+      "title": "지하 2층 주차장 구조평면도 — 101동 주변",
+      "clip": {
+        "x_min": 577082.0,
+        "y_min": -1350238.0,
+        "x_max": 687082.0,
+        "y_max": -1243238.0
+      },
+      "center_text_abs": [
+        632082.0,
+        -1296738.0
+      ],
+      "columns": [
+        {
+          "symbol": "C1",
+          "cx": 392503.79850208806,
+          "cy": 128701.53351884289,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365703.8048998262,
+          "cy": 104121.52859570808,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 359603.8048995561,
+          "cy": 104121.52859525592,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 391453.80489944713,
+          "cy": 79071.52859524102,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 370703.8048997517,
+          "cy": 74271.5285957111,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365103.8048995123,
+          "cy": 74271.5285957111,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 359603.8048995123,
+          "cy": 74271.5285957111,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 351403.8048995123,
+          "cy": 74271.5285957111,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 373903.79850212997,
+          "cy": 104121.5285952501,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 378003.79850212997,
+          "cy": 104121.5285952501,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 387703.79850209784,
+          "cy": 112301.53351884405,
+          "w": 800.0,
+          "h": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 345703.80489958497,
+          "cy": 74271.5285956529,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 345703.8048995943,
+          "cy": 91371.52859570296,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 345703.8048995985,
+          "cy": 99971.52859570296,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 373903.79850213043,
+          "cy": 120501.53351884591,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365703.7985020522,
+          "cy": 120501.53351884708,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 373903.7985021323,
+          "cy": 128701.53351884708,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365703.79850205453,
+          "cy": 128701.53351884708,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 379403.79850208154,
+          "cy": 128701.5335188529,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 373903.7985021346,
+          "cy": 136901.53351884708,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365703.7985020564,
+          "cy": 136901.53351884708,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 344703.7985020778,
+          "cy": 145101.5335188629,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 385153.80489945924,
+          "cy": 79071.52859524195,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 376853.8048994518,
+          "cy": 79071.52859525406,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 370703.8048997703,
+          "cy": 79071.5285952629,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365103.8048995305,
+          "cy": 79071.52859527105,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 359603.80489953095,
+          "cy": 79071.52859527897,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 351403.80489953095,
+          "cy": 79071.52859529108,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 345703.8048995994,
+          "cy": 79071.52859529806,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 376853.8048994555,
+          "cy": 87171.52859525406,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 370303.804899774,
+          "cy": 87171.5285952629,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 359603.8048995347,
+          "cy": 87171.52859527897,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 351403.8048995347,
+          "cy": 87171.52859529108,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 345703.8048996031,
+          "cy": 87171.52859529806,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 351403.80489953654,
+          "cy": 91371.52859529108,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 337003.79850203684,
+          "cy": 86651.53351888899,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 337003.798502062,
+          "cy": 95351.53351888503,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 337003.798502062,
+          "cy": 103751.53351887595,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 345703.8048996008,
+          "cy": 104121.52859573602,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 351403.8048995328,
+          "cy": 104121.5285957281,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 351403.80489953095,
+          "cy": 99971.5285957281,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 357503.79850205267,
+          "cy": 112301.5335193181,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365703.79850205174,
+          "cy": 112301.5335193181,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 373903.79850212997,
+          "cy": 112301.5335193181,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 379403.7985020974,
+          "cy": 112301.53351934091,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 357503.798502055,
+          "cy": 120501.5335193181,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 379403.79850209923,
+          "cy": 120501.53351933998,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 387703.7985020834,
+          "cy": 120501.53351884498,
+          "w": 800.0,
+          "h": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 387703.7985021649,
+          "cy": 128501.53351884708,
+          "w": 800.0,
+          "h": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 357503.79850205686,
+          "cy": 128701.53351931903,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 357503.7985020592,
+          "cy": 136901.5335193181,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 379403.7985021034,
+          "cy": 136901.5335193409,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 387703.79850211786,
+          "cy": 136901.53351934603,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 357503.798502062,
+          "cy": 145101.53351932298,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 379403.7985021062,
+          "cy": 145101.5335193451,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 373903.79850217374,
+          "cy": 145101.5335193451,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 365703.7985020955,
+          "cy": 145101.53351934603,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 349303.7985020755,
+          "cy": 136901.53351931507,
+          "w": 800.0,
+          "h": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 344902.63770027226,
+          "cy": 136901.53351884498,
+          "w": 800.0,
+          "h": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 337003.7985020601,
+          "cy": 136901.53351885988,
+          "w": 800.0,
+          "h": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 349303.7985020792,
+          "cy": 145101.53351931903,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 337003.7985020629,
+          "cy": 145101.53351886896,
+          "w": 800.0,
+          "h": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC1",
+          "cx": 359782.65305790165,
+          "cy": 102091.53018986504,
+          "w": 600.0,
+          "h": 1500.0,
+          "codex_w": 600.0,
+          "codex_h": 1500.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC2",
+          "cx": 364602.6466786326,
+          "cy": 89571.53023696691,
+          "w": 600.0,
+          "h": 1200.0,
+          "codex_w": 600.0,
+          "codex_h": 1200.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC6",
+          "cx": 376722.6530578993,
+          "cy": 90971.53018986504,
+          "w": 600.0,
+          "h": 1300.0,
+          "codex_w": 600.0,
+          "codex_h": 1300.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC13",
+          "cx": 383372.6530578993,
+          "cy": 91071.5301898499,
+          "w": 800.0,
+          "h": 1500.0,
+          "codex_w": 800.0,
+          "codex_h": 1500.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC2",
+          "cx": 377997.64667863166,
+          "cy": 99721.53023696411,
+          "w": 600.0,
+          "h": 1200.0,
+          "codex_w": 600.0,
+          "codex_h": 1200.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC1",
+          "cx": 365632.66440997506,
+          "cy": 102091.53023700998,
+          "w": 600.0,
+          "h": 1500.0,
+          "codex_w": 600.0,
+          "codex_h": 1500.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC1",
+          "cx": 337402.6465300354,
+          "cy": 83371.53023695992,
+          "w": 600.0,
+          "h": 1000.0,
+          "codex_w": 600.0,
+          "codex_h": 1000.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC2",
+          "cx": 330402.6466786098,
+          "cy": 112391.52852082695,
+          "w": 600.0,
+          "h": 1200.0,
+          "codex_w": 600.0,
+          "codex_h": 1200.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC8",
+          "cx": 334002.6466786098,
+          "cy": 112691.52852082695,
+          "w": 600.0,
+          "h": 1800.0,
+          "codex_w": 600.0,
+          "codex_h": 1800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC10",
+          "cx": 337202.64667861024,
+          "cy": 121251.52852082695,
+          "w": 600.0,
+          "h": 1400.0,
+          "codex_w": 600.0,
+          "codex_h": 1400.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC75",
+          "cx": 336852.64667861024,
+          "cy": 128641.52852082509,
+          "w": 1100.0,
+          "h": 900.0,
+          "codex_w": 1100.0,
+          "codex_h": 900.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC8",
+          "cx": 337202.6466786098,
+          "cy": 118211.52852082695,
+          "w": 600.0,
+          "h": 1800.0,
+          "codex_w": 600.0,
+          "codex_h": 1800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        }
+      ],
+      "girders": [],
+      "pc_stats": {
+        "pc_other": 3,
+        "non_pc": 1080
+      },
+      "grid_source": "adapter_2",
+      "grid_unique_x": 0,
+      "grid_unique_y": 0,
+      "grid_x_labels": [],
+      "grid_y_labels": [],
+      "n_entities_in_clip": 1083,
+      "n_lines_input": 838,
+      "n_wall_pairs": 188,
+      "n_boxes_input": 99,
+      "classification_stats": {
+        "column": 91,
+        "wall_segment": 8
+      },
+      "n_girders_detected": 0,
+      "n_girders_codex_matched": 0,
+      "unmatched_columns": 17
+    },
+    {
+      "sheet_id": "B1",
+      "floor": -1,
+      "title": "지하 1층 주차장 구조평면도 — 101동 주변",
+      "clip": {
+        "x_min": 1207269.0,
+        "y_min": -1350307.0,
+        "x_max": 1317269.0,
+        "y_max": -1243307.0
+      },
+      "center_text_abs": [
+        1262269.0,
+        -1296807.0
+      ],
+      "columns": [
+        {
+          "symbol": "C1",
+          "cx": 391453.8048994441,
+          "cy": 79071.52859524009,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 345703.80489958194,
+          "cy": 74271.52859565197,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "C1",
+          "cx": 337003.798502035,
+          "cy": 86651.53351888806,
+          "w": 400.0,
+          "h": 800.0,
+          "codex_w": 400.0,
+          "codex_h": 800.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC1",
+          "cx": 359782.6530578991,
+          "cy": 102091.5301898641,
+          "w": 600.0,
+          "h": 1500.0,
+          "codex_w": 600.0,
+          "codex_h": 1500.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC2",
+          "cx": 364602.64667863003,
+          "cy": 89571.53023696598,
+          "w": 600.0,
+          "h": 1200.0,
+          "codex_w": 600.0,
+          "codex_h": 1200.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC6",
+          "cx": 376722.653057897,
+          "cy": 90971.5301898641,
+          "w": 600.0,
+          "h": 1300.0,
+          "codex_w": 600.0,
+          "codex_h": 1300.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC13",
+          "cx": 383372.653057897,
+          "cy": 91071.5301898499,
+          "w": 800.0,
+          "h": 1500.0,
+          "codex_w": 800.0,
+          "codex_h": 1500.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC2",
+          "cx": 377997.64667863003,
+          "cy": 99721.53023696295,
+          "w": 600.0,
+          "h": 1200.0,
+          "codex_w": 600.0,
+          "codex_h": 1200.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC1",
+          "cx": 365632.664409972,
+          "cy": 102091.53023700998,
+          "w": 600.0,
+          "h": 1500.0,
+          "codex_w": 600.0,
+          "codex_h": 1500.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC1",
+          "cx": 337402.646530034,
+          "cy": 83371.53023695992,
+          "w": 600.0,
+          "h": 1000.0,
+          "codex_w": 600.0,
+          "codex_h": 1000.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC2",
+          "cx": 330402.6466786079,
+          "cy": 112391.52852082695,
+          "w": 600.0,
+          "h": 1200.0,
+          "codex_w": 600.0,
+          "codex_h": 1200.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        },
+        {
+          "symbol": "TC75",
+          "cx": 336852.6466786079,
+          "cy": 128641.52852082392,
+          "w": 1100.0,
+          "h": 900.0,
+          "codex_w": 1100.0,
+          "codex_h": 900.0,
+          "confidence": 0.5,
+          "method": "dimension-ambiguous"
+        }
+      ],
+      "girders": [
+        {
+          "symbol": "RB20",
+          "p1": [
+            337202.6596534136,
+            123119.03519665805
+          ],
+          "p2": [
+            337202.6596534136,
+            124689.03519665805
+          ],
+          "thickness": 400.02594932494685,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 1570.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            337102.6466787511,
+            117386.52825498534
+          ],
+          "p2": [
+            337102.6466787511,
+            118826.52991431626
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 1440.001659330912,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            385153.8048995801,
+            73871.52874423494
+          ],
+          "p2": [
+            385153.8048995801,
+            74671.52874423494
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            387303.798502238,
+            112301.53366783401
+          ],
+          "p2": [
+            388103.798502238,
+            112301.53366783401
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            337503.8048996685,
+            78671.52874469
+          ],
+          "p2": [
+            337503.8048996764,
+            79471.528595704
+          ],
+          "thickness": 400.0000001509907,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 799.9998510139994,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            385153.80489959195,
+            78671.52874423494
+          ],
+          "p2": [
+            385153.80489959195,
+            79471.52874423494
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            385153.804899595,
+            86771.5287442361
+          ],
+          "p2": [
+            385153.804899595,
+            87571.5287442361
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            337003.798502194,
+            94951.53366787895
+          ],
+          "p2": [
+            337003.798502194,
+            95751.53366787895
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            337003.79850219004,
+            103351.53366788197
+          ],
+          "p2": [
+            337003.79850219004,
+            104151.53366788197
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            387303.7985022289,
+            128501.53366784309
+          ],
+          "p2": [
+            388103.7985022289,
+            128501.53366784309
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            349303.798502221,
+            144701.53366829804
+          ],
+          "p2": [
+            349303.798502221,
+            145501.53366829804
+          ],
+          "thickness": 400.0,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 800.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            336902.6434892465,
+            81216.5312064258
+          ],
+          "p2": [
+            336902.6434892465,
+            82216.5312064258
+          ],
+          "thickness": 400.00608186097816,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 1000.0,
+          "confidence": 0.9
+        },
+        {
+          "symbol": "RB20",
+          "p1": [
+            337102.6466787153,
+            118959.02821773733
+          ],
+          "p2": [
+            337102.6466787153,
+            120399.02987706917
+          ],
+          "thickness": 400.0000000715954,
+          "codex_w": 400.0,
+          "codex_h": 900.0,
+          "length": 1440.0016593318433,
+          "confidence": 0.9
+        }
+      ],
+      "pc_stats": {
+        "pc_other": 4,
+        "non_pc": 2751,
+        "pc_slab": 28,
+        "pc_girder": 40
+      },
+      "grid_source": "adapter_2",
+      "grid_unique_x": 0,
+      "grid_unique_y": 0,
+      "grid_x_labels": [],
+      "grid_y_labels": [],
+      "n_entities_in_clip": 2823,
+      "n_lines_input": 2477,
+      "n_wall_pairs": 555,
+      "n_boxes_input": 92,
+      "classification_stats": {
+        "column": 26,
+        "wall_segment": 66
+      },
+      "n_girders_detected": 13,
+      "n_girders_codex_matched": 13,
+      "unmatched_columns": 14
+    }
+  ],
+  "gates": {
+    "G1_solid_count_match": {
+      "passed": true,
+      "detail": [
+        99,
+        99
+      ]
+    },
+    "G2_all_valid": {
+      "passed": true,
+      "detail": [
+        0,
+        []
+      ]
+    },
+    "G3_volume_match": {
+      "passed": true,
+      "detail": [
+        175032038472.3166,
+        175032038472.3166,
+        0.0
+      ]
+    },
+    "G4_z_layers": {
+      "passed": true,
+      "detail": [
+        [
+          "B1",
+          "B2"
+        ]
+      ]
+    },
+    "G5_grid_unique": {
+      "passed": true,
+      "detail": [
+        0,
+        {
+          "B2": [
+            0,
+            0
+          ],
+          "B1": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    "G6_visual": {
+      "passed": null,
+      "detail": [
+        "FreeCAD GUI로 방부장 친히 확인 청"
+      ]
+    }
+  },
+  "elapsed_s": 7.4
+}

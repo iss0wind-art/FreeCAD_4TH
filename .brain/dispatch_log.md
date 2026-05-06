@@ -342,6 +342,59 @@ title: 송수신 이벤트 누적 박제
 
 ---
 
+## 2026-05-06 — 현실 테스트 두 번째 (101동 동체 + 주변 주차장)
+
+### IN — 방부장 친명 — *"현실 테스트 두 번째"*
+- 발신: 방부장
+- 수신: 이천
+- 채널: 친명 (세션 개시)
+- 요지: 101동 동체 지하 1·2층 모델링 + 101동 주변 주차장 지하 1·2층 모델링. A1·A2 병렬 시행 후 통합 STEP + 매뉴얼 v2 봉정
+- 결과: ✅ 즉시 시행 착수
+
+### OUT — A1 시행 결과 — 101동 동체 B1·B2
+- 발신: 이천 (자력 시행)
+- 채널: 본진 자력
+- 요지: 101동 동체 지하 1·2층. 도엽 매핑 자력 채굴 (S30-001=B2F, S30-002=B1F, S30-003 빈 도엽). 格子 라벨 부재 — adapter_2 폴백. unmatched 762건 박제.
+- 결과: ✅ **419 솔리드 (기둥 399 + 거더 20), 746.819 m³, 73초. G1~G5 모두 통과.**
+- 산출물:
+  - [tests/poc_101_b1_b2_dong_stack.py](../tests/poc_101_b1_b2_dong_stack.py)
+  - [output/poc_101_b1_b2_dong.step](../output/poc_101_b1_b2_dong.step) ⭐ 2.9MB
+  - [output/poc_101_b1_b2_dong.json](../output/poc_101_b1_b2_dong.json)
+  - [output/poc_101_b1_b2_dong_boq.md](../output/poc_101_b1_b2_dong_boq.md)
+
+### OUT — A2 시행 결과 — 101동 주변 지하주차장 B1·B2
+- 발신: 이천 (자력 시행)
+- 채널: 본진 자력
+- 요지: 101동 주변 주차장 클립 처리. 좌표 매칭 옵션 A 성공 (DXF "101" TEXT 직접 발견). 옵션 B GLB 회귀 실패(잔차 120m) 정직 박제. 클립 110m × 107m.
+- 결과: ✅ **99 솔리드 (기둥 86 + 거더 13), 175.032 m³, 7.4초. G1~G5 모두 통과.**
+- 산출물:
+  - [tests/poc_101_around_parking.py](../tests/poc_101_around_parking.py)
+  - [output/poc_101_around_parking.step](../output/poc_101_around_parking.step) ⭐ 665KB
+  - [output/poc_101_around_parking.json](../output/poc_101_around_parking.json)
+  - [output/poc_101_around_parking_boq.md](../output/poc_101_around_parking_boq.md)
+
+### OUT — 통합 STEP 빌드 + 통합 BOQ 박제
+- 발신: 이천 (자력 시행)
+- 채널: 본진 자력
+- 요지: A1 + A2 STEP 결합. A2를 A1 좌표계로 평행 이동 (dx=−320,225mm, dy=−8,998mm). BBox 폭 117.5m × 높이 163.1m — 합리적 통과. 무효 솔리드 0개.
+- 결과: ✅ **518 솔리드 (기둥 485 + 거더 33), 921.851 m³, 2.7초.**
+- 산출물:
+  - [tests/build_101_combined_step.py](../tests/build_101_combined_step.py)
+  - [output/poc_101_combined.step](../output/poc_101_combined.step) ⭐
+  - [output/poc_101_combined.json](../output/poc_101_combined.json)
+  - [output/poc_101_combined_boq.md](../output/poc_101_combined_boq.md)
+
+### OUT — 매뉴얼 v2 봉정 ⭐
+- 발신: 이천 (자력 시행)
+- 채널: 본진 자력
+- 요지: MANUAL_DRAWING_TO_FREECAD_v2.md (v1 보존 + v2 신설). §3.2 도엽 분리 보강, §3.5 좌표 매칭 신설, §4.3 시행 사례 추가, §5.6~5.8 트러블슈팅 3건 추가, §7 10단계 체크리스트. MANUAL_QUICK_REFERENCE.md v2 갱신.
+- 결과: ✅ 영구 박제 완료
+- 산출물:
+  - [docs/MANUAL_DRAWING_TO_FREECAD_v2.md](../docs/MANUAL_DRAWING_TO_FREECAD_v2.md) ⭐
+  - [docs/MANUAL_QUICK_REFERENCE.md](../docs/MANUAL_QUICK_REFERENCE.md) (v2 갱신)
+
+---
+
 ## 박제 원칙
 
 1. **모든 송수신 즉시 박제** — 통신 함정 7번째 표면 재발 방지의 1차 방어선

@@ -1,0 +1,61 @@
+{
+  "project": "부산 에코델타 24BL 101동 동체 + 주변 주차장 통합",
+  "directive": "방부장 친명 현실 테스트 두 번째 — 통합 STEP",
+  "sources": {
+    "A1": {
+      "label": "101동 동체 B1·B2",
+      "step": "output/poc_101_b1_b2_dong.step",
+      "solids": 419,
+      "columns": 399,
+      "girders": 20,
+      "volume_m3": 746.819
+    },
+    "A2": {
+      "label": "101동 주변 지하주차장 B1·B2",
+      "step": "output/poc_101_around_parking.step",
+      "solids": 99,
+      "columns": 86,
+      "girders": 13,
+      "volume_m3": 175.032
+    }
+  },
+  "coordinate_alignment": {
+    "method": "A2를 A1 좌표계로 평행 이동",
+    "description": "A1(101동 동체)은 도엽 S30-001 SW 기준 정규화 좌표. A2(주변 주차장)는 지하주차장 도엽 SW 기준 정규화 좌표. A2의 \"101\" 텍스트 상대 좌표를 A1의 동체 솔리드 중심에 정렬.",
+    "a1_center_mm": [
+      64700.8,
+      84906.1
+    ],
+    "a2_dong101_relative_mm": [
+      384925.5,
+      93904.5
+    ],
+    "translation_vector_mm": [
+      -320224.7,
+      -8998.4
+    ]
+  },
+  "totals": {
+    "solids": 518,
+    "columns": 485,
+    "girders": 33,
+    "volume_m3": 921.851,
+    "invalid_solids": 0
+  },
+  "bounding_box_mm": {
+    "x_min": 5765.8,
+    "x_max": 123235.8,
+    "y_min": 5567.7,
+    "y_max": 168644.6,
+    "z_min": -8800.0,
+    "z_max": 0.0,
+    "width_m": 117.47,
+    "height_m": 163.08
+  },
+  "validation": {
+    "bbox_reasonable": true,
+    "invalid_solids": 0,
+    "note": "BoundBox 폭·높이 ≤ 200m이면 좌표 정렬 합리적. 두 모델이 겹치거나 110m×107m 범위 내에 있어야 함."
+  },
+  "elapsed_s": 2.7
+}
