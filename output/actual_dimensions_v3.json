@@ -1,0 +1,368 @@
+{
+  "source": "도면에서 읽음 (추정 없음)",
+  "project": "부산 에코델타 24BL",
+  "extraction_date": "2026-05-06",
+  "references": {
+    "floor_sl": "직전 채굴 완료 (B2F SL, B1F SL, 1F SL — 도면 직독)",
+    "slab_thickness": "S40-051~057 슬라브 리스트 150mm 826건 최다",
+    "girder_height": "codex_beams_basement.json 40종 전체 900mm",
+    "parking_columns": "S40-111~112 지하주차장 기둥 리스트.dxf 직독"
+  },
+  "floor_sl_mm": {
+    "B2F": -9050,
+    "B1F": -5600,
+    "1F": 370
+  },
+  "floor_height_mm": {
+    "B2F": 3450,
+    "B1F": 5970,
+    "note": "B2F = B1F_SL - B2F_SL = -5600 - (-9050) = 3450, B1F = 1F_SL - B1F_SL = 370 - (-5600) = 5970"
+  },
+  "slab_thickness_mm": 150,
+  "girder_height_mm": 900,
+  "column_height_mm": {
+    "B2F": 3300,
+    "B1F": 5820,
+    "formula": {
+      "B2F": "B2F 층고 - 슬라브두께 = 3450 - 150 = 3300",
+      "B1F": "B1F 층고 - 슬라브두께 = 5970 - 150 = 5820"
+    }
+  },
+  "z_ranges": {
+    "B2F_column": {
+      "z_bottom": -9050,
+      "z_top": -5750,
+      "note": "B2F SL(바닥) ~ B1F SL - 슬라브두께 = -5600 - 150 = -5750"
+    },
+    "B1F_column": {
+      "z_bottom": -5600,
+      "z_top": 220,
+      "note": "B1F SL(바닥) ~ 1F SL - 슬라브두께 = 370 - 150 = 220"
+    },
+    "B2F_slab": {
+      "z_bottom": -5750,
+      "z_top": -5600,
+      "thickness": 150,
+      "note": "B1F 바닥 슬라브 (B1F SL 기준)"
+    },
+    "B1F_slab": {
+      "z_bottom": 220,
+      "z_top": 370,
+      "thickness": 150,
+      "note": "1F 바닥 슬라브 (1F SL 기준)"
+    },
+    "B2F_girder": {
+      "z_bottom": -6500,
+      "z_top": -5750,
+      "note": "B1F SL - 보높이 = -5600 - 900 = -6500, z_top = B1F SL - 슬라브두께 = -5750"
+    },
+    "B1F_girder": {
+      "z_bottom": -530,
+      "z_top": 220,
+      "note": "1F SL - 보높이 = 370 - 900 = -530, z_top = 1F SL - 슬라브두께 = 220"
+    }
+  },
+  "parking_column_sections": [
+    {
+      "symbol": "-2~-1C1",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1C1A",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1C2",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1C2A",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1C3",
+      "w": 400,
+      "h": 900,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1C4",
+      "w": 550,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1C5",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1C5A",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1C6",
+      "w": 400,
+      "h": 900,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1C6A",
+      "w": 500,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1C7",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1C8",
+      "w": 500,
+      "h": 500,
+      "circular": true,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1EC1",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1EC1A",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1EC2",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1EC2A",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1EC5",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1EC5A",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1EC7",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1EC6",
+      "w": 400,
+      "h": 900,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1EC8",
+      "w": 500,
+      "h": 500,
+      "circular": true,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1EC9",
+      "w": 500,
+      "h": 500,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1AC1",
+      "w": 500,
+      "h": 700,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-2~-1AC2",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1TC1",
+      "w": 400,
+      "h": 800,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "-1TC2",
+      "w": 400,
+      "h": 900,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "1EC8",
+      "w": 500,
+      "h": 500,
+      "circular": true,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "1EC9",
+      "w": 500,
+      "h": 500,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "1EC10",
+      "w": 500,
+      "h": 500,
+      "circular": false,
+      "count_in_list": 1
+    },
+    {
+      "symbol": "1EC11",
+      "w": 500,
+      "h": 500,
+      "circular": true,
+      "count_in_list": 1
+    }
+  ],
+  "parking_column_section_summary": {
+    "400x800": {
+      "count": 16,
+      "circular": false,
+      "note": "지하주차장 표준 기둥 단면 (최다)"
+    },
+    "400x900": {
+      "count": 4,
+      "circular": false
+    },
+    "500x500_circular": {
+      "count": 4,
+      "circular": true,
+      "note": "원형 단면"
+    },
+    "500x500": {
+      "count": 3,
+      "circular": false
+    },
+    "550x800": {
+      "count": 1,
+      "circular": false
+    },
+    "500x700": {
+      "count": 1,
+      "circular": false
+    },
+    "500x800": {
+      "count": 1,
+      "circular": false
+    }
+  },
+  "dong_column_top5": [
+    {
+      "rank": 1,
+      "w": 600,
+      "h": 1200,
+      "symbol_count": 5,
+      "symbols": [
+        "TC1",
+        "TC4",
+        "TC7",
+        "TC9",
+        "TC22"
+      ],
+      "note": "101~112동 최다 단면"
+    },
+    {
+      "rank": 2,
+      "w": 600,
+      "h": 1500,
+      "symbol_count": 4,
+      "symbols": [
+        "TC1",
+        "TC3",
+        "TC5",
+        "TC14"
+      ]
+    },
+    {
+      "rank": 3,
+      "w": 600,
+      "h": 1300,
+      "symbol_count": 2,
+      "symbols": [
+        "TC6",
+        "TC8"
+      ]
+    },
+    {
+      "rank": 4,
+      "w": 1500,
+      "h": 800,
+      "symbol_count": 2,
+      "symbols": [
+        "TC15",
+        "TC16"
+      ]
+    },
+    {
+      "rank": 5,
+      "w": 400,
+      "h": 800,
+      "symbol_count": 2,
+      "symbols": [
+        "C1",
+        "C2"
+      ]
+    }
+  ],
+  "uncollected": []
+}
