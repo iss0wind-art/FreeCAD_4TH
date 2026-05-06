@@ -17,6 +17,7 @@ from core.dxf_parser.full_extractor import FullExtractor, ExtractResult
 from core.dxf_parser.level_parser import parse_dxf as parse_levels, LevelSet, merge_level_sets
 from core.dxf_parser.step_zone import parse_step_zones, StepZone, StepZoneMap
 from core.dxf_parser.wall_extractor import extract_walls, WallExtractResult
+from core.dxf_parser.grid_extractor import extract_grid, StructuralGrid, GridLine
 from core.dxf_parser.structural_filter import (
     is_structural, is_structural_block, classify_layers, report_layer_classification
 )
@@ -34,4 +35,5 @@ __all__ = [
     'extract_walls', 'WallExtractResult',
     'is_structural', 'is_structural_block', 'classify_layers',
     'StructuralExtractor', 'StructuralData', 'extract_structural',
+    'extract_grid', 'StructuralGrid', 'GridLine',
 ]
