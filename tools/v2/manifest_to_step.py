@@ -44,23 +44,86 @@ def main():
     manifest = parse_manifest(text)
     print(f"Manifest 로드: {len(manifest.members)} members, {len(manifest.floors)} floors")
 
-    # 2. spec_lookup 생성 (members[].spec → AUTO-XXX-WxH 패턴 파싱)
+    # 2. spec_lookup 생성 — 다양한 spec 패턴 + catalog.yaml 병합
     import re
-    spec_lookup = {}
-    pat = re.compile(r"AUTO-([A-Z]+)-T?(\d+)(?:[xX](\d+))?")
+    import yaml as _yaml
+
+    spec_lookup: dict = {}
+
+    # 2-a. catalog.yaml (있으면) — BEAM matched (RG3 등), SLAB labels (A,B,...) 등
+    cat_path = manifest_path.parent / "catalog.yaml"
+    if cat_path.exists():
+        try:
+            catalog = _yaml.safe_load(cat_path.read_text(encoding="utf-8")) or {}
+            for sym, info in catalog.items():
+                if not isinstance(info, dict):
+                    continue
+                w = info.get("width_mm"); h = info.get("height_mm")
+                mt = info.get("member_type")
+                if mt == "slab":
+                    # SLAB 카탈로그는 width_mm 에 두께
+                    spec_lookup[sym] = {"thickness_mm": float(w or 0)}
+                elif mt == "wall":
+                    spec_lookup[sym] = {"thickness_mm": float(w or 0)}
+                else:
+                    spec_lookup[sym] = {
+                        "width_mm": float(w or 0),
+                        "height_mm": float(h or w or 0),
+                    }
+            print(f"catalog.yaml 적용: {len(catalog)}건")
+        except Exception as e:
+            print(f"catalog 로드 실패: {e}")
+
+    # 2-b. members[].spec 패턴 자동 추출
+    auto_pat = re.compile(r"AUTO-([A-Z]+)-T?(\d+)(?:[xX](\d+))?")
+    meas_pat = re.compile(r"(COL|FND|WALL|SLAB)-MEAS-T?(\d+)(?:[xX](\d+))?", re.IGNORECASE)
+    slab_lab_pat = re.compile(r"^SLAB-([A-Z0-9]+)-T(\d+)$", re.IGNORECASE)
+    slab_unv_pat = re.compile(r"^SLAB-T(\d+)-UNVERIFIED$", re.IGNORECASE)
+    slab_unm_pat = re.compile(r"^SLAB-([A-Z0-9]+)-UNMATCHED$", re.IGNORECASE)
+
     for m in manifest.members:
         sp = m.spec
         if sp in spec_lookup:
             continue
-        mt = pat.match(sp)
+
+        # COL-MEAS-WxH / FND-MEAS-WxH / WALL-MEAS-TX / SLAB-MEAS-...
+        ms = meas_pat.match(sp)
+        if ms:
+            t, w, h = ms.group(1).upper(), float(ms.group(2)), ms.group(3)
+            if t in ("WALL", "SLAB"):
+                spec_lookup[sp] = {"thickness_mm": w}
+            else:
+                spec_lookup[sp] = {"width_mm": w, "height_mm": float(h or w)}
+            continue
+
+        # SLAB-A-T450 / SLAB-S12-T200
+        ml = slab_lab_pat.match(sp)
+        if ml:
+            spec_lookup[sp] = {"thickness_mm": float(ml.group(2))}
+            continue
+
+        # SLAB-T150-UNVERIFIED
+        mu = slab_unv_pat.match(sp)
+        if mu:
+            spec_lookup[sp] = {"thickness_mm": float(mu.group(1))}
+            continue
+
+        # SLAB-S12-UNMATCHED → 폴백 두께 150
+        mn = slab_unm_pat.match(sp)
+        if mn:
+            spec_lookup[sp] = {"thickness_mm": 150.0}
+            continue
+
+        # 기존 AUTO-XXX-... 패턴
+        mt = auto_pat.match(sp)
         if mt:
             t, w, h = mt.group(1), float(mt.group(2)), mt.group(3)
-            if t == "WALL" or t == "SLAB":
+            if t in ("WALL", "SLAB"):
                 spec_lookup[sp] = {"thickness_mm": w}
             else:
                 spec_lookup[sp] = {"width_mm": w, "height_mm": float(h or w)}
 
-    print(f"spec_lookup: {len(spec_lookup)}건 자동 추출")
+    print(f"spec_lookup: {len(spec_lookup)}건")
 
     # 3. STEP 빌드
     t0 = time.time()

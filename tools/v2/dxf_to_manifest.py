@@ -94,6 +94,15 @@ def main():
     out_path.write_text(yaml_text, encoding="utf-8")
     print(f"\n저장: {out_path} ({out_path.stat().st_size//1024} KB)")
 
+    # 카탈로그도 함께 저장 (STEP 빌드 시 spec_lookup에 활용)
+    if catalog:
+        cat_out = out_path.parent / "catalog.yaml"
+        cat_out.write_text(
+            yaml.safe_dump(catalog, allow_unicode=True, sort_keys=False),
+            encoding="utf-8",
+        )
+        print(f"카탈로그 저장: {cat_out} ({len(catalog)}건)")
+
 
 if __name__ == "__main__":
     main()
