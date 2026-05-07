@@ -123,9 +123,14 @@ def parse_section_list(
 
     for t, x, y in texts:
         s = t.strip()
-        if _PAT_SYMBOL.match(s):
-            symbols.append((s, x, y))
-            continue
+
+        # 콤마/슬래시 결합 처리: 'RG2,REG2' → ['RG2', 'REG2']
+        # 베이스 심볼 우선 (가장 짧은 또는 첫번째)
+        for piece in re.split(r"[,/&]", s):
+            piece = piece.strip()
+            if _PAT_SYMBOL.match(piece):
+                symbols.append((piece, x, y))
+
         m = _PAT_WH.search(s)
         if m:
             try:
