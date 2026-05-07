@@ -22,7 +22,7 @@ from core.dxf_parser.structural_extractor import StructuralExtractor
 from core.dxf_parser.entity_scanner import iter_all
 
 # ── 좌표 통일 ─────────────────────────────────────────────────
-TX_PKG = -448000.0; TY_PKG = 3622000.0
+TX_PKG = -448000.0; TY_PKG = 3621813.0  # TY 기준선 직독 정밀화 (3622000→3621813, 187mm)
 DONG_B1F_DX = 116247.0 - 242247.0   # -126000 (S30-002 → master)
 PKG_B1F_DX  = -630000.0              # -630000 (Y1 기준점으로 검증: B2F X1=1060938, B1F X1=1690938, 차=630000)
 

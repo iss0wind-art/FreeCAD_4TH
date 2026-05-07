@@ -1,0 +1,436 @@
+{
+  "floor": "B2F",
+  "floor_height_mm": 3450,
+  "sl_mm": -9050,
+  "columns": {
+    "count": 545,
+    "volume_m3": 1219.67,
+    "by_size": {
+      "850x600": {
+        "count": 36,
+        "volume_m3": 63.072
+      },
+      "600x850": {
+        "count": 77,
+        "volume_m3": 134.903
+      },
+      "400x800": {
+        "count": 136,
+        "volume_m3": 150.144
+      },
+      "800x400": {
+        "count": 28,
+        "volume_m3": 30.912
+      },
+      "900x750": {
+        "count": 1,
+        "volume_m3": 2.281
+      },
+      "1400x1550": {
+        "count": 3,
+        "volume_m3": 22.616
+      },
+      "1250x1700": {
+        "count": 4,
+        "volume_m3": 29.379
+      },
+      "1600x800": {
+        "count": 1,
+        "volume_m3": 4.416
+      },
+      "1500x800": {
+        "count": 3,
+        "volume_m3": 12.42
+      },
+      "600x2000": {
+        "count": 3,
+        "volume_m3": 12.42
+      },
+      "700x2000": {
+        "count": 2,
+        "volume_m3": 9.66
+      },
+      "850x1300": {
+        "count": 5,
+        "volume_m3": 19.709
+      },
+      "950x1600": {
+        "count": 3,
+        "volume_m3": 15.657
+      },
+      "1500x1450": {
+        "count": 5,
+        "volume_m3": 37.98
+      },
+      "900x1400": {
+        "count": 1,
+        "volume_m3": 4.351
+      },
+      "1600x1550": {
+        "count": 1,
+        "volume_m3": 8.337
+      },
+      "1100x1800": {
+        "count": 2,
+        "volume_m3": 13.685
+      },
+      "1150x1650": {
+        "count": 2,
+        "volume_m3": 12.961
+      },
+      "1150x2100": {
+        "count": 2,
+        "volume_m3": 16.723
+      },
+      "600x1200": {
+        "count": 11,
+        "volume_m3": 27.324
+      },
+      "1000x700": {
+        "count": 4,
+        "volume_m3": 9.66
+      },
+      "600x1000": {
+        "count": 23,
+        "volume_m3": 47.61
+      },
+      "1200x1000": {
+        "count": 2,
+        "volume_m3": 8.28
+      },
+      "1950x2100": {
+        "count": 1,
+        "volume_m3": 14.375
+      },
+      "600x950": {
+        "count": 2,
+        "volume_m3": 4.055
+      },
+      "500x700": {
+        "count": 7,
+        "volume_m3": 8.452
+      },
+      "750x1100": {
+        "count": 6,
+        "volume_m3": 17.234
+      },
+      "850x1600": {
+        "count": 5,
+        "volume_m3": 23.225
+      },
+      "900x1800": {
+        "count": 1,
+        "volume_m3": 5.437
+      },
+      "800x600": {
+        "count": 8,
+        "volume_m3": 13.154
+      },
+      "800x1200": {
+        "count": 1,
+        "volume_m3": 3.203
+      },
+      "850x1500": {
+        "count": 1,
+        "volume_m3": 4.267
+      },
+      "600x1800": {
+        "count": 1,
+        "volume_m3": 3.726
+      },
+      "600x1600": {
+        "count": 2,
+        "volume_m3": 6.624
+      },
+      "1200x600": {
+        "count": 10,
+        "volume_m3": 24.84
+      },
+      "1100x600": {
+        "count": 7,
+        "volume_m3": 15.939
+      },
+      "1000x600": {
+        "count": 7,
+        "volume_m3": 14.49
+      },
+      "1600x600": {
+        "count": 2,
+        "volume_m3": 6.624
+      },
+      "1400x600": {
+        "count": 6,
+        "volume_m3": 17.388
+      },
+      "1300x600": {
+        "count": 8,
+        "volume_m3": 21.528
+      },
+      "600x1300": {
+        "count": 5,
+        "volume_m3": 13.455
+      },
+      "600x1700": {
+        "count": 1,
+        "volume_m3": 3.519
+      },
+      "900x1150": {
+        "count": 5,
+        "volume_m3": 17.889
+      },
+      "1250x950": {
+        "count": 1,
+        "volume_m3": 4.018
+      },
+      "1150x900": {
+        "count": 7,
+        "volume_m3": 25.045
+      },
+      "950x1350": {
+        "count": 4,
+        "volume_m3": 17.918
+      },
+      "1000x1100": {
+        "count": 1,
+        "volume_m3": 3.795
+      },
+      "1000x900": {
+        "count": 1,
+        "volume_m3": 3.105
+      },
+      "700x850": {
+        "count": 1,
+        "volume_m3": 2.028
+      },
+      "850x550": {
+        "count": 15,
+        "volume_m3": 23.638
+      },
+      "550x850": {
+        "count": 19,
+        "volume_m3": 29.941
+      },
+      "500x800": {
+        "count": 1,
+        "volume_m3": 1.38
+      },
+      "900x400": {
+        "count": 1,
+        "volume_m3": 1.242
+      },
+      "400x900": {
+        "count": 1,
+        "volume_m3": 1.242
+      },
+      "700x1100": {
+        "count": 8,
+        "volume_m3": 21.252
+      },
+      "700x1200": {
+        "count": 4,
+        "volume_m3": 11.592
+      },
+      "700x1300": {
+        "count": 3,
+        "volume_m3": 9.418
+      },
+      "700x1600": {
+        "count": 4,
+        "volume_m3": 15.456
+      },
+      "500x500": {
+        "count": 4,
+        "volume_m3": 3.45
+      },
+      "700x500": {
+        "count": 4,
+        "volume_m3": 4.83
+      },
+      "2100x600": {
+        "count": 1,
+        "volume_m3": 4.347
+      },
+      "1100x1600": {
+        "count": 2,
+        "volume_m3": 11.998
+      },
+      "2350x1350": {
+        "count": 1,
+        "volume_m3": 11.026
+      },
+      "1350x950": {
+        "count": 1,
+        "volume_m3": 4.48
+      },
+      "950x1250": {
+        "count": 1,
+        "volume_m3": 4.018
+      },
+      "1050x1500": {
+        "count": 1,
+        "volume_m3": 5.47
+      },
+      "600x1100": {
+        "count": 7,
+        "volume_m3": 15.939
+      },
+      "1400x2450": {
+        "count": 1,
+        "volume_m3": 11.754
+      },
+      "600x2400": {
+        "count": 1,
+        "volume_m3": 4.968
+      },
+      "600x2500": {
+        "count": 1,
+        "volume_m3": 5.175
+      },
+      "900x1100": {
+        "count": 1,
+        "volume_m3": 3.416
+      },
+      "600x1400": {
+        "count": 2,
+        "volume_m3": 5.796
+      },
+      "1000x1550": {
+        "count": 1,
+        "volume_m3": 5.279
+      },
+      "600x1500": {
+        "count": 2,
+        "volume_m3": 6.21
+      },
+      "700x1000": {
+        "count": 1,
+        "volume_m3": 2.415
+      },
+      "700x1700": {
+        "count": 1,
+        "volume_m3": 4.106
+      }
+    }
+  },
+  "beams": {
+    "count": 1026,
+    "volume_m3": 2754.299,
+    "by_size": {
+      "600x900": {
+        "count": 85,
+        "volume_m3": 237.302,
+        "total_length_m": 439.45
+      },
+      "500x600": {
+        "count": 335,
+        "volume_m3": 622.97,
+        "total_length_m": 2076.57
+      },
+      "400x800": {
+        "count": 88,
+        "volume_m3": 177.15,
+        "total_length_m": 553.59
+      },
+      "500x900": {
+        "count": 226,
+        "volume_m3": 562.497,
+        "total_length_m": 1249.99
+      },
+      "900x900": {
+        "count": 24,
+        "volume_m3": 143.977,
+        "total_length_m": 177.75
+      },
+      "700x900": {
+        "count": 93,
+        "volume_m3": 378.054,
+        "total_length_m": 600.09
+      },
+      "600x1500": {
+        "count": 5,
+        "volume_m3": 13.0,
+        "total_length_m": 14.44
+      },
+      "800x900": {
+        "count": 45,
+        "volume_m3": 233.212,
+        "total_length_m": 323.91
+      },
+      "500x700": {
+        "count": 8,
+        "volume_m3": 18.264,
+        "total_length_m": 52.18
+      },
+      "700x1700": {
+        "count": 2,
+        "volume_m3": 4.927,
+        "total_length_m": 4.14
+      },
+      "600x600": {
+        "count": 11,
+        "volume_m3": 34.463,
+        "total_length_m": 95.73
+      },
+      "600x1600": {
+        "count": 2,
+        "volume_m3": 0.944,
+        "total_length_m": 0.98
+      },
+      "400x900": {
+        "count": 4,
+        "volume_m3": 21.709,
+        "total_length_m": 60.3
+      },
+      "700x600": {
+        "count": 10,
+        "volume_m3": 25.495,
+        "total_length_m": 60.7
+      },
+      "600x1000": {
+        "count": 1,
+        "volume_m3": 2.341,
+        "total_length_m": 3.9
+      },
+      "600x2000": {
+        "count": 2,
+        "volume_m3": 6.653,
+        "total_length_m": 5.54
+      },
+      "1000x900": {
+        "count": 8,
+        "volume_m3": 51.581,
+        "total_length_m": 57.31
+      },
+      "1100x900": {
+        "count": 22,
+        "volume_m3": 144.087,
+        "total_length_m": 145.54
+      },
+      "800x1500": {
+        "count": 2,
+        "volume_m3": 10.293,
+        "total_length_m": 8.58
+      },
+      "1500x1000": {
+        "count": 1,
+        "volume_m3": 11.091,
+        "total_length_m": 7.39
+      },
+      "700x1500": {
+        "count": 3,
+        "volume_m3": 24.775,
+        "total_length_m": 23.59
+      },
+      "800x1700": {
+        "count": 2,
+        "volume_m3": 14.28,
+        "total_length_m": 10.5
+      },
+      "1200x900": {
+        "count": 2,
+        "volume_m3": 15.236,
+        "total_length_m": 14.11
+      }
+    }
+  }
+}
