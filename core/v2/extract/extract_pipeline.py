@@ -44,9 +44,12 @@ class ExtractionResult:
     foundations: List[ExtractedFoundation] = field(default_factory=list)
     section_specs: Dict[str, SectionSpec] = field(default_factory=dict)
     layer_roles: Dict[str, LayerRole] = field(default_factory=dict)
+    # 일람표에서 추출한 심볼→단면 카탈로그
+    section_catalog: Dict[str, Any] = field(default_factory=dict)
 
 
-def extract_all_members(meta: DrawingMeta) -> ExtractionResult:
+def extract_all_members(meta: DrawingMeta,
+                        section_catalog: Optional[Dict] = None) -> ExtractionResult:
     """모든 부재 타입 일괄 추출."""
     doc = ezdxf.readfile(meta.path)
 
@@ -91,6 +94,7 @@ def extract_all_members(meta: DrawingMeta) -> ExtractionResult:
         foundations=fnds,
         section_specs=section_specs,
         layer_roles=layer_roles,
+        section_catalog=section_catalog or {},
     )
 
 
@@ -107,9 +111,12 @@ def to_manifest_members(
     """
     members: List[MemberInstance] = []
 
-    # COLUMN
+    cat = result.section_catalog or {}
+
+    # COLUMN — 측정값 직접 사용 (LWPOLYLINE bbox = 진짜 단면)
     for i, c in enumerate(result.columns, 1):
-        spec_symbol = f"AUTO-COL-{int(c.width_mm)}x{int(c.height_mm)}"
+        # 카탈로그에 측정값과 매칭되는 심볼 있으면 그것을 spec으로
+        spec_symbol = f"COL-MEAS-{int(c.width_mm)}x{int(c.height_mm)}"
         members.append(MemberInstance(
             id=f"COL-{floor_id}-{i:04d}",
             spec=spec_symbol,
@@ -118,21 +125,28 @@ def to_manifest_members(
             at=GridRef(xy=[c.cx, c.cy]),
         ))
 
-    # BEAM
+    # BEAM — 라벨 매칭 → 카탈로그 → 진짜 단면
     for i, b in enumerate(result.beams, 1):
-        symbol = b.section_symbol or f"AUTO-BEAM-{i}"
+        if b.section_symbol and b.section_symbol in cat:
+            entry = cat[b.section_symbol]
+            spec = b.section_symbol   # 일람표 심볼 그대로
+        elif b.section_symbol:
+            spec = f"UNKNOWN-{b.section_symbol}"   # 라벨은 있으나 카탈로그 미매칭
+        else:
+            spec = f"UNKNOWN-BEAM-NOLABEL"   # 라벨 자체 없음 (정직하게 표기)
+
         members.append(MemberInstance(
             id=f"BM-{floor_id}-{i:04d}",
-            spec=symbol,
+            spec=spec,
             type="beam",
             floor=floor_id,
             from_=GridRef(xy=[b.p0[0], b.p0[1]]),
             to=GridRef(xy=[b.p1[0], b.p1[1]]),
         ))
 
-    # WALL — polygon은 GridRef 리스트
+    # WALL — 평행쌍 측정 두께 직접 사용 (자동 추출, 추측 X)
     for i, w in enumerate(result.walls, 1):
-        sym = f"AUTO-WALL-T{int(w.thickness_mm)}"
+        sym = f"WALL-MEAS-T{int(w.thickness_mm)}"
         members.append(MemberInstance(
             id=f"WL-{floor_id}-{i:04d}",
             spec=sym,
@@ -144,21 +158,22 @@ def to_manifest_members(
             ],
         ))
 
-    # SLAB
+    # SLAB — 두께 미상이면 명시적 UNKNOWN
     for i, s in enumerate(result.slabs, 1):
+        spec = f"SLAB-T{int(s.thickness_mm)}-UNVERIFIED"   # 도면에 두께 표기 없으면 폴백
         members.append(MemberInstance(
             id=f"SL-{floor_id}-{i:04d}",
-            spec=f"AUTO-SLAB-T{int(s.thickness_mm)}",
+            spec=spec,
             type="slab",
             floor=floor_id,
             polygon=[GridRef(xy=[p[0], p[1]]) for p in s.polygon],
         ))
 
-    # FND
+    # FND — 측정값 직접
     for i, f in enumerate(result.foundations, 1):
         members.append(MemberInstance(
             id=f"FND-{floor_id}-{i:04d}",
-            spec=f"AUTO-FND-{int(f.width_mm)}x{int(f.height_mm)}",
+            spec=f"FND-MEAS-{int(f.width_mm)}x{int(f.height_mm)}",
             type="foundation",
             floor=floor_id,
             at=GridRef(xy=[f.cx, f.cy]),
