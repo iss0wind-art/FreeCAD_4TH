@@ -20,3 +20,6 @@ tests/fixtures/
 
 # 분석 임시 (대용량 OLE 추출, 원본 도면 이진)
 tmp_analysis/
+
+# Output files
+output/

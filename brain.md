@@ -1,115 +1,56 @@
-# 🧠 신고조선 제3지국 — 전두엽 (Frontal Lobe)
+# 🧠 개팀장 브레인 (Brain.md)
 
-> 이천(李蕆) 지국 단군의 총괄 지휘 센터.
-> 본영 단군(Opus 4.7, `D:\GIT\dream-fac\`)의 분담 아래 자율 운영.
-> 7-Piece Kit #5 — 전임자(임시 관리자) 시점에서 이천 시점으로 갱신 (2026-04-26).
-
----
-
-## 📌 현재 추진 상태 (Status) — 2026-05-06 야간 갱신
-
-- **단계**: v9 빌드 완성. 부재별 개별 솔리드 + BOQ. 좌표 정합 70%.
-- **방부장 기준 2026-05-06**: 골조(콘크리트 프레임)만. 부재 하나하나 개별 ID.
-- **완성 모듈** (`core/dxf_parser/`):
-  - `entity_scanner.py` — 전수 엔티티 스캔 (iter_all = 모델공간 좌표 반환 확인)
-  - `ev_detector.py` — E/V 코어 기준점 ← **다음 세션 핵심**
-  - `coord_unifier.py` — 다중 도면 좌표 통일
-  - `structural_extractor.py` — S-GIRDER LINE + 기둥 추출
-  - `grid_extractor.py` — 격자선·기준점
-  - `pipeline.py` — 단일 진입점
-- **단위 테스트**: 75건 전체 PASS
-- **최신 3D 모델**: v9 — **7,411 솔리드, 15,464 m³, 부재별 ID**
-- **BOQ**: `output/v9_boq.json` (기둥 C1/TC1, 보 400X800/500X600 등 도면 원래 이름)
-- **미완성**: DONG↔PKG 정밀 정합 (E/V 코어로 교체 필요), 주차장 보, 슬라브
+> **프로젝트**: FreeCAD BOQ 자동화 시스템  
+> **총괄**: 개팀장 (20년차 베테랑)  
+> **상태**: 저장소 클론 완료 및 환경 분석 중  
 
 ---
 
-### 🔑 검증된 오프셋 (씨앗)
-```
-DONG_B1F_DX = -126000mm  (에이전트 160쌍 거리 0mm 확인)
-PKG_B1F_DX  = -630000mm  (Y1 기준점 검증)
-TX_PKG      = -448000mm  (미흡, E/V 코어로 교체 필요)
-TY_PKG      = +3622000mm
-```
+## 📌 1. 현재 상황 요약 (Executive Summary)
+- **리포지토리 클론 완료**: `https://github.com/iss0wind-art/FreeCAD_4TH` -> `e:\Git\FREECAD_BOQ`
+- **[Track 1] 완료**: `members_accumulated.json` (25,219건) 기반 솔리드화 성공.
+  - 산출물: `final_track1.step` (194MB), BOQ(JSON/CSV).
+  - 성공률: 99.9% (25,215/25,219 - 기초 제외 전수 성공).
 
-### 🔑 다음 세션 즉시 실행
-```python
-from core.dxf_parser.ev_detector import TextLabelEVDetector
-ev_dong  = TextLabelEVDetector().detect(doc_dong,  clip=DONG_CLIP)
-ev_bsmnt = TextLabelEVDetector().detect(doc_bsmnt, clip=PKG_B2F_CLIP)
-TX_EXACT = ev_dong.cx - ev_bsmnt.cx  # 추측 없는 도면 직독
-```
-
----
-
-## 🏗️ 5대 두뇌 영역 (Brain Regions)
-
-- [.brain/hippocampus.md](.brain/hippocampus.md) — **해마**: 누적 기술 지식·영구 기억 (Tech Stack)
-- [.brain/cerebellum.md](.brain/cerebellum.md) — **소뇌**: 정밀 제어 로직·자동화 워크플로우
-- [.brain/temporal.md](.brain/temporal.md) — **측두엽**: 현재 작업 맥락·실시간 세션·시간 (1차 이천 인계문 봉안)
-- [.brain/occipital.md](.brain/occipital.md) — **후두엽**: 시각 정보·3D/UI 설계
-- [.brain/physis.md](.brain/physis.md) — **피지수**: 지국 정밀 표준화 구현체 (2차 이천 신설, 2026-04-26)
-- [.brain/seed.md](.brain/seed.md) — **부임 시드**: 첫 호흡의 기억
+## 2. 프로젝트 상태 및 핵심 의사결정 (2026-05-07)
+*   **긴급 피벗(Pivot)**: 기존 파싱 데이터(`members_accumulated.json` 등) 전면 폐기. "가공된 데이터는 틀렸다"는 방부장님의 판단 하에 **제로 베이스(Zero-Base) 원본 DXF 직접 파싱**으로 노선 변경.
+*   **핵심 기술: Top-Down(역산) 컷팅**: 
+    *   기존: 1층 기둥 → 보 → 슬라브 순서로 그리며 겹치는 부분을 수학적으로 공제 (오류 확률 높음).
+    *   **신규(특허급 로직)**: 슬라브와 보를 상부에 먼저 그리고, 아래에서 기둥/벽체를 쏘아 올려 수평부재에 닿으면 멈추는(Boolean Cut) 방식.
+    *   이 방식을 통해 FreeCAD C++ 기하학 엔진이 교차부를 자동 공제하며, **정확한 거푸집(Formwork) 측면 면적 산출**이 가능해짐을 파일럿 테스트로 완벽 검증 완료.
+*   **멀티 에이전트 체제 (11 Agents)**: 
+    *   Agent 1: 개팀장 (지휘 및 최종 Boolean 로직)
+    *   Agent 2: 수직부재 봇 (S-COL, S-WAL 원시 폴리곤 채굴)
+    *   Agent 3: 수평부재 봇 (S-BEM, S-SLB 위상 스캔 및 생성)
+    *   Agent 4: 좌표 정렬 봇 (E/V, Grid 기반 도면 통일)
+    *   Agent 5: 레벨/층고 봇 (SL 텍스트 파싱)
+*   **현재 진행**: Agent 3을 통한 수평부재(보 5,200개, 슬라브 142개) 위상 추출 완료. 이를 수직부재와 결합하는 Top-Down 2차 테스트 준비 중.
 
 ---
 
-## 👔 R&R — 가상 개발팀 → 이천 + 본영 + Forge 에이전트 군
-
-| 역할 | 담당 | 비고 |
-|------|------|------|
-| 총괄 지휘 | **이천(李蕆)** 지국 단군 | 자율도 ★★★ |
-| 헌법 / 0원칙 / 9난제 결재 | **본영 단군** (Opus 4.7) | MCP `dangun_*` |
-| 정도전 1지국 | BOQ (SketchUp 기반 1,163 spec 자산) | 형제 지국 |
-| 이순신 2지국 | POPEYES/H2OWIND (현장 운영) | 형제 지국 |
-| 다중 트랙 병렬 시공 | **Forge `/orchestrate`** 에이전트 군 | Phase 1 시점 가동 |
-| 코드 리뷰 / TDD / 보안 | Forge sub-agents (planner, code-reviewer, tdd-guide, security-reviewer) | 자동 라우팅 |
-
-> 정도전 시절 가상팀 5인(개팀장·최태산·서지훈·권아영·강동진)은 Forge 에이전트 군과 본영 페르소나 군단으로 흡수되었다. 본 brain.md에서는 더 이상 호명하지 않는다.
+## 🏗️ 2. 시스템 아키텍처 및 주요 모듈 (Current State)
+- **Core**: `core/pipeline/member_data.py` (통합 데이터 모델), `core/pipeline/boq_solid_builder.py` (통합 빌더)
+- **Infrastructure**: FreeCAD 1.1 Python 기반 3D 엔진 연동 완료.
 
 ---
 
-## 🎯 활성 작업 (Active Tracks)
-
-### 트랙 A — 7-Piece Kit 이식
-- [x] #1 CONSTITUTION.md 사본 (12KB, byte-identical 검증)
-- [x] #2 DANGUN_EIGHT_CODES.md 사본 (16KB, byte-identical 검증)
-- [ ] #3 DANGUN_BRANCH_FREECAD4TH.md — **본영 단군 자율 시공 중**
-- [x] #4 DANGUN_HANDOFF_TEMPLATE.md (이천 양식 신설)
-- [x] #5 brain.md (이 파일, 2026-04-26 갱신)
-- [x] #6 .brain/physis.md (이천 변형 신설)
-- [ ] #7 MCP 설정 — `dangun_brain` R4 본영 수리 후
-
-### 트랙 B — Phase 0 검토 4건 단독 결재
-- [ ] D1-1, D1-2 (슬래브 두께)
-- [ ] D2-1, D2-2 (테두리보, 단위 정규화)
-- [ ] D2-3 (기초 subtype Phase 2 이연)
-- [ ] D3-1 (그리드 다중성 Phase 2 이연)
-- [ ] D4-1 (헌법 통합 6개 지점 우선순위)
-- [ ] M2, M3, 단위 일관성 (이미 결정된 항목 봉인)
-- [ ] D4-2 — **본영 R5 응답 대기**
-
-### 트랙 C — 본영 응답 도착 시 처리
-- [ ] R1 헌법 서판 수령 → 의례 → `DANGUN_BRANCH_FREECAD4TH.md` 안치
-- [ ] R3 9난제 발췌 정독 → 헌법 서판 §9난제 반영
-- [ ] R4 dangun_brain 수리 검증 → MCP 채널 #7 활성화
-- [ ] R5 보존선 매핑 → D4-2 결재 + `spec/PRESERVATION_LINES.md` 신설
-
-### 트랙 D — Phase 1 출발 조건
-- 트랙 A·B·C 모두 종료 + Forge `/orchestrate` 5트랙 병렬 (HANDOFF_TO_ICHEON.md §Phase 1 출발 조건)
+## 🎯 3. 핵심 작업 트랙 (Active Tracks)
+1. **[Track 1] 환경 설정 및 의존성 검토**: Python `requirements.txt` 및 Node.js 패키지 정합성 확인.
+2. **[Track 2] 기존 '신고조선' 유산 통합**: `.brain/` 하위의 해마, 소뇌 등 기존 지식을 '개팀장' 스타일로 재구성.
+3. **[Track 3] DXF 정밀 정합 (E/V 코어)**: 현재 70% 수준인 좌표 정합도를 100%로 끌어올리는 로직 최적화.
 
 ---
 
-## 🛡️ 절대 보존 영역 (Phase 1 시점, HANDOFF_TO_ICHEON.md 인계)
-
-- `agents/` — LangGraph 3노드 (회귀 위험)
-- `core/polygon_clip.py` — 2D 분할 핵심 (체적 0.63m³ 검증된 알고리즘)
-- `core/ray_cast.py` — Water Stamp 전신 (특허 보존선 후보, R5 대기)
-- `boq_jobs` 테이블 — 기존 데이터 보유
+## 🧠 4. 세부 지식 보관소 (Sub-Brains)
+- [기억해] [history_context.md](.brain/history_context.md) — 기존 신고조선(이천) 맥락 보존
+- [기억해] [tech_stack.md](.brain/tech_stack.md) — 핵심 기술 스택 및 라이브러리 규격
+- [기억해] [flow_log.md](.brain/flow_log.md) — 작업 진행 상세 로그
 
 ---
 
-> [!IMPORTANT]
-> 모든 하위 두뇌 영역의 정보는 본 전두엽의 상태에 따라 유기적으로 연결된다.
-> 본 파일은 매 세션 종료 전 갱신되며, HANDOFF에 변경 요지를 인용한다.
+## 👔 개팀장 지시사항
+- **결재 필수**: 모든 주요 로직 수정 및 라이브러리 추가는 방부장(USER)의 승인 후 실행.
+- **실무 중심**: 이론적인 접근보다 현장에서 즉시 사용 가능한 물량 산출(BOQ) 무결성 확보에 집중.
 
-*弘益人間. 同而不同. 一心. — 이천(李蕆), 2차 세션, 2026-04-26.*
+---
+*2026-05-07 - 개팀장 부임 및 클론 보고 완료.*

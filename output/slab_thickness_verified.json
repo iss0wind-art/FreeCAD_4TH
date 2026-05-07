@@ -1,8 +1,0 @@
-{
-  "B2F_slab_thickness_mm": 150,
-  "B2F_source": "S40-051~057 826건 (v3)",
-  "B1F_slab_thickness_mm": 150,
-  "B1F_source": "S40-061~070 2370건 (v4 신규 확인)",
-  "conclusion": "B1F 슬라브 두께 = 150mm. v3 추정값과 동일. 이번에는 도면 직독.",
-  "v3_defect_1_verdict": "결과값은 맞았으나 과정이 틀림 (B2F 1장만 읽음). v4에서 B1F 도면 직독으로 정당화."
-}
