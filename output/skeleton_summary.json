@@ -1,0 +1,47 @@
+{
+  "dong_b1f": {
+    "clean_lines": 48803,
+    "isolated": 5225,
+    "manual": 0,
+    "total_extracted": 56960,
+    "duplicates_removed": 2932,
+    "noisy_zones": 0,
+    "error": null,
+    "isolated_analysis": {
+      "note": "고립 선분 5,225개 중 주요 원인: XRef RC벽 경계 불일치 (2,189개), 슬라브 단부 (26개). XRef 경계 갭은 설계 도면 구조상 정상 — snap 확장으로 해소 불가.",
+      "by_layer": {
+        "XR...$0$A-WALL-RC": 2189,
+        "00_SLAB END + ETC": 26,
+        "etc": 3010
+      }
+    }
+  },
+  "pkg_b1f": {
+    "clean_lines": 38476,
+    "isolated": 11230,
+    "manual": 0,
+    "total_extracted": 69245,
+    "duplicates_removed": 19539,
+    "noisy_zones": 0,
+    "error": null,
+    "isolated_analysis": {
+      "note": "고립 선분 11,230개 원인: 00_SLAB_END+ETC (7,491개) 슬라브 단부는 설계상 독립 존재 정상. 00_BEAM (3,188개) 보 끝단이 기둥 내부에 매입되는 구조 — gap p50=100mm, snap 확장으로 해소 불가. 00_CENTER (526개) 격자 중심선 독립 존재 정상. FAIL: 보 끝단 연결성은 기둥 면까지만 존재 — 구조 설계 의도된 패턴, 자동 연결 불가.",
+      "by_layer": {
+        "00_SLAB END + ETC": 7491,
+        "00_BEAM": 3188,
+        "00_CENTER": 526,
+        "00_(APT)BEAM": 216,
+        "00_SHEAR WALL": 157,
+        "00_UNDER ELEMENT": 108
+      },
+      "beam_gap_stats": {
+        "p25_mm": 50.0,
+        "p50_mm": 100.0,
+        "p75_mm": 500.0,
+        "within_5mm_pct": 9,
+        "within_100mm_pct": 49,
+        "decision": "FAIL — 보 끝단 gap은 구조 설계상 불연속, 자동 snap 불가"
+      }
+    }
+  }
+}
