@@ -1,240 +1,227 @@
-# Master Plan — 좌표 통일 + 부재 정확 파싱 정밀화
+# Master Plan v3 — 도면-Agnostic 백지 시작
 
-> 확정: 2026-05-07 (제2판)
+> 확정: 2026-05-07 (제3판)
 > 단군: 이천(李蕆), 신고조선 제3지국
-> 방부장 명령: "좌표 통일 + 부재 정확 파싱 = 두 기본. Track 2는 그 다음"
-> 이전 계획: docs/forge_brief.md (투트랙 전략)
+> 방부장 명령: "좌표·부재 모두 백지부터 새로 시작.
+>             아무 도면을 넣어줘도 척하고 모델링·수량산출하는 시스템 = 핵심"
 
 ---
 
-## 핵심 진단 (탐사로 확정)
+## 헌장 (Charter)
 
-두 도면 모두 **시트/동이 동일 도면 안에 격자 라벨로 식별 가능**.
+**목표**: 어떤 KS 구조도면 DXF가 들어와도, 매직넘버 입력 없이
+**(1) 부재 솔리드 STEP + (2) BOQ JSON/CSV** 자동 출력.
 
-**PKG DXF**:
-- 동일 `Y18` 라벨이 X = 317,083 / 947,083 / 1,577,083 — **간격 정확히 630,000mm**
-- 또 다른 그룹 757,131 / 1,387,131 / 2,017,131 (PIT/B1F 시트)
-- → 한 도면에 6개 시트 (3동 × 2층). 격자 라벨 X 클러스터링으로 자동 분리 가능
+### 4대 원칙
+1. **하드코딩 금지** — `TX=-447970` 같은 매직넘버 코드에 0건. lint rule로 강제
+2. **도면-내재 신호만 신뢰** — 시트 경계·격자 라벨·레이어 통계는 그 DXF가 말해주는 것에서 추출
+3. **KS 표준만 사전지식** — `S-*` prefix, `Xn`/`Yn` 격자, `SL=GL.X.Xm` 표기. 그 외는 데이터 학습
+4. **검증 우선 (TDD)** — 모든 추출 함수는 fixture 통과 후 다음 단계
 
-**DONG DXF**:
-- 시트 BBox는 `f1_anchor_102_9sheets.json`에 9시트 단위로 추출됨
-- 인접 시트 W=126,000mm, H=178,200mm 박스 격자 배치
-- `DONG_B1F_DX = -126,000` (박제값) ↔ 시트 W와 정확히 일치 → 시트 SW 코너만 자동 검출하면 모든 층 오프셋 자동
+### 디렉토리 격리
+- 신규: `core/v2/`, `tests/v2/`, `tools/v2/`, `output/v2/<project_id>/`
+- 기존 `core/dxf_parser/`, `core/pipeline/`은 보존만, **import 금지**
+- baseline 산출물은 **검증 기댓값**으로만 (강제 일치 X)
 
 ---
 
-## 8 Phase 구조
+## 공통 IR (Phase 모두가 합의)
+
+`core/v2/ir.py` — 단일 진실 원천
+
+- `DrawingMeta` — 도면 단위 (단위·시트·레이어 통계·종류)
+- `SheetMeta` — 한 평면도 (경계·SW 모서리·격자·SL)
+- `SheetTransform` — 시트→절대좌표 변환 (tx/ty/tz/rot)
+- `MemberInstance` — 절대좌표 부재 인스턴스 (id·type·section·증거)
+
+---
+
+## 7 Phase 구조
 
 | Phase | 내용 | Forge | 의존 |
 |-------|------|-------|------|
-| 0 | sheet_detector.py 신설 (PKG/DONG 시트 자동 검출) | — | 없음 |
-| 1 | DONG 시트별 X·Y 오프셋 자동 계산 | #A | Phase 0 |
-| 2 | PKG 동별 클립 + 좌표 매칭 (#A와 병렬) | #B | Phase 0 |
-| 3 | coord_config v2 + 변환 통합 모듈 | #C | Phase 1+2 |
-| 4 | WALL LINE 쌍 매칭 (line_pairing.py 활용) | #D | Phase 3 |
-| 5 | BEAM·FND 단면 텍스트 자동 매핑 (#D와 병렬) | #E | Phase 3 |
-| 6 | 잡선 필터 강화 | #F | Phase 4 |
-| 7 | SLAB 다른 동 PKG 추출 + FND 단면 보강 | #G | Phase 2+5 |
-| 8 | v14_full 통합 빌드 + 검증 | #H | Phase 1~7 |
+| 1 | DXF 메타 자동 검출 | #1 | 없음 |
+| 2 | 좌표 시스템 자동 구축 | #2 | Phase 1 |
+| 3 | 부재 자동 분류 (레이어 자가학습) | #3 | Phase 1 (#2와 병렬) |
+| 4 | 부재 형상 정규화 (5개 부재) | #4~8 | Phase 2+3 |
+| 5 | 솔리드 빌더 + STEP | #9 | Phase 4 |
+| 6 | BOQ 산출 | #10 | Phase 4 (#9와 병렬) |
+| 7 | 검증 + 일반화 테스트 | #11 | Phase 5+6 |
 
 ---
 
-## Phase 0 — sheet_detector.py 신설
+## Phase 1 — DXF 메타 자동 검출
 
-| 항목 | 값 |
-|------|-----|
-| 파일 | `core/dxf_parser/sheet_detector.py` (신설) |
-| 함수 | `scan_pkg_grid_clusters(dxf)`, `scan_dong_sheet_boxes(dxf)` |
-| 완료 기준 | PKG 동 3개·시트 6개, DONG 시트 ≥ 8개 자동 검출 |
-| 검증 | `python -c "from core.dxf_parser.sheet_detector import ..."` |
+신규:
+- `core/v2/io/dxf_loader.py`
+- `core/v2/inspect/units_detector.py` — `$INSUNITS` + bbox + DIMENSION 통계
+- `core/v2/inspect/sheet_segmenter.py` — **3중 신호** (TITLEBLOCK + 표제 TEXT + 외곽 클러스터링)
+- `core/v2/inspect/text_classifier.py` — 7부류 정규식 (격자/표고/단면/시트코드/dim)
+- `core/v2/inspect/layer_profiler.py` — 레이어별 통계
+- `core/v2/inspect/sl_extractor.py` — `SL=GL.X.Xm` 자동 파싱
+- `core/v2/inspect/drawing_kind_classifier.py` — DONG/PKG/SECTION 자동 추정
+- `core/v2/inspect/meta_pipeline.py` — `inspect(dxf) -> DrawingMeta`
 
----
-
-## Phase 1 — DONG 시트별 X·Y 오프셋 자동 계산 (Forge #A)
-
-| 항목 | 값 |
-|------|-----|
-| 파일 | `sheet_detector.py::DongSheetDetector` |
-| 함수 | `detect(doc) -> dict[sheet_id, SheetTransform]` |
-| 완료 기준 | B1F `DX=-126,000` ± 5mm 자동 재생성, 격자 일치 ≤ 50mm |
-| 검증 | `python tests/test_dong_sheet_offsets.py` |
-
-알고리즘: `f1_anchor_102_9sheets.py` 시트 BBox 로직 재사용 → 기준 시트(B2F·S30-001) SW를 (0,0)으로 두고 나머지 시트 오프셋 사전 생성.
+**완료 기준**:
+- DONG: 시트 9개, sheet_pitch 126,000±100mm 자동 추출
+- PKG: 시트 6개, X 피치 630,000±100mm 자동 추출 (현 매직넘버와 일치, 매직넘버 없이)
+- 단위 오검출 0건
 
 ---
 
-## Phase 2 — PKG 동별 클립 + 좌표 매칭 (Forge #B, Phase 1과 병렬)
+## Phase 2 — 좌표 시스템 자동 구축
 
-| 항목 | 값 |
-|------|-----|
-| 파일 | `sheet_detector.py::PkgDongDetector`, `coord_unifier.py` 확장 |
-| 함수 | `PkgDongDetector.detect(doc)`, `CoordUnifier.match_per_dong()` |
-| 완료 기준 | 3개 동 클립 검출, 동별 매칭율 ≥ 95%, 오차 median ≤ 50mm |
-| 검증 | `python tests/test_pkg_dong_offsets.py` |
+신규:
+- `core/v2/coords/grid_resolver.py` — 시트별 격자 X·Y 좌표
+- `core/v2/coords/anchor_finder.py` — 앵커 우선순위 (X1·Y1 교점 → EV 코어 → SW)
+- `core/v2/coords/sheet_alignment.py` — 같은 도면 시트 간 정렬
+- `core/v2/coords/cross_drawing_aligner.py` — **ICP 점군 정합** (PKG↔DONG)
+- `core/v2/coords/transform_pipeline.py`
+- `core/v2/coords/validator.py`
 
-알고리즘:
-1. PKG 격자 라벨 X 클러스터 → 동 N개, 클립 박스 = X 중심 ± 80,000
-2. 각 동 안의 `00_COLUMN` 추출 → DONG B2F 기둥과 brute-force 매칭
-3. 결과: `{101: (TX, TY), 102: (TX, TY), 103: (TX, TY)}`
+**완료 기준**:
+- 에코델타 ICP 매칭율 ≥ 90% (현 brute force 98.6% 근접)
+- baseline `coord_config.json` TX/TY와 자동 추출 차이 < 100mm
+- residual_mm_max ≤ 50mm
 
 ---
 
-## Phase 3 — coord_config.json v2 + 변환 통합 (Forge #C)
+## Phase 3 — 부재 자동 분류 (Phase 2와 병렬)
 
-| 항목 | 값 |
-|------|-----|
-| 파일 | `output/coord_config.json` v2, `core/pipeline/coord_apply.py` (신설) |
-| 함수 | `CoordTransformer.from_config(path)`, `transform_member(m)` |
-| 완료 기준 | TDD 단위 테스트 80%+, v1+v2 호환, 미지정 부재 폴백 |
-| 검증 | `python -m pytest tests/unit/test_coord_apply.py` |
+신규:
+- `core/v2/classify/ks_lexicon.py` — KS 일반 키워드만 (도면별 레이어명 X)
+- `core/v2/classify/layer_role_inferer.py` — 키워드 + 통계 합의
+- `core/v2/classify/entity_role_voter.py` — 3σ outlier 격하
+- `core/v2/classify/member_router.py`
 
-스키마:
-```json
-{
-  "schema_version": 2,
-  "dong_sheets": {
-    "B2F": {"DX": 0,        "DY": 0, "TZ": -9050},
-    "B1F": {"DX": -126000,  "DY": 0, "TZ": -5600},
-    "1F":  {"DX": -252000,  "DY": 0, "TZ":   370}
-  },
-  "pkg_dongs": {
-    "101": {"TX": -447970, "TY": 3621813, "clip": [...]},
-    "102": {"TX":  182030, "TY": 3621813, "clip": [...]},
-    "103": {"TX":  812030, "TY": 3621813, "clip": [...]}
-  },
-  "legacy": {"TX_PKG": -447970, "TY_PKG": 3621813}
-}
+**KS_KEYWORDS** (예):
+```python
+'COLUMN':     ['COLUMN','COL','기둥','C-']
+'WALL':       ['WALL','벽체','SHEAR','W-','RC']
+'BEAM':       ['BEAM','GIRDER','GDR','보','RG','RB','TB','FB','G-','B-']
+'SLAB':       ['SLAB','바닥','FLOOR','SL-','PC-SLAB']
+'FOUNDATION': ['FOOTING','FOUNDATION','MAT','PILE','기초','FND','F-']
+'IGNORE':     ['DIM','HATCH','TEXT','CEN','HID','XREF','XR','DEF','A-','AH-',...]
 ```
 
-`Member` dataclass에 `sheet_id`, `dong_id` 옵션 필드 추가.
+**완료 기준**:
+- 부재 레이어 분류 정확도 ≥ 95% (사람 검수 100개 샘플)
+- IGNORE 오분류 0건
 
 ---
 
-## Phase 4 — WALL LINE 쌍 매칭 (Forge #D)
+## Phase 4 — 부재 형상 정규화 (5개 부재 병렬, Forge #4~8)
 
-| 항목 | 값 |
-|------|-----|
-| 파일 | `stage2_member_classifier.py` 수정, `core/pipeline/wall_pair_resolver.py` 신설 |
-| 함수 | `resolve_wall_pairs(wall_lines) -> list[Member]` |
-| 완료 기준 | WALL 17,057 → 7,000~8,500개로 축소, 단일 두께 시각화 |
-| 검증 | `python tests/test_wall_pair_count.py` |
+신규 (각 부재 1명):
+- `core/v2/extract/columns.py` — minimum-area rectangle, 단면 라벨 매칭
+- `core/v2/extract/walls.py` — **평행쌍 매칭** (각도 ±1°, 거리 100~600mm), 두께 자동 추출
+- `core/v2/extract/beams.py` — 평행쌍 + 격자 직선, RG1/G1 라벨
+- `core/v2/extract/slabs.py` — 외곽 polygon, 두께 SL TEXT
+- `core/v2/extract/foundations.py` — area + F1/MAT/PILE 라벨
+- `core/v2/extract/section_text.py` — `C1: 600x600` 등 KS 단면 표기 정규식
+- `core/v2/extract/extract_pipeline.py`
 
-설계:
-- 동일 레이어·시트의 LINE을 모아 `pair_walls()` 호출
-- 페어 거리 = 벽 두께, height = 층고
-- `min_dist`/`max_dist` 레이어별: SHEAR 250-350, RC 150-250
-
----
-
-## Phase 5 — BEAM·FND 단면 텍스트 자동 매핑 (Forge #E, #D와 병렬)
-
-| 항목 | 값 |
-|------|-----|
-| 파일 | `core/pipeline/section_text_mapper.py` 신설 |
-| 함수 | `map_beam_section(beam, texts)`, `map_fnd_section(...)` |
-| 완료 기준 | BEAM 폴백 사용율 ≤ 5% (≤ 340/6,812), FND 4건 모두 단면 채움 |
-| 검증 | `python tests/test_section_mapping.py` |
-
-알고리즘:
-- DXF TEXT/MTEXT에서 `\d+[xX×]\d+`, `W\d+`, `F\d+` 패턴 수집
-- BEAM 중점에서 ≤ 1,500mm 반경 + 같은 시트 SectionLabel 매칭 (KD-tree)
+**완료 기준**:
+- 에코델타 DONG B2F COLUMN ≥ 800개 (baseline 827)
+- WALL 평행쌍 매칭율 ≥ 90%, 두께 분포 200/300mm 양봉
+- 중복 검출 0건
 
 ---
 
-## Phase 6 — 잡선 필터 강화 (Forge #F)
+## Phase 5 — 솔리드 빌더 + STEP
 
-| 항목 | 값 |
-|------|-----|
-| 파일 | `stage1_structural_filter.py` (DROP 패턴), `core/pipeline/noise_filter.py` 신설 |
-| 함수 | `filter_noise_members(coll) -> MemberCollection` |
-| 완료 기준 | BEAM 길이 < 500mm 0건, WALL orphan ≤ 10%, 비구조 잔재 0건 |
-| 검증 | `python tests/test_noise_filter.py` |
+신규:
+- `core/v2/build/solid_factory.py` — `build_column/wall/beam/slab/foundation`
+- `core/v2/build/step_exporter.py` — AP214
+- `core/v2/build/build_pipeline.py`
 
-추가 DROP: `00_CENTER`, `S-Defpoints`, `XR*$0$A-CEN-1`, `XR*$0$AH-계단상부선`, `0-Pile`
-
----
-
-## Phase 7 — SLAB 다른 동 + FND 단면 보강 (Forge #G)
-
-| 항목 | 값 |
-|------|-----|
-| 파일 | `core/pipeline/slab_extractor.py` 신설, `tests/build_v9_clean.py` 수정 |
-| 함수 | `extract_slabs_per_dong(doc, pkg_dongs) -> list[Member]` |
-| 완료 기준 | SLAB ≥ 800건, FND 4/4 단면 채움 |
-| 검증 | `python tests/test_slab_per_dong.py` |
+**완료 기준**:
+- B2F STEP 생성, 시각 정합 ≥ 95%
+- 솔리드 실패율 < 1%
 
 ---
 
-## Phase 8 — v14_full 통합 빌드 + 검증 (Forge #H)
+## Phase 6 — BOQ 산출 (Phase 5와 병렬)
 
-| 항목 | 값 |
-|------|-----|
-| 파일 | `tests/build_v14_full.py`, `tests/test_full_build_validation.py` |
-| 함수 | `main()`, `validate_full_build(step) -> ValidationReport` |
-| 완료 기준 | (a) BBox X ≤ 250m (1.4km → 정상), (b) 솔리드 16,000~18,000, (c) 잘못된 위치 0건, (d) 빌드 < 5분 |
-| 검증 | `freecadcmd build_v14_full.py && python test_full_build_validation.py` |
+신규:
+- `core/v2/boq/quantity_calc.py` — 체적·면적·거푸집 자동 계산
+- `core/v2/boq/exporter.py` — JSON + CSV + 집계
 
-검증 항목:
-1. 동별 BBox 분리도 — 101동/102동/103동 X폭 ≤ 70m
-2. WALL 두께 통계 — 200/300mm 둘 중 하나
-3. BEAM 단면 폴백율 ≤ 5%
-4. FND 4/4 솔리드
+**완료 기준**:
+- 음수·NaN 0건
+- baseline 25,219건과 ±5% 이내 일치
+
+---
+
+## Phase 7 — 검증 + 일반화 테스트
+
+신규:
+- `tests/v2/fixtures/eco_delta_24bl/` — 현재 도면
+- `tests/v2/fixtures/_synthetic/` — **합성 미니 도면 3종** (mm/m/in, 단동/다동)
+- `tests/v2/integration/test_eco_e2e.py`
+- `tests/v2/integration/test_synthetic_e2e.py`
+- `tests/v2/integration/test_baseline_compare.py`
+- `tools/v2/run_pipeline.py` — CLI 진입점
+- `tools/v2/diff_against_baseline.py`
+
+**완료 기준 (수치)**:
+- 에코델타 e2e: STEP + BOQ baseline ±5%, 좌표 ±100mm
+- **합성 fixture 3종 모두 e2e 통과** (부재 검출율 ≥ 90%) ← 일반화 보장
+- 매직넘버 lint 0건
 
 ---
 
 ## 병렬 분배
 
 ```
-Phase 0 (단독)
-   │
-   ├── Phase 1 (Forge #A) ── DONG 시트
-   └── Phase 2 (Forge #B) ── PKG 동
-        │
-        Phase 3 (Forge #C) ── coord_config v2
-            │
-            ├── Phase 4 (Forge #D) ── WALL 페어링
-            └── Phase 5 (Forge #E) ── 단면 매핑
-                 │
-                 ├── Phase 6 (Forge #F) ── 잡선 필터
-                 └── Phase 7 (Forge #G) ── SLAB·FND
-                      │
-                      Phase 8 (Forge #H) ── 통합 검증
+Phase 1 (#1) ──┬─→ Phase 2 (#2) ─┐
+               │                  ├─→ Phase 4 (5명 병렬, #4~8) ─┬─→ Phase 5 (#9) ─┐
+               └─→ Phase 3 (#3) ─┘                                └─→ Phase 6 (#10)─┴─→ Phase 7 (#11)
 ```
+
+총 11 Forge 동시 가용 (Phase 4에서 5명 동시), 최소 1명 시퀀스로도 가능.
 
 ---
 
-## TDD 의무 (testing.md 80% 최소 커버)
+## 검수 게이트 (Phase별 방부장 결재)
 
-각 Phase RED → GREEN → REFACTOR. 신설 모듈 반드시 테스트 선행.
+| Phase | 게이트 산출물 |
+|-------|--------------|
+| 1 | `meta.json` + 시트 경계 시각화 PNG |
+| 2 | `transforms.json` + ICP 잔차 히스토그램 + baseline diff |
+| 3 | `layer_roles.json` + 분류 audit HTML |
+| 4 | `members.json` + 부재 분포 top view PNG |
+| 5 | `<project>.step` + FreeCAD 4뷰 PNG |
+| 6 | `boq.json` + `boq.csv` + 집계 markdown |
+| 7 | `report.html` + 합성 fixture 통과 표시 |
 
-- `tests/unit/test_sheet_detector.py` — Phase 0·1·2
-- `tests/unit/test_coord_apply.py` — Phase 3
-- `tests/unit/test_wall_pair_resolver.py` — Phase 4
-- `tests/unit/test_section_text_mapper.py` — Phase 5
-- `tests/unit/test_noise_filter.py` — Phase 6
-- `tests/unit/test_slab_extractor.py` — Phase 7
-- `tests/test_full_build_validation.py` — Phase 8
+---
+
+## 절대 금지 (헌장)
+
+- 매직넘버 (TX=-447970, sheet_pitch=126000 등) 코드 등장 금지
+- 특정 도면 레이어명 직조 금지 (`XR지하2층평면도$0$A-WALL-RC` 같은)
+- 추측 채움 금지 (UNKNOWN_SPEC 플래그로 표시 후 사람 확인)
+- 기존 `core/dxf_parser/`, `core/pipeline/` 모듈 import 금지
+
+---
+
+## 기존 자산 처리
+
+| 자산 | 처리 |
+|------|------|
+| `core/dxf_parser/`, `core/pipeline/` | 보존 (참고만), 신규 코드 import 금지 |
+| `members_accumulated.json` | 검증 기댓값 (baseline diff용) |
+| `coord_config.json` | 검증 기댓값 (TX/TY 차이 ≤ 100mm 확인용) |
+| `output/v9~v13_*.step` | 시각 baseline (회귀 비교용) |
+| 발견된 사실 (PKG 동 간격 630k, DONG 시트 W=126k) | **검증 기댓값**으로만 (자동 추출 결과가 일치하는지 확인) |
 
 ---
 
 ## Track 2 (후순위)
 
-방부장 지시 (2026-05-07): "트랙 2는 그 다음으로 미룬다"
-
-본 정밀화 (Phase 0~8) 완료 후 시작:
-- Track 2-A: 골조선 Step 4 연결 (방향<5° + gap<800mm)
-- Track 2-B: 기둥-기둥 직선 수동 삽입
-- Track 2-C: stage3 골조선→부재 추출
-- Track 2-D: build_final_track2.py
-
----
-
-## 절대 금지 (공통)
-
-- 추측값 사용 금지
-- 대충 일부만 처리 금지
-- Z값 임의 지정 금지
-- 기존 `core/` 모듈 무단 수정 금지 (확장만)
+방부장 지시: "트랙 2는 그 다음으로 미룬다"
+정밀화(이 v3 플랜) 완료 후 시작.
 
 ---
 
