@@ -125,48 +125,73 @@ def segment_sheets(
 ) -> List[SheetMeta]:
     """DXF에서 시트 자동 검출.
 
-    전략 (3중 신호):
-        1. 표제 TEXT (sheet_code + floor_label) 위치 클러스터링
-        2. 격자 라벨 X·Y 클러스터 → 시트 영역 추정
-        3. 둘이 일치하면 confidence ↑
+    전략 (우선순위):
+        A. 격자 X 라벨 ALL 클러스터링 (가장 robust — PKG 패턴)
+        B. 시트 코드(S30-001) 위치 클러스터링 (DONG 패턴)
+        C. 단일 시트 폴백
     """
     text_stats = classify_text(doc)
 
-    # (a) 시트 코드 위치 (S30-001 등)
     sheet_codes = text_stats.by_category(TextCategory.SHEET_CODE)
     floor_labels = text_stats.by_category(TextCategory.FLOOR)
     grid_x = text_stats.by_category(TextCategory.GRID_X)
     grid_y = text_stats.by_category(TextCategory.GRID_Y)
 
-    # (b) 격자 X·Y의 같은 라벨('X1') 위치들 → 클러스터
     sheets: List[SheetMeta] = []
 
-    # 'X1' 라벨이 N번 등장 = 시트 N개 (가장 강력한 신호)
-    x1_labels = [g for g in grid_x if g.text.upper() == "X1"]
-    y1_labels = [g for g in grid_y if g.text.upper() == "Y1"]
+    # ── 전략 A: 격자 X 라벨 ALL 클러스터링 ──
+    if grid_x:
+        x_clusters = cluster_x_positions(
+            [g.x for g in grid_x], bin_size=grid_bin_size,
+        )
+        # Y 클러스터링 (각 시트의 Y축)
+        if grid_y:
+            y_clusters = cluster_x_positions(
+                [g.y for g in grid_y], bin_size=grid_bin_size,
+            )
+        else:
+            y_clusters = []
 
-    if x1_labels and y1_labels:
-        # X1·Y1 교점들이 시트 SW 모서리
-        for i, (xl, yl) in enumerate(zip(
-            sorted(x1_labels, key=lambda g: g.x),
-            sorted(y1_labels, key=lambda g: g.y),
-        )):
-            sw_x, sw_y = xl.x, yl.y
-            # 시트 bbox 추정 — 인접 X1까지의 폭으로
+        if y_clusters:
+            for i, (cx, cnt_x) in enumerate(x_clusters):
+                # 각 X 클러스터마다 시트 1개
+                # Y 범위는 가장 가까운 Y 클러스터 또는 전체 Y 범위
+                ys_in_cluster = [g.y for g in grid_y
+                                 if abs(g.y - y_clusters[0][0]) < grid_bin_size * 5]
+                if not ys_in_cluster:
+                    ys_in_cluster = [g.y for g in grid_y]
+
+                ymin, ymax = min(ys_in_cluster), max(ys_in_cluster)
+                xs_in = [g.x for g in grid_x if abs(g.x - cx) < grid_bin_size]
+                xmin, xmax = min(xs_in), max(xs_in)
+
+                sheets.append(SheetMeta(
+                    sheet_id=f"sheet_{i+1}",
+                    floor_label=None,
+                    bbox=(xmin, ymin, xmax, ymax),
+                    sw_corner=(xmin, ymin),
+                    confidence=0.7,
+                    grid_x_labels=[(g.text, g.x, g.y) for g in grid_x
+                                   if abs(g.x - cx) < grid_bin_size],
+                    grid_y_labels=[(g.text, g.x, g.y) for g in grid_y
+                                   if ymin <= g.y <= ymax],
+                ))
+
+    # ── 전략 B: 시트 코드 클러스터링 (격자 미검출 도면용) ──
+    if not sheets and sheet_codes:
+        # 시트 코드 X·Y 클러스터링 (시트 1장당 코드 1개 가정)
+        # 각 시트 코드가 곧 하나의 시트
+        for i, sc in enumerate(sheet_codes):
             sheets.append(SheetMeta(
-                sheet_id=f"sheet_{i+1}",
+                sheet_id=sc.text,
                 floor_label=None,
-                bbox=(sw_x - sheet_half_span, sw_y - sheet_half_span,
-                      sw_x + sheet_half_span, sw_y + sheet_half_span),
-                sw_corner=(sw_x, sw_y),
-                confidence=0.7,
-                grid_x_labels=[(g.text, g.x, g.y) for g in grid_x
-                               if abs(g.x - xl.x) < grid_bin_size],
-                grid_y_labels=[(g.text, g.x, g.y) for g in grid_y
-                               if abs(g.y - yl.y) < grid_bin_size],
+                bbox=(sc.x - sheet_half_span, sc.y - sheet_half_span,
+                      sc.x + sheet_half_span, sc.y + sheet_half_span),
+                sw_corner=(sc.x - sheet_half_span, sc.y - sheet_half_span),
+                confidence=0.6,
             ))
 
-    # 시트 코드(S30-001)가 시트 안 어디에 있는지 매칭
+    # ── 시트 코드를 시트 안 매칭 (전략 A의 sheet_id 보강) ──
     for sc in sheet_codes:
         for s in sheets:
             xmin, ymin, xmax, ymax = s.bbox
@@ -175,7 +200,7 @@ def segment_sheets(
                     s.sheet_id = sc.text
                 s.confidence = min(1.0, s.confidence + 0.2)
 
-    # 층 라벨 매칭
+    # ── 층 라벨 매칭 ──
     for fl in floor_labels:
         for s in sheets:
             xmin, ymin, xmax, ymax = s.bbox
@@ -183,20 +208,19 @@ def segment_sheets(
                 if s.floor_label is None:
                     s.floor_label = fl.text.upper()
 
-    # (c) 시트 0개 + 시트 코드/격자 있으면 단일 시트로 폴백
-    if not sheets and (sheet_codes or grid_x):
-        # 전체 도면 bbox로 단일 시트
-        all_x = ([sc.x for sc in sheet_codes]
-                 + [g.x for g in grid_x] + [g.x for g in grid_y])
-        all_y = ([sc.y for sc in sheet_codes]
-                 + [g.y for g in grid_x] + [g.y for g in grid_y])
+    # ── 전략 C: 단일 시트 폴백 ──
+    if not sheets:
+        all_x = ([g.x for g in grid_x] + [g.x for g in grid_y]
+                 + [sc.x for sc in sheet_codes])
+        all_y = ([g.y for g in grid_x] + [g.y for g in grid_y]
+                 + [sc.y for sc in sheet_codes])
         if all_x and all_y:
             sheets.append(SheetMeta(
                 sheet_id=sheet_codes[0].text if sheet_codes else "sheet_1",
                 floor_label=floor_labels[0].text if floor_labels else None,
                 bbox=(min(all_x), min(all_y), max(all_x), max(all_y)),
                 sw_corner=(min(all_x), min(all_y)),
-                confidence=0.5,
+                confidence=0.4,
             ))
 
     return sheets
