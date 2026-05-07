@@ -105,37 +105,100 @@ def classify_single(text: str) -> TextCategory:
     return TextCategory.UNKNOWN
 
 
-def classify_text(doc) -> TextStats:
-    """DXF 문서의 모든 TEXT/MTEXT 분류."""
+def classify_text(doc, max_block_depth: int = 8) -> TextStats:
+    """DXF 문서의 모든 TEXT/MTEXT 분류 (INSERT 블록 재귀 포함).
+
+    Args:
+        max_block_depth: INSERT 재귀 최대 깊이.
+
+    [신호 회수 전략]
+        1. modelspace의 plain TEXT/MTEXT
+        2. INSERT 엔티티의 ATTRIB (보이는 라벨)
+        3. INSERT가 참조하는 BLOCK 정의 안의 TEXT/MTEXT/ATTDEF (재귀, 깊이 제한)
+    """
     stats = TextStats()
     msp = doc.modelspace()
 
     for e in msp:
-        etype = e.dxftype()
-        if etype not in ("TEXT", "MTEXT"):
-            continue
-
-        # 텍스트 추출
-        try:
-            if etype == "TEXT":
-                content = e.dxf.text
-            else:
-                # MTEXT: plain_text() 사용
-                content = e.plain_text() if hasattr(e, "plain_text") else e.text
-        except Exception:
-            continue
-
-        # 위치 추출
-        try:
-            if hasattr(e.dxf, "insert"):
-                ip = e.dxf.insert
-            else:
-                ip = e.dxf.location
-            x, y = float(ip.x), float(ip.y)
-        except Exception:
-            x, y = 0.0, 0.0
-
-        category = classify_single(content)
-        stats.add(category, content, x, y)
+        _walk_entity_for_text(e, doc, stats, depth=0,
+                              max_depth=max_block_depth,
+                              offset_x=0.0, offset_y=0.0)
 
     return stats
+
+
+def _walk_entity_for_text(
+    e, doc, stats: TextStats, depth: int, max_depth: int,
+    offset_x: float, offset_y: float,
+) -> None:
+    """엔티티 1개 처리 — INSERT면 재귀."""
+    etype = e.dxftype()
+
+    # TEXT / MTEXT — 직접 추출
+    if etype in ("TEXT", "MTEXT"):
+        _emit_text(e, etype, stats, offset_x, offset_y)
+        return
+
+    # ATTRIB / ATTDEF — INSERT 안의 라벨
+    if etype in ("ATTRIB", "ATTDEF"):
+        _emit_text(e, "TEXT", stats, offset_x, offset_y)
+        return
+
+    # INSERT — ATTRIB 추출 + BLOCK 재귀
+    if etype == "INSERT":
+        # ATTRIB 추출 (visible attributes attached to the INSERT)
+        try:
+            for attrib in e.attribs:
+                _emit_text(attrib, "ATTRIB", stats, offset_x, offset_y)
+        except Exception:
+            pass
+
+        if depth >= max_depth:
+            return
+
+        # INSERT의 위치 + 회전 → 자식 좌표 변환 (단순 평행이동만)
+        try:
+            ix = float(e.dxf.insert.x) + offset_x
+            iy = float(e.dxf.insert.y) + offset_y
+        except Exception:
+            ix, iy = offset_x, offset_y
+
+        # BLOCK 정의 재귀
+        try:
+            block_name = e.dxf.name
+            block = doc.blocks.get(block_name)
+            if block is None:
+                return
+            for child in block:
+                _walk_entity_for_text(child, doc, stats, depth + 1,
+                                      max_depth, ix, iy)
+        except Exception:
+            return
+
+
+def _emit_text(e, etype: str, stats: TextStats,
+               offset_x: float, offset_y: float) -> None:
+    """엔티티에서 텍스트·위치 추출 후 stats에 추가."""
+    try:
+        if etype in ("TEXT", "ATTRIB"):
+            content = e.dxf.text
+        else:
+            content = e.plain_text() if hasattr(e, "plain_text") else e.text
+    except Exception:
+        return
+
+    if not content:
+        return
+
+    try:
+        if hasattr(e.dxf, "insert"):
+            ip = e.dxf.insert
+        else:
+            ip = e.dxf.location
+        x = float(ip.x) + offset_x
+        y = float(ip.y) + offset_y
+    except Exception:
+        x, y = offset_x, offset_y
+
+    category = classify_single(content)
+    stats.add(category, content, x, y)
