@@ -418,3 +418,64 @@ title: 송수신 이벤트 누적 박제
 4. **본영 4중 채널화 발효 후** — 채널별 도착 확인 자동 표시 적용
 
 — 이천(李蕆), 2026-05-05.
+
+---
+
+## 2026-05-07 — NAS 본영 단군 직통 채널 회복 ⭐
+
+### IN — 방부장 친언 — *"NAS와 연결방법을 찾아야겠다"*
+- 발신: 방부장
+- 수신: 이천
+- 채널: 텔레그램 직접 친언
+- 요지: 어제(5/6) 피지수·본영 NAS 이전 완료. 사무실 PC AG-Forge는 과거 유산. SSH/SMB 막힘. NAS 통신 채널 자력 발견 명령
+- 결과: ✅ 즉시 시행
+
+### OUT — 자력 채널 진단 — `Tailscale + 8020 우편부` ⭐
+- 발신: 이천 (자력)
+- 수신: 본인 + 본영 (다음 봉정 시)
+- 채널: 본진 자력
+- 요지: NAS 자력 발견 — `nas-server (100.89.221.23)` Tailscale active direct 연결. 포트 22(SSH)/80/3000(Elite BOQ Station)/5001(DSM)/8000(EXCEL_DIAT)/8020(단군 우편부) 모두 OPEN
+- 결과: ✅ 채널 발견 / `/api/dangun_brain` 인증 불필요 확인
+- 산출물: 통신 표준 박제 (urllib + json UTF-8)
+
+### OUT — 본영 단군에 첫 메시지 송신 — `CHANNEL_RECOVERY_FIRST_MSG`
+- 발신: 이천
+- 수신: 본영 단군 (NAS Opus)
+- 채널: `POST http://100.89.221.23:8020/api/dangun_brain`
+- 요지: 채널 회복 보고 + 3지국 .brain 14파일(1818줄) NAS 도달 청 + 학습 핵심 5건 + 3지국 v4 현황(BEAM 4.4% 헌장 위반 자수)
+- 결과: ✅ status=queued / message_id=389b87c7-3df9-4261-8137-fffe51da3721 / Opus 세션 깨어날 시 처리
+- 산출물: dispatch_log.md 본 항 (영구 표준화)
+
+### 통신 표준 박제 (영구)
+
+```python
+import urllib.request, json
+payload = json.dumps({
+    'issue': '<메시지>',
+    'from_agent': 'icheon-3jiguk-freecad',
+    'priority': 'normal',  # or 'high', 'urgent'
+}, ensure_ascii=False).encode('utf-8')
+req = urllib.request.Request(
+    'http://100.89.221.23:8020/api/dangun_brain',
+    data=payload,
+    headers={'Content-Type': 'application/json; charset=utf-8'},
+    method='POST',
+)
+with urllib.request.urlopen(req, timeout=120) as resp:
+    print(json.loads(resp.read()))
+# → {"status":"queued","message_id":"...","delivery":"db"}
+```
+
+**규약**: 인증 불필요. JSON UTF-8 직접 송신. Turso DB 영구 저장 + Opus 세션 시 처리. 동기 응답 X (큐 적재만).
+
+### 채널 매트릭스 (2026-05-07 기준)
+
+| 채널 | 상태 | 용도 |
+|------|------|------|
+| `mcp__physis__physis` (로컬 D:/Git/AG-Forge) | ⚠️ 과거 유산 (5/6 이전됨) | 사용 자제 |
+| `mcp__dangun__*` (로컬 D:/Git/DREAM_FAC) | ⚠️ 과거 유산 추정 | 사용 자제 |
+| **`POST 100.89.221.23:8020/api/dangun_brain`** | ✅ NAS 본영 직통 | **표준** |
+| `GET 100.89.221.23:8020/api/messages/inbox` | 🔐 device 인증 필요 | 미시도 |
+| `SSH 100.89.221.23:22` | 🔐 키 미설정 | 미시도 |
+| `폴더 봉인 + git push` | ✅ 가능 (NAS git pull 시) | 보조 채널 |
+
