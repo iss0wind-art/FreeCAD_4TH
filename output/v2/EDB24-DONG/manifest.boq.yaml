@@ -1,0 +1,4203 @@
+version: '1.0'
+project:
+  id: EDB24-DONG-101
+  name: EDB24-DONG-101 with 일람표 + 진짜 SL
+  units: mm
+floors:
+- id: B2F
+  z_base: 0.0
+  height: 3450.0
+- id: B1F
+  z_base: 3450.0
+  height: 5970.0
+- id: 1F
+  z_base: 9420.0
+  height: 2930.0
+- id: 2F
+  z_base: 12350.0
+  height: 39620.0
+- id: 16F
+  z_base: 51970.0
+  height: 3500.0
+members:
+- id: COL-B2F-0001
+  spec: COL-MEAS-1301x1630
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 193508.97036407352
+    - 2115614.9356545247
+- id: COL-B2F-0002
+  spec: COL-MEAS-1247x1547
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 196885.7323811187
+    - 2120814.6931758327
+- id: COL-B2F-0003
+  spec: COL-MEAS-1247x1547
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 198350.8113815454
+    - 2123070.717006027
+- id: COL-B2F-0004
+  spec: COL-MEAS-1301x1630
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 200436.77888559975
+    - 2126282.825281279
+- id: COL-B2F-0005
+  spec: COL-MEAS-1161x996
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 202052.35932251846
+    - 2132626.3534579785
+- id: COL-B2F-0006
+  spec: COL-MEAS-2486x1857
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 200577.09515555546
+    - 2134669.4302094905
+- id: COL-B2F-0007
+  spec: COL-MEAS-1547x1247
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 194804.345874706
+    - 2136796.6589127197
+- id: COL-B2F-0008
+  spec: COL-MEAS-1630x1301
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 196842.32097691274
+    - 2135473.182440589
+- id: COL-B2F-0009
+  spec: COL-MEAS-1039x1094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 203360.0534091589
+    - 2105486.4946921794
+- id: COL-B2F-0010
+  spec: COL-MEAS-1156x1244
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 201262.54505975527
+    - 2105897.2059675185
+- id: COL-B2F-0011
+  spec: COL-MEAS-1145x1269
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 194167.4434645384
+    - 2108164.712186333
+- id: COL-B2F-0012
+  spec: COL-MEAS-1505x1329
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 205583.2056860129
+    - 2097134.7168259146
+- id: COL-B2F-0013
+  spec: COL-MEAS-1584x1391
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 203707.73571859841
+    - 2095669.448077375
+- id: COL-B2F-0014
+  spec: COL-MEAS-1161x996
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 76052.33267567499
+    - 2132626.324715012
+- id: COL-B2F-0015
+  spec: COL-MEAS-2486x1857
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 74577.08125483857
+    - 2134669.420230952
+- id: COL-B2F-0016
+  spec: COL-MEAS-1547x1247
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 68804.34589623955
+    - 2136796.6588986637
+- id: COL-B2F-0017
+  spec: COL-MEAS-1630x1301
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 70842.31496518504
+    - 2135473.186122778
+- id: COL-B2F-0018
+  spec: COL-MEAS-1301x1630
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 67508.97031160469
+    - 2115614.9355737
+- id: COL-B2F-0019
+  spec: COL-MEAS-1247x1547
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 70885.73232864316
+    - 2120814.6930949967
+- id: COL-B2F-0020
+  spec: COL-MEAS-1247x1547
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 72350.81133282649
+    - 2123070.716922775
+- id: COL-B2F-0021
+  spec: COL-MEAS-1301x1630
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 74436.77883689028
+    - 2126282.8251980357
+- id: COL-B2F-0022
+  spec: COL-MEAS-1039x1094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 77360.05384455653
+    - 2105486.4938100046
+- id: COL-B2F-0023
+  spec: COL-MEAS-1156x1244
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 75262.54508991988
+    - 2105897.2059675194
+- id: COL-B2F-0024
+  spec: COL-MEAS-1145x1269
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 68167.44347594818
+    - 2108164.712148159
+- id: COL-B2F-0025
+  spec: COL-MEAS-1584x1391
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 77707.74007799369
+    - 2095669.4424621204
+- id: COL-B2F-0026
+  spec: COL-MEAS-1505x1329
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 79583.20567159104
+    - 2097134.7167734029
+- id: COL-B2F-0027
+  spec: COL-MEAS-1341x496
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 111631.3347773172
+    - 2134135.248407763
+- id: COL-B2F-0028
+  spec: COL-MEAS-1341x496
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 111631.3347773172
+    - 2132335.248407763
+- id: COL-B2F-0029
+  spec: COL-MEAS-1341x496
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 237631.3347773182
+    - 2134135.248407763
+- id: COL-B2F-0030
+  spec: COL-MEAS-1341x496
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 237631.3347773182
+    - 2132335.248407763
+- id: COL-B2F-0031
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 45008.0106505608
+    - 2115389.548070226
+- id: COL-B2F-0032
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 65238.36496585241
+    - 2128220.7152075036
+- id: COL-B2F-0033
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 72856.07879060063
+    - 2103597.345726461
+- id: COL-B2F-0034
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 171767.99736874845
+    - 2116478.993143975
+- id: COL-B2F-0035
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 196954.11147346365
+    - 2104246.738260093
+- id: COL-B2F-0036
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 190914.8906650936
+    - 2126296.6349374247
+- id: COL-B2F-0037
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 295224.45592156553
+    - 2115231.222584989
+- id: COL-B2F-0038
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 288774.95761388016
+    - 2110638.158794489
+- id: COL-B2F-0039
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 302867.29203368747
+    - 2112123.987112693
+- id: COL-B2F-0040
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 316904.08369013434
+    - 2126360.4096802673
+- id: COL-B2F-0041
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 324747.58349758375
+    - 2131552.1384123517
+- id: COL-B2F-0042
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 317818.0033464554
+    - 2122976.5482992097
+- id: COL-B2F-0043
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 317669.42742281035
+    - 2104764.366899276
+- id: COL-B2F-0044
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 322977.43336610217
+    - 2104302.3681166684
+- id: COL-B2F-0045
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 328240.49192637805
+    - 2097285.603644971
+- id: COL-B2F-0046
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 569953.7110140978
+    - 2104515.513727485
+- id: COL-B2F-0047
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 570275.3549037932
+    - 2121238.9808608387
+- id: COL-B2F-0048
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 554818.8249428296
+    - 2112116.581807549
+- id: COL-B2F-0049
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 700955.272762283
+    - 2104246.7382129813
+- id: COL-B2F-0050
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 694916.051953913
+    - 2126296.6348903114
+- id: COL-B2F-0051
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 673224.4559215645
+    - 2115231.222584989
+- id: COL-B2F-0052
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 675261.5208223065
+    - 2109951.534691639
+- id: COL-B2F-0053
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 947908.1122934739
+    - 2101893.9193254486
+- id: COL-B2F-0054
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 949327.8234975545
+    - 2120851.8644110793
+- id: COL-B2F-0055
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 928778.94080993
+    - 2114721.213462182
+- id: COL-B2F-0056
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 443953.71101409814
+    - 2104515.513727485
+- id: COL-B2F-0057
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 444275.35490379354
+    - 2121238.9808608387
+- id: COL-B2F-0058
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 428818.82494282996
+    - 2112116.581807549
+- id: COL-B2F-0059
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 51271.03319184091
+    - 2326966.253788149
+- id: COL-B2F-0060
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 66484.6925741553
+    - 2319455.538562848
+- id: COL-B2F-0061
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 69133.73851861866
+    - 2343550.7935738335
+- id: COL-B2F-0062
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 177271.03319184086
+    - 2326966.253788149
+- id: COL-B2F-0063
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 191407.0568404028
+    - 2318640.030440009
+- id: COL-B2F-0064
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 191432.01459218672
+    - 2340688.1178004974
+- id: COL-B2F-0065
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 303271.03319184075
+    - 2326966.253788149
+- id: COL-B2F-0066
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 317407.0568404027
+    - 2318640.030440009
+- id: COL-B2F-0067
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 317432.0145921866
+    - 2340688.1178004974
+- id: COL-B2F-0068
+  spec: COL-MEAS-1960x2187
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 882100.5336416203
+    - 354414.3461638775
+- id: COL-B2F-0069
+  spec: COL-MEAS-2424x2424
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 937641.0632013058
+    - 271763.17708147527
+- id: COL-B2F-0070
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 696275.3549037937
+    - 2121238.9808608387
+- id: COL-B2F-0071
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 695953.7110140991
+    - 2104515.513727485
+- id: COL-B2F-0072
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 294322.32424222457
+    - 2111381.84266432
+- id: COL-B2F-0073
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 291153.98051795387
+    - 2116314.305903934
+- id: COL-B2F-0074
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 296513.98051798576
+    - 2112498.726482471
+- id: COL-B2F-0075
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 307741.2362975443
+    - 2113505.962179696
+- id: COL-B2F-0076
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 317818.0033464554
+    - 2116786.8478100835
+- id: COL-B2F-0077
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 320790.7469096803
+    - 2129962.0789856627
+- id: COL-B2F-0078
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 316612.99226028385
+    - 2108592.313975637
+- id: COL-B2F-0079
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 321697.22638871096
+    - 2100368.917943506
+- id: COL-B2F-0080
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 325166.35073381214
+    - 2099404.577452264
+- id: COL-B2F-0081
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 421433.9805179617
+    - 2111734.305903929
+- id: COL-B2F-0082
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 417153.98051795777
+    - 2116314.305903926
+- id: COL-B2F-0083
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 433742.51686445484
+    - 2113505.962179688
+- id: COL-B2F-0084
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 440888.2724918289
+    - 2118883.4852415845
+- id: COL-B2F-0085
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 446918.1721356226
+    - 2125980.3001087843
+- id: COL-B2F-0086
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 446790.74690968427
+    - 2129962.0789856543
+- id: COL-B2F-0087
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 442612.99226028874
+    - 2108592.3139756285
+- id: COL-B2F-0088
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 451166.35073381703
+    - 2099404.5774522554
+- id: COL-B2F-0089
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 447287.97585403785
+    - 2100397.246646297
+- id: COL-B2F-0090
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 547433.9805179625
+    - 2111734.305903744
+- id: COL-B2F-0091
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 543153.9805179585
+    - 2116314.30590374
+- id: COL-B2F-0092
+  spec: COL-MEAS-2249x900
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 559742.5168644557
+    - 2113505.962179502
+- id: COL-B2F-0093
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 566888.2724918296
+    - 2118883.4852413987
+- id: COL-B2F-0094
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 572918.1721356233
+    - 2125980.3001085995
+- id: COL-B2F-0095
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 572790.746909685
+    - 2129962.0789854694
+- id: COL-B2F-0096
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 568612.9922602895
+    - 2108592.313975443
+- id: COL-B2F-0097
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 577166.3507338178
+    - 2099404.577452069
+- id: COL-B2F-0098
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 573287.9758540385
+    - 2100397.246646112
+- id: COL-B2F-0099
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 692888.2724918295
+    - 2118883.485241213
+- id: COL-B2F-0100
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 698918.1721356232
+    - 2125980.3001084137
+- id: COL-B2F-0101
+  spec: COL-MEAS-2377x1980
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 698790.7469096849
+    - 2129962.0789852836
+- id: COL-B2F-0102
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 694612.9922602894
+    - 2108592.313975257
+- id: COL-B2F-0103
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 703166.3507338177
+    - 2099404.577451884
+- id: COL-B2F-0104
+  spec: COL-MEAS-2327x2094
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 699287.9758540384
+    - 2100397.246645926
+- id: COL-B2F-0105
+  spec: COL-MEAS-1341x496
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 111831.3347773172
+    - 2336908.532360464
+- id: COL-B2F-0106
+  spec: COL-MEAS-2056x2154
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 325348.2251093751
+    - 2108851.406875939
+- id: COL-B2F-0107
+  spec: COL-MEAS-2056x2154
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 329160.35065586126
+    - 2106246.0856255284
+- id: COL-B2F-0108
+  spec: COL-MEAS-1565x1773
+  type: column
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 194462.8252617754
+    - 2103800.660972478
+- id: BM-B2F-0001
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 1007999.999999998
+    - 2248349.432811998
+  to:
+    xy:
+    - 1007999.999999998
+    - 2070149.430483894
+- id: BM-B2F-0002
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 881999.9999999977
+    - 2248349.432811998
+  to:
+    xy:
+    - 881999.9999999977
+    - 2070149.430483894
+- id: BM-B2F-0003
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 755999.9999999981
+    - 2248349.432811998
+  to:
+    xy:
+    - 755999.9999999981
+    - 2070149.432811999
+- id: BM-B2F-0004
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 629999.9999999986
+    - 2248349.432811998
+  to:
+    xy:
+    - 629999.9999999986
+    - 2070149.432811999
+- id: BM-B2F-0005
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 9.895302e-10
+    - 2248349.432811999
+  to:
+    xy:
+    - 9.895302e-10
+    - 2070149.432811999
+- id: BM-B2F-0006
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - -125999.9999999986
+    - 2159249.432811998
+  to:
+    xy:
+    - 1133999.999999997
+    - 2159249.432811998
+- id: BM-B2F-0007
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - -125999.9999999986
+    - 2070149.432811999
+  to:
+    xy:
+    - 1133999.999999997
+    - 2070149.432811999
+- id: BM-B2F-0008
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 503999.9999999991
+    - 2248349.432811998
+  to:
+    xy:
+    - 503999.9999999991
+    - 2070149.432811999
+- id: BM-B2F-0009
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 377999.9999999996
+    - 2248349.432811998
+  to:
+    xy:
+    - 377999.9999999996
+    - 2070149.432811999
+- id: BM-B2F-0010
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 252000.0000000001
+    - 2248349.432811998
+  to:
+    xy:
+    - 252000.0000000001
+    - 2070149.432811999
+- id: BM-B2F-0011
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 126000.0000000005
+    - 2248349.432811998
+  to:
+    xy:
+    - 126000.0000000005
+    - 2070149.432811999
+- id: BM-B2F-0012
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 171972.8192291409
+    - 2119914.305951069
+  to:
+    xy:
+    - 174272.8192291405
+    - 2117464.30595107
+- id: BM-B2F-0013
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 171972.8192291404
+    - 2117464.30595107
+  to:
+    xy:
+    - 174272.81922914
+    - 2119914.305951071
+- id: BM-B2F-0014
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 187650.3059817804
+    - 2128791.57220416
+  to:
+    xy:
+    - 188452.3790927517
+    - 2125528.264262122
+- id: BM-B2F-0015
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 186397.6412571687
+    - 2126862.637683235
+  to:
+    xy:
+    - 189705.0488732709
+    - 2127457.206568411
+- id: BM-B2F-0016
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 198452.1492456246
+    - 2105027.608147886
+  to:
+    xy:
+    - 198966.7541987054
+    - 2108348.403495732
+- id: BM-B2F-0017
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 197036.1278523711
+    - 2106840.032881181
+  to:
+    xy:
+    - 200382.775591958
+    - 2106535.978762439
+- id: BM-B2F-0018
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 297973.9805179615
+    - 2119914.305903955
+  to:
+    xy:
+    - 300273.9805179611
+    - 2117464.305903957
+- id: BM-B2F-0019
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 297973.9805179611
+    - 2117464.305903957
+  to:
+    xy:
+    - 300273.9805179606
+    - 2119914.305903957
+- id: BM-B2F-0020
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 313651.4672706392
+    - 2128791.572157047
+  to:
+    xy:
+    - 314453.5403815724
+    - 2125528.264215008
+- id: BM-B2F-0021
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 312398.8145343916
+    - 2126862.629850763
+  to:
+    xy:
+    - 315706.2101620919
+    - 2127457.206521298
+- id: BM-B2F-0022
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 324453.3105344446
+    - 2105027.608100773
+  to:
+    xy:
+    - 324967.9154875254
+    - 2108348.403448619
+- id: BM-B2F-0023
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 326383.9368807778
+    - 2106535.978715325
+  to:
+    xy:
+    - 323037.2891411913
+    - 2106840.032834067
+- id: BM-B2F-0024
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 423973.9805179608
+    - 2119914.305903957
+  to:
+    xy:
+    - 426273.9805179604
+    - 2117464.305903957
+- id: BM-B2F-0025
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 426273.9805179608
+    - 2119914.305903957
+  to:
+    xy:
+    - 423973.9805179604
+    - 2117464.305903957
+- id: BM-B2F-0026
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 439651.4672706376
+    - 2128791.572157047
+  to:
+    xy:
+    - 440453.5403815938
+    - 2125528.264214991
+- id: BM-B2F-0027
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 441706.210162116
+    - 2127457.206521278
+  to:
+    xy:
+    - 438398.7974901179
+    - 2126862.629850763
+- id: BM-B2F-0028
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 450967.9154875267
+    - 2108348.403448619
+  to:
+    xy:
+    - 450453.3105344456
+    - 2105027.608100773
+- id: BM-B2F-0029
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 449037.2891411922
+    - 2106840.032834069
+  to:
+    xy:
+    - 452383.9368807789
+    - 2106535.978715326
+- id: BM-B2F-0030
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 549973.9805179602
+    - 2119914.305903957
+  to:
+    xy:
+    - 552273.9805179599
+    - 2117464.305903957
+- id: BM-B2F-0031
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 552273.9805179602
+    - 2119914.305903957
+  to:
+    xy:
+    - 549973.9805179599
+    - 2117464.305903957
+- id: BM-B2F-0032
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 565651.467270637
+    - 2128791.572157047
+  to:
+    xy:
+    - 566453.5403815933
+    - 2125528.264214991
+- id: BM-B2F-0033
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 567706.2101621155
+    - 2127457.206521278
+  to:
+    xy:
+    - 564398.7974901174
+    - 2126862.629850763
+- id: BM-B2F-0034
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 576967.9154875262
+    - 2108348.403448619
+  to:
+    xy:
+    - 576453.3105344451
+    - 2105027.608100773
+- id: BM-B2F-0035
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 575037.2891411916
+    - 2106840.032834069
+  to:
+    xy:
+    - 578383.9368807783
+    - 2106535.978715326
+- id: BM-B2F-0036
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 691651.4672706374
+    - 2128791.572157047
+  to:
+    xy:
+    - 692453.5403815936
+    - 2125528.264214991
+- id: BM-B2F-0037
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 693706.2101621157
+    - 2127457.206521278
+  to:
+    xy:
+    - 690398.7974901176
+    - 2126862.629850763
+- id: BM-B2F-0038
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 702967.9154875266
+    - 2108348.403448619
+  to:
+    xy:
+    - 702453.3105344455
+    - 2105027.608100773
+- id: BM-B2F-0039
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 701037.289141192
+    - 2106840.032834069
+  to:
+    xy:
+    - 704383.9368807788
+    - 2106535.978715326
+- id: BM-B2F-0040
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 675973.9805179598
+    - 2117464.305903957
+  to:
+    xy:
+    - 678273.9805179607
+    - 2119914.305903957
+- id: BM-B2F-0041
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 675973.9805179598
+    - 2119914.305903957
+  to:
+    xy:
+    - 678273.9805179604
+    - 2117464.305903957
+- id: BM-B2F-0042
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 944310.7896995666
+    - 2126945.996193756
+  to:
+    xy:
+    - 945112.8628105205
+    - 2123682.688251702
+- id: BM-B2F-0043
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 946365.5325910425
+    - 2125611.630557989
+  to:
+    xy:
+    - 943058.1199190452
+    - 2125017.053887468
+- id: BM-B2F-0044
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 955627.2379164526
+    - 2106502.827485331
+  to:
+    xy:
+    - 955112.6329633476
+    - 2103182.032137515
+- id: BM-B2F-0045
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 953696.6115700498
+    - 2104994.456870775
+  to:
+    xy:
+    - 957043.259309638
+    - 2104690.40275203
+- id: BM-B2F-0046
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 944660.6968601642
+    - 331741.60181502
+  to:
+    xy:
+    - 944660.6968601642
+    - 329411.60181502
+- id: BM-B2F-0047
+  spec: UNKNOWN-BEAM-NOLABEL
+  type: beam
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  from_:
+    xy:
+    - 944830.6968601642
+    - 331741.60181502
+  to:
+    xy:
+    - 944830.6968601642
+    - 329411.60181502
+- id: SL-B2F-0001
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 913253.1678340534
+    - 2145184.450188675
+  - xy:
+    - 913253.1678340534
+    - 2140939.45018867
+  - xy:
+    - 915713.1678340614
+    - 2140939.450188671
+  - xy:
+    - 915713.16783406
+    - 2140039.450188676
+  - xy:
+    - 917413.1678340604
+    - 2140039.450188676
+  - xy:
+    - 917413.1678340608
+    - 2140939.450188672
+  - xy:
+    - 922913.167834059
+    - 2140939.450188675
+  - xy:
+    - 922913.1678340506
+    - 2146584.450188685
+  - xy:
+    - 917753.167834051
+    - 2146584.450188677
+  - xy:
+    - 917753.167834051
+    - 2145184.450188675
+  - xy:
+    - 913253.167834051
+    - 2145184.450188675
+- id: SL-B2F-0002
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 923633.3029468206
+    - 2119518.729940666
+  - xy:
+    - 923633.3029468206
+    - 2112028.729940666
+  - xy:
+    - 927073.3002210144
+    - 2112028.729940666
+  - xy:
+    - 927073.3002210144
+    - 2111128.727612563
+  - xy:
+    - 928773.3002210144
+    - 2111128.727612563
+  - xy:
+    - 928773.3002210144
+    - 2112028.729940666
+  - xy:
+    - 931133.3029468372
+    - 2112028.729940666
+  - xy:
+    - 931133.3029468242
+    - 2118268.729940668
+  - xy:
+    - 926633.3029468206
+    - 2118268.729940668
+  - xy:
+    - 926633.3029468206
+    - 2119518.729940666
+  - xy:
+    - 923633.3029468206
+    - 2119518.729940666
+- id: SL-B2F-0003
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 975196.2358971164
+    - 2125094.665258164
+  - xy:
+    - 979696.2358971164
+    - 2125094.665258164
+  - xy:
+    - 979696.2358971164
+    - 2126494.665258171
+  - xy:
+    - 984856.2358971164
+    - 2126494.665258176
+  - xy:
+    - 984856.235897115
+    - 2123494.665258168
+  - xy:
+    - 981396.2358971192
+    - 2123494.665258165
+  - xy:
+    - 981396.2358971199
+    - 2122734.665258233
+  - xy:
+    - 982296.2358972036
+    - 2122734.66525829
+  - xy:
+    - 982296.2358973112
+    - 2121034.66525829
+  - xy:
+    - 981396.2358971213
+    - 2121034.665258234
+  - xy:
+    - 981396.2358971233
+    - 2118494.665258164
+  - xy:
+    - 975196.2358971164
+    - 2118494.665258164
+  - xy:
+    - 975196.2358971164
+    - 2125094.665258164
+- id: SL-B2F-0004
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 975196.235897121
+    - 2098286.881808093
+  - xy:
+    - 979696.235897121
+    - 2098286.881808093
+  - xy:
+    - 979696.235897121
+    - 2099686.881808099
+  - xy:
+    - 984856.235897121
+    - 2099686.881808104
+  - xy:
+    - 984856.2358971196
+    - 2096686.881808096
+  - xy:
+    - 981396.2358971238
+    - 2096686.881808093
+  - xy:
+    - 981396.235897128
+    - 2091686.881808092
+  - xy:
+    - 975196.235897121
+    - 2091686.881808092
+  - xy:
+    - 975196.235897121
+    - 2098286.881808093
+- id: SL-B2F-0005
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 961467.1556881134
+    - 2099060.558985723
+  - xy:
+    - 963745.1031468234
+    - 2096144.919197378
+  - xy:
+    - 959883.8504541538
+    - 2093128.177968278
+  - xy:
+    - 960702.6802163383
+    - 2092080.123665982
+  - xy:
+    - 957093.5909648214
+    - 2089260.394108987
+  - xy:
+    - 956551.8088665346
+    - 2089953.84357216
+  - xy:
+    - 955322.5120909086
+    - 2088993.411670651
+  - xy:
+    - 954552.9352467504
+    - 2089978.425112658
+  - xy:
+    - 953512.7610519918
+    - 2089165.751965227
+  - xy:
+    - 941033.302947249
+    - 2105138.729940666
+  - xy:
+    - 940833.3029468778
+    - 2105138.729940665
+  - xy:
+    - 940833.3029468778
+    - 2115138.729940664
+  - xy:
+    - 940989.2255423798
+    - 2115138.729940664
+  - xy:
+    - 943767.6798983224
+    - 2119417.174457011
+  - xy:
+    - 943935.4140119202
+    - 2119308.246650004
+  - xy:
+    - 946173.8804458084
+    - 2122755.182684274
+  - xy:
+    - 942781.457998453
+    - 2124958.247580886
+  - xy:
+    - 945232.3336559918
+    - 2128732.265136658
+  - xy:
+    - 944058.1948608628
+    - 2129494.759785667
+  - xy:
+    - 946868.5322815112
+    - 2133822.299916293
+  - xy:
+    - 948193.6317788746
+    - 2132961.770240976
+  - xy:
+    - 950208.7962084062
+    - 2136064.85134239
+  - xy:
+    - 954318.2819913572
+    - 2133396.120070846
+  - xy:
+    - 955042.6519079192
+    - 2134511.551926219
+  - xy:
+    - 958883.7631091272
+    - 2132017.105145877
+  - xy:
+    - 958404.4807583194
+    - 2131279.075046083
+  - xy:
+    - 959712.8068443208
+    - 2130429.438151468
+  - xy:
+    - 959032.0080505594
+    - 2129381.099941531
+  - xy:
+    - 960139.0532002526
+    - 2128662.176415319
+  - xy:
+    - 948857.0060227846
+    - 2111289.347246363
+  - xy:
+    - 947866.5866054615
+    - 2110515.546791394
+  - xy:
+    - 950101.4377609038
+    - 2107655.067755808
+  - xy:
+    - 949943.8356101823
+    - 2107531.935460742
+  - xy:
+    - 952474.2042737736
+    - 2104293.211263423
+  - xy:
+    - 955661.707772109
+    - 2106783.561931117
+  - xy:
+    - 958432.184411079
+    - 2103237.51353989
+  - xy:
+    - 959535.3994661263
+    - 2104099.439605347
+  - xy:
+    - 962712.2126788136
+    - 2100033.304116739
+  - xy:
+    - 961467.1556881152
+    - 2099060.558985721
+- id: SL-B2F-0006
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 955661.707772035
+    - 2106783.56193111
+  - xy:
+    - 958432.184411004
+    - 2103237.513539883
+  - xy:
+    - 959535.3994660577
+    - 2104099.439605343
+  - xy:
+    - 962712.2126787462
+    - 2100033.304116739
+  - xy:
+    - 960348.1804179203
+    - 2098186.319690756
+  - xy:
+    - 958217.991713291
+    - 2100912.836898227
+  - xy:
+    - 954277.9379452624
+    - 2097834.529521591
+  - xy:
+    - 950460.8367982338
+    - 2102720.196193955
+  - xy:
+    - 955661.707772035
+    - 2106783.56193111
+- id: SL-B2F-0007
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 942781.4579984578
+    - 2124958.247580889
+  - xy:
+    - 946341.6145594054
+    - 2122646.254877272
+  - xy:
+    - 951602.827637596
+    - 2130747.812563667
+  - xy:
+    - 946868.5322815112
+    - 2133822.299916293
+  - xy:
+    - 944058.1948608686
+    - 2129494.759785673
+  - xy:
+    - 945232.3336559996
+    - 2128732.265136658
+  - xy:
+    - 942781.4579984565
+    - 2124958.247580887
+- id: SL-B2F-0008
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 948361.3658924656
+    - 2132852.842433976
+  - xy:
+    - 950267.6025149942
+    - 2135788.189421798
+  - xy:
+    - 954377.0882979454
+    - 2133119.458150254
+  - xy:
+    - 955101.4582145074
+    - 2134234.890005627
+  - xy:
+    - 958607.1011885356
+    - 2131958.298839289
+  - xy:
+    - 958127.8188377277
+    - 2131220.268739495
+  - xy:
+    - 959436.1449237292
+    - 2130370.63184488
+  - xy:
+    - 958755.3461299676
+    - 2129322.293634943
+  - xy:
+    - 959862.3912796607
+    - 2128603.370108731
+  - xy:
+    - 948707.5001726202
+    - 2111426.344117566
+  - xy:
+    - 947585.8521596747
+    - 2110550.016647049
+  - xy:
+    - 949820.703315117
+    - 2107689.537611463
+  - xy:
+    - 949663.1011643958
+    - 2107566.405316398
+  - xy:
+    - 952316.6021230278
+    - 2104170.078968389
+- id: SL-B2F-0009
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 961309.5535373671
+    - 2098937.42669069
+  - xy:
+    - 963464.368701037
+    - 2096179.389053034
+  - xy:
+    - 959603.1160083672
+    - 2093162.647823934
+  - xy:
+    - 960421.9457705516
+    - 2092114.593521638
+  - xy:
+    - 957128.0608204774
+    - 2089541.128554773
+  - xy:
+    - 956586.2787221906
+    - 2090234.578017946
+  - xy:
+    - 955356.9819465646
+    - 2089274.146116437
+  - xy:
+    - 954587.4051024062
+    - 2090259.159558444
+  - xy:
+    - 953547.2309076476
+    - 2089446.486411013
+  - xy:
+    - 941130.8494649616
+    - 2105338.729940666
+  - xy:
+    - 941033.3029468778
+    - 2105338.729940666
+  - xy:
+    - 941033.3029468778
+    - 2114938.729940664
+  - xy:
+    - 941097.8166823084
+    - 2114938.729940664
+  - xy:
+    - 943826.4862049104
+    - 2119140.51253642
+  - xy:
+    - 943994.2203185082
+    - 2119031.584729413
+  - xy:
+    - 946341.6145594
+    - 2122646.254877275
+- id: SL-B2F-0010
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 662763.9805179556
+    - 2119504.305903955
+  - xy:
+    - 670973.9805179556
+    - 2119504.30590396
+  - xy:
+    - 670973.9805179565
+    - 2121364.305903955
+  - xy:
+    - 673973.9805179556
+    - 2121364.305903955
+  - xy:
+    - 673973.9805179565
+    - 2120114.305903957
+  - xy:
+    - 678473.9805179603
+    - 2120114.305903957
+  - xy:
+    - 678473.9805179696
+    - 2116284.305903955
+  - xy:
+    - 680003.9805179556
+    - 2116284.305903955
+  - xy:
+    - 680003.9805179556
+    - 2116984.305903955
+  - xy:
+    - 688329.9031134566
+    - 2116984.305903955
+  - xy:
+    - 691108.3574693982
+    - 2121262.750420299
+  - xy:
+    - 691276.0915829936
+    - 2121153.822613294
+  - xy:
+    - 693514.5580168805
+    - 2124600.758647563
+  - xy:
+    - 690122.135569526
+    - 2126803.823544173
+  - xy:
+    - 692573.0112270681
+    - 2130577.841099944
+  - xy:
+    - 691398.8724319359
+    - 2131340.335748955
+  - xy:
+    - 694209.2098525838
+    - 2135667.875879583
+  - xy:
+    - 695534.3093499459
+    - 2134807.346204267
+  - xy:
+    - 697549.4737794782
+    - 2137910.42730568
+  - xy:
+    - 701658.9595624317
+    - 2135241.696034135
+  - xy:
+    - 702399.6686500426
+    - 2136382.288006544
+  - xy:
+    - 706240.7798512516
+    - 2133887.841226206
+  - xy:
+    - 705745.1583293938
+    - 2133124.651009371
+  - xy:
+    - 707053.4844153962
+    - 2132275.014114761
+  - xy:
+    - 706372.6856216328
+    - 2131226.67590482
+  - xy:
+    - 707479.7307713247
+    - 2130507.75237861
+  - xy:
+    - 696197.6835938712
+    - 2113134.923209664
+  - xy:
+    - 695207.2641765355
+    - 2112361.122754683
+  - xy:
+    - 697442.1153319707
+    - 2109500.643719091
+  - xy:
+    - 697284.5131812558
+    - 2109377.511424031
+  - xy:
+    - 699814.8818448476
+    - 2106138.787226712
+  - xy:
+    - 703002.385343183
+    - 2108629.137894406
+  - xy:
+    - 705772.8619821529
+    - 2105083.089503179
+  - xy:
+    - 706876.0770371981
+    - 2105945.015568638
+  - xy:
+    - 710052.8902498876
+    - 2101878.880080028
+  - xy:
+    - 708807.8332591878
+    - 2100906.134949011
+  - xy:
+    - 711085.7807178992
+    - 2097990.495160666
+  - xy:
+    - 707224.5280252277
+    - 2094973.753931567
+  - xy:
+    - 708061.8276316711
+    - 2093902.059306664
+  - xy:
+    - 704452.7383801561
+    - 2091082.329749666
+  - xy:
+    - 703892.4864376086
+    - 2091799.419535448
+  - xy:
+    - 702663.1896619863
+    - 2090838.987633935
+  - xy:
+    - 701893.6128178249
+    - 2091824.001075947
+  - xy:
+    - 700853.4386230657
+    - 2091011.327928515
+  - xy:
+    - 688373.980518323
+    - 2106984.305903955
+  - xy:
+    - 673873.9805179556
+    - 2106984.305903955
+  - xy:
+    - 673873.9805179565
+    - 2105634.305903955
+  - xy:
+    - 663033.9805179556
+    - 2105634.305903955
+  - xy:
+    - 663033.9805179556
+    - 2107034.305903955
+  - xy:
+    - 661063.9805179565
+    - 2107034.305903955
+  - xy:
+    - 661063.9805179565
+    - 2113434.305903956
+  - xy:
+    - 662763.9805179556
+    - 2113434.305903955
+  - xy:
+    - 662763.9805179556
+    - 2119504.305903955
+- id: SL-B2F-0011
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 708807.8332591853
+    - 2100906.13494901
+  - xy:
+    - 711085.7807178954
+    - 2097990.495160665
+  - xy:
+    - 707224.5280252257
+    - 2094973.753931565
+  - xy:
+    - 708061.8276316703
+    - 2093902.059306661
+  - xy:
+    - 704452.7383801534
+    - 2091082.329749666
+  - xy:
+    - 703892.4864376066
+    - 2091799.419535447
+  - xy:
+    - 702663.1896619806
+    - 2090838.987633938
+  - xy:
+    - 701893.6128178225
+    - 2091824.001075945
+  - xy:
+    - 700853.4386230637
+    - 2091011.327928514
+  - xy:
+    - 688373.980518321
+    - 2106984.305903953
+  - xy:
+    - 688173.9805179499
+    - 2106984.305903952
+  - xy:
+    - 688173.9805179499
+    - 2116984.305903951
+  - xy:
+    - 688329.9031134518
+    - 2116984.305903951
+  - xy:
+    - 691108.3574693943
+    - 2121262.750420299
+  - xy:
+    - 691276.0915829921
+    - 2121153.822613292
+  - xy:
+    - 693514.5580168804
+    - 2124600.758647561
+  - xy:
+    - 690122.135569525
+    - 2126803.823544173
+  - xy:
+    - 692573.0112270638
+    - 2130577.841099945
+  - xy:
+    - 691398.8724319348
+    - 2131340.335748954
+  - xy:
+    - 694209.2098525832
+    - 2135667.87587958
+  - xy:
+    - 695534.3093499467
+    - 2134807.346204263
+  - xy:
+    - 697549.4737794781
+    - 2137910.427305677
+  - xy:
+    - 701658.9595624292
+    - 2135241.696034133
+  - xy:
+    - 702399.6686500426
+    - 2136382.288006546
+  - xy:
+    - 706240.7798512507
+    - 2133887.841226205
+  - xy:
+    - 705745.1583293914
+    - 2133124.65100937
+  - xy:
+    - 707053.4844153929
+    - 2132275.014114755
+  - xy:
+    - 706372.6856216313
+    - 2131226.675904818
+  - xy:
+    - 707479.7307713246
+    - 2130507.752378606
+  - xy:
+    - 696197.6835938566
+    - 2113134.923209651
+  - xy:
+    - 695207.2641765336
+    - 2112361.122754681
+  - xy:
+    - 697442.1153319757
+    - 2109500.643719095
+  - xy:
+    - 697284.5131812543
+    - 2109377.511424029
+  - xy:
+    - 699814.8818448456
+    - 2106138.78722671
+  - xy:
+    - 703002.385343181
+    - 2108629.137894404
+  - xy:
+    - 705772.8619821509
+    - 2105083.089503178
+  - xy:
+    - 706876.0770371985
+    - 2105945.015568634
+  - xy:
+    - 710052.8902498856
+    - 2101878.880080026
+  - xy:
+    - 708807.8332591872
+    - 2100906.134949008
+- id: SL-B2F-0012
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 688173.9805179499
+    - 2107184.305903955
+  - xy:
+    - 673673.9805179555
+    - 2107184.305903955
+  - xy:
+    - 673673.9805179564
+    - 2105834.305903955
+  - xy:
+    - 663233.9805179556
+    - 2105834.305903955
+  - xy:
+    - 663233.9805179556
+    - 2107234.305903955
+  - xy:
+    - 661263.9805179565
+    - 2107234.305903955
+  - xy:
+    - 661263.9805179565
+    - 2113234.305903956
+  - xy:
+    - 662963.9805179556
+    - 2113234.305903955
+  - xy:
+    - 662963.9805179556
+    - 2119304.305903955
+  - xy:
+    - 670973.9805179563
+    - 2119304.30590396
+- id: SL-B2F-0013
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 678473.980517969
+    - 2116084.305903955
+  - xy:
+    - 680203.9805179556
+    - 2116084.305903955
+  - xy:
+    - 680203.9805179556
+    - 2116784.305903955
+  - xy:
+    - 688173.9805179499
+    - 2116784.305903955
+- id: SL-B2F-0014
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 670973.980517957
+    - 2121364.305903955
+  - xy:
+    - 670973.980517957
+    - 2113874.305903955
+  - xy:
+    - 678473.9805179738
+    - 2113874.305903955
+  - xy:
+    - 678473.9805179607
+    - 2120114.305903957
+  - xy:
+    - 673973.980517957
+    - 2120114.305903957
+  - xy:
+    - 673973.980517957
+    - 2121364.305903955
+  - xy:
+    - 670973.980517957
+    - 2121364.305903955
+- id: SL-B2F-0015
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 536763.9805179533
+    - 2119504.305903955
+  - xy:
+    - 536763.980517957
+    - 2113434.305903956
+  - xy:
+    - 535063.980517957
+    - 2113434.305903956
+  - xy:
+    - 535063.980517957
+    - 2107034.305903956
+  - xy:
+    - 537033.980517957
+    - 2107034.305903956
+  - xy:
+    - 537033.980517957
+    - 2105634.305903957
+  - xy:
+    - 547873.9805179561
+    - 2105634.305903957
+  - xy:
+    - 547873.9805179561
+    - 2106984.305903955
+  - xy:
+    - 562373.9805183416
+    - 2106984.305903955
+  - xy:
+    - 574853.438623062
+    - 2091011.327928512
+  - xy:
+    - 575893.6128178226
+    - 2091824.001075941
+  - xy:
+    - 576663.1896619798
+    - 2090838.987633933
+  - xy:
+    - 577892.4864376063
+    - 2091799.419535441
+  - xy:
+    - 578452.7383801537
+    - 2091082.329749658
+  - xy:
+    - 582061.827631671
+    - 2093902.059306651
+  - xy:
+    - 581224.5280252296
+    - 2094973.753931554
+  - xy:
+    - 585085.7807179039
+    - 2097990.495160653
+  - xy:
+    - 582807.8332591873
+    - 2100906.134949013
+  - xy:
+    - 584052.8902498871
+    - 2101878.880080029
+  - xy:
+    - 580876.0770371953
+    - 2105945.015568639
+  - xy:
+    - 579772.8619821552
+    - 2105083.089503184
+  - xy:
+    - 577002.3853431867
+    - 2108629.13789441
+  - xy:
+    - 573814.8818448443
+    - 2106138.787226708
+  - xy:
+    - 571284.5131812753
+    - 2109377.511424027
+  - xy:
+    - 571442.1153319968
+    - 2109500.643719092
+  - xy:
+    - 569207.2641765598
+    - 2112361.122754687
+  - xy:
+    - 570197.6835938023
+    - 2113134.923209586
+  - xy:
+    - 581479.7307712758
+    - 2130507.752378642
+  - xy:
+    - 580372.6856215881
+    - 2131226.675904861
+  - xy:
+    - 581053.4844153571
+    - 2132275.014114794
+  - xy:
+    - 579745.1583293603
+    - 2133124.651009417
+  - xy:
+    - 580240.7798512051
+    - 2133887.841226217
+  - xy:
+    - 576399.6686500137
+    - 2136382.288006583
+  - xy:
+    - 575658.9595624154
+    - 2135241.69603421
+  - xy:
+    - 571549.4737795141
+    - 2137910.427305763
+  - xy:
+    - 569534.3093499081
+    - 2134807.346204288
+  - xy:
+    - 568209.2098525466
+    - 2135667.875879601
+  - xy:
+    - 565398.8724319056
+    - 2131340.335748975
+  - xy:
+    - 566573.0112270355
+    - 2130577.841099965
+  - xy:
+    - 564122.1355695013
+    - 2126803.82354419
+  - xy:
+    - 567514.5580168628
+    - 2124600.75864758
+  - xy:
+    - 565276.0915829792
+    - 2121153.822613305
+  - xy:
+    - 565108.3574693903
+    - 2121262.750420305
+  - xy:
+    - 562329.9031134477
+    - 2116984.305903956
+  - xy:
+    - 554003.9805179551
+    - 2116984.305903956
+  - xy:
+    - 554003.9805179551
+    - 2116284.305903954
+  - xy:
+    - 552473.9805179598
+    - 2116284.305903962
+  - xy:
+    - 552473.9805179603
+    - 2120114.305904069
+  - xy:
+    - 547973.9805179565
+    - 2120114.305904069
+  - xy:
+    - 547973.9805179565
+    - 2121364.305903955
+  - xy:
+    - 544973.9805179565
+    - 2121364.305903955
+  - xy:
+    - 544973.9805179565
+    - 2119504.305903961
+  - xy:
+    - 536763.980517957
+    - 2119504.305903955
+- id: SL-B2F-0016
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 410763.9805179576
+    - 2119504.305903955
+  - xy:
+    - 418973.9805179571
+    - 2119504.305903961
+  - xy:
+    - 418973.9805179571
+    - 2121364.305903955
+  - xy:
+    - 421773.9805179571
+    - 2121364.305903955
+  - xy:
+    - 421773.9805179576
+    - 2122714.305903955
+  - xy:
+    - 426473.9805179613
+    - 2122714.305903955
+  - xy:
+    - 426473.9805179604
+    - 2116284.305903963
+  - xy:
+    - 428003.9805179557
+    - 2116284.305903954
+  - xy:
+    - 428003.9805179557
+    - 2116984.305903957
+  - xy:
+    - 436329.9031134483
+    - 2116984.305903956
+  - xy:
+    - 439108.3574693908
+    - 2121262.750420305
+  - xy:
+    - 439276.0915829797
+    - 2121153.822613305
+  - xy:
+    - 441514.5580168634
+    - 2124600.75864758
+  - xy:
+    - 438122.1355695019
+    - 2126803.82354419
+  - xy:
+    - 440573.0112270361
+    - 2130577.841099966
+  - xy:
+    - 439398.8724319061
+    - 2131340.335748975
+  - xy:
+    - 442209.2098525471
+    - 2135667.875879601
+  - xy:
+    - 443534.3093499087
+    - 2134807.346204288
+  - xy:
+    - 445549.4737795146
+    - 2137910.427305763
+  - xy:
+    - 449658.9595624159
+    - 2135241.696034211
+  - xy:
+    - 450399.6686500143
+    - 2136382.288006583
+  - xy:
+    - 454240.7798512056
+    - 2133887.841226217
+  - xy:
+    - 453745.1583293608
+    - 2133124.651009418
+  - xy:
+    - 455053.4844153576
+    - 2132275.014114794
+  - xy:
+    - 454372.6856215887
+    - 2131226.675904861
+  - xy:
+    - 455479.7307712763
+    - 2130507.752378642
+  - xy:
+    - 444197.6835938028
+    - 2113134.923209586
+  - xy:
+    - 443207.2641765603
+    - 2112361.122754687
+  - xy:
+    - 445442.1153319974
+    - 2109500.643719092
+  - xy:
+    - 445284.5131812759
+    - 2109377.511424027
+  - xy:
+    - 447814.8818448449
+    - 2106138.787226708
+  - xy:
+    - 453051.2133025557
+    - 2110229.857730256
+  - xy:
+    - 455944.8222365921
+    - 2106526.207188307
+  - xy:
+    - 454999.209332267
+    - 2105787.413417911
+  - xy:
+    - 458052.8902498877
+    - 2101878.880080029
+  - xy:
+    - 456807.8332591878
+    - 2100906.134949013
+  - xy:
+    - 459085.7807179044
+    - 2097990.495160653
+  - xy:
+    - 455224.5280252301
+    - 2094973.753931554
+  - xy:
+    - 456061.8276316672
+    - 2093902.059306657
+  - xy:
+    - 452452.7383801499
+    - 2091082.329749664
+  - xy:
+    - 451892.4864376068
+    - 2091799.419535441
+  - xy:
+    - 450663.1896619803
+    - 2090838.987633933
+  - xy:
+    - 449893.6128178232
+    - 2091824.001075941
+  - xy:
+    - 448853.4386230625
+    - 2091011.327928512
+  - xy:
+    - 436373.9805183422
+    - 2106984.305903955
+  - xy:
+    - 421873.9805179566
+    - 2106984.305903955
+  - xy:
+    - 421873.9805179566
+    - 2105634.305903957
+  - xy:
+    - 411033.9805179576
+    - 2105634.305903957
+  - xy:
+    - 411033.9805179576
+    - 2107034.305903956
+  - xy:
+    - 409063.9805179576
+    - 2107034.305903956
+  - xy:
+    - 409063.9805179576
+    - 2113434.305903956
+  - xy:
+    - 410763.9805179576
+    - 2113434.305903956
+  - xy:
+    - 410763.9805179538
+    - 2119504.305903955
+- id: SL-B2F-0017
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 284763.9805179583
+    - 2119504.305903955
+  - xy:
+    - 292973.9805179579
+    - 2119504.305903961
+  - xy:
+    - 292973.9805179579
+    - 2121364.305903955
+  - xy:
+    - 295773.9805179579
+    - 2121364.305903955
+  - xy:
+    - 295773.9805179583
+    - 2122714.305903955
+  - xy:
+    - 300473.980517962
+    - 2122714.305903955
+  - xy:
+    - 300473.9805179611
+    - 2116284.305903963
+  - xy:
+    - 302003.9805179565
+    - 2116284.305903954
+  - xy:
+    - 302003.9805179565
+    - 2116984.305903957
+  - xy:
+    - 310329.903113449
+    - 2116984.305903956
+  - xy:
+    - 313108.3574693916
+    - 2121262.750420305
+  - xy:
+    - 313276.0915829805
+    - 2121153.822613305
+  - xy:
+    - 315514.5580168641
+    - 2124600.75864758
+  - xy:
+    - 312122.1355695026
+    - 2126803.82354419
+  - xy:
+    - 314573.0112270369
+    - 2130577.841099966
+  - xy:
+    - 313398.8724319069
+    - 2131340.335748975
+  - xy:
+    - 316209.2098525479
+    - 2135667.875879601
+  - xy:
+    - 317534.3093499094
+    - 2134807.346204288
+  - xy:
+    - 319549.4737795154
+    - 2137910.427305763
+  - xy:
+    - 323658.9595624167
+    - 2135241.696034211
+  - xy:
+    - 324399.6686500364
+    - 2136382.288006615
+  - xy:
+    - 328240.7798512277
+    - 2133887.841226249
+  - xy:
+    - 327745.1583293616
+    - 2133124.651009418
+  - xy:
+    - 329053.4844153584
+    - 2132275.014114794
+  - xy:
+    - 328372.6856215894
+    - 2131226.675904861
+  - xy:
+    - 329479.7307712771
+    - 2130507.752378642
+  - xy:
+    - 318197.6835938036
+    - 2113134.923209586
+  - xy:
+    - 317207.2641765611
+    - 2112361.122754687
+  - xy:
+    - 319442.1153319981
+    - 2109500.643719092
+  - xy:
+    - 319284.5131812766
+    - 2109377.511424027
+  - xy:
+    - 321814.8818448456
+    - 2106138.787226708
+  - xy:
+    - 327051.2133025565
+    - 2110229.857730256
+  - xy:
+    - 329944.8222365929
+    - 2106526.207188307
+  - xy:
+    - 328999.2093322678
+    - 2105787.413417911
+  - xy:
+    - 332052.8902498884
+    - 2101878.880080029
+  - xy:
+    - 330807.8332591886
+    - 2100906.134949013
+  - xy:
+    - 333085.7807179052
+    - 2097990.495160653
+  - xy:
+    - 329224.5280252309
+    - 2094973.753931554
+  - xy:
+    - 330061.8276316722
+    - 2093902.059306651
+  - xy:
+    - 326452.7383801549
+    - 2091082.329749658
+  - xy:
+    - 325892.4864376076
+    - 2091799.419535441
+  - xy:
+    - 324663.1896619811
+    - 2090838.987633933
+  - xy:
+    - 323893.6128178239
+    - 2091824.001075941
+  - xy:
+    - 322853.4386230633
+    - 2091011.327928512
+  - xy:
+    - 310373.980518343
+    - 2106984.305903955
+  - xy:
+    - 295873.9805179574
+    - 2106984.305903955
+  - xy:
+    - 295873.9805179574
+    - 2105634.305903957
+  - xy:
+    - 285033.9805179583
+    - 2105634.305903957
+  - xy:
+    - 285033.9805179583
+    - 2107034.305903956
+  - xy:
+    - 283063.9805179583
+    - 2107034.305903956
+  - xy:
+    - 283063.9805179583
+    - 2113434.305903956
+  - xy:
+    - 284763.9805179583
+    - 2113434.305903956
+  - xy:
+    - 284763.9805179546
+    - 2119504.305903955
+- id: SL-B2F-0018
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 158762.819229134
+    - 2119504.305951069
+  - xy:
+    - 158762.8192291377
+    - 2113434.30595107
+  - xy:
+    - 157062.8192291377
+    - 2113434.30595107
+  - xy:
+    - 157062.8192291377
+    - 2107034.30595107
+  - xy:
+    - 159032.8192291377
+    - 2107034.30595107
+  - xy:
+    - 159032.8192291377
+    - 2105634.305951071
+  - xy:
+    - 169872.8192291368
+    - 2105634.305951071
+  - xy:
+    - 169872.8192291368
+    - 2106984.305951068
+  - xy:
+    - 184372.8192295224
+    - 2106984.305951069
+  - xy:
+    - 196852.2773342427
+    - 2091011.327975625
+  - xy:
+    - 197892.4515290033
+    - 2091824.001123055
+  - xy:
+    - 198662.0283731605
+    - 2090838.987681046
+  - xy:
+    - 199891.325148787
+    - 2091799.419582554
+  - xy:
+    - 200451.5770713071
+    - 2091082.329822407
+  - xy:
+    - 204060.6663228244
+    - 2093902.059379399
+  - xy:
+    - 203223.3667364103
+    - 2094973.753978667
+  - xy:
+    - 207084.6194290846
+    - 2097990.495207767
+  - xy:
+    - 205052.9365604988
+    - 2100590.930694685
+  - xy:
+    - 206613.1978526418
+    - 2101809.940415833
+  - xy:
+    - 202943.85545969
+    - 2106506.484507324
+  - xy:
+    - 201840.6404046428
+    - 2105644.558441864
+  - xy:
+    - 199070.1637656736
+    - 2109190.606833092
+  - xy:
+    - 195725.0581166246
+    - 2106577.123870336
+  - xy:
+    - 191206.1028877405
+    - 2112361.1228018
+  - xy:
+    - 192196.522304983
+    - 2113134.9232567
+  - xy:
+    - 203478.5694824566
+    - 2130507.752425755
+  - xy:
+    - 202371.5243327689
+    - 2131226.675951975
+  - xy:
+    - 203052.3231265379
+    - 2132275.014161907
+  - xy:
+    - 201743.997040541
+    - 2133124.651056531
+  - xy:
+    - 202239.6210423589
+    - 2133887.845092151
+  - xy:
+    - 198398.5098411676
+    - 2136382.291872517
+  - xy:
+    - 197657.7982735961
+    - 2135241.696081324
+  - xy:
+    - 193548.3244996721
+    - 2137910.419554156
+  - xy:
+    - 191560.3920218159
+    - 2134849.271981078
+  - xy:
+    - 190193.3469870793
+    - 2135737.041406861
+  - xy:
+    - 187328.5456629376
+    - 2131325.634219441
+  - xy:
+    - 188502.6844580685
+    - 2130563.13957043
+  - xy:
+    - 186051.8088005344
+    - 2126789.122014656
+  - xy:
+    - 189486.1647762928
+    - 2124558.825166296
+  - xy:
+    - 187274.9302941599
+    - 2121153.822660418
+  - xy:
+    - 187107.196180571
+    - 2121262.750467419
+  - xy:
+    - 184328.7418246284
+    - 2116984.30595107
+  - xy:
+    - 176002.8279457438
+    - 2116984.30595107
+  - xy:
+    - 176002.8279457438
+    - 2116284.305951067
+  - xy:
+    - 174522.8192291403
+    - 2116284.305951076
+  - xy:
+    - 174522.8192291408
+    - 2120164.30595107
+  - xy:
+    - 170022.8192291373
+    - 2120164.30595107
+  - xy:
+    - 170022.8192291373
+    - 2121364.305951068
+  - xy:
+    - 166922.8192291376
+    - 2121364.305951068
+  - xy:
+    - 166922.8192291376
+    - 2119504.305951074
+  - xy:
+    - 158762.8192291377
+    - 2119504.305951069
+- id: SL-B2F-0019
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 314772.744942024
+    - 2123091.250992095
+  - xy:
+    - 318827.5000179091
+    - 2120475.947706704
+  - xy:
+    - 320039.3218707912
+    - 2122341.98972038
+  - xy:
+    - 320014.1617537552
+    - 2122358.328891428
+  - xy:
+    - 321223.2604114681
+    - 2124220.177552291
+  - xy:
+    - 321248.4205285148
+    - 2124203.838381236
+  - xy:
+    - 322392.1625020299
+    - 2125965.046573926
+- id: SL-B2F-0020
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 422183.9805179608
+    - 2120114.305903955
+  - xy:
+    - 421973.980517957
+    - 2120114.305903955
+  - xy:
+    - 421973.980517957
+    - 2121364.305903955
+  - xy:
+    - 421773.9805179571
+    - 2121364.305903955
+  - xy:
+    - 421773.9805179576
+    - 2122714.305903955
+  - xy:
+    - 426473.9805179613
+    - 2122714.305903955
+  - xy:
+    - 426473.9805179613
+    - 2120114.305903957
+  - xy:
+    - 422263.9805179608
+    - 2120114.305903955
+- id: SL-B2F-0021
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 453594.3201543083
+    - 2105311.612621725
+  - xy:
+    - 451002.3853431814
+    - 2108629.137894408
+  - xy:
+    - 453051.2133025557
+    - 2110229.857730256
+  - xy:
+    - 455944.8222366055
+    - 2106526.207188318
+  - xy:
+    - 454999.2093322682
+    - 2105787.413417912
+  - xy:
+    - 454876.0770371997
+    - 2105945.015568635
+  - xy:
+    - 453772.8619821531
+    - 2105083.089503179
+  - xy:
+    - 453643.5730723343
+    - 2105248.571761437
+- id: SL-B2F-0022
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111860.5535273172
+    - 2128983.685907763
+  - xy:
+    - 113202.1160273173
+    - 2128983.685907763
+  - xy:
+    - 113202.1160273173
+    - 2128486.810907763
+  - xy:
+    - 111860.5535273172
+    - 2128486.810907763
+- id: SL-B2F-0023
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 237860.5535273182
+    - 2122683.685907763
+  - xy:
+    - 239202.1160273182
+    - 2122683.685907763
+  - xy:
+    - 239202.1160273182
+    - 2122186.810907763
+  - xy:
+    - 237860.5535273182
+    - 2122186.810907763
+- id: SL-B2F-0024
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273153
+    - 2126283.685907763
+  - xy:
+    - 365202.1160273153
+    - 2126283.685907763
+  - xy:
+    - 365202.1160273153
+    - 2125786.810907763
+  - xy:
+    - 363860.5535273153
+    - 2125786.810907763
+- id: SL-B2F-0025
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273153
+    - 2125383.685907763
+  - xy:
+    - 365202.1160273153
+    - 2125383.685907763
+  - xy:
+    - 365202.1160273153
+    - 2124886.810907763
+  - xy:
+    - 363860.5535273153
+    - 2124886.810907763
+- id: SL-B2F-0026
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273153
+    - 2123583.685907763
+  - xy:
+    - 365202.1160273153
+    - 2123583.685907763
+  - xy:
+    - 365202.1160273153
+    - 2123086.810907763
+  - xy:
+    - 363860.5535273153
+    - 2123086.810907763
+- id: SL-B2F-0027
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273153
+    - 2124483.685907763
+  - xy:
+    - 365202.1160273153
+    - 2124483.685907763
+  - xy:
+    - 365202.1160273153
+    - 2123986.810907763
+  - xy:
+    - 363860.5535273153
+    - 2123986.810907763
+- id: SL-B2F-0028
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273153
+    - 2122683.685907763
+  - xy:
+    - 365202.1160273153
+    - 2122683.685907763
+  - xy:
+    - 365202.1160273153
+    - 2122186.810907763
+  - xy:
+    - 363860.5535273153
+    - 2122186.810907763
+- id: SL-B2F-0029
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 330061.8276316719
+    - 2093902.059306652
+  - xy:
+    - 325750.1637358801
+    - 2090534.305903951
+  - xy:
+    - 278963.980518208
+    - 2090534.305903246
+- id: SL-B2F-0030
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 319549.4737794835
+    - 2137910.427305784
+  - xy:
+    - 317985.1323414203
+    - 2138926.32251389
+  - xy:
+    - 317985.1323414122
+    - 2145305.466130563
+- id: SL-B2F-0031
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 489860.5535273149
+    - 2126283.685907763
+  - xy:
+    - 491202.1160273149
+    - 2126283.685907763
+  - xy:
+    - 491202.1160273149
+    - 2125786.810907763
+  - xy:
+    - 489860.5535273149
+    - 2125786.810907763
+- id: SL-B2F-0032
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 615860.5535273144
+    - 2128083.685907763
+  - xy:
+    - 617202.1160273144
+    - 2128083.685907763
+  - xy:
+    - 617202.1160273144
+    - 2127586.810907763
+  - xy:
+    - 615860.5535273144
+    - 2127586.810907763
+- id: SL-B2F-0033
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 741860.5535273143
+    - 2125358.407611188
+  - xy:
+    - 743202.1160273143
+    - 2125358.407611188
+  - xy:
+    - 743202.1160273143
+    - 2124861.532611188
+  - xy:
+    - 741860.5535273143
+    - 2124861.532611188
+- id: SL-B2F-0034
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 741860.5535273143
+    - 2123558.407611188
+  - xy:
+    - 743202.1160273143
+    - 2123558.407611188
+  - xy:
+    - 743202.1160273143
+    - 2123061.532611188
+  - xy:
+    - 741860.5535273143
+    - 2123061.532611188
+- id: SL-B2F-0035
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 993860.5535273126
+    - 2134383.685907763
+  - xy:
+    - 995202.1160273126
+    - 2134383.685907763
+  - xy:
+    - 995202.1160273126
+    - 2133886.810907763
+  - xy:
+    - 993860.5535273126
+    - 2133886.810907763
+- id: SL-B2F-0036
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 993860.5535273126
+    - 2133483.685907763
+  - xy:
+    - 995202.1160273126
+    - 2133483.685907763
+  - xy:
+    - 995202.1160273126
+    - 2132986.810907763
+  - xy:
+    - 993860.5535273126
+    - 2132986.810907763
+- id: SL-B2F-0037
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 993860.5535273126
+    - 2132583.685907763
+  - xy:
+    - 995202.1160273126
+    - 2132583.685907763
+  - xy:
+    - 995202.1160273126
+    - 2132086.810907763
+  - xy:
+    - 993860.5535273126
+    - 2132086.810907763
+- id: SL-B2F-0038
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 993860.5535273126
+    - 2131683.685907763
+  - xy:
+    - 995202.1160273126
+    - 2131683.685907763
+  - xy:
+    - 995202.1160273126
+    - 2131186.810907763
+  - xy:
+    - 993860.5535273126
+    - 2131186.810907763
+- id: SL-B2F-0039
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111860.5535273172
+    - 2128083.685907763
+  - xy:
+    - 113202.1160273173
+    - 2128083.685907763
+  - xy:
+    - 113202.1160273173
+    - 2127586.810907763
+  - xy:
+    - 111860.5535273172
+    - 2127586.810907763
+- id: SL-B2F-0040
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111860.5535273173
+    - 2343456.969860464
+  - xy:
+    - 113202.1160273173
+    - 2343456.969860464
+  - xy:
+    - 113202.1160273173
+    - 2342960.094860464
+  - xy:
+    - 111860.5535273173
+    - 2342960.094860464
+- id: SL-B2F-0041
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111860.5535273173
+    - 2342556.969860464
+  - xy:
+    - 113202.1160273173
+    - 2342556.969860464
+  - xy:
+    - 113202.1160273173
+    - 2342060.094860464
+  - xy:
+    - 111860.5535273173
+    - 2342060.094860464
+- id: SL-B2F-0042
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111860.5535273173
+    - 2341656.969860464
+  - xy:
+    - 113202.1160273173
+    - 2341656.969860464
+  - xy:
+    - 113202.1160273173
+    - 2341160.094860464
+  - xy:
+    - 111860.5535273173
+    - 2341160.094860464
+- id: SL-B2F-0043
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111860.5535273173
+    - 2339856.969860464
+  - xy:
+    - 113202.1160273173
+    - 2339856.969860464
+  - xy:
+    - 113202.1160273173
+    - 2339360.094860464
+  - xy:
+    - 111860.5535273173
+    - 2339360.094860464
+- id: SL-B2F-0044
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111860.5535273173
+    - 2338956.969860464
+  - xy:
+    - 113202.1160273173
+    - 2338956.969860464
+  - xy:
+    - 113202.1160273173
+    - 2338460.094860464
+  - xy:
+    - 111860.5535273173
+    - 2338460.094860464
+- id: SL-B2F-0045
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 111160.5535273172
+    - 2338056.969860464
+  - xy:
+    - 112502.1160273172
+    - 2338056.969860464
+  - xy:
+    - 112502.1160273172
+    - 2337560.094860464
+  - xy:
+    - 111160.5535273172
+    - 2337560.094860464
+- id: SL-B2F-0046
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 74886.90415817876
+    - 2090534.30595107
+  - xy:
+    - 78885.53905837897
+    - 2093658.405046515
+  - xy:
+    - 78582.78388512162
+    - 2094045.917707478
+  - xy:
+    - 83035.04464308936
+    - 2097524.405042988
+  - xy:
+    - 80388.28484208294
+    - 2100912.099392355
+  - xy:
+    - 81909.1455965489
+    - 2102100.32603974
+  - xy:
+    - 77539.13352428749
+    - 2107693.686424201
+  - xy:
+    - 76435.91846923777
+    - 2106831.760358742
+  - xy:
+    - 73276.98289953232
+    - 2110875.013507811
+  - xy:
+    - 69380.26972296226
+    - 2107830.567512329
+  - xy:
+    - 66462.03432993934
+    - 2111565.738484386
+  - xy:
+    - 67644.05046034779
+    - 2112489.230697376
+  - xy:
+    - 67438.50715201107
+    - 2112752.314134941
+  - xy:
+    - 79207.70648609262
+    - 2130875.291841927
+  - xy:
+    - 76691.6947822973
+    - 2132509.208946931
+  - xy:
+    - 77459.63830161183
+    - 2133691.738266531
+  - xy:
+    - 72251.49407459811
+    - 2137073.946673968
+  - xy:
+    - 71945.96984981069
+    - 2136603.480624626
+  - xy:
+    - 67081.68055568961
+    - 2139762.387027688
+  - xy:
+    - 64726.64061448873
+    - 2136135.943533792
+  - xy:
+    - 63380.57435295719
+    - 2137010.089184964
+  - xy:
+    - 59834.97423504712
+    - 2131550.343787613
+  - xy:
+    - 61009.11303018236
+    - 2130787.849138596
+  - xy:
+    - 58149.75809638622
+    - 2126384.828656865
+  - xy:
+    - 61812.16855041257
+    - 2124006.431498651
+  - xy:
+    - 57674.06180447966
+    - 2117634.305903966
+  - xy:
+    - 56747.81922907202
+    - 2117634.30590395
+  - xy:
+    - 56747.81922907202
+    - 2116984.305951071
+  - xy:
+    - 52512.81922905991
+    - 2116984.305951071
+  - xy:
+    - 52512.81922905991
+    - 2122764.305951068
+  - xy:
+    - 31562.82560836207
+    - 2122764.305951068
+  - xy:
+    - 31562.82560830616
+    - 2114059.30595107
+  - xy:
+    - 29687.81922906271
+    - 2114059.30595107
+  - xy:
+    - 29687.81922906271
+    - 2106064.305951071
+  - xy:
+    - 31383.9774499638
+    - 2106064.305951071
+  - xy:
+    - 31383.9774499638
+    - 2102954.30430937
+  - xy:
+    - 45097.81922906032
+    - 2102954.30430937
+  - xy:
+    - 45097.81922906032
+    - 2105609.30595107
+  - xy:
+    - 57183.97744989232
+    - 2105609.30595107
+  - xy:
+    - 57183.97744989232
+    - 2102334.304309349
+  - xy:
+    - 58531.30504139399
+    - 2102334.304309349
+  - xy:
+    - 60058.42129859102
+    - 2103527.418291102
+  - xy:
+    - 64046.78413378415
+    - 2098422.546654052
+  - xy:
+    - 63593.68607196581
+    - 2098068.530910646
+  - xy:
+    - 64184.72362342678
+    - 2097312.037342343
+  - xy:
+    - 63081.50267150232
+    - 2096450.099695062
+  - xy:
+    - 64928.49299435779
+    - 2094086.079016068
+  - xy:
+    - 66031.70804940647
+    - 2094948.005081525
+  - xy:
+    - 69480.06773976359
+    - 2090534.30595107
+- id: SL-B2F-0047
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 237860.5535273172
+    - 2340756.969860464
+  - xy:
+    - 239202.1160273172
+    - 2340756.969860464
+  - xy:
+    - 239202.1160273172
+    - 2340260.094860464
+  - xy:
+    - 237860.5535273172
+    - 2340260.094860464
+- id: SL-B2F-0048
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 237860.5535273172
+    - 2339856.969860464
+  - xy:
+    - 239202.1160273172
+    - 2339856.969860464
+  - xy:
+    - 239202.1160273172
+    - 2339360.094860464
+  - xy:
+    - 237860.5535273172
+    - 2339360.094860464
+- id: SL-B2F-0049
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 237860.5535273172
+    - 2338956.969860464
+  - xy:
+    - 239202.1160273172
+    - 2338956.969860464
+  - xy:
+    - 239202.1160273172
+    - 2338460.094860464
+  - xy:
+    - 237860.5535273172
+    - 2338460.094860464
+- id: SL-B2F-0050
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273171
+    - 2341656.969860463
+  - xy:
+    - 365202.1160273171
+    - 2341656.969860463
+  - xy:
+    - 365202.1160273171
+    - 2341160.094860463
+  - xy:
+    - 363860.5535273171
+    - 2341160.094860463
+- id: SL-B2F-0051
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273171
+    - 2340756.969860463
+  - xy:
+    - 365202.1160273171
+    - 2340756.969860463
+  - xy:
+    - 365202.1160273171
+    - 2340260.094860463
+  - xy:
+    - 363860.5535273171
+    - 2340260.094860463
+- id: SL-B2F-0052
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273171
+    - 2339856.969860463
+  - xy:
+    - 365202.1160273171
+    - 2339856.969860463
+  - xy:
+    - 365202.1160273171
+    - 2339360.094860463
+  - xy:
+    - 363860.5535273171
+    - 2339360.094860463
+- id: SL-B2F-0053
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 363860.5535273153
+    - 2121783.685907763
+  - xy:
+    - 365202.1160273153
+    - 2121783.685907763
+  - xy:
+    - 365202.1160273153
+    - 2121286.810907763
+  - xy:
+    - 363860.5535273153
+    - 2121286.810907763
+- id: SL-B2F-0054
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 489860.5535273149
+    - 2125383.685907763
+  - xy:
+    - 491202.1160273149
+    - 2125383.685907763
+  - xy:
+    - 491202.1160273149
+    - 2124886.810907763
+  - xy:
+    - 489860.5535273149
+    - 2124886.810907763
+- id: SL-B2F-0055
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 741860.5535273143
+    - 2124458.407611188
+  - xy:
+    - 743202.1160273143
+    - 2124458.407611188
+  - xy:
+    - 743202.1160273143
+    - 2123961.532611188
+  - xy:
+    - 741860.5535273143
+    - 2123961.532611188
+- id: SL-B2F-0056
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 615860.5535273144
+    - 2127183.685907763
+  - xy:
+    - 617202.1160273144
+    - 2127183.685907763
+  - xy:
+    - 617202.1160273144
+    - 2126686.810907763
+  - xy:
+    - 615860.5535273144
+    - 2126686.810907763
+- id: SL-B2F-0057
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 371734.3687348396
+    - 2128083.685907716
+  - xy:
+    - 373075.9312348396
+    - 2128083.685907716
+  - xy:
+    - 373075.9312348396
+    - 2127586.810907716
+  - xy:
+    - 371734.3687348396
+    - 2127586.810907716
+- id: SL-B2F-0058
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 623734.3687348394
+    - 2131683.685907623
+  - xy:
+    - 625075.9312348394
+    - 2131683.685907623
+  - xy:
+    - 625075.9312348394
+    - 2131186.810907623
+  - xy:
+    - 623734.3687348394
+    - 2131186.810907623
+- id: SL-B2F-0059
+  spec: SLAB-T150-UNVERIFIED
+  type: slab
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  polygon:
+  - xy:
+    - 749734.3687348394
+    - 2129858.407611001
+  - xy:
+    - 751075.9312348394
+    - 2129858.407611001
+  - xy:
+    - 751075.9312348394
+    - 2129361.532611001
+  - xy:
+    - 749734.3687348394
+    - 2129361.532611001
+- id: FND-B2F-0001
+  spec: FND-MEAS-5500x3000
+  type: foundation
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 298123.9805179592
+    - 2121614.305979265
+- id: FND-B2F-0002
+  spec: FND-MEAS-5435x5073
+  type: foundation
+  floor: B2F
+  rotation: 0.0
+  z_offset: 0.0
+  at:
+    xy:
+    - 327788.4471338558
+    - 2108254.6181554296
