@@ -20,3 +20,7 @@ tests/fixtures/
 
 # 분석 임시 (대용량 OLE 추출, 원본 도면 이진)
 tmp_analysis/
+
+# 대용량 STEP·skeleton DXF (로컬만 보관, BOQ JSON/CSV는 git 추적)
+output/*.step
+output/skeleton_*.dxf
