@@ -115,7 +115,11 @@ class Member:
         if self.type == "WALL":
             length = float(self.length_mm or 0.0)
             height = self.height_mm_for_volume()
-            # 두께 미지정 시 BOQ는 면적만, 체적은 0
+            sec = self.parse_section()
+            if sec:
+                # WALL의 section은 'thickness x height' 규약
+                thickness, _ = sec
+                return (length / 1000.0) * (thickness / 1000.0) * (height / 1000.0)
             return 0.0
 
         if self.type == "FND":
