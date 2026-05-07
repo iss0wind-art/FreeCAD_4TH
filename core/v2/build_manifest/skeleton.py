@@ -15,6 +15,7 @@ from core.manifest_parser import (
     ProjectMeta,
 )
 from core.v2.inspect.meta_pipeline import DrawingMeta
+from core.v2.inspect.sl_extractor import extract_floors_from_drawing
 
 
 # 표준 층고 (KS 사전지식 — 실측 SL 우선, 누락 시 폴백)
@@ -34,18 +35,23 @@ def build_skeleton(
     - grid: None (Phase 2에서 작성)
     - members: [] (Phase 4에서 작성)
     """
-    # 시트별 (floor, sl) 수집
-    floors_raw = []
+    # 1. 도면 전체에서 '지하2층 SL = GL.-9.05' 형식으로 자동 추출 (1순위)
+    all_labels = [(lab.text, lab.x, lab.y) for lab in meta.text_stats.all()]
+    auto_floors = extract_floors_from_drawing(all_labels)
+
+    # 2. 시트별 z_sl 폴백 (sl_extractor 별도 매칭)
+    floor_map: dict[str, float] = dict(auto_floors)
     for s in meta.sheets:
         floor_id = s.floor_label or s.sheet_id
-        z_sl = s.z_sl if s.z_sl is not None else 0.0
-        floors_raw.append((floor_id, z_sl))
+        z_sl = s.z_sl if s.z_sl is not None else None
+        if z_sl is None:
+            continue
+        if floor_id not in floor_map or z_sl < floor_map[floor_id]:
+            floor_map[floor_id] = z_sl
 
-    # 중복 제거 (같은 floor_id면 가장 낮은 z_sl 채택)
-    floor_map = {}
-    for fid, z in floors_raw:
-        if fid not in floor_map or z < floor_map[fid]:
-            floor_map[fid] = z
+    # 3. 모두 없으면 sheet_id 기본 floor 1개
+    if not floor_map:
+        floor_map = {(meta.sheets[0].sheet_id if meta.sheets else "1F"): 0.0}
 
     # Z 오름차순 정렬
     sorted_floors = sorted(floor_map.items(), key=lambda kv: kv[1])
