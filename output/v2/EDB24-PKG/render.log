@@ -1,0 +1,16 @@
+[로드] output/v2/EDB24-PKG/EDB24-PKG.step
+  솔리드 18313개  (44.8s)
+[메시] tessellate deflection=300 ...
+  v=146340, f=221798  (13.6s)
+  X: 495.4m ~ 1916.9m  (1421.5m)
+  Y: -1323.5m ~ -985.9m  (337.6m)
+  Z: -11.21m ~ 3.50m  (14.71m)
+[PNG] output\v2\EDB24-PKG\v4_iso.png
+[PNG] output\v2\EDB24-PKG\v4_top.png
+[PNG] output\v2\EDB24-PKG\v4_north.png
+[PNG] output\v2\EDB24-PKG\v4_east.png
+완료 162.3s
+FreeCAD 1.1.1, Libs: 1.1.1R20260414 (Git shallow)
+(C) 2001-2026 FreeCAD contributors
+FreeCAD is free and open-source software licensed under the terms of LGPL2+ license.
+

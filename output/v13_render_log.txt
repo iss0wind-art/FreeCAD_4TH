@@ -1,0 +1,30 @@
+D:\Git\FreeCAD_4TH\tests\render_v13_demo.py:76: UserWarning: Glyph 49884 (\N{HANGUL SYLLABLE SI}) missing from font(s) DejaVu Sans.
+  plt.savefig(out, dpi=100, bbox_inches='tight')
+D:\Git\FreeCAD_4TH\tests\render_v13_demo.py:76: UserWarning: Glyph 50672 (\N{HANGUL SYLLABLE YEON}) missing from font(s) DejaVu Sans.
+  plt.savefig(out, dpi=100, bbox_inches='tight')
+D:\Git\FreeCAD_4TH\tests\render_v13_demo.py:76: UserWarning: Glyph 46041 (\N{HANGUL SYLLABLE DONG}) missing from font(s) DejaVu Sans.
+  plt.savefig(out, dpi=100, bbox_inches='tight')
+D:\Git\FreeCAD_4TH\tests\render_v13_demo.py:76: UserWarning: Glyph 44060 (\N{HANGUL SYLLABLE GAE}) missing from font(s) DejaVu Sans.
+  plt.savefig(out, dpi=100, bbox_inches='tight')
+D:\Git\FreeCAD_4TH\tests\render_v13_demo.py:76: UserWarning: Glyph 48624 (\N{HANGUL SYLLABLE BYU}) missing from font(s) DejaVu Sans.
+  plt.savefig(out, dpi=100, bbox_inches='tight')
+D:\Git\FreeCAD_4TH\tests\render_v13_demo.py:76: UserWarning: Glyph 50689 (\N{HANGUL SYLLABLE YEONG}) missing from font(s) DejaVu Sans.
+  plt.savefig(out, dpi=100, bbox_inches='tight')
+D:\Git\FreeCAD_4TH\tests\render_v13_demo.py:76: UserWarning: Glyph 50669 (\N{HANGUL SYLLABLE YEOG}) missing from font(s) DejaVu Sans.
+  plt.savefig(out, dpi=100, bbox_inches='tight')
+[로드] output/v13_demo.step
+  솔리드 7822개 (19.2s)
+[메시] tessellate deflection=200mm ...
+  v=54329, f=93864 (5.8s)
+  X: 64.9m ~ 232.9m
+  Y: 2233.3m ~ 2403.8m
+  Z: -9.1m ~ -5.6m
+[PNG] output/v13_demo_iso.png
+[PNG] output/v13_demo_top.png
+[PNG] output/v13_demo_north.png
+[PNG] output/v13_demo_east.png
+완료, 총 69.6s
+FreeCAD 1.1.1, Libs: 1.1.1R20260414 (Git shallow)
+(C) 2001-2026 FreeCAD contributors
+FreeCAD is free and open-source software licensed under the terms of LGPL2+ license.
+
