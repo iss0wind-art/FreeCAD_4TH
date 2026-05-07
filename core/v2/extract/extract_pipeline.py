@@ -8,7 +8,7 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
 import ezdxf
 
@@ -75,6 +75,24 @@ def extract_all_members(meta: DrawingMeta,
     ]
     section_specs = collect_section_specs(section_label_positions)
 
+    # 슬라브 라벨 후보 — 'A','B','S1' 등은 SECTION_CODE로 분류되지 않으므로
+    # text_stats 전체에서 수집
+    all_text_positions = [
+        (lab.text, lab.x, lab.y)
+        for lab in meta.text_stats.all()
+    ]
+
+    # 카탈로그에서 슬라브 두께 lookup table 만들기
+    catalog = section_catalog or {}
+    slab_thickness_lookup: Dict[str, float] = {}
+    for sym, entry in catalog.items():
+        # SLAB 카탈로그는 width_mm에 두께 저장 (parse_slab_list 규약)
+        member_type = entry.get("member_type") if isinstance(entry, dict) else None
+        if member_type == "slab":
+            t = entry.get("width_mm") if isinstance(entry, dict) else None
+            if t and t > 0:
+                slab_thickness_lookup[sym] = float(t)
+
     # 3. 부재 추출
     columns = extract_columns(doc, cols_layers)
     walls = extract_walls(doc, walls_layers)
@@ -83,7 +101,11 @@ def extract_all_members(meta: DrawingMeta,
         section_specs=section_specs,
         section_label_positions=section_label_positions,
     )
-    slabs = extract_slabs(doc, slabs_layers)
+    slabs = extract_slabs(
+        doc, slabs_layers,
+        label_positions=all_text_positions,
+        slab_catalog=slab_thickness_lookup,
+    )
     fnds = extract_foundations(doc, fnds_layers)
 
     return ExtractionResult(
@@ -158,9 +180,17 @@ def to_manifest_members(
             ],
         ))
 
-    # SLAB — 두께 미상이면 명시적 UNKNOWN
+    # SLAB — 라벨 매칭 → 카탈로그 → 두께 / 폴백 시 UNVERIFIED 명시
     for i, s in enumerate(result.slabs, 1):
-        spec = f"SLAB-T{int(s.thickness_mm)}-UNVERIFIED"   # 도면에 두께 표기 없으면 폴백
+        if s.matched_from_catalog and s.section_symbol:
+            # 라벨 + 두께 모두 카탈로그에서 검증됨
+            spec = f"SLAB-{s.section_symbol}-T{int(s.thickness_mm)}"
+        elif s.section_symbol:
+            # 라벨은 있으나 카탈로그 미매칭
+            spec = f"SLAB-{s.section_symbol}-UNMATCHED"
+        else:
+            # 라벨 자체 없음 → 폴백 두께
+            spec = f"SLAB-T{int(s.thickness_mm)}-UNVERIFIED"
         members.append(MemberInstance(
             id=f"SL-{floor_id}-{i:04d}",
             spec=spec,
