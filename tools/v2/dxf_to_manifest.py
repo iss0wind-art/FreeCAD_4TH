@@ -31,7 +31,9 @@ from core.v2.inspect.meta_pipeline import inspect
 
 def main():
     parser = argparse.ArgumentParser(description="DXF → .boq.yaml")
-    parser.add_argument("--dxf", required=True, nargs="+", help="DXF 경로(들)")
+    parser.add_argument("--dxf", required=True, nargs="+", help="평면도 DXF 경로(들)")
+    parser.add_argument("--section-list", nargs="*", default=[],
+                        help="단면 일람표 DXF 경로 (보 리스트, 기둥 리스트 등)")
     parser.add_argument("--project-id", required=True)
     parser.add_argument("--project-name", default=None)
     parser.add_argument("--out", required=True, help="출력 .boq.yaml 경로")
@@ -59,8 +61,21 @@ def main():
     manifest = write_grid_to_manifest(manifest, coord.grids)
     print(f"  has_grid={coord.has_grid}")
 
+    # 일람표 카탈로그 (있으면)
+    catalog = {}
+    if args.section_list:
+        from core.v2.extract.section_list import parse_multiple_lists
+        list_paths = [Path(p) for p in args.section_list if Path(p).exists()]
+        print(f"[catalog] 일람표 {len(list_paths)}개 파싱")
+        cat_entries = parse_multiple_lists(list_paths)
+        catalog = {sym: {
+            "width_mm": e.width_mm, "height_mm": e.height_mm,
+            "member_type": e.member_type.value,
+        } for sym, e in cat_entries.items()}
+        print(f"  심볼-단면: {len(catalog)}개 (예: {list(catalog.keys())[:5]})")
+
     print("[extract] 부재 추출")
-    result = extract_all_members(meta)
+    result = extract_all_members(meta, section_catalog=catalog)
     print(f"  COL={len(result.columns)} BEAM={len(result.beams)} "
           f"WALL={len(result.walls)} SLAB={len(result.slabs)} "
           f"FND={len(result.foundations)}")
