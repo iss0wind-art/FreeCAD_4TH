@@ -1,5 +1,13 @@
 {
   "mcpServers": {
+    "physis": {
+      "command": "python3",
+      "args": ["/home/nas/AG-Forge/mcp_server.py"],
+      "env": {
+        "PYTHONPATH": "/home/nas/AG-Forge",
+        "PYTHONUTF8": "1"
+      }
+    },
     "dangun": {
       "command": "D:/GIT/BOQ-workspace/venv/Scripts/python.exe",
       "args": ["-m", "dangun.mcp.mcp_server"],
