@@ -1,0 +1,36 @@
+# 신고조선 제국 — Pre-commit 안전장치 #1
+# 출처: FAIL_종합_분석_2026_05_09 (Gemini 2.5 Pro)
+# 목적: 비밀키 커밋 차단, 보편적 실수 방지
+exclude: |
+  (?x)^(
+    node_modules/.*|
+    \.next/.*|
+    dist/.*|
+    build/.*|
+    \.venv/.*|
+    output/.*\.json|
+    physis_memory/graphify-out/.*|
+    physis_memory/\.chromadb/.*|
+    drizzle/meta/.*|
+    .*_LEGACY\.md|
+    .*_ARCHIVE.*\.md
+  )$
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+        args: ['--allow-multiple-documents']
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ['--maxkb=10000']
+      - id: check-case-conflict
+
+  # gitleaks: 정교한 비밀키 스캐너 (detect-private-key보다 우수)
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.21.4
+    hooks:
+      - id: gitleaks
