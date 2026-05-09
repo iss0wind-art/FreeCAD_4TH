@@ -118,3 +118,16 @@ brain.md                — 전두엽 (총괄)
 ## 피지수 뇌 연동
 vault_ingest 호출 시 tags에 반드시 `freecad, 3지국` 포함.
 CAD 파싱 결과는 자동으로 wiki에 반영됨 (cad_to_wiki.py).
+
+---
+
+## 🛡️ 신고조선 4대 안전장치 — 지국 수칙 (2026-05-09)
+
+본영 단군이 Gemini 2.5 Pro 분석으로 추출한 4대 안전장치. 본 지국에 의무 적용.
+
+1. **Pre-commit Hooks** — `.pre-commit-config.yaml` 가동 중. 비밀키 커밋 차단.
+2. **CI/CD 품질 게이트** — `.github/workflows/quality-gate.yml` 가동.
+3. **통신 이중화** — Paperclip 다운 시 `comms_failover` 사용.
+4. **Assumption.md 의무화** — **모든 새 작업 전 가정 명세 작성**. 템플릿: `/home/nas/DREAM_FAC/dangun/templates/ASSUMPTION_TEMPLATE.md`
+
+작성하지 않고 코드부터 시작하면 — 그것이 곧 썩은 씨앗이다.
