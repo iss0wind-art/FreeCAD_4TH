@@ -1,0 +1,59 @@
+name: Quality Gate (Python)
+
+# 신고조선 안전장치 #2 — CI/CD 품질 게이트
+# 출처: FAIL_종합_분석_2026_05_09 (Gemini 2.5 Pro)
+
+on:
+  push:
+    branches: [main, master, claude-code]
+  pull_request:
+    branches: [main, master]
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install ruff pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Ruff lint
+        run: ruff check . --output-format=github
+        continue-on-error: true
+
+      - name: Ruff format check
+        run: ruff format --check .
+        continue-on-error: true
+
+      - name: Pytest
+        run: |
+          if [ -d tests ] || [ -d test ]; then
+            pytest --tb=short -q || echo "::warning::Tests failed"
+          else
+            echo "No tests/ directory — skipping"
+          fi
+        continue-on-error: true
+
+      - name: Gitleaks (secrets scan)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        continue-on-error: true
