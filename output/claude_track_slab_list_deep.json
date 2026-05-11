@@ -1,0 +1,4034 @@
+{
+  "total_texts": 2591,
+  "s_pattern_count": 0,
+  "s_pattern_unique": [],
+  "label_like_count": 0,
+  "label_like_top20": [],
+  "height_distribution": {
+    "0": 308,
+    "100": 1884,
+    "250": 4,
+    "200": 24,
+    "150": 276,
+    "500": 3
+  },
+  "big_text_top30": [
+    [
+      "25.07.01 BIM 치수변경",
+      1
+    ],
+    [
+      "25.07.01 BIM 슬래브 리스트 추가",
+      1
+    ],
+    [
+      "시공 BIM _ 부대시설 슬래브 리스트 추가",
+      1
+    ]
+  ],
+  "source_distribution": {
+    "modelspace": 2591
+  },
+  "first_500_samples": [
+    {
+      "text": "에코델타시티 24BL 민간참여",
+      "x": -181918.0,
+      "y": 349448.3,
+      "height": 2.5,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "도 면   번 호",
+      "x": -181919.6,
+      "y": 349215.4,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DRAWING NO.",
+      "x": -181919.6,
+      "y": 349213.4,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "SERIAL NO.",
+      "x": -181919.6,
+      "y": 349207.3,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "일 련   번 호",
+      "x": -181919.6,
+      "y": 349209.3,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "SCALE",
+      "x": -181919.6,
+      "y": 349225.4,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "축  척",
+      "x": -181919.6,
+      "y": 349227.4,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DATE",
+      "x": -181919.6,
+      "y": 349219.3,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "날 짜",
+      "x": -181919.6,
+      "y": 349221.4,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DRAWN",
+      "x": -181885.0,
+      "y": 349331.9,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "CHECK",
+      "x": -181885.0,
+      "y": 349329.6,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "작 성 자",
+      "x": -181919.2,
+      "y": 349325.6,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "검 토 1",
+      "x": -181919.2,
+      "y": 349320.6,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "CHECKED BY",
+      "x": -181919.2,
+      "y": 349313.2,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "검 토 2",
+      "x": -181919.2,
+      "y": 349315.5,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DESIGN CONSULTING",
+      "x": -181919.2,
+      "y": 349302.9,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DRAWN BY",
+      "x": -181919.2,
+      "y": 349323.3,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "승      인",
+      "x": -181898.2,
+      "y": 349325.7,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "APPROVED BY",
+      "x": -181898.2,
+      "y": 349323.3,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "REVISION DESCRIPTION",
+      "x": -181914.9,
+      "y": 349330.8,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "NO",
+      "x": -181919.8,
+      "y": 349330.8,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DATE",
+      "x": -181890.2,
+      "y": 349330.8,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "CHECKED BY",
+      "x": -181919.2,
+      "y": 349318.2,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "프로젝트 코드",
+      "x": -181919.5,
+      "y": 349437.5,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "PROJECT CODE",
+      "x": -181919.4,
+      "y": 349435.5,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "전 문 분 야",
+      "x": -181919.5,
+      "y": 349430.9,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DOMAIN",
+      "x": -181919.4,
+      "y": 349428.9,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "주 기",
+      "x": -181919.5,
+      "y": 349424.3,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "NOTE",
+      "x": -181919.4,
+      "y": 349422.3,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DRAWING NAME",
+      "x": -181919.3,
+      "y": 349246.6,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "도 면 명",
+      "x": -181919.3,
+      "y": 349248.6,
+      "height": 1.307949908890414,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "2025. 06.",
+      "x": -181900.3,
+      "y": 349219.6,
+      "height": 1.5,
+      "layer": "A-FORM(실시)$0$BORD-TEXT",
+      "source": "modelspace"
+    },
+    {
+      "text": "A1 :                A3 :",
+      "x": -181911.9,
+      "y": 349225.6,
+      "height": 1.5,
+      "layer": "A-FORM(실시)$0$BORD-TEXT",
+      "source": "modelspace"
+    },
+    {
+      "text": "설 계 명",
+      "x": -181919.5,
+      "y": 349457.0,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "PROJECT TITLE",
+      "x": -181919.5,
+      "y": 349455.0,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "공공분양주택건립사업",
+      "x": -181913.8,
+      "y": 349443.3,
+      "height": 2.5,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349418.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349415.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349412.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349409.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349406.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349403.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349400.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349397.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349394.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349391.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349388.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349385.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349382.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349379.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349376.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349373.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349370.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349367.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349364.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "설계사무소명",
+      "x": -181919.5,
+      "y": 349297.7,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DRAWING OFFICE NAME",
+      "x": -181919.4,
+      "y": 349295.7,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "(주) 한미건축종합건축사사무소",
+      "x": -181914.6,
+      "y": 349292.9,
+      "height": 1.5,
+      "layer": "A-FORM(실시)$0$BORD-TEXT",
+      "source": "modelspace"
+    },
+    {
+      "text": "책임건축(기술)사",
+      "x": -181919.5,
+      "y": 349289.7,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "ARCHITECT NAME",
+      "x": -181919.4,
+      "y": 349287.7,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "이 봉 두",
+      "x": -181903.7,
+      "y": 349284.9,
+      "height": 1.5,
+      "layer": "A-FORM(실시)$0$BORD-TEXT",
+      "source": "modelspace"
+    },
+    {
+      "text": "설계사무소명",
+      "x": -181919.5,
+      "y": 349281.7,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DRAWING OFFICE NAME",
+      "x": -181919.4,
+      "y": 349279.7,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "(주) 부산건축종합건축사사무소",
+      "x": -181914.6,
+      "y": 349276.9,
+      "height": 1.5,
+      "layer": "A-FORM(실시)$0$BORD-TEXT",
+      "source": "modelspace"
+    },
+    {
+      "text": "책임건축(기술)사",
+      "x": -181919.5,
+      "y": 349273.7,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "ARCHITECT NAME",
+      "x": -181919.4,
+      "y": 349271.7,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "정 태 복, 이 채 근",
+      "x": -181908.3,
+      "y": 349268.9,
+      "height": 1.5,
+      "layer": "A-FORM(실시)$0$BORD-TEXT",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349361.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349358.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "-",
+      "x": -181919.7,
+      "y": 349355.1,
+      "height": 1.250000000000091,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "설계사무소명",
+      "x": -181919.5,
+      "y": 349265.7,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "DRAWING OFFICE NAME",
+      "x": -181919.4,
+      "y": 349263.7,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "책임건축(기술)사",
+      "x": -181919.5,
+      "y": 349257.7,
+      "height": 1.250000000000091,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "ARCHITECT NAME",
+      "x": -181919.4,
+      "y": 349255.7,
+      "height": 1.000000000000073,
+      "layer": "A-FORM(실시)$0$BORD-FORM",
+      "source": "modelspace"
+    },
+    {
+      "text": "실시설계",
+      "x": -181904.8,
+      "y": 349487.2,
+      "height": 1.75,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "최종성과품",
+      "x": -181891.0,
+      "y": 349487.2,
+      "height": 1.75,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "사업승인",
+      "x": -181919.8,
+      "y": 349487.2,
+      "height": 1.75,
+      "layer": "Defpoints",
+      "source": "modelspace"
+    },
+    {
+      "text": "NONE",
+      "x": -159398.0,
+      "y": 351113.6,
+      "height": 89.99999991814236,
+      "layer": "A-TEXT-4.0",
+      "source": "modelspace"
+    },
+    {
+      "text": "NONE",
+      "x": -158498.0,
+      "y": 351113.6,
+      "height": 89.99999991814236,
+      "layer": "A-TEXT-4.0",
+      "source": "modelspace"
+    },
+    {
+      "text": "S40-121",
+      "x": -159017.2,
+      "y": 350347.3,
+      "height": 120.0,
+      "layer": "A-TEXT-4.0",
+      "source": "modelspace"
+    },
+    {
+      "text": "S",
+      "x": -173009.2,
+      "y": 365511.4,
+      "height": 105.0,
+      "layer": "A-TAG",
+      "source": "modelspace"
+    },
+    {
+      "text": "1",
+      "x": -172885.5,
+      "y": 365782.6,
+      "height": 105.0,
+      "layer": "A-TAG",
+      "source": "modelspace"
+    },
+    {
+      "text": "SCALE : NONE",
+      "x": -169408.7,
+      "y": 365503.6,
+      "height": 105.0,
+      "layer": "A-TAG",
+      "source": "modelspace"
+    },
+    {
+      "text": "지하주차장 슬래브 일람표-1",
+      "x": -172346.3,
+      "y": 365773.6,
+      "height": 240.0,
+      "layer": "A-TAG",
+      "source": "modelspace"
+    },
+    {
+      "text": "SLAB LIST",
+      "x": -180587.6,
+      "y": 357488.0,
+      "height": 180.742334575,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "NAME",
+      "x": -180598.2,
+      "y": 356772.9,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "TYPE",
+      "x": -179680.3,
+      "y": 356770.8,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "(mm)",
+      "x": -179033.8,
+      "y": 356695.8,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "THK",
+      "x": -179009.0,
+      "y": 356917.2,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "E",
+      "x": -177851.6,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "A",
+      "x": -177851.6,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "F",
+      "x": -176523.8,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "B",
+      "x": -176523.8,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "(UNIT : mm)",
+      "x": -172377.4,
+      "y": 357455.2,
+      "height": 121.6960731485297,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "RE-BAR",
+      "x": -175581.4,
+      "y": 357087.9,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "G",
+      "x": -175224.7,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "C",
+      "x": -175224.7,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "H",
+      "x": -173901.0,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173901.0,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "H'",
+      "x": -172600.8,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D'",
+      "x": -172600.8,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "REMARK",
+      "x": -171706.5,
+      "y": 356773.7,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -178353.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -177803.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -177033.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -176483.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -175713.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -175163.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -174393.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -173843.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -173073.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -172523.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "* 재료강도 : 콘크리트강도 : fck = 27 MPa",
+      "x": -164322.8,
+      "y": 359139.0,
+      "height": 140.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "철근강도 : fy = 500 MPa [ SD500 ]",
+      "x": -163433.7,
+      "y": 358865.4,
+      "height": 140.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "-1S4",
+      "x": -180578.5,
+      "y": 353484.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "C",
+      "x": -179531.6,
+      "y": 353484.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -179003.2,
+      "y": 353484.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -178172.7,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -177547.7,
+      "y": 353654.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -178172.7,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -177547.7,
+      "y": 353242.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -175532.7,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -174907.7,
+      "y": 353654.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -175532.7,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -174907.7,
+      "y": 353242.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "-1S5",
+      "x": -180578.5,
+      "y": 352660.4,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "C",
+      "x": -179531.6,
+      "y": 352660.4,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -179003.2,
+      "y": 352660.4,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "13",
+      "x": -178172.7,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -177547.7,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -178172.7,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -177547.7,
+      "y": 352418.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -175532.7,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -174907.7,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -175532.7,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -174907.7,
+      "y": 352418.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "SLAB LIST",
+      "x": -170358.6,
+      "y": 357488.0,
+      "height": 180.742334575,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "NAME",
+      "x": -170369.2,
+      "y": 356772.9,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "TYPE",
+      "x": -169451.3,
+      "y": 356770.8,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "(mm)",
+      "x": -168804.8,
+      "y": 356695.8,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "THK",
+      "x": -168780.0,
+      "y": 356917.2,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "E",
+      "x": -167622.6,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "A",
+      "x": -167622.6,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "F",
+      "x": -166294.8,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "B",
+      "x": -166294.8,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "(UNIT : mm)",
+      "x": -162148.4,
+      "y": 357455.2,
+      "height": 121.6960731485297,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "RE-BAR",
+      "x": -165352.4,
+      "y": 357087.9,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "G",
+      "x": -164995.6,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "C",
+      "x": -164995.6,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "H",
+      "x": -163672.0,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -163672.0,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "H'",
+      "x": -162371.8,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D'",
+      "x": -162371.8,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "REMARK",
+      "x": -161477.4,
+      "y": 356773.7,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 352006.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 351594.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 351182.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 350769.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "-1S6",
+      "x": -170349.5,
+      "y": 355905.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "B",
+      "x": -169296.9,
+      "y": 355905.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -168774.2,
+      "y": 355905.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -167943.7,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -167318.7,
+      "y": 356127.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -166623.7,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -165998.7,
+      "y": 356127.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -164678.7,
+      "y": 356127.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -163983.7,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -163358.7,
+      "y": 356127.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -162663.7,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -162038.7,
+      "y": 356127.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -167943.7,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "400",
+      "x": -167318.7,
+      "y": 355715.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -166623.7,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "400",
+      "x": -165998.7,
+      "y": 355715.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "400",
+      "x": -164678.7,
+      "y": 355715.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -163983.7,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "250",
+      "x": -163358.7,
+      "y": 355715.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -162663.7,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "250",
+      "x": -162038.7,
+      "y": 355715.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "-1S7",
+      "x": -170349.5,
+      "y": 355081.4,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "B",
+      "x": -169296.9,
+      "y": 355081.4,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -168774.2,
+      "y": 355081.4,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "13",
+      "x": -167943.7,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -167318.7,
+      "y": 355303.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -166623.7,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -165998.7,
+      "y": 355303.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -164678.7,
+      "y": 355303.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10+13",
+      "x": -164028.1,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -163358.7,
+      "y": 355303.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -162038.7,
+      "y": 355303.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -167943.7,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -167318.7,
+      "y": 354891.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -166623.7,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -165998.7,
+      "y": 354891.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "300",
+      "x": -164678.7,
+      "y": 354891.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -163358.7,
+      "y": 354891.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -162663.7,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -162038.7,
+      "y": 354891.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "-1S8",
+      "x": -170349.5,
+      "y": 354308.8,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "C",
+      "x": -169302.6,
+      "y": 354308.8,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -168774.2,
+      "y": 354308.8,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -167318.7,
+      "y": 354479.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -167318.7,
+      "y": 354066.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -164678.7,
+      "y": 354479.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "200",
+      "x": -164678.7,
+      "y": 354066.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "-1S9",
+      "x": -170349.5,
+      "y": 353484.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "C",
+      "x": -169302.6,
+      "y": 353484.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -168774.2,
+      "y": 353484.6,
+      "height": 160.0,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -167318.7,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -167318.7,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -164678.7,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10",
+      "x": -165303.7,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "150",
+      "x": -164678.7,
+      "y": 353242.4,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10+13",
+      "x": -162708.1,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -168124.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -167574.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -166804.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -166254.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -165484.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -164934.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -164164.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -163614.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 352830.3,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -162844.5,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -162294.6,
+      "y": 352418.2,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10+13",
+      "x": -167988.1,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "10+13",
+      "x": -167988.1,
+      "y": 353654.5,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "SLAB LIST",
+      "x": -155387.6,
+      "y": 357488.0,
+      "height": 180.742334575,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "NAME",
+      "x": -155398.2,
+      "y": 356772.9,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -153153.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "TYPE",
+      "x": -154480.3,
+      "y": 356770.8,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "(mm)",
+      "x": -153833.8,
+      "y": 356695.8,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "THK",
+      "x": -153809.0,
+      "y": 356917.2,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -152603.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "E",
+      "x": -152651.6,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "A",
+      "x": -152651.6,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "F",
+      "x": -151323.8,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "B",
+      "x": -151323.8,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "(UNIT : mm)",
+      "x": -147177.4,
+      "y": 357455.2,
+      "height": 121.6960731485297,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "RE-BAR",
+      "x": -150381.4,
+      "y": 357087.9,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "G",
+      "x": -150024.7,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "C",
+      "x": -150024.7,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "H",
+      "x": -148701.0,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -148701.0,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "H'",
+      "x": -147400.8,
+      "y": 356459.4,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D'",
+      "x": -147400.8,
+      "y": 356783.1,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "REMARK",
+      "x": -146506.5,
+      "y": 356773.7,
+      "height": 147.880091925,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -153153.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -152603.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -151833.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -151283.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -151833.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -151283.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -150513.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -149963.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -150513.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -149963.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -149193.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -148643.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -149193.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -148643.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -147873.5,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -147323.6,
+      "y": 356127.1,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -147873.5,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -147323.6,
+      "y": 355715.0,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -153153.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -152603.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -153153.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -152603.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -151833.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -151283.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -151833.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -151283.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -150513.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -149963.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -150513.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -149963.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -149193.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -148643.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -149193.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -148643.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -147873.5,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -147323.6,
+      "y": 355302.9,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -147873.5,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -147323.6,
+      "y": 354890.8,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -153153.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -152603.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -153153.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -152603.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -151833.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -151283.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -151833.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -151283.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -150513.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -149963.6,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -150513.5,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "@",
+      "x": -149963.6,
+      "y": 354066.6,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    },
+    {
+      "text": "D",
+      "x": -149193.5,
+      "y": 354478.7,
+      "height": 122.904787511,
+      "layer": "LAYER1",
+      "source": "modelspace"
+    }
+  ]
+}

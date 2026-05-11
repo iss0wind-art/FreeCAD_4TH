@@ -1,0 +1,88 @@
+{
+  "insert_block_count": 9,
+  "insert_unique_blocks": 3,
+  "insert_top30": [
+    [
+      "A-FORM(실시)",
+      4
+    ],
+    [
+      "A$C74FA30E5",
+      4
+    ],
+    [
+      "A$C31DA7BBF",
+      1
+    ]
+  ],
+  "all_blocks_count": 13,
+  "s_blocks": [],
+  "polylines_count": 15,
+  "big_polylines_count": 9,
+  "big_pl_layers": [
+    [
+      "A-CHECK",
+      5
+    ],
+    [
+      "Defpoints",
+      4
+    ]
+  ],
+  "sample_block_positions": [
+    {
+      "name": "A-FORM(실시)",
+      "x": -182287.0,
+      "y": 349194.0,
+      "layer": "0"
+    },
+    {
+      "name": "A-FORM(실시)",
+      "x": -157087.0,
+      "y": 349194.0,
+      "layer": "0"
+    },
+    {
+      "name": "A-FORM(실시)",
+      "x": -131887.0,
+      "y": 349194.0,
+      "layer": "0"
+    },
+    {
+      "name": "A-FORM(실시)",
+      "x": -106687.0,
+      "y": 349194.0,
+      "layer": "0"
+    },
+    {
+      "name": "A$C74FA30E5",
+      "x": -178289.0,
+      "y": 358656.0,
+      "layer": "0"
+    },
+    {
+      "name": "A$C74FA30E5",
+      "x": -153089.0,
+      "y": 358656.0,
+      "layer": "0"
+    },
+    {
+      "name": "A$C74FA30E5",
+      "x": -127889.0,
+      "y": 358656.0,
+      "layer": "0"
+    },
+    {
+      "name": "A$C74FA30E5",
+      "x": -102689.0,
+      "y": 358656.0,
+      "layer": "0"
+    },
+    {
+      "name": "A$C31DA7BBF",
+      "x": -105367.0,
+      "y": 354749.0,
+      "layer": "0"
+    }
+  ]
+}

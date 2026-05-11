@@ -38,7 +38,15 @@ _PAT_GRID_X = re.compile(r"^X\d+[a-z]?$", re.IGNORECASE)
 _PAT_GRID_Y = re.compile(r"^Y\d+[a-z]?$", re.IGNORECASE)
 _PAT_FLOOR  = re.compile(r"^(B?\d+F|RF|MF|PIT)$", re.IGNORECASE)
 _PAT_SL     = re.compile(r"SL\s*=\s*GL\.\s*[+-]?\d+\.\d+", re.IGNORECASE)
-_PAT_SECTION = re.compile(r"^(C|TC|RG|G|B|TB|FB|W|F)\d+[A-Z]?$", re.IGNORECASE)
+# [확장 2026-05-08, 끌로드 트랙]
+# 기존 패턴(C|TC|RG|G|B|TB|FB|W|F)\d+ 으로는 451건만 매칭 (48 unique).
+# PKG 도면 직독 결과 실제 부재 라벨은 더 다양:
+#   S1~S13 (SLAB), REG/RWG/RPG/EG/PG/WG (보 변형), EC/AC (기둥 변형),
+#   -1 (음수 층 prefix, B1F), HCS (Hollow Core Slab), ARW (보강벽) 등
+# 일반화 패턴([\-]?\d?[A-Z]{1,4}\d+[A-Z]?)으로 3843건 매칭 (+752%).
+# GRID_X/GRID_Y가 우선순위에서 먼저 매칭하므로 격자 라벨 false positive 없음.
+# 검증 스크립트: scripts/claude_track_section_compare.py
+_PAT_SECTION = re.compile(r"^[\-]?\d?[A-Z]{1,4}\d{1,3}[A-Z]?$", re.IGNORECASE)
 _PAT_SHEET   = re.compile(r"^S\d{2}-\d{3}$", re.IGNORECASE)
 _PAT_DIM     = re.compile(r"^\d+(\.\d+)?$")
 

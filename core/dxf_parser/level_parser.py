@@ -116,19 +116,23 @@ class LevelSet:
 # 파싱 함수
 # ─────────────────────────────────────────────────────────────
 
-def parse_dxf(dxf_path: str, encoding: str = 'cp949',
+def parse_dxf(dxf_path: str, encoding: str = 'auto',
               clip: Optional[Tuple[float,float,float,float]] = None) -> LevelSet:
     """DXF에서 모든 표고·단차 정보 추출.
 
     Args:
         dxf_path: DXF 파일 경로
-        encoding: 인코딩 (한국 = cp949)
+        encoding: 'auto'(기본, utf-8/cp949 자동) | 'cp949' | 'utf-8'
         clip: (xmin,ymin,xmax,ymax) 영역 제한
 
     Returns:
         LevelSet — 층 SL 딕셔너리 + 단차 목록
     """
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    if encoding == 'auto':
+        from core.dxf_parser.safe_reader import safe_readfile
+        doc = safe_readfile(dxf_path)
+    else:
+        doc = ezdxf.readfile(dxf_path, encoding=encoding)
     msp = doc.modelspace()
     return parse_msp(msp, clip)
 

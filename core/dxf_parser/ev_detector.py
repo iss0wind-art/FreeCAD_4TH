@@ -42,8 +42,12 @@ _EV_LAYER = re.compile(
     r'A[-_]?EV|EV[-_]CORE|S[-_]?CORE|승강|STAIR|ELEV|E_V',
     re.IGNORECASE,
 )
-_GRID_X1 = re.compile(r'^X\s*1$|^[Aa]\s*$|^①$', re.IGNORECASE)
-_GRID_Y1 = re.compile(r'^Y\s*1$|^1\s*$|^①$', re.IGNORECASE)
+_GRID_X1 = re.compile(r'^1$|^a$|^①$|^\(1\)$|^가$|^x1$', re.IGNORECASE)
+_GRID_Y1 = re.compile(r'^a$|^1$|^①$|^\(1\)$|^가$|^y1$', re.IGNORECASE)
+
+def normalize_text(txt: str) -> str:
+    """텍스트 정규화: 따옴표/공백 제거 및 소문자화."""
+    return txt.replace('"', '').replace("'", "").strip().replace(' ', '').lower()
 
 
 # ─────────────────────────────────────────────────────────────
@@ -156,6 +160,33 @@ class GridAnchorDetector:
     def __init__(self, dong_clip: Optional[Tuple[float,float,float,float]] = None):
         self.clip = dong_clip
 
+
+    def detect_all(self, dxf_doc) -> List[AnchorPoint]:
+        """도면 내의 모든 격자 교점(Anchor)을 탐지하여 리스트로 반환."""
+        msp = dxf_doc.modelspace()
+        x_points: List[Tuple[float, str]] = []
+        y_points: List[Tuple[float, str]] = []
+        for e in iter_all(msp):
+            if e.dxftype() not in ('TEXT', 'MTEXT'): continue
+            try:
+                raw_txt = (e.dxf.text if e.dxftype() == 'TEXT' else e.text)
+                txt = normalize_text(raw_txt)
+                pos = e.dxf.insert
+                if _GRID_X1.search(txt): x_points.append((pos.x, txt))
+                if _GRID_Y1.search(txt): y_points.append((pos.y, txt))
+            except Exception: pass
+        anchors = []
+        seen_pairs = set()
+        for x, xt in x_points:
+            for y, yt in y_points:
+                if (xt == '1' and yt == 'a') or (xt == 'a' and yt == '1'):
+                    # 시트 구분을 위해 10m(10000mm) 격자로 클러스터링
+                    key = (round(x/10000), round(y/10000))
+                    if key not in seen_pairs:
+                        anchors.append(AnchorPoint(x=x, y=y, strategy='grid_intersection', confidence=0.8))
+                        seen_pairs.add(key)
+        return anchors
+
     def detect(self, dxf_doc, dong: str = '', floor: object = 0,
                sheet_id: str = '') -> Optional[AnchorPoint]:
         """격자 X1·Y1 교점 반환. None if not found."""
@@ -167,16 +198,19 @@ class GridAnchorDetector:
             if e.dxftype() not in ('TEXT', 'MTEXT'):
                 continue
             try:
-                txt = (e.dxf.text if e.dxftype() == 'TEXT' else e.text).strip()
+                raw_txt = (e.dxf.text if e.dxftype() == 'TEXT' else e.text)
+                txt = normalize_text(raw_txt)
                 pos = e.dxf.insert
                 if self.clip:
                     xmin,ymin,xmax,ymax = self.clip
                     if not (xmin <= pos.x <= xmax and ymin <= pos.y <= ymax):
                         continue
-                if _GRID_X1.match(txt):
+                if _GRID_X1.search(txt):
                     x_coords.append(pos.x)
-                elif _GRID_Y1.match(txt):
+                    # print(f"  [DEBUG] Grid X match: '{raw_txt}' at {pos.x}")
+                if _GRID_Y1.search(txt):
                     y_coords.append(pos.y)
+                    # print(f"  [DEBUG] Grid Y match: '{raw_txt}' at {pos.y}")
             except Exception:
                 pass
 

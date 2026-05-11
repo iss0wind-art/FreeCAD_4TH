@@ -259,13 +259,16 @@ def main():
     # Step 1: DXF 로드
     # ─────────────────────────────────────────────
     print(f'\n[Step 1] DXF 로드...')
+    # [패치 2026-05-08, 끌로드 트랙] DONG는 헤더가 ANSI_949지만 실제 utf-8.
+    # safe_readfile()이 utf-8 우선 + cp949 fallback으로 자동 판별.
+    from core.dxf_parser.safe_reader import safe_readfile
     print(f'  DONG: {DXF_DONG}')
-    doc_dong = ezdxf.readfile(DXF_DONG, encoding='cp949')
+    doc_dong = safe_readfile(DXF_DONG)
     msp_dong = doc_dong.modelspace()
     print(f'  DONG 로드 완료 ({time.time()-t0:.1f}s)')
 
     print(f'  PKG: {DXF_PKG}')
-    doc_pkg = ezdxf.readfile(DXF_PKG, encoding='cp949')
+    doc_pkg = safe_readfile(DXF_PKG)
     msp_pkg = doc_pkg.modelspace()
     print(f'  PKG 로드 완료 ({time.time()-t0:.1f}s)')
 

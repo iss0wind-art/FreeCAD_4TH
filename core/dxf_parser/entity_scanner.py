@@ -44,25 +44,37 @@ def iter_all(container, depth: int = 0, max_depth: int = 8) -> Iterator:
 
 def iter_clip(container, clip: Optional[Tuple[float,float,float,float]],
               depth: int = 0, max_depth: int = 8) -> Iterator:
-    """클립 영역 안 엔티티만 순회."""
+    """클립 영역 안 엔티티만 순회. 블록 내부 엔티티도 개별 좌표 체크."""
     if depth > max_depth:
         return
     for e in container:
-        if clip is not None:
-            try:
-                pos = e.dxf.insert
-                if not (clip[0] <= pos.x <= clip[2] and clip[1] <= pos.y <= clip[3]):
-                    if e.dxftype() != 'INSERT':
-                        continue
-            except Exception:
-                pass
-        yield e
-        if e.dxftype() == 'INSERT':
+        t = e.dxftype()
+        
+        # 블록(INSERT)인 경우, 내부 엔티티 탐색을 위해 일단 통과
+        if t == 'INSERT':
             try:
                 yield from iter_clip(list(e.virtual_entities()), clip,
                                      depth + 1, max_depth)
             except Exception:
                 pass
+            continue
+
+        # 일반 엔티티는 클립 체크
+        if clip is not None:
+            try:
+                # 엔티티 종류별 위치 파악 (insert, start, center 등)
+                pos = None
+                if hasattr(e.dxf, 'insert'): pos = e.dxf.insert
+                elif hasattr(e.dxf, 'start'): pos = e.dxf.start
+                elif hasattr(e.dxf, 'center'): pos = e.dxf.center
+                
+                if pos:
+                    if not (clip[0] <= pos.x <= clip[2] and clip[1] <= pos.y <= clip[3]):
+                        continue
+            except Exception:
+                pass
+        
+        yield e
 
 
 # ─────────────────────────────────────────────────────────────
@@ -128,16 +140,20 @@ class ScanResult:
 # 3. 스캔 실행
 # ─────────────────────────────────────────────────────────────
 
-def scan(dxf_path: str, encoding: str = 'cp949',
+def scan(dxf_path: str, encoding: str = 'auto',
          clip: Optional[Tuple[float,float,float,float]] = None) -> ScanResult:
     """DXF 전수 스캔. INSERT 재귀 포함.
 
     Args:
         dxf_path: DXF 파일 경로
-        encoding: 인코딩 (한국 도면 = cp949)
+        encoding: 'auto'(utf-8/cp949 자동 판별, 기본) | 'cp949' | 'utf-8'
         clip: (xmin,ymin,xmax,ymax) — 특정 영역만 집계 (None=전체)
     """
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    if encoding == 'auto':
+        from core.dxf_parser.safe_reader import safe_readfile
+        doc = safe_readfile(dxf_path)
+    else:
+        doc = ezdxf.readfile(dxf_path, encoding=encoding)
     msp = doc.modelspace()
 
     result = ScanResult()
@@ -209,7 +225,7 @@ def scan(dxf_path: str, encoding: str = 'cp949',
 
 
 def quick_text_grep(dxf_path: str, pattern: str,
-                    encoding: str = 'cp949') -> List[Tuple[str, float, float]]:
+                    encoding: str = 'auto') -> List[Tuple[str, float, float]]:
     """DXF에서 특정 패턴 텍스트만 빠르게 검색.
 
     Returns:
@@ -217,7 +233,11 @@ def quick_text_grep(dxf_path: str, pattern: str,
     """
     import re
     pat = re.compile(pattern, re.IGNORECASE)
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    if encoding == 'auto':
+        from core.dxf_parser.safe_reader import safe_readfile
+        doc = safe_readfile(dxf_path)
+    else:
+        doc = ezdxf.readfile(dxf_path, encoding=encoding)
     msp = doc.modelspace()
     results = []
 
