@@ -1,9 +1,9 @@
 # codex 매칭률 분석 처방 보고서
 
-**작성일**: 2026-05-06  
-**이천(李蕆)** 3지국 단군 작성  
-**대상 PoC**: `tests/poc_basement_b1_b2_full_stack.py`  
-**분석 스크립트**: `tests/analyze_codex_match_rates.py`  
+**작성일**: 2026-05-06
+**이천(李蕆)** 3지국 단군 작성
+**대상 PoC**: `tests/poc_basement_b1_b2_full_stack.py`
+**분석 스크립트**: `tests/analyze_codex_match_rates.py`
 **분석 결과**: `output/basement_codex_match_analysis.json`
 
 ---
@@ -65,7 +65,7 @@ TC* 계열(101~112동 source) 치수(600×1200, 600×1500 등)는 `dim_match`는
 
 B1의 `wall_pairs=4459` (B2의 **4배**). `is_in_wall_zone()` 강등이 B1에서 훨씬 많이 발생한다. B1은 B2보다 벽체 구조가 훨씬 복잡한 층 (계단실, 코어 등)이므로 column 후보가 wall_segment로 강등되는 비율이 높다.
 
-B1: 453 박스 → 144 column + 309 wall_segment (67.8%가 벽 강등)  
+B1: 453 박스 → 144 column + 309 wall_segment (67.8%가 벽 강등)
 B2: 476 박스 → 412 column + 64 wall_segment (13.4%가 벽 강등)
 
 ---
@@ -174,8 +174,8 @@ S40 계열 도면에서 전용 기둥 치수를 추출하여 `codex_columns_unif
 
 **[P4] 거더 추출 방식 근본 개선**
 
-보 리스트 도면 `pos` 좌표 → 평면도 격자 좌표 변환 테이블 구축.  
-`wall_pair` 두께 추출 방식 대신 보 리스트 좌표 직접 매핑으로 거더 검출.  
+보 리스트 도면 `pos` 좌표 → 평면도 격자 좌표 변환 테이블 구축.
+`wall_pair` 두께 추출 방식 대신 보 리스트 좌표 직접 매핑으로 거더 검출.
 예상 효과: girder 매칭률 0.2% → **50%+**.
 
 **[P5] B1 wall_pair zone 강등 기준 재검토**

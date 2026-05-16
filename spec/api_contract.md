@@ -55,7 +55,7 @@ Phase 1: 없음 (로컬 단독). Phase 4+ 도입 예정.
 ### `GET /api/specs/{symbol}`
 단건 조회. 쿼리 `?scope=global` 가능.
 
-**응답 200**: 단일 spec 객체.  
+**응답 200**: 단일 spec 객체.
 **응답 404**: 존재하지 않음.
 
 ### `POST /api/specs`
@@ -73,7 +73,7 @@ Phase 1: 없음 (로컬 단독). Phase 4+ 도입 예정.
 }
 ```
 
-**응답 201**: 생성된 spec.  
+**응답 201**: 생성된 spec.
 **응답 409**: `(symbol, project_scope)` 중복.
 
 ### `PUT /api/specs/{symbol}`

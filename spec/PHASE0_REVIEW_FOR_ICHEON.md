@@ -21,7 +21,7 @@
 {symbol: 'ES10', thickness: 210, height: 0, width: 0, depth: 0, wallThk: 0}  # 특수
 ```
 
-**패턴**: 57개 전부 `thickness`만 채워져 있고, 다른 치수는 0.  
+**패턴**: 57개 전부 `thickness`만 채워져 있고, 다른 치수는 0.
 **값 분포**: 150mm (일반층) / 210mm (특수) / 250mm (옥상)
 
 ### Phase 0 산출물 영향

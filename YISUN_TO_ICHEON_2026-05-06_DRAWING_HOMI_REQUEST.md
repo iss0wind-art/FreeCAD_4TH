@@ -183,7 +183,7 @@ D116_B1
 
 ### 청 3 — 동별 지상층수 ⏳ 자료 미확보
 
-`complex_master.json`은 *underground_floors*만 있고 *ground_floors* 자료 부재. 
+`complex_master.json`은 *underground_floors*만 있고 *ground_floors* 자료 부재.
 
 지상층수는 [의구심 박제](.brain/doubt_points_2026-05-05.md §2.1)에 *"동별 도면 수 편차"* 의심점 박제됨 — 116동 11장 / 102·103·107·111·114·115동 2장. 동별 지상층수 비례인지 미확정.
 
