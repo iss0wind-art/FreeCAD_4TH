@@ -97,13 +97,14 @@ _STEP_TEXT_PAT = re.compile(
 # 파싱
 # ─────────────────────────────────────────────────────────────
 
-def parse_step_zones(dxf_path: str, encoding: str = 'cp949',
+def parse_step_zones(dxf_path: str, encoding: str = 'auto',
                      clip: Optional[Tuple[float,float,float,float]] = None,
                      base_sl: Optional[dict] = None) -> StepZoneMap:
     """도면에서 단차 구역 파싱.
 
     Args:
         dxf_path: DXF 파일 경로
+        encoding: 'auto'(utf-8/cp949 자동) | 'cp949' | 'utf-8'
         clip: 검색 영역 제한
         base_sl: 층별 기준 SL (예: {'B2F': -9050, 'B1F': -5600})
 
@@ -113,7 +114,11 @@ def parse_step_zones(dxf_path: str, encoding: str = 'cp949',
     if base_sl is None:
         base_sl = {'B2F': -9050.0, 'B1F': -5600.0, '1F': 370.0}
 
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    if encoding == 'auto':
+        from core.dxf_parser.safe_reader import safe_readfile
+        doc = safe_readfile(dxf_path)
+    else:
+        doc = ezdxf.readfile(dxf_path, encoding=encoding)
     msp = doc.modelspace()
     zones = []
 

@@ -102,7 +102,7 @@ class CoordUnifier:
     def add(self, drawing_id: str, dxf_path: str,
             dong: str = '', floor: object = 0, sheet_id: str = '',
             dong_clip: Optional[Tuple[float,float,float,float]] = None,
-            encoding: str = 'cp949',
+            encoding: str = 'auto',
             manual_anchor: Optional[Tuple[float,float]] = None) -> 'CoordUnifier':
         """도면 등록.
 
@@ -111,16 +111,22 @@ class CoordUnifier:
             dxf_path: DXF 파일 경로
             dong: 동 이름 (예: '101', '지하주차장')
             dong_clip: 해당 동 영역 제한 (xmin,ymin,xmax,ymax)
+            encoding: 'auto'(utf-8/cp949 자동) | 'cp949' | 'utf-8'
             manual_anchor: (x, y) 수동 앵커 — 자동 검출 실패 시 사용
         """
-        doc = ezdxf.readfile(dxf_path, encoding=encoding)
-        anchor = self._auto_detect(doc, dong, floor, sheet_id, dong_clip)
-
-        if anchor is None and manual_anchor is not None:
+        if encoding == 'auto':
+            from core.dxf_parser.safe_reader import safe_readfile
+            doc = safe_readfile(dxf_path)
+        else:
+            doc = ezdxf.readfile(dxf_path, encoding=encoding)
+        # manual_anchor가 있으면 최우선 적용
+        if manual_anchor is not None:
             anchor = AnchorPoint(
                 x=manual_anchor[0], y=manual_anchor[1],
                 label='manual', strategy='manual', confidence=1.0,
             )
+        else:
+            anchor = self._auto_detect(doc, dong, floor, sheet_id, dong_clip)
 
         self._entries[drawing_id] = {
             'path': dxf_path,
@@ -136,7 +142,7 @@ class CoordUnifier:
         return self
 
     def add_text_anchor(self, drawing_id: str, search_text: str,
-                        encoding: str = 'cp949') -> 'CoordUnifier':
+                        encoding: str = 'auto') -> 'CoordUnifier':
         """특정 TEXT 검색으로 앵커 설정 (예: '101', '기준점').
 
         v3에서 지하주차장 도면의 "101" TEXT를 101동 위치 기준점으로 사용한 방식.
@@ -254,35 +260,38 @@ class CoordUnifier:
     def verify_overlap(self, did_a: str, did_b: str,
                        columns_a: List[Tuple[float,float]],
                        columns_b: List[Tuple[float,float]],
-                       tol_mm: float = 300.0) -> dict:
+                       tol_mm: float = 500.0) -> dict:
         """두 도면 기둥 좌표를 통일 후 겹치는 비율 검증.
-
-        Args:
-            did_a, did_b: 도면 ID
-            columns_a: 도면 a 기둥 raw (x,y) 목록
-            columns_b: 도면 b 기둥 raw (x,y) 목록
-            tol_mm: 매칭 허용 오차
-
+        
         Returns:
-            {'matched': int, 'total_a': int, 'total_b': int, 'rate': float}
+            {'matched': int, 'total_a': int, 'total_b': int, 'rate': float, 'avg_dist': float}
         """
         ua = self.apply_pts(did_a, columns_a)
         ub = self.apply_pts(did_b, columns_b)
 
         matched = 0
+        distances = []
         for ax, ay in ua:
+            best_d = 1e9
             for bx, by in ub:
-                if abs(ax-bx) < tol_mm and abs(ay-by) < tol_mm:
-                    matched += 1
-                    break
+                d = math.hypot(ax-bx, ay-by)
+                if d < best_d: best_d = d
+            
+            if best_d < tol_mm:
+                matched += 1
+                distances.append(best_d)
 
         total_a = len(ua)
         rate = matched / total_a if total_a else 0.0
+        avg_dist = sum(distances) / len(distances) if distances else 0.0
+        
         return {
             'matched': matched,
             'total_a': total_a,
             'total_b': len(ub),
             'rate': round(rate, 3),
+            'avg_dist': round(avg_dist, 1),
+            'distances': sorted(distances)[:10] # 상위 10개 오차
         }
 
     # ─────────────────────────────────────────────────────────

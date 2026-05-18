@@ -1,0 +1,74 @@
+0
+0-FOOT
+0-LEADER
+0-諛곌렐?몴?떆?꽑
+00_FOUNDATION
+00_FOUNDATION HATCH
+00_HATCH
+00_REINFORCE BAR
+00_SHEAR WALL
+00_SHEAR WALL NAME
+00_SLAB END + ETC
+00_媛뺤옱 pit
+51-?룄硫댄???씠???
+A-251-T
+A-BF寃??넗
+A-CEN-2
+A-CHECK
+A-CHECK (二쇱텧?엯援? 踰쎌껜異뺤냼)
+A-COL
+A-DIM-2
+A-DOOR-ELE
+A-ELEV
+A-F-?떒?뿴
+A-F-????씪
+A-FIN-1
+A-FIN-2
+A-HID-1
+A-HID-3
+A-LAMP-FIN
+A-LEAD
+A-MARK
+A-NONE PLOT
+A-PLAN-DIM300
+A-STAIR
+A-TAG
+A-TEXT-2.5
+A-TEXT-2.5(S)
+A-TEXT-3.0
+A-TEXT-4.0
+A-TEXT-BOX
+A-WALL-BRICK
+A-WALL-RC
+A-WIN-ELE
+A-二쇱감(寃쏀삎)
+A-二쇱감(????삎)
+A-二쇱감(?씪諛?)
+A-二쇱감(?옣?븷?씤)
+A-?궃媛?-3
+A-?뒪留덊듃紐⑤퉴由ы떚
+A-?엯硫?4
+AH-二쇱감(SOLID253)-嫄댁떇二쇱감
+AH-臾쇰쭑?씠踰?
+AH-踰쎌껜(?긽遺?)
+AH-?쉶李④났媛?
+AH-吏묒닔?젙
+BAR-B
+BAR-T
+BORD-TEXT
+DEFPOINT3
+Defpoints
+FORM-TEXT
+HAT
+S-ABW1
+S-ARW1
+S-BEAM
+S-FOUNDATION
+S-GIRDER
+S-OPEN
+S-PC-GIRDER
+S-SLAB-SYMBOL
+S-WALL-SYMBOL
+S-?긽遺?踰쎌껜
+S-?븯遺?踰쎌껜
+SOL
