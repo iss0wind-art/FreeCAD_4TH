@@ -35,3 +35,4 @@ output/v13_walls.step
 *.step
 *.FCStd1
 *.fcstd1
+.venv/
