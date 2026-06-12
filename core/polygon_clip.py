@@ -32,11 +32,12 @@ class BeamProfile:
 class JointResult:
     """교차점 연산 결과"""
     member_id: str
-    volume_m3: float               # 순체적 (m³)
+    volume_m3: float               # 기둥 체적 (m³, 지배 상위 — 전량 유지)
     formwork_area_m2: float        # 거푸집 면적 (m²)
     formwork_deduction_m2: float   # 거푸집 공제량 (m², 사칙연산)
     intersection_area_mm2: float   # 교차 영역 면적 (mm²)
     cut_line_length_mm: float      # 2D 가상 절단선 길이 (mm)
+    beam_deduction_volume_m3: float = 0.0  # 보 쪽에서 공제할 체적 (m³, 교차면적 × 보 춤)
 
 
 def compute_column_beam_joint(
@@ -46,24 +47,26 @@ def compute_column_beam_joint(
     """
     기둥-보 교차 지점 2D 선행 분할 후 순체적·거푸집 산출.
 
+    지배 서열 (1지국 DOMINANCE 정합): Column > Beam.
+    교차 구간 콘크리트는 상위 부재(기둥)가 전량 가져가고,
+    하위 부재(보) 물량에서 교차분을 공제한다 (이중 산입 방지).
+
     알고리즘:
     1. intersection(A) = 기둥 폴리곤 ∩ 보 폴리곤
-    2. remainder(B)    = 기둥 폴리곤 - 보 폴리곤
-    3. 체적 = A.area × beam.height + B.area × column.height
+    2. 기둥 체적 = 기둥 단면 전체 × 층고 (전량 유지)
+    3. 보 공제 체적 = A.area × beam.height (보 쪽에서 차감)
     4. 절단선 = 두 영역 경계의 공유 선분
     5. 거푸집 공제 = 절단선 길이 × min(높이) × 2
     """
     intersection = column.polygon.intersection(beam.polygon)
-    remainder = column.polygon.difference(beam.polygon)
 
     intersection_area = intersection.area   # mm²
-    remainder_area = remainder.area         # mm²
 
-    # 체적 (mm³ → m³)
-    vol_intersection = intersection_area * beam.height
-    vol_remainder = remainder_area * column.height
-    total_volume_mm3 = vol_intersection + vol_remainder
-    total_volume_m3 = total_volume_mm3 / 1_000_000_000
+    # 기둥 체적 (mm³ → m³): 지배 상위 — 단면 전체 × 층고 전량
+    total_volume_m3 = column.polygon.area * column.height / 1_000_000_000
+
+    # 보 쪽 공제 체적 (mm³ → m³): 교차면적 × 보 춤
+    beam_deduction_m3 = intersection_area * beam.height / 1_000_000_000
 
     # 절단선 길이 (mm): 기둥 경계 ∩ 보 경계
     cut_line = column.polygon.boundary.intersection(beam.polygon)
@@ -86,6 +89,7 @@ def compute_column_beam_joint(
         formwork_deduction_m2=round(formwork_deduction_m2, 4),
         intersection_area_mm2=round(intersection_area, 2),
         cut_line_length_mm=round(cut_line_length, 2),
+        beam_deduction_volume_m3=round(beam_deduction_m3, 6),
     )
 
 

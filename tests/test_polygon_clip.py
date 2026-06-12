@@ -85,21 +85,26 @@ class TestVolumeCalculation:
 
     def test_volume_beam_through_center(self, square_column_600, beam_through_center):
         """
-        보가 중앙 관통 시 순체적:
-        - A영역(교차, 600×300): 180,000 mm² × 500mm = 90,000,000 mm³
-        - B영역(잔여, 600×300×2): 180,000 mm² × 3000mm = 540,000,000 mm³
-        - 합계: 630,000,000 mm³ = 0.63 m³
+        지배 서열(기둥 > 보, 1지국 DOMINANCE 정합):
+        - 기둥 체적 = 단면 전체 × 층고 = 360,000 mm² × 3000mm = 1.08 m³ (전량 유지)
+        - 보 쪽 공제 = 교차 180,000 mm² × 보 춤 500mm = 0.09 m³ (하위 부재에서 공제)
         """
         result = compute_column_beam_joint(square_column_600, beam_through_center)
-        expected_m3 = 630_000_000 / 1_000_000_000  # 0.63
-        assert abs(result.volume_m3 - expected_m3) < 0.000001
+        assert abs(result.volume_m3 - 1.08) < 0.000001
+        assert abs(result.beam_deduction_volume_m3 - 0.09) < 0.000001
 
     def test_volume_full_cover(self, square_column_600, beam_full_cover):
-        """보가 기둥 전체 덮을 때: 체적 = 기둥 단면 × 보 높이"""
+        """보가 기둥 전체를 덮어도 기둥은 전량, 공제는 보 쪽 수치로 (교차면적 × 보 춤)"""
         col_area = square_column_600.polygon.area  # 360,000 mm²
-        expected_m3 = col_area * beam_full_cover.height / 1_000_000_000
         result = compute_column_beam_joint(square_column_600, beam_full_cover)
-        assert abs(result.volume_m3 - expected_m3) < 0.000001
+        assert abs(result.volume_m3 - 1.08) < 0.000001
+        expected_deduction = col_area * beam_full_cover.height / 1_000_000_000  # 0.18
+        assert abs(result.beam_deduction_volume_m3 - expected_deduction) < 0.000001
+
+    def test_no_beam_means_no_deduction(self, square_column_600, beam_no_overlap):
+        """보 미교차 시 보 쪽 공제도 0"""
+        result = compute_column_beam_joint(square_column_600, beam_no_overlap)
+        assert result.beam_deduction_volume_m3 == 0.0
 
     def test_volume_is_always_positive(self, square_column_600, beam_through_center):
         """체적은 항상 양수"""
@@ -165,10 +170,10 @@ class TestMultiBeamJoints:
             height=500.0, member_id="BY"
         )
         result = compute_multi_beam_joints(square_column_600, [beam_x, beam_y])
-        # 체적은 반드시 순수 기둥 체적보다 작아야 함 (보 높이 < 층고)
+        # 지배 서열: 기둥은 전량 유지, 공제는 보 쪽 수치로만 보고
         pure_vol = (600 * 600 * 3000) / 1_000_000_000
-        assert result.volume_m3 < pure_vol
-        assert result.volume_m3 > 0
+        assert abs(result.volume_m3 - pure_vol) < 0.000001
+        assert result.beam_deduction_volume_m3 > 0
 
     def test_member_id_preserved(self, square_column_600, beam_through_center):
         """결과 부재 ID가 기둥 ID와 일치"""
