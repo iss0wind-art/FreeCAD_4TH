@@ -33,9 +33,11 @@ class TextCategory(str, Enum):
 # ─────────────────────────────────────────────────────────────
 # KS 표준 정규식 (사전지식)
 # ─────────────────────────────────────────────────────────────
-
-_PAT_GRID_X = re.compile(r"^X\d+[a-z]?$", re.IGNORECASE)
-_PAT_GRID_Y = re.compile(r"^Y\d+[a-z]?$", re.IGNORECASE)
+# 격자 라벨 패턴 (X1, Y1, 1, 2, A, B 등 지원)
+_PAT_GRID = re.compile(r"^[XY]?[A-Z0-9]{1,3}$")
+_PAT_GRID_PURE_NUM = re.compile(r"^[1-9]\d?$") # 1~99까지만 격자로 인정
+_PAT_GRID_X = re.compile(r"^(X[1-9]\d?[a-z]?|[1-9]\d?)$", re.IGNORECASE)
+_PAT_GRID_Y = re.compile(r"^(Y[1-9]\d?[a-z]?|[A-Z])$", re.IGNORECASE)
 _PAT_FLOOR  = re.compile(r"^(B?\d+F|RF|MF|PIT)$", re.IGNORECASE)
 _PAT_SL     = re.compile(r"SL\s*=\s*GL\.\s*[+-]?\d+\.\d+", re.IGNORECASE)
 # [확장 2026-05-08, 끌로드 트랙]

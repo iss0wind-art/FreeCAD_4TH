@@ -38,23 +38,47 @@ def profile_layers(doc) -> Dict[str, LayerStat]:
     bbox_per_layer: Dict[str, list] = defaultdict(list)
     sizes_per_layer: Dict[str, list] = defaultdict(list)
 
-    for e in msp:
-        layer = e.dxf.layer
+    def _process_entity(e, trans_layer=None):
+        nonlocal type_counter, bbox_per_layer, sizes_per_layer
+        
+        # 실제 레이어 결정 (INSERT 내부에 있어도 원래 레이어 유지 또는 상속)
+        layer = trans_layer or e.dxf.layer
         etype = e.dxftype()
+        
+        if etype == "INSERT":
+            # 블록 내부 탐색
+            try:
+                block = doc.blocks.get(e.dxf.name)
+                for be in block:
+                    # 블록 내부의 엔티티는 블록의 레이어를 따를 수도 있고 자기 레이어를 가질 수도 있음
+                    # 보통은 자기 레이어(0번 레이어 제외)를 가짐
+                    inner_layer = be.dxf.layer
+                    if inner_layer == "0":
+                        inner_layer = layer # INSERT 레이어 상속
+                    _process_entity(be, trans_layer=inner_layer)
+            except Exception:
+                pass
+            # INSERT 자체도 카운트 (추가 신호)
+            type_counter[layer][etype] += 1
+            return
+
         type_counter[layer][etype] += 1
 
         # bbox + size 수집
         try:
             xs, ys = _entity_xy(e)
             if not xs or not ys:
-                continue
+                return
             xmin, xmax = min(xs), max(xs)
             ymin, ymax = min(ys), max(ys)
             bbox_per_layer[layer].append((xmin, ymin, xmax, ymax))
             diag = math.hypot(xmax - xmin, ymax - ymin)
             sizes_per_layer[layer].append(diag)
         except Exception:
-            continue
+            pass
+
+    for e in msp:
+        _process_entity(e)
 
     # 결과 조립
     result: Dict[str, LayerStat] = {}

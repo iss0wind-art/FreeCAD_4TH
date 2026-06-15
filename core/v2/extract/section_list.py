@@ -97,89 +97,186 @@ def _walk_texts(doc, max_depth: int = 6):
         yield from _walk(e)
 
 
+def _build_table_cells(doc) -> List[Tuple[float, float, float, float]]:
+    """도면의 수평/수직 선들을 교차 분석하여 표의 칸(Cell) Bounding Box 리스트를 반환."""
+    h_lines = []
+    v_lines = []
+    
+    # 1. 수평/수직선 수집 (오차 1도 허용)
+    for e in doc.modelspace().query("LINE"):
+        try:
+            x1, y1 = float(e.dxf.start.x), float(e.dxf.start.y)
+            x2, y2 = float(e.dxf.end.x), float(e.dxf.end.y)
+            if x1 > x2: x1, x2, y1, y2 = x2, x1, y2, y1 # 왼쪽에서 오른쪽으로
+            
+            dx = x2 - x1
+            dy = y2 - y1
+            length = (dx**2 + dy**2)**0.5
+            if length < 100: continue # 너무 짧은 선은 무시
+            
+            angle = abs(dy / dx) if dx != 0 else 999.0
+            
+            if angle < 0.05: # 수평선 (약 3도 이내)
+                h_lines.append((x1, y1, x2, y2))
+            elif angle > 20.0: # 수직선
+                if y1 > y2: x1, x2, y1, y2 = x2, x1, y2, y1 # 아래에서 위로
+                v_lines.append((x1, y1, x2, y2))
+        except:
+            pass
+            
+    # 2. X, Y 좌표 클러스터링 (비슷한 좌표의 선들은 하나의 구분선으로 병합)
+    tol = 50.0
+    y_coords = []
+    for h in h_lines:
+        y = (h[1] + h[3]) / 2
+        matched = False
+        for i, cy in enumerate(y_coords):
+            if abs(cy - y) < tol:
+                y_coords[i] = (cy + y) / 2
+                matched = True
+                break
+        if not matched: y_coords.append(y)
+        
+    x_coords = []
+    for v in v_lines:
+        x = (v[0] + v[2]) / 2
+        matched = False
+        for i, cx in enumerate(x_coords):
+            if abs(cx - x) < tol:
+                x_coords[i] = (cx + x) / 2
+                matched = True
+                break
+        if not matched: x_coords.append(x)
+        
+    x_coords.sort()
+    y_coords.sort()
+    
+    # 3. 격자(Grid) 생성: x_coords와 y_coords로 만들어지는 사각형(Cell)
+    cells = []
+    for i in range(len(x_coords) - 1):
+        for j in range(len(y_coords) - 1):
+            xmin, xmax = x_coords[i], x_coords[i+1]
+            ymin, ymax = y_coords[j], y_coords[j+1]
+            if (xmax - xmin) > 50 and (ymax - ymin) > 50:
+                cells.append((xmin, xmax, ymin, ymax))
+                
+    return cells
+
 def parse_section_list(
     dxf_path: Path,
     row_tolerance_mm: float = 3500.0,
     col_match_radius_mm: float = 8000.0,
 ) -> List[SectionEntry]:
-    """일람표 DXF 1개 → SectionEntry 목록.
-
-    [행 단위 매칭]
-        같은 Y 좌표(±row_tolerance) 안의 심볼·dim을 X로 정렬.
-        각 심볼은 같은 행에서 X 가장 가까운 dim과 매칭.
-
-    Args:
-        dxf_path: 일람표 DXF
-        row_tolerance_mm: 같은 행으로 볼 Y 차이
-        col_match_radius_mm: X 매칭 최대 거리
-    """
+    """일람표 DXF 1개 → SectionEntry 목록 (Table Grid 알고리즘)."""
     doc = ezdxf.readfile(str(dxf_path))
     texts = list(_walk_texts(doc))
+    cells = _build_table_cells(doc)
 
-    # 심볼·치수·두께 분리
-    symbols: List[Tuple[str, float, float]] = []
-    dims: List[Tuple[float, float, float, float]] = []   # (w, h, x, y)
-    thicknesses: List[Tuple[float, float, float]] = []   # (t, x, y)
-
-    for t, x, y in texts:
-        s = t.strip()
-
-        # 콤마/슬래시 결합 처리: 'RG2,REG2' → ['RG2', 'REG2']
-        # 베이스 심볼 우선 (가장 짧은 또는 첫번째)
-        for piece in re.split(r"[,/&]", s):
-            piece = piece.strip()
-            if _PAT_SYMBOL.match(piece):
-                symbols.append((piece, x, y))
-
-        m = _PAT_WH.search(s)
-        if m:
-            try:
-                w, h = float(m.group(1)), float(m.group(2))
-                if 50 <= w <= 5000 and 50 <= h <= 5000:
-                    dims.append((w, h, x, y))
-                continue
-            except Exception:
-                pass
-        m = _PAT_THK.match(s)
-        if m:
-            v = next(g for g in m.groups() if g)
-            try:
-                thicknesses.append((float(v), x, y))
-            except Exception:
-                pass
-
-    # 행 단위 매칭
     entries: List[SectionEntry] = []
-    used_dims = set()
+    
+    # Grid를 성공적으로 추출한 경우: 행(Row) 단위로 묶기
+    if cells:
+        # 1. 텍스트를 Cell에 할당
+        cell_contents = {} # cell_bounds -> list of texts
+        for t, x, y in texts:
+            assigned = False
+            for (xmin, xmax, ymin, ymax) in cells:
+                if xmin <= x <= xmax and ymin <= y <= ymax:
+                    cell_contents.setdefault((xmin, xmax, ymin, ymax), []).append((t.strip(), x, y))
+                    assigned = True
+                    break
+            # 셀에 들어가지 못한 텍스트는 임시로 가장 가까운 셀에 넣거나 보류 (우선 생략)
 
-    for sym, sx, sy in symbols:
-        # 같은 행 (Y±tolerance) 의 미사용 dim 중 X 가장 가까운 것
-        best_idx = -1
-        best_dx = col_match_radius_mm
-        for i, (w, h, dx, dy) in enumerate(dims):
-            if i in used_dims:
-                continue
-            if abs(dy - sy) > row_tolerance_mm:
-                continue
-            dist_x = abs(dx - sx)
-            if dist_x < best_dx:
-                best_dx = dist_x
-                best_idx = i
+        # 2. 동일한 Y 범위를 가진 셀들을 같은 행(Row)으로 묶기
+        rows = {} # (ymin, ymax) -> list of cells
+        for c in cells:
+            key = (c[2], c[3])
+            matched_key = None
+            for rk in rows.keys():
+                if abs(rk[0] - key[0]) < 100 and abs(rk[1] - key[1]) < 100:
+                    matched_key = rk
+                    break
+            if matched_key:
+                rows[matched_key].append(c)
+            else:
+                rows[key] = [c]
 
-        if best_idx < 0:
-            continue
-
-        w, h, dx, dy = dims[best_idx]
-        d2 = (dx - sx) ** 2 + (dy - sy) ** 2
-        entries.append(SectionEntry(
-            symbol=sym,
-            width_mm=w,
-            height_mm=h,
-            member_type=_symbol_to_type(sym),
-            source_dxf=str(dxf_path),
-            distance_mm=d2 ** 0.5,
-        ))
-        used_dims.add(best_idx)
+        # 3. 각 행(Row) 안에서 심볼과 치수를 찾아서 매칭
+        for row_bounds, row_cells in rows.items():
+            row_symbols = []
+            row_dims = []
+            row_cells.sort(key=lambda c: c[0]) # X 좌표 순으로 정렬 (왼쪽에서 오른쪽)
+            
+            for c in row_cells:
+                contents = cell_contents.get(c, [])
+                for t, x, y in contents:
+                    for piece in re.split(r"[,/&]", t):
+                        piece = piece.strip()
+                        if _PAT_SYMBOL.match(piece):
+                            row_symbols.append((piece, x, y))
+                    
+                    m = _PAT_WH.search(t)
+                    if m:
+                        try:
+                            w, h = float(m.group(1)), float(m.group(2))
+                            if 50 <= w <= 5000 and 50 <= h <= 5000:
+                                row_dims.append((w, h, x, y))
+                        except:
+                            pass
+            
+            # 같은 행 안에서 심볼과 가장 가까운 치수 매칭
+            used_dims = set()
+            for sym, sx, sy in row_symbols:
+                best_idx = -1
+                best_dx = float('inf')
+                for i, (w, h, dx, dy) in enumerate(row_dims):
+                    if i in used_dims: continue
+                    dist_x = abs(dx - sx)
+                    if dist_x < best_dx:
+                        best_dx = dist_x
+                        best_idx = i
+                
+                if best_idx >= 0:
+                    w, h, dx, dy = row_dims[best_idx]
+                    entries.append(SectionEntry(
+                        symbol=sym, width_mm=w, height_mm=h,
+                        member_type=_symbol_to_type(sym), source_dxf=str(dxf_path),
+                        distance_mm=best_dx,
+                    ))
+                    used_dims.add(best_idx)
+    
+    # Grid 추출 실패 시 Fallback (기존 방식 유사)
+    else:
+        symbols, dims = [], []
+        for t, x, y in texts:
+            s = t.strip()
+            for piece in re.split(r"[,/&]", s):
+                piece = piece.strip()
+                if _PAT_SYMBOL.match(piece): symbols.append((piece, x, y))
+            m = _PAT_WH.search(s)
+            if m:
+                try:
+                    w, h = float(m.group(1)), float(m.group(2))
+                    dims.append((w, h, x, y))
+                except: pass
+                
+        used_dims = set()
+        for sym, sx, sy in symbols:
+            best_idx, best_dx = -1, col_match_radius_mm
+            for i, (w, h, dx, dy) in enumerate(dims):
+                if i in used_dims: continue
+                if abs(dy - sy) > row_tolerance_mm: continue
+                if abs(dx - sx) < best_dx:
+                    best_dx = abs(dx - sx)
+                    best_idx = i
+            if best_idx >= 0:
+                w, h, dx, dy = dims[best_idx]
+                entries.append(SectionEntry(
+                    symbol=sym, width_mm=w, height_mm=h,
+                    member_type=_symbol_to_type(sym), source_dxf=str(dxf_path),
+                    distance_mm=best_dx,
+                ))
+                used_dims.add(best_idx)
 
     return entries
 
@@ -189,64 +286,91 @@ def parse_slab_list(
     row_tolerance_mm: float = 1500.0,
     col_match_radius_mm: float = 5000.0,
 ) -> List[SectionEntry]:
-    """슬라브 일람표: 'A','B','C' 또는 'S1','S2' 라벨 + 두께 (단일값).
-
-    슬라브 두께는 W×H 형식이 아니라 단일 값('150', '200').
-    행 단위로 라벨 ↔ 두께 매칭.
-    """
+    """슬라브 일람표: 'A','B','C' 또는 'S1','S2' 라벨 + 두께 (단일값). Table Grid 지원."""
     doc = ezdxf.readfile(str(dxf_path))
     texts = list(_walk_texts(doc))
+    cells = _build_table_cells(doc)
 
-    # 슬라브 라벨 패턴 (단순 알파벳·S+숫자·SLAB 등)
     slab_label_pat = re.compile(r"^([A-H]|S\d+|SL\d+|F\d+)$")
-    # 두께 후보 (단일 정수)
     thk_pat = re.compile(r"^(\d{2,4})$")
 
-    labels = []
-    thicknesses = []
-    for t, x, y in texts:
-        s = t.strip()
-        if slab_label_pat.match(s):
-            labels.append((s, x, y))
-        elif thk_pat.match(s):
-            try:
-                v = int(s)
-                if 50 <= v <= 1000:    # 슬라브 두께 합리적 범위
-                    thicknesses.append((v, x, y))
-            except Exception:
-                pass
-
     entries: List[SectionEntry] = []
-    used = set()
-    for lab, lx, ly in labels:
-        best_idx = -1
-        best_dx = col_match_radius_mm
-        for i, (v, tx, ty) in enumerate(thicknesses):
-            if i in used:
-                continue
-            if abs(ty - ly) > row_tolerance_mm:
-                continue
-            dist_x = abs(tx - lx)
-            if dist_x < best_dx:
-                best_dx = dist_x
-                best_idx = i
+    
+    if cells:
+        cell_contents = {}
+        for t, x, y in texts:
+            for (xmin, xmax, ymin, ymax) in cells:
+                if xmin <= x <= xmax and ymin <= y <= ymax:
+                    cell_contents.setdefault((xmin, xmax, ymin, ymax), []).append((t.strip(), x, y))
+                    break
 
-        if best_idx < 0:
-            continue
+        rows = {}
+        for c in cells:
+            key = (c[2], c[3])
+            matched = None
+            for rk in rows.keys():
+                if abs(rk[0] - key[0]) < 100 and abs(rk[1] - key[1]) < 100:
+                    matched = rk
+                    break
+            if matched: rows[matched].append(c)
+            else: rows[key] = [c]
 
-        v, tx, ty = thicknesses[best_idx]
-        d2 = (tx - lx) ** 2 + (ty - ly) ** 2
-        entries.append(SectionEntry(
-            symbol=lab,
-            width_mm=0,        # 슬라브는 W·H 의미 없음
-            height_mm=0,
-            member_type=MemberType.SLAB,
-            source_dxf=str(dxf_path),
-            distance_mm=d2 ** 0.5,
-        ))
-        # 두께를 다른 필드로 저장 못하니 SectionEntry 확장이 필요. 임시로 width_mm에 두께
-        entries[-1].width_mm = v
-        used.add(best_idx)
+        for row_bounds, row_cells in rows.items():
+            row_labels, row_thks = [], []
+            for c in row_cells:
+                for t, x, y in cell_contents.get(c, []):
+                    if slab_label_pat.match(t): row_labels.append((t, x, y))
+                    elif thk_pat.match(t):
+                        try:
+                            v = int(t)
+                            if 50 <= v <= 1000: row_thks.append((v, x, y))
+                        except: pass
+            
+            used = set()
+            for lab, lx, ly in row_labels:
+                best_idx, best_dx = -1, float('inf')
+                for i, (v, tx, ty) in enumerate(row_thks):
+                    if i in used: continue
+                    if abs(tx - lx) < best_dx:
+                        best_dx = abs(tx - lx)
+                        best_idx = i
+                if best_idx >= 0:
+                    v, tx, ty = row_thks[best_idx]
+                    entries.append(SectionEntry(
+                        symbol=lab, width_mm=v, height_mm=0, # width_mm에 임시저장
+                        member_type=MemberType.SLAB, source_dxf=str(dxf_path),
+                        distance_mm=best_dx,
+                    ))
+                    used.add(best_idx)
+    else:
+        # Fallback
+        labels, thicknesses = [], []
+        for t, x, y in texts:
+            s = t.strip()
+            if slab_label_pat.match(s): labels.append((s, x, y))
+            elif thk_pat.match(s):
+                try:
+                    v = int(s)
+                    if 50 <= v <= 1000: thicknesses.append((v, x, y))
+                except: pass
+                
+        used = set()
+        for lab, lx, ly in labels:
+            best_idx, best_dx = -1, col_match_radius_mm
+            for i, (v, tx, ty) in enumerate(thicknesses):
+                if i in used: continue
+                if abs(ty - ly) > row_tolerance_mm: continue
+                if abs(tx - lx) < best_dx:
+                    best_dx = abs(tx - lx)
+                    best_idx = i
+            if best_idx >= 0:
+                v, tx, ty = thicknesses[best_idx]
+                entries.append(SectionEntry(
+                    symbol=lab, width_mm=v, height_mm=0,
+                    member_type=MemberType.SLAB, source_dxf=str(dxf_path),
+                    distance_mm=best_dx,
+                ))
+                used.add(best_idx)
 
     return entries
 

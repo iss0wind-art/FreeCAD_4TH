@@ -8,13 +8,13 @@ grid_resolver.py — 시트별 격자선 좌표 자동 추출 (v4 P2.1)
   - 도면-내재 신호만 (격자 라벨 위치)
 """
 from __future__ import annotations
-
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
+from collections import defaultdict
 
 from core.v2.inspect.meta_pipeline import DrawingMeta
 from core.v2.inspect.sheet_segmenter import SheetMeta
-from core.v2.inspect.text_classifier import TextCategory, TextLabel
+from core.v2.inspect.text_classifier import TextCategory, TextLabel, classify_single
 
 
 @dataclass
@@ -48,49 +48,61 @@ def _resolve_one_sheet(sheet: SheetMeta, meta: DrawingMeta) -> Optional[SheetGri
     # 시트 내 격자 라벨 모으기 (sheet_segmenter가 이미 채움)
     x_in_sheet = sheet.grid_x_labels
     y_in_sheet = sheet.grid_y_labels
+    # 1. 시트 내 격자 텍스트 & 라인 수집
+    texts = [l for l in meta.text_stats.all()
+             if sheet.bbox[0] <= l.x <= sheet.bbox[2] and sheet.bbox[1] <= l.y <= sheet.bbox[3]]
+    
+    # 격자 후보들 (텍스트 근처의 긴 수직/수평선)
+    # (가정: 텍스트 근처 2m 이내에 격자선이 있음)
+    x_pos: Dict[str, List[float]] = defaultdict(list) # label -> [x_coordinates]
+    y_pos: Dict[str, List[float]] = defaultdict(list) # label -> [y_coordinates]
+    
+    for t in texts:
+        cat = classify_single(t.text)
+        if cat not in [TextCategory.GRID_X, TextCategory.GRID_Y]:
+            continue
+            
+        # 가장자리 필터링 (Zoning): 진짜 격자는 시트 가장자리에 있음
+        # (시트 폭의 15% 이내 가장자리만 인정)
+        x_margin = (sheet.bbox[2] - sheet.bbox[0]) * 0.15
+        y_margin = (sheet.bbox[3] - sheet.bbox[1]) * 0.15
+        
+        is_edge_x = (t.y < sheet.bbox[1] + y_margin) or (t.y > sheet.bbox[3] - y_margin)
+        is_edge_y = (t.x < sheet.bbox[0] + x_margin) or (t.x > sheet.bbox[2] - x_margin)
 
-    # 폴백: 시트 bbox 내 격자 라벨 직접 검색
-    if not x_in_sheet:
-        x_in_sheet = [
-            (lab.text, lab.x, lab.y)
-            for lab in meta.text_stats.by_category(TextCategory.GRID_X)
-            if _in_bbox(lab.x, lab.y, sheet.bbox)
-        ]
-    if not y_in_sheet:
-        y_in_sheet = [
-            (lab.text, lab.x, lab.y)
-            for lab in meta.text_stats.by_category(TextCategory.GRID_Y)
-            if _in_bbox(lab.x, lab.y, sheet.bbox)
-        ]
+        label = t.text.upper()
+        
+        # 1-1. X-grid (수직선) -> 상/하단 가장자리에 있어야 함
+        if label.startswith('X') or (label.isdigit() and 1 <= int(label) <= 99):
+            if is_edge_x:
+                clean_label = label if label.startswith('X') else "X"+label
+                x_pos[clean_label].append(t.x)
+        # 1-2. Y-grid (수평선) -> 좌/우측 가장자리에 있어야 함
+        elif label.startswith('Y') or (len(label) == 1 and 'A' <= label <= 'Z'):
+            if is_edge_y:
+                clean_label = label if label.startswith('Y') else "Y"+label
+                y_pos[clean_label].append(t.y)
 
-    if not x_in_sheet or not y_in_sheet:
+    if not x_pos or not y_pos:
         return None
-
-    # 라벨별 위치 (같은 라벨 여러 개면 평균)
-    x_pos: Dict[str, List[float]] = {}
-    for text, x, _ in x_in_sheet:
-        x_pos.setdefault(text.upper(), []).append(x)
-    y_pos: Dict[str, List[float]] = {}
-    for text, _, y in y_in_sheet:
-        y_pos.setdefault(text.upper(), []).append(y)
 
     x_lines = {k: sum(v) / len(v) for k, v in x_pos.items()}
     y_lines = {k: sum(v) / len(v) for k, v in y_pos.items()}
 
-    # 원점: X1·Y1 교점 → 가장 작은 라벨 폴백
-    origin_x = x_lines.get("X1", min(x_lines.values()))
-    origin_y = y_lines.get("Y1", min(y_lines.values()))
+    # 원점: X1·Y1 교점 (없으면 최소값 폴백하되, 나중에 시트 정렬 시 이름표 기준으로 보정됨)
+    origin_x = x_lines.get("X1", min(x_lines.values()) if x_lines else 0.0)
+    origin_y = y_lines.get("Y1", min(y_lines.values()) if y_lines else 0.0)
 
-    # 정규화: 원점 기준 상대좌표
+    # 정규화: 원점 기준 상대좌표 (이 값은 로컬 추출용)
     x_lines_norm = {k: v - origin_x for k, v in x_lines.items()}
     y_lines_norm = {k: v - origin_y for k, v in y_lines.items()}
 
     return SheetGrid(
         sheet_id=sheet.sheet_id,
-        x_lines=x_lines_norm,
-        y_lines=y_lines_norm,
+        x_lines=x_lines,  # 정규화하지 않은 CAD 원본 좌표 유지 (정렬용)
+        y_lines=y_lines,
         origin=(origin_x, origin_y),
-        rotation_deg=0.0,    # 회전은 v4.1+ (지금은 직각만)
+        rotation_deg=0.0,
     )
 
 

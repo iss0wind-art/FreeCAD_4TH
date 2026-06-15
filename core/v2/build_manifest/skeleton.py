@@ -39,15 +39,20 @@ def build_skeleton(
     all_labels = [(lab.text, lab.x, lab.y) for lab in meta.text_stats.all()]
     auto_floors = extract_floors_from_drawing(all_labels)
 
-    # 2. 시트별 z_sl 폴백 (sl_extractor 별도 매칭)
+    # 2. 모든 시트 전수 등록 (높이 없어도 일단 등록해서 유령 부재 방지)
     floor_map: dict[str, float] = dict(auto_floors)
     for s in meta.sheets:
-        floor_id = s.floor_label or s.sheet_id
-        z_sl = s.z_sl if s.z_sl is not None else None
-        if z_sl is None:
-            continue
-        if floor_id not in floor_map or z_sl < floor_map[floor_id]:
-            floor_map[floor_id] = z_sl
+        # 시트의 floor_label이 있으면 그것을 쓰고, 없으면 sheet_id(S30-001 등)를 직접 층 ID로 사용
+        fid = s.floor_label or s.sheet_id
+        z_sl = s.z_sl if s.z_sl is not None else 0.0
+        
+        # 이미 등록된 층이면 더 낮은 높이(또는 첫 발견 높이) 유지, 없으면 신규 등록
+        if fid not in floor_map:
+            floor_map[fid] = z_sl
+        
+        # 부재 추출 시 sheet_id를 직접 floor ID로 쓸 수도 있으므로 sheet_id도 명시적으로 등록
+        if s.sheet_id not in floor_map:
+            floor_map[s.sheet_id] = z_sl
 
     # 3. 모두 없으면 sheet_id 기본 floor 1개
     if not floor_map:
