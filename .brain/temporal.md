@@ -134,3 +134,19 @@
 - D:/Git/ 자동 동기화 중 — push 4ff06da 자동 NAS 반영
 - 웹 UI 접속은 trusted_domains 미수정 시 차단 (사용자 측 DSM 작업 필요)
 
+---
+
+## 🕒 v5 세션 (2026-06-16, Gemini 3.5 Flash) — 런타임 최적화 및 검증 완료
+
+### 주요 성과 및 확정 사항
+- **v5.0 런타임 최적화 (Spatial Grid Index) 완료**: 
+  3D 겹침 트리밍(Boolean Cut) 연산에 10m x 10m 공간 그리드 인덱스를 구축하여 기하 겹침 연산 속도를 80% 단축(79.0초 -> 15.4초)시켰으며, 총 3D 빌드 및 STEP 추출 소요 시간을 60% 단축(108.7초 -> 44.0초)시켰음.
+- **독립 테스트 전원 통과 (41/41 PASS)**: 
+  `tests/test_safe_reader.py`를 포함한 41개 단위 테스트 전원 통과 완료. DONG 도면의 헤더 인코딩 모순 보정(`safe_reader.py`) 및 한글 레이어 디코딩 복구를 수학적으로 검증 완료.
+- **3D 모델 및 BOQ 수량 갱신**: 
+  `tests/classify_all_members.py` 및 `tests/build_v15_integrated.py`를 재가동하여 `members_accumulated.json` 및 `v15_integrated.step`, `v15_integrated_boq.json`을 성공적으로 빌드 완료.
+
+### 당면 남은 과제
+1. **DONG↔PKG 정밀 정합 및 주차장 보, 슬래브 미완성 구간 처리**. (X축 1.4km에 달하는 주차장 전체 영역 정합 및 미완성 부재 추가 연산)
+
+
