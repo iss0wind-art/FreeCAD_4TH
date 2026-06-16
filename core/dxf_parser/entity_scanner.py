@@ -29,7 +29,7 @@ def iter_all(container, depth: int = 0, max_depth: int = 8) -> Iterator:
     """모든 엔티티 재귀 순회 — INSERT 내부까지.
 
     한국 구조도면은 INSERT(블록 참조) 안에 INSERT가 중첩된다.
-    max_depth=8로 충분히 깊이 파고든다.
+    부모 INSERT의 레이어가 '0'이 아닌 경우 자식에게 상속해 필터 누락을 방지합니다.
     """
     if depth > max_depth:
         return
@@ -37,7 +37,13 @@ def iter_all(container, depth: int = 0, max_depth: int = 8) -> Iterator:
         yield e
         if e.dxftype() == 'INSERT':
             try:
-                yield from iter_all(list(e.virtual_entities()), depth + 1, max_depth)
+                parent_layer = getattr(e.dxf, 'layer', '0')
+                virtuals = list(e.virtual_entities())
+                for sub_e in virtuals:
+                    sub_layer = getattr(sub_e.dxf, 'layer', '0')
+                    if sub_layer == '0' or not sub_layer:
+                        sub_e.dxf.layer = parent_layer
+                yield from iter_all(virtuals, depth + 1, max_depth)
             except Exception:
                 pass
 
@@ -50,11 +56,17 @@ def iter_clip(container, clip: Optional[Tuple[float,float,float,float]],
     for e in container:
         t = e.dxftype()
         
-        # 블록(INSERT)인 경우, 내부 엔티티 탐색을 위해 일단 통과
+        # 블록(INSERT)인 경우, 자식 전개 및 레이어 상속 적용
         if t == 'INSERT':
+            yield e  # INSERT 본체 방출
             try:
-                yield from iter_clip(list(e.virtual_entities()), clip,
-                                     depth + 1, max_depth)
+                parent_layer = getattr(e.dxf, 'layer', '0')
+                virtuals = list(e.virtual_entities())
+                for sub_e in virtuals:
+                    sub_layer = getattr(sub_e.dxf, 'layer', '0')
+                    if sub_layer == '0' or not sub_layer:
+                        sub_e.dxf.layer = parent_layer
+                yield from iter_clip(virtuals, clip, depth + 1, max_depth)
             except Exception:
                 pass
             continue
@@ -62,15 +74,27 @@ def iter_clip(container, clip: Optional[Tuple[float,float,float,float]],
         # 일반 엔티티는 클립 체크
         if clip is not None:
             try:
-                # 엔티티 종류별 위치 파악 (insert, start, center 등)
-                pos = None
-                if hasattr(e.dxf, 'insert'): pos = e.dxf.insert
-                elif hasattr(e.dxf, 'start'): pos = e.dxf.start
-                elif hasattr(e.dxf, 'center'): pos = e.dxf.center
-                
-                if pos:
-                    if not (clip[0] <= pos.x <= clip[2] and clip[1] <= pos.y <= clip[3]):
+                # 엔티티 종류별 위치 파악 (LWPOLYLINE/LINE 포함)
+                if t == 'LWPOLYLINE':
+                    pts = e.get_points()
+                    if pts:
+                        cx = sum(p[0] for p in pts) / len(pts)
+                        cy = sum(p[1] for p in pts) / len(pts)
+                        if not (clip[0] <= cx <= clip[2] and clip[1] <= cy <= clip[3]):
+                            continue
+                elif t == 'LINE':
+                    s, en = e.dxf.start, e.dxf.end
+                    cx, cy = (s.x + en.x) / 2, (s.y + en.y) / 2
+                    if not (clip[0] <= cx <= clip[2] and clip[1] <= cy <= clip[3]):
                         continue
+                else:
+                    pos = None
+                    if hasattr(e.dxf, 'insert'): pos = e.dxf.insert
+                    elif hasattr(e.dxf, 'start'): pos = e.dxf.start
+                    elif hasattr(e.dxf, 'center'): pos = e.dxf.center
+                    if pos:
+                        if not (clip[0] <= pos.x <= clip[2] and clip[1] <= pos.y <= clip[3]):
+                            continue
             except Exception:
                 pass
         

@@ -19,6 +19,12 @@ _OUTLINE_LAYER = re.compile(r'(OUTLINE|A[-_]HAT|00[-_]OUTLINE|구조.*외곽)', 
 _COL_LAYER = re.compile(r'(00[-_]COLUMN|S[-_]기둥|S[-_]COL|STRUCT[-_]COL|COL(?!OR)|柱|구조.*기둥)', re.IGNORECASE)
 _SLAB_LABEL_PAT = re.compile(r'(\d?S\d[A-Z]?|T\s*[=]?\s*\d{2,3}|THK\s*\d{2,3}|\(\d{3}\))', re.IGNORECASE)
 
+# [수동 덧방 / 바이패스 레이어 패턴]
+_ADD_COL_LAYER = re.compile(r'(ADD[-_]COL|덧방[-_]기둥)', re.IGNORECASE)
+_ADD_BEAM_LAYER = re.compile(r'(ADD[-_]BEAM|덧방[-_]보)', re.IGNORECASE)
+_ADD_WALL_LAYER = re.compile(r'(ADD[-_]WALL|덧방[-_]벽체)', re.IGNORECASE)
+_ADD_SLAB_LAYER = re.compile(r'(ADD[-_]SLAB|덧방[-_]슬라브)', re.IGNORECASE)
+
 # ─────────────────────────────────────────────────────────────
 # 2. 자료구조
 # ─────────────────────────────────────────────────────────────
@@ -26,15 +32,18 @@ _SLAB_LABEL_PAT = re.compile(r'(\d?S\d[A-Z]?|T\s*[=]?\s*\d{2,3}|THK\s*\d{2,3}|\(
 class ColumnPrim:
     cx: float; cy: float; w: float; h: float; rotation: float = 0.0
     symbol: str = "NOCOL"; source: str = ""; block_name: str = ""; layer: str = ""
+    bypass_filter: bool = False
 
 @dataclass
 class SlabOutline:
     pts: List[Tuple[float, float]]; area_m2: float; symbol: str = "NOSLAB"; layer: str = ""
+    bypass_filter: bool = False
 
 @dataclass
 class BeamLine:
     x0: float; y0: float; x1: float; y1: float; layer: str = ''
     width: float = 400.0; height: float = 700.0; symbol: str = "NOBEAM"; volume_m3: float = 0.0
+    bypass_filter: bool = False
     @property
     def length(self) -> float: return math.hypot(self.x1-self.x0, self.y1-self.y0)
 
@@ -64,6 +73,56 @@ class StructuralExtractor:
                 txt = e.plain_text() if t == 'MTEXT' else e.dxf.text
                 if _in_clip(e.dxf.insert.x, e.dxf.insert.y, clip): text_entities.append((e.dxf.insert.x, e.dxf.insert.y, txt))
             
+            # --- [수동 덧방 / 바이패스 처리 분기] ---
+            if _ADD_COL_LAYER.search(layer):
+                if t == 'INSERT':
+                    col = self._col_from_insert(e, clip, seen_cols, layer)
+                    if col:
+                        col.bypass_filter = True
+                        result.columns.append(col)
+                elif t == 'LWPOLYLINE':
+                    col = self._col_from_hatch_pts(e, clip, seen_cols, layer)
+                    if col:
+                        col.bypass_filter = True
+                        result.columns.append(col)
+                continue
+            
+            elif _ADD_BEAM_LAYER.search(layer):
+                if t == 'LINE':
+                    s, en = e.dxf.start, e.dxf.end
+                    b_line = BeamLine(x0=s.x, y0=s.y, x1=en.x, y1=en.y, layer=layer, bypass_filter=True, symbol="ADD_BEAM")
+                    result.beams.append(b_line)
+                elif t == 'LWPOLYLINE':
+                    pts = e.get_points()
+                    for i in range(len(pts)-1):
+                        b_line = BeamLine(x0=pts[i][0], y0=pts[i][1], x1=pts[i+1][0], y1=pts[i+1][1], layer=layer, bypass_filter=True, symbol="ADD_BEAM")
+                        result.beams.append(b_line)
+                continue
+                
+            elif _ADD_WALL_LAYER.search(layer):
+                # 덧방 벽체는 단선을 200mm 두께 벽체로 즉시 빌드
+                if t == 'LINE':
+                    s, en = e.dxf.start, e.dxf.end
+                    w_pair = WallPair(line_a_id=idx, line_b_id=-1, distance=200.0, overlap_length=math.hypot(en.x-s.x, en.y-s.y),
+                                      angle=math.atan2(en.y-s.y, en.x-s.x), centerline_p1=(s.x, s.y), centerline_p2=(en.x, en.y),
+                                      confidence=1.0, bypass_filter=True)
+                    result.shear_walls.append(w_pair)
+                elif t == 'LWPOLYLINE':
+                    pts = e.get_points()
+                    for i in range(len(pts)-1):
+                        w_pair = WallPair(line_a_id=idx*100+i, line_b_id=-1, distance=200.0, overlap_length=math.hypot(pts[i+1][0]-pts[i][0], pts[i+1][1]-pts[i][1]),
+                                          angle=math.atan2(pts[i+1][1]-pts[i][1], pts[i+1][0]-pts[i][0]), centerline_p1=(pts[i][0], pts[i][1]), centerline_p2=(pts[i+1][0], pts[i+1][1]),
+                                          confidence=1.0, bypass_filter=True)
+                        result.shear_walls.append(w_pair)
+                continue
+
+            elif _ADD_SLAB_LAYER.search(layer):
+                if t == 'LWPOLYLINE':
+                    pts = [(p[0], p[1]) for p in e.get_points()]; area = _shoelace_area(pts)
+                    result.slab_outlines.append(SlabOutline(pts=pts, area_m2=area/1e6, symbol="ADD_SLAB", layer=layer, bypass_filter=True))
+                continue
+            
+            # --- [기존 자동 추출 로직] ---
             if t == 'INSERT' and _COL_LAYER.search(layer):
                 col = self._col_from_insert(e, clip, seen_cols, layer)
                 if col: result.columns.append(col)

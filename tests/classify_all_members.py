@@ -64,6 +64,12 @@ _PKG_WALL   = re.compile(r'00_SHEAR WALL$', re.IGNORECASE)
 _PKG_SLAB   = re.compile(r'S-PC-SLAB$', re.IGNORECASE)
 _PKG_FND    = re.compile(r'S-FOUNDATION|S-BASE|S-FND', re.IGNORECASE)
 
+# 덧방용 수동 보조선 레이어
+_ADD_COL    = re.compile(r'(ADD[-_]COL|덧방[-_]기둥)', re.IGNORECASE)
+_ADD_BEAM   = re.compile(r'(ADD[-_]BEAM|덧방[-_]보)', re.IGNORECASE)
+_ADD_WALL   = re.compile(r'(ADD[-_]WALL|덧방[-_]벽체)', re.IGNORECASE)
+_ADD_SLAB   = re.compile(r'(ADD[-_]SLAB|덧방[-_]슬라브)', re.IGNORECASE)
+
 
 # ── 면적 계산 ──────────────────────────────────────────────
 def poly_area(pts: List[Tuple[float, float]]) -> float:
@@ -163,6 +169,89 @@ def classify_dong(
                 if not in_clip(cx, cy, clip):
                     continue
 
+                # ── 수동 덧방 / 바이패스 처리 분기 ────────────────
+                if _ADD_COL.search(layer):
+                    if etype == 'LWPOLYLINE' and len(coords) >= 3:
+                        xs = [p[0] for p in coords]
+                        ys = [p[1] for p in coords]
+                        w = max(xs) - min(xs)
+                        h = max(ys) - min(ys)
+                        members.append({
+                            'id': next_id('COL', floor),
+                            'type': 'COLUMN',
+                            'floor': floor,
+                            'source': 'DONG',
+                            'x': round(cx, 1), 'y': round(cy, 1),
+                            'z_bot': zb, 'z_top': zt,
+                            'section': f'{round(w)}x{round(h)}',
+                            'layer': layer,
+                            'bypass_filter': True,
+                        })
+                        col_cnt += 1
+                        continue
+
+                elif _ADD_BEAM.search(layer):
+                    if etype in ('LINE', 'LWPOLYLINE'):
+                        for i in range(len(coords)-1):
+                            L = math.hypot(coords[i+1][0] - coords[i][0], coords[i+1][1] - coords[i][1])
+                            dx = coords[i+1][0] - coords[i][0]
+                            dy = coords[i+1][1] - coords[i][1]
+                            ang = math.degrees(math.atan2(dy, dx)) % 180
+                            members.append({
+                                'id': next_id('BM', floor),
+                                'type': 'BEAM',
+                                'floor': floor,
+                                'source': 'DONG',
+                                'x': round((coords[i][0]+coords[i+1][0])/2, 1), 'y': round((coords[i][1]+coords[i+1][1])/2, 1),
+                                'z_bot': zb, 'z_top': zt,
+                                'length_mm': round(L, 1),
+                                'angle_deg': round(ang, 1),
+                                'layer': layer,
+                                'bypass_filter': True,
+                            })
+                            beam_cnt += 1
+                        continue
+
+                elif _ADD_WALL.search(layer):
+                    if etype in ('LINE', 'LWPOLYLINE'):
+                        for i in range(len(coords)-1):
+                            L = math.hypot(coords[i+1][0] - coords[i][0], coords[i+1][1] - coords[i][1])
+                            dx = coords[i+1][0] - coords[i][0]
+                            dy = coords[i+1][1] - coords[i][1]
+                            ang = math.degrees(math.atan2(dy, dx)) % 180
+                            members.append({
+                                'id': next_id('WL', floor),
+                                'type': 'WALL',
+                                'floor': floor,
+                                'source': 'DONG',
+                                'x': round((coords[i][0]+coords[i+1][0])/2, 1), 'y': round((coords[i][1]+coords[i+1][1])/2, 1),
+                                'z_bot': zb, 'z_top': zt,
+                                'length_mm': round(L, 1),
+                                'height_mm': h_floor,
+                                'angle_deg': round(ang, 1),
+                                'layer': layer,
+                                'bypass_filter': True,
+                            })
+                            wall_cnt += 1
+                        continue
+
+                elif _ADD_SLAB.search(layer):
+                    if etype == 'LWPOLYLINE' and len(coords) >= 3:
+                        area_mm2 = poly_area(coords)
+                        members.append({
+                            'id': next_id('SL', floor),
+                            'type': 'SLAB',
+                            'floor': floor,
+                            'source': 'DONG',
+                            'x': round(cx, 1), 'y': round(cy, 1),
+                            'z_bot': zb, 'z_top': zt,
+                            'area_m2': round(area_mm2 / 1e6, 3),
+                            'layer': layer,
+                            'bypass_filter': True,
+                        })
+                        slab_cnt += 1
+                        continue
+
                 # ── 기둥 ──────────────────────────────────
                 if _DONG_COL.search(layer) and etype == 'LWPOLYLINE':
                     if len(coords) < 3:
@@ -252,7 +341,7 @@ def classify_dong(
 
                 # ── 기초 ─────────────────────────────────
                 elif _DONG_FND.search(layer):
-                    members.append({
+                    fnd_data = {
                         'id': next_id('FND', floor),
                         'type': 'FND',
                         'floor': floor,
@@ -260,7 +349,12 @@ def classify_dong(
                         'x': round(cx, 1), 'y': round(cy, 1),
                         'z_bot': zb - 1000, 'z_top': zb,
                         'layer': layer,
-                    })
+                    }
+                    if etype == 'LWPOLYLINE' and len(coords) >= 3:
+                        fnd_data['points'] = [(round(p[0], 1), round(p[1], 1)) for p in coords]
+                        area_m2 = poly_area(coords) / 1e6
+                        fnd_data['area_m2'] = round(area_m2, 3)
+                    members.append(fnd_data)
                     fnd_cnt += 1
 
             except Exception:
@@ -314,6 +408,89 @@ def classify_pkg(dxf_path: str) -> List[dict]:
                 continue
 
             cx, cy = centroid(coords)
+
+            # ── 수동 덧방 / 바이패스 처리 분기 ────────────────
+            if _ADD_COL.search(layer):
+                if etype == 'LWPOLYLINE' and len(coords) >= 3:
+                    xs = [p[0] for p in coords]
+                    ys = [p[1] for p in coords]
+                    w = max(xs) - min(xs)
+                    h = max(ys) - min(ys)
+                    members.append({
+                        'id': next_id('COL'),
+                        'type': 'COLUMN',
+                        'floor': floor,
+                        'source': 'PKG',
+                        'x': round(cx, 1), 'y': round(cy, 1),
+                        'z_bot': zb, 'z_top': zt,
+                        'section': f'{round(w)}x{round(h)}',
+                        'layer': layer,
+                        'bypass_filter': True,
+                    })
+                    col_cnt += 1
+                    continue
+
+            elif _ADD_BEAM.search(layer):
+                if etype in ('LINE', 'LWPOLYLINE'):
+                    for i in range(len(coords)-1):
+                        L = math.hypot(coords[i+1][0] - coords[i][0], coords[i+1][1] - coords[i][1])
+                        dx = coords[i+1][0] - coords[i][0]
+                        dy = coords[i+1][1] - coords[i][1]
+                        ang = math.degrees(math.atan2(dy, dx)) % 180
+                        members.append({
+                            'id': next_id('BM'),
+                            'type': 'BEAM',
+                            'floor': floor,
+                            'source': 'PKG',
+                            'x': round((coords[i][0]+coords[i+1][0])/2, 1), 'y': round((coords[i][1]+coords[i+1][1])/2, 1),
+                            'z_bot': zb, 'z_top': zt,
+                            'length_mm': round(L, 1),
+                            'angle_deg': round(ang, 1),
+                            'layer': layer,
+                            'bypass_filter': True,
+                        })
+                        beam_cnt += 1
+                    continue
+
+            elif _ADD_WALL.search(layer):
+                if etype in ('LINE', 'LWPOLYLINE'):
+                    for i in range(len(coords)-1):
+                        L = math.hypot(coords[i+1][0] - coords[i][0], coords[i+1][1] - coords[i][1])
+                        dx = coords[i+1][0] - coords[i][0]
+                        dy = coords[i+1][1] - coords[i][1]
+                        ang = math.degrees(math.atan2(dy, dx)) % 180
+                        members.append({
+                            'id': next_id('WL'),
+                            'type': 'WALL',
+                            'floor': floor,
+                            'source': 'PKG',
+                            'x': round((coords[i][0]+coords[i+1][0])/2, 1), 'y': round((coords[i][1]+coords[i+1][1])/2, 1),
+                            'z_bot': zb, 'z_top': zt,
+                            'length_mm': round(L, 1),
+                            'height_mm': h_floor,
+                            'angle_deg': round(ang, 1),
+                            'layer': layer,
+                            'bypass_filter': True,
+                        })
+                        wall_cnt += 1
+                    continue
+
+            elif _ADD_SLAB.search(layer):
+                if etype == 'LWPOLYLINE' and len(coords) >= 3:
+                    area_mm2 = poly_area(coords)
+                    members.append({
+                        'id': next_id('SL'),
+                        'type': 'SLAB',
+                        'floor': floor,
+                        'source': 'PKG',
+                        'x': round(cx, 1), 'y': round(cy, 1),
+                        'z_bot': zb, 'z_top': zt,
+                        'area_m2': round(area_mm2 / 1e6, 3),
+                        'layer': layer,
+                        'bypass_filter': True,
+                    })
+                    slab_cnt += 1
+                    continue
 
             # ── 기둥 ──────────────────────────────────────
             if _PKG_COL.search(layer) and etype == 'LWPOLYLINE':
@@ -406,7 +583,7 @@ def classify_pkg(dxf_path: str) -> List[dict]:
 
             # ── 기초 ─────────────────────────────────────
             elif _PKG_FND.search(layer):
-                members.append({
+                fnd_data = {
                     'id': next_id('FND'),
                     'type': 'FND',
                     'floor': floor,
@@ -414,7 +591,12 @@ def classify_pkg(dxf_path: str) -> List[dict]:
                     'x': round(cx, 1), 'y': round(cy, 1),
                     'z_bot': zb - 1000, 'z_top': zb,
                     'layer': layer,
-                })
+                }
+                if etype == 'LWPOLYLINE' and len(coords) >= 3:
+                    fnd_data['points'] = [(round(p[0], 1), round(p[1], 1)) for p in coords]
+                    area_m2 = poly_area(coords) / 1e6
+                    fnd_data['area_m2'] = round(area_m2, 3)
+                members.append(fnd_data)
                 fnd_cnt += 1
 
         except Exception:

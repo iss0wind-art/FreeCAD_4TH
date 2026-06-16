@@ -78,6 +78,7 @@ class WallPair:
     centerline_p1: tuple[float, float]  # 벽 중심선 시작
     centerline_p2: tuple[float, float]  # 벽 중심선 끝
     confidence: float
+    bypass_filter: bool = False
 
     @property
     def thickness(self) -> float:
