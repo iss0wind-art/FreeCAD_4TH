@@ -93,7 +93,12 @@ class FloorLevelParser:
         "1F":  370,
         "2F":  3300,
     }
-    
+
+    # 배치도(A01-023) vs 단면도(A40-010~240) 대조:
+    # 배치도MAX = 단면도 numbered MAX + 1인 동 → Roof S.L. = PH(옥탑 거주층)
+    # 나머지는 Roof S.L. = 구조 지붕 슬래브 (비거주, 층수 미포함)
+    PH_BUILDINGS = {"101동", "103동", "104동"}
+
     def __init__(self, dong_name="101동"):
         self.dong = dong_name
         self.sl_markers = {}    # floor_label -> y_position
@@ -159,7 +164,8 @@ class FloorLevelParser:
                 
                 label_lower = t.lower()
                 if "roof" in label_lower or "옥상" in t or "r.f" in label_lower:
-                    label = "PH"
+                    # Roof S.L. = PH(옥탑 거주층)인 동: 배치도 MAX = 단면도 MAX + 1
+                    label = "PH" if self.dong in self.PH_BUILDINGS else "Roof"
                 elif "지하" in t:
                     pass  # already handled
                 
@@ -222,10 +228,11 @@ class FloorLevelParser:
                 if label in self.sl_markers:
                     base_sl += 2830
                     self.absolute_sl[label] = base_sl
-            
-            # Roof
-            if "PH" in self.sl_markers:
-                self.absolute_sl["PH"] = self.absolute_sl.get("15F", base_sl) + 2930
+
+            # Roof slab (PH or structural roof) — always 2930mm above highest numbered floor
+            roof_label = "PH" if "PH" in self.sl_markers else ("Roof" if "Roof" in self.sl_markers else None)
+            if roof_label:
+                self.absolute_sl[roof_label] = base_sl + 2930
         
         return self
     
