@@ -34,6 +34,8 @@ def iter_all(container, depth: int = 0, max_depth: int = 8) -> Iterator:
     if depth > max_depth:
         return
     for e in container:
+        if e.dxftype() == 'DIMASSOC':  # causes iter hang on some DXF files (108/116동)
+            continue
         yield e
         if e.dxftype() == 'INSERT':
             try:
@@ -55,7 +57,10 @@ def iter_clip(container, clip: Optional[Tuple[float,float,float,float]],
         return
     for e in container:
         t = e.dxftype()
-        
+
+        if t == 'DIMASSOC':  # causes iter hang on some DXF files (108/116동)
+            continue
+
         # 블록(INSERT)인 경우, 자식 전개 및 레이어 상속 적용
         if t == 'INSERT':
             yield e  # INSERT 본체 방출

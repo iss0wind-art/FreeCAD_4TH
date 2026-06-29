@@ -188,10 +188,11 @@ def parse_structural_frame(
     # ─────────────────────────────────────────────────────────
 
     # 2. 격자선 추출 (부재 매칭에 필요할 수 있음)
+    # clip=None: 격자 라벨은 동 경계 바깥에 위치하는 경우가 많으므로 전체 도면 탐색
     grid = None
     if extract_grid:
         from core.dxf_parser.grid_extractor import extract_grid as _extract_grid
-        grid = _extract_grid(doc, clip=clip)
+        grid = _extract_grid(doc, clip=None)
 
     # 3. 골조 부재 추출
     extractor = StructuralExtractor(

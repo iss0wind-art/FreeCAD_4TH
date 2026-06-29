@@ -60,7 +60,9 @@ class StructuralData:
 class StructuralExtractor:
     def __init__(self, min_col_size=100.0, max_col_size=2500.0, min_slab_area_m2=10.0, **kwargs):
         self.min_col = min_col_size; self.max_col = max_col_size
-        self.min_slab = min_slab_area_m2 * 1_000_000; self.min_beam = 500.0
+        self.min_slab = min_slab_area_m2 * 1_000_000
+        self.min_beam = 3000.0   # 3m — 보 최소 길이 (격자선·치수선 제거)
+        self.max_beam = 15000.0  # 15m — 보 최대 길이 (비합리적 긴 선 제거)
 
     def extract(self, doc, clip=None, grid=None, **kwargs) -> StructuralData:
         result = StructuralData(); msp = doc.modelspace(); text_entities = []
@@ -158,7 +160,8 @@ class StructuralExtractor:
 
         if col_lines: result.columns.extend(self._rect_cols_from_lines(col_lines, seen_cols))
         for seg in beam_lines:
-            if seg.length >= self.min_beam: result.beams.append(BeamLine(x0=seg.p1[0], y0=seg.p1[1], x1=seg.p2[0], y1=seg.p2[1], layer=seg.layer))
+            if self.min_beam <= seg.length <= self.max_beam:
+                result.beams.append(BeamLine(x0=seg.p1[0], y0=seg.p1[1], x1=seg.p2[0], y1=seg.p2[1], layer=seg.layer))
 
         # [NEW] 슈퍼 전파 엔진 가동
         if result.beams:
