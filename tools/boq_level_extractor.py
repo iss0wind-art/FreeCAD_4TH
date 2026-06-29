@@ -159,7 +159,7 @@ class FloorLevelParser:
                 
                 label_lower = t.lower()
                 if "roof" in label_lower or "옥상" in t or "r.f" in label_lower:
-                    label = "Roof"
+                    label = "PH"
                 elif "지하" in t:
                     pass  # already handled
                 
@@ -173,7 +173,7 @@ class FloorLevelParser:
         # Sort floors
         def sort_key(item):
             label, y = item
-            if label == "Roof": return (0, 99)
+            if label in ("Roof", "PH"): return (0, 99)
             if label.startswith("B"): return (1, int(label[1:].replace("F","")))
             try: return (2, int(label.replace("F","")))
             except: return (3, 0)
@@ -208,7 +208,9 @@ class FloorLevelParser:
         }
         
         for label, (sl, src) in anchors.items():
-            self.absolute_sl[label] = sl
+            # Only anchor floors that appear in the section drawing
+            if label in self.sl_markers:
+                self.absolute_sl[label] = sl
         
         # Use heights from section to compute intermediate floors
         # Known heights: 2F→3F=2830, 3F→4F=2830, etc.
@@ -222,8 +224,8 @@ class FloorLevelParser:
                     self.absolute_sl[label] = base_sl
             
             # Roof
-            if "Roof" in self.sl_markers:
-                self.absolute_sl["Roof"] = self.absolute_sl.get("15F", base_sl) + 2930
+            if "PH" in self.sl_markers:
+                self.absolute_sl["PH"] = self.absolute_sl.get("15F", base_sl) + 2930
         
         return self
     
