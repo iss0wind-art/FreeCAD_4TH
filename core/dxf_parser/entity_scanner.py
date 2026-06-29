@@ -66,6 +66,11 @@ def iter_clip(container, clip: Optional[Tuple[float,float,float,float]],
             yield e  # INSERT 본체 방출
             try:
                 parent_layer = getattr(e.dxf, 'layer', '0')
+                block_name = getattr(e.dxf, 'name', '')
+                # XR 외부참조 INSERT는 내부 전개 생략
+                if ('$0$' in parent_layer or parent_layer.startswith('XR') or
+                        '$0$' in block_name or block_name.startswith('XR')):
+                    continue
                 virtuals = list(e.virtual_entities())
                 for sub_e in virtuals:
                     sub_layer = getattr(sub_e.dxf, 'layer', '0')

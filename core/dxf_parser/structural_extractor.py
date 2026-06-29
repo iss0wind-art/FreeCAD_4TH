@@ -71,6 +71,9 @@ class StructuralExtractor:
         
         for idx, e in enumerate(iter_clip(msp, clip)):
             t = e.dxftype(); layer = getattr(e.dxf, 'layer', '0')
+            # XR 외부참조 레이어 건너뜀 (AutoCAD xref: XrefName$0$LayerName)
+            if '$0$' in layer or layer.startswith('XR'):
+                continue
             if t in ('TEXT', 'MTEXT'):
                 txt = e.plain_text() if t == 'MTEXT' else e.dxf.text
                 if _in_clip(e.dxf.insert.x, e.dxf.insert.y, clip): text_entities.append((e.dxf.insert.x, e.dxf.insert.y, txt))
@@ -320,18 +323,6 @@ class StructuralExtractor:
         if grid:
             self._apply_grid_to_columns(data.columns, grid)
             self._apply_grid_fallback(data.beams, grid)
-        pat = re.compile(r'([ST]?C\d+[A-Z0-9-]*)', re.IGNORECASE)
-        best_dist = 5000.0
-        best_sym = None
-        for tx, ty, txt in texts:
-            dist = math.hypot(tx-col.cx, ty-col.cy)
-            if dist < best_dist:
-                m = pat.search(txt)
-                if m:
-                    best_dist = dist
-                    best_sym = m.group(1).upper()
-        if best_sym:
-            col.symbol = best_sym
 
     def _match_slab_labels(self, slab, texts):
         if not slab.pts: return
