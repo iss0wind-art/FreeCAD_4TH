@@ -16,6 +16,61 @@ module GoljoBuild
     pts
   end
 
+  # [확인요망] 계단 간이 생성 — 실측(단높이157.22/디딤270/9단2런), 런방향=개구 장변 가정
+  def build_stairs(ents, opening, z, m_stair)
+    xs = opening.map { |p| p[0] }; ys = opening.map { |p| p[1] }
+    x0, x1 = xs.min, xs.max; y0, y1 = ys.min, ys.max
+    w, h = x1 - x0, y1 - y0
+    along_x = w >= h
+    run_len = 8 * 270.0
+    riser = 157.22
+    half = (along_x ? h : w) / 2.0
+    8.times do |i|
+      zt = z + riser * (i + 1)
+      if along_x
+        tx0 = x0 + i * 270.0; tx1 = tx0 + 270.0
+        f1 = ents.add_face([tx0/MM, y0/MM, zt/MM], [tx1/MM, y0/MM, zt/MM],
+                           [tx1/MM, (y0+half)/MM, zt/MM], [tx0/MM, (y0+half)/MM, zt/MM]) rescue nil
+      else
+        ty0 = y0 + i * 270.0; ty1 = ty0 + 270.0
+        f1 = ents.add_face([x0/MM, ty0/MM, zt/MM], [(x0+half)/MM, ty0/MM, zt/MM],
+                           [(x0+half)/MM, ty1/MM, zt/MM], [x0/MM, ty1/MM, zt/MM]) rescue nil
+      end
+      if f1 && f1.valid?
+        f1.material = m_stair
+        f1.pushpull(f1.normal.z > 0 ? -170.0/MM : 170.0/MM) rescue nil
+      end
+      # 2런째 (반대편 절반, 반대 방향, 상부 구간)
+      zt2 = z + 1415.0 + riser * (i + 1)
+      if along_x
+        tx0 = x1 - i * 270.0; tx1 = tx0 - 270.0
+        f2 = ents.add_face([tx1/MM, (y0+half)/MM, zt2/MM], [tx0/MM, (y0+half)/MM, zt2/MM],
+                           [tx0/MM, y1/MM, zt2/MM], [tx1/MM, y1/MM, zt2/MM]) rescue nil
+      else
+        ty0 = y1 - i * 270.0; ty1 = ty0 - 270.0
+        f2 = ents.add_face([(x0+half)/MM, ty1/MM, zt2/MM], [(x0+half)/MM, ty0/MM, zt2/MM],
+                           [x1/MM, ty0/MM, zt2/MM], [x1/MM, ty1/MM, zt2/MM]) rescue nil
+      end
+      if f2 && f2.valid?
+        f2.material = m_stair
+        f2.pushpull(f2.normal.z > 0 ? -170.0/MM : 170.0/MM) rescue nil
+      end
+    end
+    # 중간참 (런 끝단)
+    zl = z + 1415.0
+    if along_x
+      lf = ents.add_face([(x0+run_len)/MM, y0/MM, zl/MM], [x1/MM, y0/MM, zl/MM],
+                         [x1/MM, y1/MM, zl/MM], [(x0+run_len)/MM, y1/MM, zl/MM]) rescue nil
+    else
+      lf = ents.add_face([x0/MM, (y0+run_len)/MM, zl/MM], [x1/MM, (y0+run_len)/MM, zl/MM],
+                         [x1/MM, y1/MM, zl/MM], [x0/MM, y1/MM, zl/MM]) rescue nil
+    end
+    if lf && lf.valid?
+      lf.material = m_stair
+      lf.pushpull(lf.normal.z > 0 ? -170.0/MM : 170.0/MM) rescue nil
+    end
+  end
+
   def build_floor(model, name, f, z, wz0, wz1, mats)
     m_slab, m_wall, m_col, m_fnd = mats
     thk = f['slab_thk'].to_f
@@ -64,6 +119,33 @@ module GoljoBuild
           face.material = m_fnd; face.back_material = m_fnd
         end
       rescue StandardError
+      end
+    end
+    # 1F 기립벽 (해당층 골조선) — "1층 비었음" 수정
+    sw = f['standing_walls']
+    if sw
+      swh = sw['z1'].to_f - sw['z0'].to_f
+      sw['faces'].each do |w|
+        begin
+          face = ents.add_face(ring(w, sw['z0'].to_f))
+          next unless face && face.valid?
+          face.material = m_wall
+          face.pushpull(face.normal.z > 0 ? swh/MM : -swh/MM)
+        rescue StandardError
+        end
+      end
+    end
+    # 계단 [확인요망]
+    st = f['stairs']
+    if st
+      m_stair = ents.model.materials['계단'] ||
+                ents.model.materials.add('계단')
+      m_stair.color = [120, 180, 120]
+      st['openings'].each do |op|
+        begin
+          build_stairs(ents, op, z, m_stair)
+        rescue StandardError
+        end
       end
     end
   end

@@ -15,9 +15,29 @@ from pathlib import Path
 import ezdxf
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from shapely.ops import polygonize, unary_union  # noqa: E402
 from core.pipeline.slab_engine import (  # noqa: E402
-    DXF_S30_101, FLOOR_ANCHOR)
+    DXF_S30_101, FLOOR_ANCHOR, bridge_collinear, collect_floor_data,
+    snap_segments)
 from core.pipeline.frame_parser import detect_columns  # noqa: E402
+
+
+# [AUTO] 해당층 기립 벽 face — 골조선(노랑) 페어 폐합 슬리버 추출
+def standing_wall_faces(doc, floor):
+    data = collect_floor_data(doc, floor)
+    segs = data.get("standing_wall_segs", [])
+    if not segs:
+        return []
+    segs = segs + bridge_collinear(segs, max_gap=2600, ang_tol=2.0,
+                                   lateral_tol=60)
+    faces = polygonize(unary_union(snap_segments(segs, 5)))
+    out = []
+    for f in faces:
+        if f.area < 0.05e6 or f.area > 60e6:
+            continue
+        if f.buffer(-150).is_empty:          # 슬리버 = 벽 발자국
+            out.append(list(f.exterior.coords))
+    return out
 
 ROOT = Path(__file__).resolve().parents[2]
 GEO_PATH = ROOT / "output" / "slab_precise_101동.json"
@@ -105,11 +125,32 @@ def main():
                           "poly": _shift(o["poly"], anc)}
                          for o in g.get("openings", [])],
         }
+        # 1F: 해당층 기립 벽(골조선 612본) 추가 — "1층 비었음" 수정
+        if fl == "1F":
+            sw = standing_wall_faces(doc, "1F")
+            build["floors"][fl]["standing_walls"] = {
+                "z0": 370, "z1": 3300,
+                "faces": [_shift(w, anc) for w in sw],
+                "note": "1F 골조선 기립 벽 (필로티 개방부는 도면 그대로)",
+            }
+        # 계단 생성 데이터: STAIR 개구부 + Phase8 실측 (157.22x9단x2런, 디딤270)
+        stair_polys = [o["poly"] for o in build["floors"][fl]["openings"]
+                       if o["type"] == "STAIR"]
+        if stair_polys:
+            build["floors"][fl]["stairs"] = {
+                "openings": stair_polys,
+                "riser_mm": 157.22, "risers_per_flight": 9,
+                "tread_mm": 270, "flights": 2,
+                "note": "[확인요망] 런 방향=개구 장변, 참=개구 절반 가정",
+            }
         f = build["floors"][fl]
         ztxt = f['z_sl'] if f['z_sl'] is not None else f"반복{len(f['repeat'] or [])}개층"
         print(f"[{fl}] z={ztxt} 슬라브 {len(f['slabs'])} / "
               f"벽면 {len(f['wall_faces'])} / 기둥 {len(f['columns'])} / "
-              f"개구부 {len(f['openings'])}")
+              f"개구부 {len(f['openings'])}"
+              + (f" / 기립벽 {len(build['floors'][fl].get('standing_walls', {}).get('faces', []))}"
+                 if fl == "1F" else "")
+              + (f" / 계단개구 {len(stair_polys)}" if stair_polys else ""))
     OUT_PATH.write_text(json.dumps(build, ensure_ascii=False),
                         encoding="utf-8")
     print(f"저장: {OUT_PATH}")
