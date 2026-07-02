@@ -21,6 +21,7 @@ REPORT_DIR = ROOT / "output" / "reports"
 HISTORY = Path(__file__).parent / "accuracy_history.json"
 
 # ── 기준값: 2026-07-02 세션 최초 통과 수치 (리포트 영구 저장본과 동일) ──────────
+# 5차 개정 2026-07-03: face우선 오픈(내벽 경계) — 1F 1448.25→1441.12
 # 4차 개정 2026-07-02: 전소스 X마크(EV·샤프트) + 계단클러스터 명시 절삭
 # — 'EV 슬라브 깔림/계단 누락' 수정. EV: B2F 2(피트 상부덮개 실존), B1F 4, 1F 3
 BASELINE = {
@@ -29,7 +30,7 @@ BASELINE = {
                 "ev_xmark": 2, "violations": 0},
         "B1F": {"slab_panels": 108, "area_after_m2": 1470.9,
                 "ev_xmark": 4, "violations": 0},
-        "1F": {"slab_panels": 131, "area_after_m2": 1448.25,
+        "1F": {"slab_panels": 130, "area_after_m2": 1441.12,
                "ev_xmark": 3, "violations": 0},
     },
     "phase4": {"schedule_marks": 222, "matched": 1544, "plan_total": 1586},

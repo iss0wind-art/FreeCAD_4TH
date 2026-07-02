@@ -169,14 +169,11 @@ def main():
                 "faces": [_shift(w, anc) for w in sw],
                 "note": "1F 골조선 기립 벽 (필로티 개방부는 도면 그대로)",
             }
-        # 계단 트레드 박스: 파이썬 결정론 생성 (방향=A-STAIR 최장선 실측 각도)
+        # 계단: 방부장 순서 — ①오픈(정확) 유지, ②채움은 코어 도면 실측 매핑 후.
+        # 코아#1 실측(2026-07-03): UP런 서측열 +Y 8단 / DN런 동측열 -Y,
+        # 디딤 270x8EA, 중간참 북측 — 코어별 S30 매핑 후 형상 생성 예정.
         stair_ops = [o for o in build["floors"][fl]["openings"]
                      if o["type"] == "STAIR"]
-        if stair_ops:
-            boxes = []
-            for o in stair_ops:
-                boxes += stair_tread_boxes(o["poly"], o.get("angle", 0.0))
-            build["floors"][fl]["stair_boxes"] = boxes
         f = build["floors"][fl]
         ztxt = f['z_sl'] if f['z_sl'] is not None else f"반복{len(f['repeat'] or [])}개층"
         print(f"[{fl}] z={ztxt} 슬라브 {len(f['slabs'])} / "

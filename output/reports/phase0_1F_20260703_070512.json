@@ -1,0 +1,184 @@
+{
+  "floor": "1F",
+  "timestamp": "2026-07-03T07:05:12",
+  "source": "S30-001~010-101동 구조평면도.dxf",
+  "status": "OK",
+  "wall_style": {
+    "wall_segments": 725,
+    "method": "양면 외곽선(더블라인)"
+  },
+  "phase3_order": "classify_faces(①폐합→②내부검사) → boolean_cut(③제외) @ core/pipeline/slab_engine.py",
+  "snap_evidence": [
+    {
+      "snap_mm": 0,
+      "faces": 412,
+      "max_face_m2": 297.79,
+      "total_m2": 1541.6
+    },
+    {
+      "snap_mm": 5,
+      "faces": 412,
+      "max_face_m2": 198.06,
+      "total_m2": 1541.6
+    },
+    {
+      "snap_mm": 10,
+      "faces": 414,
+      "max_face_m2": 198.06,
+      "total_m2": 1541.6
+    },
+    {
+      "snap_mm": 20,
+      "faces": 414,
+      "max_face_m2": 198.06,
+      "total_m2": 1541.6
+    }
+  ],
+  "openings": [
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.81,
+      "removed_m2": 0.4,
+      "cut": "미확정(부분 교차)"
+    },
+    {
+      "type": "EV",
+      "opening_m2": 5.63,
+      "removed_m2": 5.63,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.63,
+      "removed_m2": 0.63,
+      "cut": "성공"
+    },
+    {
+      "type": "EV",
+      "opening_m2": 3.61,
+      "removed_m2": 3.58,
+      "cut": "성공"
+    },
+    {
+      "type": "EV",
+      "opening_m2": 3.4,
+      "removed_m2": 3.39,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.33,
+      "removed_m2": 0.33,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.52,
+      "removed_m2": 0.52,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.49,
+      "removed_m2": 0.49,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 1.34,
+      "removed_m2": 1.34,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 1.58,
+      "removed_m2": 1.56,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.57,
+      "removed_m2": 0.57,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 1.33,
+      "removed_m2": 1.33,
+      "cut": "성공"
+    },
+    {
+      "type": "STAIR",
+      "opening_m2": 11.16,
+      "removed_m2": 10.95,
+      "cut": "성공"
+    },
+    {
+      "type": "STAIR",
+      "opening_m2": 12.74,
+      "removed_m2": 12.74,
+      "cut": "성공"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.05,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.15,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.15,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    }
+  ],
+  "snap_mm_adopted": 5,
+  "opening_boundary": {
+    "face_내벽": 1,
+    "bbox_폴백": 13
+  },
+  "overlap_check": {
+    "panels_checked": 130,
+    "violations": 0,
+    "detail": []
+  },
+  "faces_total": 412,
+  "slab_panels": 130,
+  "wall_slivers": 171,
+  "rejected_outer_faces": 7,
+  "openings_found": {
+    "EV_xmark": 3,
+    "SHAFT_xmark": 9,
+    "PD_sopen": 3,
+    "stair_clusters": 2
+  },
+  "stair_zones": [
+    {
+      "x0": 327593.1391400964,
+      "y0": 2101337.044079504,
+      "x1": 330971.7958861743,
+      "y1": 2104639.867143164,
+      "angle": 38.0,
+      "n_lines": 7
+    },
+    {
+      "x0": 293173.980517958,
+      "y0": 2117654.305856833,
+      "x1": 295773.9805179589,
+      "y1": 2119814.305856834,
+      "angle": 0.0,
+      "n_lines": 6
+    }
+  ],
+  "area_before_m2": 1484.6,
+  "area_after_m2": 1441.12,
+  "area_cut_m2": 43.48,
+  "cut_consistency": "일치",
+  "precondition": "PASS"
+}

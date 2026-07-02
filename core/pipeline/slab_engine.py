@@ -641,9 +641,25 @@ def run_floor(floor, doc=None):
     slab_faces, slivers, stair_faces, rejected = classify_faces(
         best_faces, [], wall_ink, envelope)
 
-    cut_list = ([(m["kind"], m["poly"]) for m in xmarks]
-                + [("STAIR", s["poly"]) for s in stair_zones]
+    # [AUTO] 오픈 정밀화 — X마크·계단은 "지시자"일 뿐, 실제 개구 경계는
+    # 그 중심을 포함하는 폐합 face(= 벽 내측면). face 우선, bbox는 폴백+플래그.
+    def _refine(kind, poly):
+        c = poly.representative_point()
+        host = next((f for f in slab_faces
+                     if f.contains(c) and f.area < 6 * poly.area
+                     and f.area > 0.3 * poly.area), None)
+        if host is not None:
+            return (kind, host, "face(내벽)")
+        return (kind, poly, "bbox폴백[미확정]")
+
+    refined = ([_refine(m["kind"], m["poly"]) for m in xmarks]
+               + [_refine("STAIR", s["poly"]) for s in stair_zones])
+    cut_list = ([(k, p) for k, p, _ in refined]
                 + [("PD", p) for p in data["pd_polys"]])
+    report["opening_boundary"] = {
+        "face_내벽": sum(1 for _, _, m in refined if m.startswith("face")),
+        "bbox_폴백": sum(1 for _, _, m in refined if m.startswith("bbox")),
+    }
     area_before = sum(f.area for f in slab_faces)
     panels, cut_log = boolean_cut(slab_faces, cut_list)
     area_after = sum(p.area for p in panels)
@@ -708,11 +724,13 @@ def run_floor(floor, doc=None):
             list(w.exterior.coords) for w in slivers if w.area > 0.05e6
         ],
         "openings": (
-            [{"type": m["kind"], "poly": list(m["poly"].exterior.coords)}
-             for m in xmarks]
+            [{"type": k, "poly": list(p.exterior.coords), "boundary": m}
+             for (k, p, m) in refined if k != "STAIR"]
             + [{"type": "PD", "poly": list(p.exterior.coords)} for p in data["pd_polys"]]
-            + [{"type": "STAIR", "poly": list(s["poly"].exterior.coords),
-                "angle": s["angle"]} for s in stair_zones]
+            + [{"type": "STAIR", "poly": list(p.exterior.coords), "boundary": m,
+                "angle": s["angle"]}
+               for (k, p, m), s in zip(
+                   [r for r in refined if r[0] == "STAIR"], stair_zones)]
         ),
     }
     return report, geo
