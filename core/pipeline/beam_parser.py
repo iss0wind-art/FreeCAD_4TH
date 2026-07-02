@@ -37,30 +37,10 @@ EDGE_BAND_MM = 600     # 건물 외피 경계에서 이 거리 이내 중점 →
 #   S-1F-GIRDER 1719세그 중 1F 도곽 내 84 / 타 대역 1635 (2026-07-02)
 # → 시트 도곽(_in_sheet) 필터 = 인쇄 도면과 동일한 가시 콘텐츠 기준.
 def collect_beams(doc, floor):
-    msp = doc.modelspace()
-    _, girder_blk, beam_blk = FLOOR_BLOCKS[floor]
-    segs, out_of_frame = [], 0
-    for blk_name in (girder_blk, beam_blk):
-        if blk_name is None:
-            continue
-        for ins in msp.query("INSERT"):
-            if ins.dxf.name != blk_name:
-                continue
-            if not (SHEETS[floor][0] < ins.dxf.insert.x < SHEETS[floor][1]):
-                continue
-            for ve in ins.virtual_entities():
-                if ve.dxftype() not in ("LINE", "LWPOLYLINE"):
-                    continue
-                ss = _entity_lines(ve)
-                if not ss:
-                    continue
-                mx = sum(s[0][0] + s[1][0] for s in ss) / (2 * len(ss))
-                my = sum(s[0][1] + s[1][1] for s in ss) / (2 * len(ss))
-                if _in_sheet(mx, my, floor):
-                    segs += ss
-                else:
-                    out_of_frame += len(ss)
-    return segs, out_of_frame
+    """collect_floor_data의 beam_segs(PC거더 포함) + 브리지 연결선 사용."""
+    data = collect_floor_data(doc, floor)
+    segs = data.get("beam_segs", []) + data.get("bridge_segs", [])
+    return segs, len(data.get("bridge_segs", []))
 
 
 # [AUTO] 순수 기하 연산 — 외피 근접 기준 테두리보/일반보 구분
@@ -146,8 +126,8 @@ def main():
             "beam_segments": len(beam_segs),
             "edge_beam_segments": len(edge),
             "normal_beam_segments": len(normal),
-            "out_of_frame_segments": out_frame,
-            "out_of_frame_note": "도곽 밖 블록 잔재 — 인쇄 도면 비표시 콘텐츠",
+            "bridge_segments": out_frame,
+            "bridge_note": "보 끊김 공선 연결선 (bridge_collinear) — 감사용 분리",
             "beam_expected": "미확정 — 평면 배치 총수 독립 소스 없음 "
                              "(일람표는 타입 수록)",
             "precheck": pre,

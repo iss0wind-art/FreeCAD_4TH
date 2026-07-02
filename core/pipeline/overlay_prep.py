@@ -28,8 +28,7 @@ import ezdxf
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from core.pipeline.slab_engine import (  # noqa: E402
-    DXF_S30_101, SHEETS, collect_floor_data)
-from core.pipeline.beam_parser import collect_beams  # noqa: E402
+    DXF_S30_101, FLOOR_ANCHOR, SHEETS, collect_floor_data)
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORT_DIR = ROOT / "output" / "reports"
@@ -44,9 +43,10 @@ def _latest(pattern):
     return json.loads(hits[-1].read_text(encoding="utf-8")) if hits else None
 
 
-def _seg_shift(segs, dx):
-    return [[[round(a[0] - dx, 1), round(a[1], 1)],
-             [round(b[0] - dx, 1), round(b[1], 1)]] for a, b in segs]
+def _seg_shift(segs, anc):
+    ax, ay = anc
+    return [[[round(a[0] - ax, 1), round(a[1] - ay, 1)],
+             [round(b[0] - ax, 1), round(b[1] - ay, 1)]] for a, b in segs]
 
 
 def main():
@@ -58,9 +58,12 @@ def main():
 
     out = {"floors": {}}
     for fl in FLOORS:
-        dx = SHEETS[fl][0]
+        anc = FLOOR_ANCHOR[fl]
+        ax, ay = anc
         data = collect_floor_data(doc, fl)
-        beam_segs, _ = collect_beams(doc, fl)
+        beam_segs = data.get("beam_segs", [])
+        bridge_segs = data.get("bridge_segs", [])
+        slab_end_segs = data.get("slab_end_segs", [])
         g = geo.get(fl, {})
         errors = []
 
@@ -68,23 +71,23 @@ def main():
         fr = frame["floors"].get(fl, {}) if frame else {}
         for p in fr.get("closure_fail_coords", []):
             errors.append({"kind": "open_endpoint",
-                           "x": round(p[0] - dx, 1), "y": round(p[1], 1),
+                           "x": round(p[0] - ax, 1), "y": round(p[1] - ay, 1),
                            "note": "벽 폐합 실패(개방 끝점)"})
         # 2) 미페어 벽 세그먼트 (Phase -1)
         for u in fr.get("unpaired_detail", []):
             errors.append({"kind": "unpaired_wall",
-                           "x": round((u["p0"][0] + u["p1"][0]) / 2 - dx, 1),
-                           "y": round((u["p0"][1] + u["p1"][1]) / 2, 1),
-                           "x1": round(u["p0"][0] - dx, 1),
-                           "y1": round(u["p0"][1], 1),
-                           "x2": round(u["p1"][0] - dx, 1),
-                           "y2": round(u["p1"][1], 1),
+                           "x": round((u["p0"][0] + u["p1"][0]) / 2 - ax, 1),
+                           "y": round((u["p0"][1] + u["p1"][1]) / 2 - ay, 1),
+                           "x1": round(u["p0"][0] - ax, 1),
+                           "y1": round(u["p0"][1] - ay, 1),
+                           "x2": round(u["p1"][0] - ax, 1),
+                           "y2": round(u["p1"][1] - ay, 1),
                            "note": f"평행쌍 미형성 벽 (L={u['length']})"})
         # 3) 벽+보 결합 후 열린 경계 (Phase -0.5)
         br = beam["floors"].get(fl, {}) if beam else {}
         for p in (br.get("precheck") or {}).get("open_coords", []):
             errors.append({"kind": "boundary_open",
-                           "x": round(p[0] - dx, 1), "y": round(p[1], 1),
+                           "x": round(p[0] - ax, 1), "y": round(p[1] - ay, 1),
                            "note": "벽+보 결합에도 열린 경계"})
         # 4) PD 자체폐합(슬라브 미교차) — 확인 표시
         for o in g.get("openings", []):
@@ -92,28 +95,29 @@ def main():
                 cx = sum(c[0] for c in o["poly"]) / len(o["poly"])
                 cy = sum(c[1] for c in o["poly"]) / len(o["poly"])
                 errors.append({"kind": "pd_unattached",
-                               "x": round(cx - dx, 1), "y": round(cy, 1),
+                               "x": round(cx - ax, 1), "y": round(cy - ay, 1),
                                "note": "PD 개구부(자체 폐합) 확인 지점"})
         # 5) [INFER] 구역 표기
         if fl == "B2F":
-            errors.append({"kind": "infer_zone", "x": 5000, "y": 2088000,
+            errors.append({"kind": "infer_zone", "x": -40000, "y": -30000,
                            "note": "[INFER c=0.75] S-B1F-101-BASE 기초 해석 "
                                    "— 기둥좌표 97.5% 상부층 일치로 재검증"})
 
         out["floors"][fl] = {
-            "trace_wall": _seg_shift(data["wall_segs"], dx),
-            "trace_beam": _seg_shift(beam_segs, dx),
+            "trace_wall": _seg_shift(data["wall_segs"], anc),
+            "trace_beam": _seg_shift(beam_segs, anc),
+            "trace_bridge": _seg_shift(bridge_segs, anc),
+            "trace_slab_end": _seg_shift(slab_end_segs, anc),
             "trace_slab": [
-                [[round(x - dx, 1), round(y, 1)]
+                [[round(x - ax, 1), round(y - ay, 1)]
                  for x, y in p["exterior"]]
                 for p in g.get("slab_panels", [])],
             "errors": errors,
         }
         f = out["floors"][fl]
-        print(f"[{fl}] 덧그림: 벽 {len(f['trace_wall'])}세그 / "
-              f"보 {len(f['trace_beam'])}세그 / "
-              f"슬라브경계 {len(f['trace_slab'])}링 / "
-              f"오류표시 {len(errors)}건")
+        print(f"[{fl}] 덧그림: 벽 {len(f['trace_wall'])} / 보 {len(f['trace_beam'])} / "
+              f"연결선 {len(f['trace_bridge'])} / 단부선 {len(f['trace_slab_end'])} / "
+              f"슬라브링 {len(f['trace_slab'])} / 오류 {len(errors)}건")
 
     OUT_PATH.write_text(json.dumps(out, ensure_ascii=False),
                         encoding="utf-8")

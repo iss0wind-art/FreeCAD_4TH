@@ -44,15 +44,28 @@ SHEETS = {
 }
 SHEET_Y = (2085000, 2142000)   # 건물 footprint Y대역
 
-# 구조 부재 블록 (시트별 INSERT 전수조사 결과, 2026-07-02)
-# 값: (벽체 블록, 거더 블록, 보 블록) — 없으면 None
+# 구조 부재 블록 (시트별 INSERT 전수조사, 2026-07-02 2차 — PC/PILE 누락 보완)
 FLOOR_BLOCKS = {
-    "B2F": ("S-B1F-101-BASE", None, None),
-    "B1F": ("S-B2F-WALL COL-250523", "S-B1F GIRDER", "S-B2F-BEAM"),
-    "1F": ("S-B1F-WALL COL-250523", "S-1F-GIRDER-1007", "S-1F BEAM-1007"),
-    "2F": (None, None, None),     # 세대부 S20 참조 — 미확정
-    "TYP": (None, None, None),    # 세대부 S20 참조 — 미확정
-    "16F": (None, None, None),    # 세대부 S20 참조 — 미확정
+    "B2F": {"wall": ["S-B1F-101-BASE", "S-101-FOUND-PILE(25-0520)"],
+            "girder": [], "beam": []},
+    "B1F": {"wall": ["S-B2F-WALL COL-250523"],
+            "girder": ["S-B1F GIRDER", "S-B1F-PC"],
+            "beam": ["S-B2F-BEAM"]},
+    "1F": {"wall": ["S-B1F-WALL COL-250523"],
+           "girder": ["S-1F-GIRDER-1007", "S-1F-PC-GIRDER-1007"],
+           "beam": ["S-1F BEAM-1007"]},
+    "2F": {"wall": [], "girder": [], "beam": []},    # 세대부 S20 참조 — 미확정
+    "TYP": {"wall": [], "girder": [], "beam": []},   # 세대부 S20 참조 — 미확정
+    "16F": {"wall": [], "girder": [], "beam": []},   # 세대부 S20 참조 — 미확정
+}
+
+# 층간 수직 정합 앵커 (EV코어 X마크 중심, 실측):
+#   1F EV (299124, 2118689) / B1F EV (173123, 2118689) → 피치 126001
+#   B2F: EV마크 없음 → 기둥좌표 815/819 일치로 검증된 오프셋 252000 적용
+FLOOR_ANCHOR = {
+    "B2F": (47124.0, 2118689.0),
+    "B1F": (173123.0, 2118689.0),
+    "1F": (299124.0, 2118689.0),
 }
 
 SNAP_STEPS = [5, 10, 20]          # Phase 2 단계별 스냅 거리 (mm)
@@ -128,6 +141,9 @@ def collect_floor_data(doc, floor):
         "status": "OK",
     }
 
+    data["slab_end_segs"] = []   # 슬라브 단부선 (덧그림 별도 보관용)
+    data["bridge_segs"] = []     # 보 끊김 연결선 (감사용 별도 분류)
+
     # 1) 시트 원시 엔티티
     for e in msp:
         if e.dxftype() not in ("LINE", "LWPOLYLINE"):
@@ -142,6 +158,7 @@ def collect_floor_data(doc, floor):
         layer = e.dxf.layer
         if layer == "00_SLAB END + ETC":
             data["boundary_segs"] += segs
+            data["slab_end_segs"] += segs
         elif layer == "S-OPEN":
             pts = [(p[0], p[1]) for p in e.get_points()]
             if len(pts) >= 3:
@@ -164,38 +181,92 @@ def collect_floor_data(doc, floor):
             for (p0, p1) in segs:
                 data["stair_pts"].append(((p0[0] + p1[0]) / 2, (p0[1] + p1[1]) / 2))
 
-    # 2) 구조 블록 explode (벽·거더·보)
-    wall_blk, girder_blk, beam_blk = FLOOR_BLOCKS[floor]
-    if wall_blk is None:
+    # 2) 구조 블록 explode (벽·거더·보 — 다중 블록 목록 지원, PC거더 포함)
+    blocks = FLOOR_BLOCKS[floor]
+    if not blocks["wall"]:
         data["status"] = "미확정: 세대부 데이터 없음 — S20 단위세대구조평면도 조합 필요"
-    for blk_name, kind in ((wall_blk, "wall"), (girder_blk, "girder"), (beam_blk, "beam")):
-        if blk_name is None:
-            continue
-        found = False
-        for ins in msp.query("INSERT"):
-            if ins.dxf.name != blk_name:
-                continue
-            ix = ins.dxf.insert.x
-            if not (SHEETS[floor][0] < ix < SHEETS[floor][1]):
-                continue
-            found = True
-            for ve in ins.virtual_entities():
-                if ve.dxftype() not in ("LINE", "LWPOLYLINE"):
+    data["beam_segs"] = []
+    for kind in ("wall", "girder", "beam"):
+        for blk_name in blocks[kind]:
+            found = False
+            for ins in msp.query("INSERT"):
+                if ins.dxf.name != blk_name:
                     continue
-                segs = _entity_lines(ve)
-                if not segs:
+                ix = ins.dxf.insert.x
+                if not (SHEETS[floor][0] < ix < SHEETS[floor][1]):
                     continue
-                # 블록 내용도 시트 영역으로 클리핑 (범례·주기 등 원거리 요소 제외)
-                mx = sum(s[0][0] + s[1][0] for s in segs) / (2 * len(segs))
-                my = sum(s[0][1] + s[1][1] for s in segs) / (2 * len(segs))
-                if not _in_sheet(mx, my, floor):
-                    continue
-                data["boundary_segs"] += segs
-                if kind == "wall":
-                    data["wall_segs"] += segs
-        if not found:
-            data["status"] = f"미확정: 블록 {blk_name} INSERT 미발견"
+                found = True
+                for ve in ins.virtual_entities():
+                    if ve.dxftype() not in ("LINE", "LWPOLYLINE"):
+                        continue
+                    segs = _entity_lines(ve)
+                    if not segs:
+                        continue
+                    # 블록 내용도 도곽으로 클리핑 (잔재 제외)
+                    mx = sum(s[0][0] + s[1][0] for s in segs) / (2 * len(segs))
+                    my = sum(s[0][1] + s[1][1] for s in segs) / (2 * len(segs))
+                    if not _in_sheet(mx, my, floor):
+                        continue
+                    data["boundary_segs"] += segs
+                    if kind == "wall":
+                        data["wall_segs"] += segs
+                    else:
+                        data["beam_segs"] += segs
+            if not found:
+                data["status"] = f"미확정: 블록 {blk_name} INSERT 미발견"
+
+    # 3) 보 끊김 연결 [AUTO] — 벽체선과 동일 원칙의 공선 브리징.
+    #    기둥·벽 교차부에서 끊긴 보 선을 잇는다. 연결선은 별도 분류(감사용).
+    data["bridge_segs"] = bridge_collinear(data["beam_segs"])
+    data["boundary_segs"] += data["bridge_segs"]
     return data
+
+
+# [AUTO] 순수 기하 연산 — 공선 세그먼트 브리징 (보 끊김 연결)
+def bridge_collinear(segs, max_gap=900, ang_tol=2.0, lateral_tol=60):
+    """같은 방향·같은 축선의 세그먼트 사이 끊김(기둥/벽 통과부)을 연결.
+
+    조건: 각도차 ≤ ang_tol°, 축선 이탈 ≤ lateral_tol mm, 끝점 간격 ≤ max_gap mm.
+    반환: 연결(브리지) 세그먼트 목록 — 원본과 분리 보관해 감사 가능.
+    """
+    items = []
+    for (p0, p1) in segs:
+        dx, dy = p1[0] - p0[0], p1[1] - p0[1]
+        L = math.hypot(dx, dy)
+        if L < 200:
+            continue
+        items.append({"p0": p0, "p1": p1,
+                      "ang": math.degrees(math.atan2(dy, dx)) % 180,
+                      "ux": dx / L, "uy": dy / L})
+    bridges = []
+    used = set()
+    for i, a in enumerate(items):
+        for j in range(i + 1, len(items)):
+            if (i, j) in used:
+                continue
+            b = items[j]
+            dang = abs(a["ang"] - b["ang"])
+            dang = min(dang, 180 - dang)
+            if dang > ang_tol:
+                continue
+            # 최근접 끝점 쌍
+            best = None
+            for pa in (a["p0"], a["p1"]):
+                for pb in (b["p0"], b["p1"]):
+                    d = math.hypot(pa[0] - pb[0], pa[1] - pb[1])
+                    if best is None or d < best[0]:
+                        best = (d, pa, pb)
+            gap, pa, pb = best
+            if not (10 < gap <= max_gap):
+                continue
+            # 축선 이탈: pb를 a의 축선에 투영한 수직거리
+            wx, wy = pb[0] - a["p0"][0], pb[1] - a["p0"][1]
+            lateral = abs(wx * (-a["uy"]) + wy * a["ux"])
+            if lateral > lateral_tol:
+                continue
+            bridges.append((pa, pb))
+            used.add((i, j))
+    return bridges
 
 
 # ── Phase 2: 끝점 스냅 ────────────────────────────────────────────────────────

@@ -21,13 +21,15 @@ REPORT_DIR = ROOT / "output" / "reports"
 HISTORY = Path(__file__).parent / "accuracy_history.json"
 
 # ── 기준값: 2026-07-02 세션 최초 통과 수치 (리포트 영구 저장본과 동일) ──────────
+# 3차 개정 2026-07-02: PC거더 블록 누락 보완 + 보 브리징 도입으로
+# B1F 1017→1508㎡, 1F 1120→1466㎡ (빠진 부위 = PC거더 구역 실증)
 BASELINE = {
     "phase0": {
         "B2F": {"slab_panels": 60, "area_after_m2": 1170.3,
                 "ev_xmark": 0, "violations": 0},
-        "B1F": {"slab_panels": 50, "area_after_m2": 1017.37,
+        "B1F": {"slab_panels": 103, "area_after_m2": 1507.66,
                 "ev_xmark": 1, "violations": 0},
-        "1F": {"slab_panels": 80, "area_after_m2": 1119.75,
+        "1F": {"slab_panels": 123, "area_after_m2": 1466.22,
                "ev_xmark": 1, "violations": 0},
     },
     "phase4": {"schedule_marks": 222, "matched": 1544, "plan_total": 1586},

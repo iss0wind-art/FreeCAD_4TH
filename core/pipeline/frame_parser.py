@@ -34,13 +34,13 @@ WALL_PAIR_MAX = 350    # 상한
 def detect_columns(doc, floor):
     """기둥 = 폐합 LWPOLYLINE, bbox 300~2500mm, 세장비<6, 유효 폴리곤."""
     msp = doc.modelspace()
-    wall_blk = FLOOR_BLOCKS[floor][0]
-    if wall_blk is None:
+    wall_blks = FLOOR_BLOCKS[floor]["wall"]
+    if not wall_blks:
         return None
     cols = []
     x0, x1 = SHEETS[floor]
     for ins in msp.query("INSERT"):
-        if ins.dxf.name != wall_blk or not (x0 < ins.dxf.insert.x < x1):
+        if ins.dxf.name not in wall_blks or not (x0 < ins.dxf.insert.x < x1):
             continue
         for ve in ins.virtual_entities():
             if ve.dxftype() != "LWPOLYLINE" or not ve.closed:

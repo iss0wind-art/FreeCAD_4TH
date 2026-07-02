@@ -15,7 +15,8 @@ from pathlib import Path
 import ezdxf
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-from core.pipeline.slab_engine import DXF_S30_101, SHEETS  # noqa: E402
+from core.pipeline.slab_engine import (  # noqa: E402
+    DXF_S30_101, FLOOR_ANCHOR)
 from core.pipeline.frame_parser import detect_columns  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -33,8 +34,10 @@ SLAB_THK = {
 }
 
 
-def _shift(coords, dx):
-    return [[round(x - dx, 1), round(y, 1)] for x, y in coords]
+# 수직 정합: 층별 EV코어 앵커 기준 (시트원점 방식은 B2F 1000mm 오차 유발했음)
+def _shift(coords, anchor):
+    ax, ay = anchor
+    return [[round(x - ax, 1), round(y - ay, 1)] for x, y in coords]
 
 
 def main():
@@ -46,7 +49,7 @@ def main():
         g = geo.get(fl)
         if not g or not g.get("slab_panels"):
             continue
-        dx = SHEETS[fl][0]          # 시트 원점 보정 → 층 겹침
+        anc = FLOOR_ANCHOR[fl]      # EV코어 앵커 정합 → 층 겹침
         cols = detect_columns(doc, fl) or []
         thk, thk_src = SLAB_THK[fl]
         build["floors"][fl] = {
@@ -54,14 +57,15 @@ def main():
             "storey_h": STOREY[fl],
             "slab_thk": thk,
             "slab_thk_source": thk_src,
-            "slabs": [{"exterior": _shift(p["exterior"], dx),
-                       "holes": [_shift(h, dx) for h in p["holes"]]}
+            "slabs": [{"exterior": _shift(p["exterior"], anc),
+                       "holes": [_shift(h, anc) for h in p["holes"]]}
                       for p in g["slab_panels"]],
-            "wall_faces": [_shift(w, dx) for w in g.get("wall_faces", [])],
-            "columns": [{"cx": round(c["cx"] - dx, 1), "cy": c["cy"],
+            "wall_faces": [_shift(w, anc) for w in g.get("wall_faces", [])],
+            "columns": [{"cx": round(c["cx"] - anc[0], 1),
+                         "cy": round(c["cy"] - anc[1], 1),
                          "w": c["w"], "h": c["h"]} for c in cols],
             "openings": [{"type": o["type"],
-                          "poly": _shift(o["poly"], dx)}
+                          "poly": _shift(o["poly"], anc)}
                          for o in g.get("openings", [])],
         }
         f = build["floors"][fl]
