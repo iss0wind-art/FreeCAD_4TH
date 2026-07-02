@@ -23,9 +23,16 @@ ROOT = Path(__file__).resolve().parents[2]
 GEO_PATH = ROOT / "output" / "slab_precise_101동.json"
 OUT_PATH = ROOT / "output" / "sketchup_build_101동.json"
 
-# 레벨: build_101동.json levels (S30 SL 표기 실측). 층고 = 다음 레벨 차.
+# 레벨: build_101동.json levels (S30 SL 표기 실측).
 LEVELS = {"B2F": -9050, "B1F": -5600, "1F": 370, "2F": 3300}
-STOREY = {"B2F": 3450, "B1F": 5970, "1F": 2930}
+# 구조평면 관례: N층 시트의 벽·기둥 = N층 슬라브를 받치는 "아래층" 부재.
+#   → 부재 수직 구간 = SL(N-1) ~ SL(N). (이전 빌드는 한 층 위로 오배치 — 수정)
+# B2F 시트 부재 = 기초(footing) — 하부 깊이 미확정 → 발자국 face만, 붉은플래그.
+WALL_SPAN = {
+    "B2F": (None, -9050),      # 기초: 하단 미확정
+    "B1F": (-9050, -5600),     # B2F 벽 (B1F 슬라브 지지)
+    "1F": (-5600, 370),        # B1F 벽 (1F 슬라브 지지)
+}
 # 슬라브 두께: beam_slab_floor_parsed.json 층별 최빈값 (실측 파싱 소스 명기)
 SLAB_THK = {
     "B2F": (250, "beam_slab_floor_parsed.json B2F 최빈 250(16/22)"),
@@ -52,9 +59,14 @@ def main():
         anc = FLOOR_ANCHOR[fl]      # EV코어 앵커 정합 → 층 겹침
         cols = detect_columns(doc, fl) or []
         thk, thk_src = SLAB_THK[fl]
+        wz0, wz1 = WALL_SPAN[fl]
         build["floors"][fl] = {
             "z_sl": LEVELS[fl],
-            "storey_h": STOREY[fl],
+            "wall_z0": wz0,          # None = 기초(하단 미확정, 발자국만)
+            "wall_z1": wz1,
+            "wall_note": ("아래층 벽 (구조평면 관례: N층 시트=N-1층 벽)"
+                          if wz0 is not None else
+                          "기초 발자국 — 깊이 미확정, 붉은 플래그"),
             "slab_thk": thk,
             "slab_thk_source": thk_src,
             "slabs": [{"exterior": _shift(p["exterior"], anc),
