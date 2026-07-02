@@ -35,7 +35,7 @@ REPORT_DIR = ROOT / "output" / "reports"
 GEO_PATH = ROOT / "output" / "slab_precise_101동.json"
 OUT_PATH = ROOT / "output" / "sketchup_overlay_101동.json"
 
-FLOORS = ("B2F", "B1F", "1F")
+FLOORS = ("B2F", "B1F", "1F", "2F", "TYP", "16F")
 
 
 def _latest(pattern):

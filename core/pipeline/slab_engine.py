@@ -66,6 +66,9 @@ FLOOR_ANCHOR = {
     "B2F": (47124.0, 2118689.0),
     "B1F": (173123.0, 2118689.0),
     "1F": (299124.0, 2118689.0),
+    "2F": (425124.0, 2118689.0),    # EV X마크 실측
+    "TYP": (551124.0, 2118689.0),   # EV X마크 실측
+    "16F": (677124.0, 2118689.0),   # EV X마크 실측
 }
 
 SNAP_STEPS = [5, 10, 20]          # Phase 2 단계별 스냅 거리 (mm)
@@ -590,7 +593,7 @@ def run_floor(floor, doc=None):
     })
 
     # 미확정 층(세대부 없음)은 개구부 좌표만 유효 — 슬라브 지오메트리 출력 금지 (추정값0)
-    if report["status"] != "OK":
+    if not report["status"].startswith("OK"):
         geo = {
             "floor": floor,
             "slab_panels": [],
@@ -681,8 +684,13 @@ def main(argv):
             geos[fl] = geo
     if geos:
         out = ROOT / "output" / "slab_precise_101동.json"
-        out.write_text(json.dumps(geos, ensure_ascii=False), encoding="utf-8")
-        print(f"\n지오메트리 저장: {out}")
+        # 부분 실행 시 기존 층 보존 (병합 저장)
+        merged = {}
+        if out.exists():
+            merged = json.loads(out.read_text(encoding="utf-8"))
+        merged.update(geos)
+        out.write_text(json.dumps(merged, ensure_ascii=False), encoding="utf-8")
+        print(f"\n지오메트리 저장(병합): {out} — 층 {sorted(merged.keys())}")
 
 
 if __name__ == "__main__":
