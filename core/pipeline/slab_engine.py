@@ -54,9 +54,10 @@ FLOOR_BLOCKS = {
     "1F": {"wall": ["S-B1F-WALL COL-250523"],
            "girder": ["S-1F-GIRDER-1007", "S-1F-PC-GIRDER-1007"],
            "beam": ["S-1F BEAM-1007"]},
-    "2F": {"wall": [], "girder": [], "beam": []},    # 세대부 S20 참조 — 미확정
-    "TYP": {"wall": [], "girder": [], "beam": []},   # 세대부 S20 참조 — 미확정
-    "16F": {"wall": [], "girder": [], "beam": []},   # 세대부 S20 참조 — 미확정
+    # 상부층 하부벽체는 한글 블록명 — S-* 검색에서 누락됐던 것 (2026-07-02 발견)
+    "2F": {"wall": ["2층하부벽체"], "girder": [], "beam": []},
+    "TYP": {"wall": ["기준층하부벽체"], "girder": [], "beam": []},
+    "16F": {"wall": ["16층하부벽체"], "girder": [], "beam": []},
 }
 
 # 층간 수직 정합 앵커 (EV코어 X마크 중심, 실측):
@@ -218,29 +219,50 @@ def collect_floor_data(doc, floor):
             if not found:
                 data["status"] = f"미확정: 블록 {blk_name} INSERT 미발견"
 
-    # 3) XR(구조) 노란 골조선 [AUTO] — 방부장 교본 2026-07-02:
-    #    노랑 = 해당층 바닥+1.2m 수평절단 골조선 (해당층에 서는 벽).
-    #    초록 = 배근 지시 (기초 도면 컨텍스트 외에는 골조 아님 — 제외).
+    # 3) 전 INSERT 통합 스캔 [AUTO] — 1회 순회로 3종 수집:
+    #    (a) XR(구조) 노란 골조선 — 해당층 기립 벽 (방부장 교본: 노랑=+1.2m 절단)
+    #    (b) 대각선(전 소스·전 레이어) — X마크 개구부 후보 (EV·샤프트)
+    #    (c) 계단선(레이어명 STA 포함) — 계단실 클러스터용
     layer_color = {ly.dxf.name: ly.dxf.color for ly in doc.layers}
     yellow = []
-    for ins in msp.query("INSERT"):
-        if "평면도(구조)" not in ins.dxf.name:
-            continue
-        for ve in ins.virtual_entities():
-            if ve.dxftype() not in ("LINE", "LWPOLYLINE"):
-                continue
+    data["diag_all"] = []
+    data["stair_segs"] = []
+
+    def _scan_entity(ve, from_xr_struct):
+        if ve.dxftype() not in ("LINE", "LWPOLYLINE"):
+            return
+        segs = _entity_lines(ve)
+        if not segs:
+            return
+        mx = sum(s[0][0] + s[1][0] for s in segs) / (2 * len(segs))
+        my = sum(s[0][1] + s[1][1] for s in segs) / (2 * len(segs))
+        if not _in_sheet(mx, my, floor):
+            return
+        lay = ve.dxf.layer.upper()
+        if "STA" in lay.split("$0$")[-1]:
+            data["stair_segs"] += segs
+        if from_xr_struct:
             c = ve.dxf.color
             if c == 256:
                 c = layer_color.get(ve.dxf.layer, 7)
-            if c != 2:          # 노랑만 골조선
-                continue
-            segs = _entity_lines(ve)
-            if not segs:
-                continue
-            mx = sum(s[0][0] + s[1][0] for s in segs) / (2 * len(segs))
-            my = sum(s[0][1] + s[1][1] for s in segs) / (2 * len(segs))
-            if _in_sheet(mx, my, floor):
-                yellow += segs
+            if c == 2:
+                yellow.extend(segs)
+        for (p0, p1) in segs:
+            dx, dy = p1[0] - p0[0], p1[1] - p0[1]
+            if abs(dx) > 200 and abs(dy) > 200:
+                ang = math.degrees(math.atan2(abs(dy), abs(dx)))
+                if 25 < ang < 65 and 800 < math.hypot(dx, dy) < 6000:
+                    data["diag_all"].append((p0, p1))
+
+    for e in msp:
+        _scan_entity(e, False)
+    for ins in msp.query("INSERT"):
+        is_xr = "평면도(구조)" in ins.dxf.name
+        try:
+            for ve in ins.virtual_entities():
+                _scan_entity(ve, is_xr)
+        except Exception:
+            pass
     data["standing_wall_segs"] = yellow   # 해당층에 서는 벽 (골조선)
 
     # 세대부 벽 블록이 없는 층(기준층 등)은 골조선이 유일한 벽 소스.
@@ -351,10 +373,13 @@ def closure_stats(segs, tol):
 
 # ── Phase 3: X마크 페어링 ─────────────────────────────────────────────────────
 
-# [AUTO] 순수 기하 연산 — 대각선 교차쌍 판정
-def pair_x_marks(diagonals):
-    """교차 대각선 쌍 → 개구부 bbox 폴리곤. (순서 ②: 폐합 탐색 후 내부 검사에 사용)"""
-    marks = []
+# [AUTO] 순수 기하 연산 — 대각선 교차쌍 판정 (전 소스, 중복 제거)
+def pair_x_marks(diagonals, min_size=350):
+    """교차 대각선 쌍 → 개구부 bbox 폴리곤 + 크기분류.
+
+    반환: [{'poly', 'w', 'h', 'kind'}] — kind: EV(장변≥1800) / SHAFT.
+    같은 개구부가 원시+XR 양쪽에 그려진 중복은 중심 300mm 이내 병합.
+    """
     used = set()
     items = []
     for (p0, p1) in diagonals:
@@ -365,23 +390,86 @@ def pair_x_marks(diagonals):
             "bbox": (min(p0[0], p1[0]), min(p0[1], p1[1]),
                      max(p0[0], p1[0]), max(p0[1], p1[1])),
         })
+    raw = []
     for i, a in enumerate(items):
         if i in used:
             continue
         for j, b in enumerate(items):
             if j <= i or j in used or a["sign"] == b["sign"]:
                 continue
-            if math.hypot(a["mx"] - b["mx"], a["my"] - b["my"]) < 300 \
-                    and abs(a["L"] - b["L"]) / max(a["L"], b["L"]) < 0.4:
+            if math.hypot(a["mx"] - b["mx"], a["my"] - b["my"]) < 400 \
+                    and abs(a["L"] - b["L"]) / max(a["L"], b["L"]) < 0.5:
                 x0 = min(a["bbox"][0], b["bbox"][0])
                 y0 = min(a["bbox"][1], b["bbox"][1])
                 x1 = max(a["bbox"][2], b["bbox"][2])
                 y1 = max(a["bbox"][3], b["bbox"][3])
-                marks.append(Polygon([(x0, y0), (x1, y0), (x1, y1), (x0, y1)]))
+                w, h = x1 - x0, y1 - y0
+                if w >= min_size and h >= min_size:
+                    raw.append({"cx": (x0+x1)/2, "cy": (y0+y1)/2,
+                                "x0": x0, "y0": y0, "x1": x1, "y1": y1,
+                                "w": w, "h": h})
                 used.add(i)
                 used.add(j)
                 break
+    # 중복 병합 (원시 + XR 이중 표기)
+    marks = []
+    for r in raw:
+        dup = next((m for m in marks
+                    if math.hypot(m["cx"] - r["cx"], m["cy"] - r["cy"]) < 300),
+                   None)
+        if dup:
+            continue
+        r["poly"] = Polygon([(r["x0"], r["y0"]), (r["x1"], r["y0"]),
+                             (r["x1"], r["y1"]), (r["x0"], r["y1"])])
+        r["kind"] = "EV" if max(r["w"], r["h"]) >= 1800 else "SHAFT"
+        marks.append(r)
     return marks
+
+
+# [AUTO] 순수 기하 연산 — 계단선 클러스터 → 계단실 존 + 런 방향 실측
+def cluster_stairs(stair_segs, link_mm=1500):
+    """계단선 세그먼트를 근접 클러스터로 묶어 계단실 bbox + 방향 산출.
+
+    방향 = 클러스터 내 최장 세그먼트의 각도 (추론 아님, 도면 실측).
+    """
+    items = []
+    for (p0, p1) in stair_segs:
+        items.append({"mx": (p0[0]+p1[0])/2, "my": (p0[1]+p1[1])/2,
+                      "p0": p0, "p1": p1,
+                      "L": math.hypot(p1[0]-p0[0], p1[1]-p0[1])})
+    clusters = []
+    assigned = [False] * len(items)
+    for i, it in enumerate(items):
+        if assigned[i]:
+            continue
+        group = [it]
+        assigned[i] = True
+        changed = True
+        while changed:
+            changed = False
+            for j, jt in enumerate(items):
+                if assigned[j]:
+                    continue
+                if any(math.hypot(g["mx"]-jt["mx"], g["my"]-jt["my"]) < link_mm
+                       for g in group):
+                    group.append(jt)
+                    assigned[j] = True
+                    changed = True
+        if len(group) < 3:
+            continue
+        xs = [c for g in group for c in (g["p0"][0], g["p1"][0])]
+        ys = [c for g in group for c in (g["p0"][1], g["p1"][1])]
+        longest = max(group, key=lambda g: g["L"])
+        ang = math.degrees(math.atan2(longest["p1"][1] - longest["p0"][1],
+                                      longest["p1"][0] - longest["p0"][0])) % 180
+        clusters.append({
+            "poly": Polygon([(min(xs), min(ys)), (max(xs), min(ys)),
+                             (max(xs), max(ys)), (min(xs), max(ys))]),
+            "x0": min(xs), "y0": min(ys), "x1": max(xs), "y1": max(ys),
+            "angle": round(ang, 1),
+            "n_lines": len(group),
+        })
+    return clusters
 
 
 # ── Phase 0+1+3: face 분류와 절삭 ────────────────────────────────────────────
@@ -429,11 +517,11 @@ def classify_faces(faces, stair_pts, wall_ink, envelope):
 
 
 # [AUTO] 순수 기하 연산 — Shapely difference 절삭
-def boolean_cut(slab_faces, stair_faces, ev_marks, pd_polys):
+def boolean_cut(slab_faces, cut_list):
     """Phase 0 + Phase 3 ③: 명시적 개구부 폴리곤을 실제 difference 절삭.
 
+    cut_list: [(타입문자열, Polygon)] — EV/SHAFT/STAIR/PD 전 개구부.
     반환: (절삭 후 패널 목록, 절삭 로그)
-    로그의 removed_m2 = 슬라브와 개구부의 실제 교차 면적 (증거 수치).
     """
     log = []
     panels = list(slab_faces)
@@ -467,18 +555,8 @@ def boolean_cut(slab_faces, stair_faces, ev_marks, pd_polys):
             "cut": verdict,
         })
 
-    for m in ev_marks:
-        cut_poly(m, "EV")
-    for p in pd_polys:
-        cut_poly(p, "PD")
-    # 계단 face는 분류 단계에서 이미 제외됨 (지오메트리 제외 = 절삭)
-    for f in stair_faces:
-        log.append({
-            "type": "STAIR",
-            "opening_m2": round(f.area / 1e6, 2),
-            "removed_m2": round(f.area / 1e6, 2),
-            "cut": "성공(face 제외)",
-        })
+    for otype, poly in cut_list:
+        cut_poly(poly, otype)
     return panels, log
 
 
@@ -557,12 +635,17 @@ def run_floor(floor, doc=None):
             (max(xs) + 1000, max(ys) + 1000), (min(xs) - 1000, max(ys) + 1000)])
 
     # Phase 3 ① 폐합 → ② 내부 검사 → ③ 제외/절삭 (Phase 0)
-    ev_marks = pair_x_marks(data["ev_diagonals"])
+    # 개구부: 전 소스 X마크(EV·샤프트) + 계단 클러스터 + PD — 전부 명시 절삭
+    xmarks = pair_x_marks(data["diag_all"])
+    stair_zones = cluster_stairs(data["stair_segs"])
     slab_faces, slivers, stair_faces, rejected = classify_faces(
-        best_faces, data["stair_pts"], wall_ink, envelope)
+        best_faces, [], wall_ink, envelope)
 
-    area_before = sum(f.area for f in slab_faces) + sum(f.area for f in stair_faces)
-    panels, cut_log = boolean_cut(slab_faces, stair_faces, ev_marks, data["pd_polys"])
+    cut_list = ([(m["kind"], m["poly"]) for m in xmarks]
+                + [("STAIR", s["poly"]) for s in stair_zones]
+                + [("PD", p) for p in data["pd_polys"]])
+    area_before = sum(f.area for f in slab_faces)
+    panels, cut_log = boolean_cut(slab_faces, cut_list)
     area_after = sum(p.area for p in panels)
     area_cut = area_before - area_after
     expected_cut = sum(o["removed_m2"] for o in cut_log) * 1e6
@@ -581,10 +664,15 @@ def run_floor(floor, doc=None):
         "wall_slivers": len(slivers),
         "rejected_outer_faces": len(rejected),
         "openings_found": {
-            "EV_xmark": len(ev_marks),
+            "EV_xmark": sum(1 for m in xmarks if m["kind"] == "EV"),
+            "SHAFT_xmark": sum(1 for m in xmarks if m["kind"] == "SHAFT"),
             "PD_sopen": len(data["pd_polys"]),
-            "stair_faces": len(stair_faces),
+            "stair_clusters": len(stair_zones),
         },
+        "stair_zones": [{"x0": s["x0"], "y0": s["y0"],
+                         "x1": s["x1"], "y1": s["y1"],
+                         "angle": s["angle"], "n_lines": s["n_lines"]}
+                        for s in stair_zones],
         "openings": cut_log,
         "area_before_m2": round(area_before / 1e6, 2),
         "area_after_m2": round(area_after / 1e6, 2),
@@ -599,7 +687,8 @@ def run_floor(floor, doc=None):
             "slab_panels": [],
             "slab_status": report["status"],
             "openings": (
-                [{"type": "EV", "poly": list(m.exterior.coords)} for m in ev_marks]
+                [{"type": m["kind"], "poly": list(m["poly"].exterior.coords)}
+                 for m in xmarks]
                 + [{"type": "PD", "poly": list(p.exterior.coords)}
                    for p in data["pd_polys"]]
             ),
@@ -619,9 +708,11 @@ def run_floor(floor, doc=None):
             list(w.exterior.coords) for w in slivers if w.area > 0.05e6
         ],
         "openings": (
-            [{"type": "EV", "poly": list(m.exterior.coords)} for m in ev_marks]
+            [{"type": m["kind"], "poly": list(m["poly"].exterior.coords)}
+             for m in xmarks]
             + [{"type": "PD", "poly": list(p.exterior.coords)} for p in data["pd_polys"]]
-            + [{"type": "STAIR", "poly": list(f.exterior.coords)} for f in stair_faces]
+            + [{"type": "STAIR", "poly": list(s["poly"].exterior.coords),
+                "angle": s["angle"]} for s in stair_zones]
         ),
     }
     return report, geo
@@ -666,9 +757,10 @@ def main(argv):
             print(f"  face 총 {report['faces_total']} = 슬라브패널 {report['slab_panels']}"
                   f" + 벽슬리버 {report['wall_slivers']}"
                   f" + 개구부 {len(report['openings'])}")
-            print(f"  개구부 검출: EV(X마크) {report['openings_found']['EV_xmark']}, "
-                  f"PD(S-OPEN) {report['openings_found']['PD_sopen']}, "
-                  f"계단 {report['openings_found']['stair_faces']}")
+            print(f"  개구부 검출: EV {report['openings_found']['EV_xmark']}, "
+                  f"샤프트 {report['openings_found']['SHAFT_xmark']}, "
+                  f"PD {report['openings_found']['PD_sopen']}, "
+                  f"계단클러스터 {report['openings_found']['stair_clusters']}")
             print(f"  절삭 전 {report['area_before_m2']}㎡ → 후 {report['area_after_m2']}㎡ "
                   f"(절삭 {report['area_cut_m2']}㎡, 정합성: {report['cut_consistency']})")
             oc = report.get("overlap_check", {})

@@ -22,6 +22,41 @@ from core.pipeline.slab_engine import (  # noqa: E402
 from core.pipeline.frame_parser import detect_columns  # noqa: E402
 
 
+# [AUTO] 계단 트레드 박스 결정론 생성 — 방향은 A-STAIR 최장선 각도 실측.
+# 실측: 단높이 157.22, 런당 9단(디딤 8), 디딤 270, 2런, 중간참 z=1415.
+def stair_tread_boxes(poly_coords, angle_deg):
+    xs = [p[0] for p in poly_coords]
+    ys = [p[1] for p in poly_coords]
+    x0, x1 = min(xs), max(xs)
+    y0, y1 = min(ys), max(ys)
+    along_x = angle_deg < 45 or angle_deg > 135   # 런 진행축 (실측 각도)
+    boxes = []
+    riser, tread, n = 157.22, 270.0, 8
+    if along_x:
+        half = (y1 - y0) / 2.0
+        for i in range(n):
+            boxes.append({"x0": x0 + i*tread, "y0": y0,
+                          "x1": x0 + (i+1)*tread, "y1": y0 + half,
+                          "dz": riser * (i+1)})
+            boxes.append({"x0": x1 - (i+1)*tread, "y0": y0 + half,
+                          "x1": x1 - i*tread, "y1": y1,
+                          "dz": 1415.0 + riser * (i+1)})
+        boxes.append({"x0": x0 + n*tread, "y0": y0, "x1": x1, "y1": y1,
+                      "dz": 1415.0})   # 중간참
+    else:
+        half = (x1 - x0) / 2.0
+        for i in range(n):
+            boxes.append({"x0": x0, "y0": y0 + i*tread,
+                          "x1": x0 + half, "y1": y0 + (i+1)*tread,
+                          "dz": riser * (i+1)})
+            boxes.append({"x0": x0 + half, "y0": y1 - (i+1)*tread,
+                          "x1": x1, "y1": y1 - i*tread,
+                          "dz": 1415.0 + riser * (i+1)})
+        boxes.append({"x0": x0, "y0": y0 + n*tread, "x1": x1, "y1": y1,
+                      "dz": 1415.0})
+    return [{k: round(v, 1) for k, v in b.items()} for b in boxes]
+
+
 # [AUTO] 해당층 기립 벽 face — 골조선(노랑) 페어 폐합 슬리버 추출
 def standing_wall_faces(doc, floor):
     data = collect_floor_data(doc, floor)
@@ -122,7 +157,8 @@ def main():
                          "cy": round(c["cy"] - anc[1], 1),
                          "w": c["w"], "h": c["h"]} for c in cols],
             "openings": [{"type": o["type"],
-                          "poly": _shift(o["poly"], anc)}
+                          "poly": _shift(o["poly"], anc),
+                          **({"angle": o["angle"]} if "angle" in o else {})}
                          for o in g.get("openings", [])],
         }
         # 1F: 해당층 기립 벽(골조선 612본) 추가 — "1층 비었음" 수정
@@ -133,16 +169,14 @@ def main():
                 "faces": [_shift(w, anc) for w in sw],
                 "note": "1F 골조선 기립 벽 (필로티 개방부는 도면 그대로)",
             }
-        # 계단 생성 데이터: STAIR 개구부 + Phase8 실측 (157.22x9단x2런, 디딤270)
-        stair_polys = [o["poly"] for o in build["floors"][fl]["openings"]
-                       if o["type"] == "STAIR"]
-        if stair_polys:
-            build["floors"][fl]["stairs"] = {
-                "openings": stair_polys,
-                "riser_mm": 157.22, "risers_per_flight": 9,
-                "tread_mm": 270, "flights": 2,
-                "note": "[확인요망] 런 방향=개구 장변, 참=개구 절반 가정",
-            }
+        # 계단 트레드 박스: 파이썬 결정론 생성 (방향=A-STAIR 최장선 실측 각도)
+        stair_ops = [o for o in build["floors"][fl]["openings"]
+                     if o["type"] == "STAIR"]
+        if stair_ops:
+            boxes = []
+            for o in stair_ops:
+                boxes += stair_tread_boxes(o["poly"], o.get("angle", 0.0))
+            build["floors"][fl]["stair_boxes"] = boxes
         f = build["floors"][fl]
         ztxt = f['z_sl'] if f['z_sl'] is not None else f"반복{len(f['repeat'] or [])}개층"
         print(f"[{fl}] z={ztxt} 슬라브 {len(f['slabs'])} / "
@@ -150,7 +184,9 @@ def main():
               f"개구부 {len(f['openings'])}"
               + (f" / 기립벽 {len(build['floors'][fl].get('standing_walls', {}).get('faces', []))}"
                  if fl == "1F" else "")
-              + (f" / 계단개구 {len(stair_polys)}" if stair_polys else ""))
+              + (f" / 계단개구 {len(stair_ops)} 트레드박스 "
+                 f"{len(build['floors'][fl].get('stair_boxes', []))}"
+                 if stair_ops else ""))
     OUT_PATH.write_text(json.dumps(build, ensure_ascii=False),
                         encoding="utf-8")
     print(f"저장: {OUT_PATH}")

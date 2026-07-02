@@ -21,16 +21,16 @@ REPORT_DIR = ROOT / "output" / "reports"
 HISTORY = Path(__file__).parent / "accuracy_history.json"
 
 # ── 기준값: 2026-07-02 세션 최초 통과 수치 (리포트 영구 저장본과 동일) ──────────
-# 3차 개정 2026-07-02: PC거더 블록 누락 보완 + 보 브리징 도입으로
-# B1F 1017→1508㎡, 1F 1120→1466㎡ (빠진 부위 = PC거더 구역 실증)
+# 4차 개정 2026-07-02: 전소스 X마크(EV·샤프트) + 계단클러스터 명시 절삭
+# — 'EV 슬라브 깔림/계단 누락' 수정. EV: B2F 2(피트 상부덮개 실존), B1F 4, 1F 3
 BASELINE = {
     "phase0": {
-        "B2F": {"slab_panels": 60, "area_after_m2": 1170.3,
-                "ev_xmark": 0, "violations": 0},
-        "B1F": {"slab_panels": 103, "area_after_m2": 1507.66,
-                "ev_xmark": 1, "violations": 0},
-        "1F": {"slab_panels": 123, "area_after_m2": 1466.22,
-               "ev_xmark": 1, "violations": 0},
+        "B2F": {"slab_panels": 63, "area_after_m2": 1149.57,
+                "ev_xmark": 2, "violations": 0},
+        "B1F": {"slab_panels": 108, "area_after_m2": 1470.9,
+                "ev_xmark": 4, "violations": 0},
+        "1F": {"slab_panels": 131, "area_after_m2": 1448.25,
+               "ev_xmark": 3, "violations": 0},
     },
     "phase4": {"schedule_marks": 222, "matched": 1544, "plan_total": 1586},
     "phase5": {"schedule_symbols": 38, "matched": 133, "placements": 145},
