@@ -496,13 +496,17 @@ def run_floor(floor, doc=None):
         }
         return report, geo
 
-    # 절삭 결과 지오메트리 (후속 Phase·FreeCAD용) — 구멍(interior) 포함
+    # 절삭 결과 지오메트리 (후속 Phase·FreeCAD·SketchUp용) — 구멍(interior) 포함
     geo = {
         "floor": floor,
         "slab_panels": [
             {"exterior": list(p.exterior.coords),
              "holes": [list(r.coords) for r in p.interiors]}
             for p in panels
+        ],
+        # 벽 슬리버 face = 실측 벽 발자국 (추정 없는 벽 솔리드 소스)
+        "wall_faces": [
+            list(w.exterior.coords) for w in slivers if w.area > 0.05e6
         ],
         "openings": (
             [{"type": "EV", "poly": list(m.exterior.coords)} for m in ev_marks]

@@ -19,7 +19,8 @@ from shapely.ops import polygonize, unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from core.pipeline.slab_engine import (  # noqa: E402
-    DXF_S30_101, FLOOR_BLOCKS, SHEETS, collect_floor_data, snap_segments)
+    DXF_S30_101, FLOOR_BLOCKS, SHEETS, _in_sheet, collect_floor_data,
+    snap_segments)
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORT_DIR = ROOT / "output" / "reports"
@@ -49,6 +50,9 @@ def detect_columns(doc, floor):
                 continue
             xs = [p[0] for p in pts]
             ys = [p[1] for p in pts]
+            # 도곽 클리핑 — 블록 내 도곽 밖 잔재 제외 (보/거더와 동일 원칙)
+            if not _in_sheet(sum(xs) / len(xs), sum(ys) / len(ys), floor):
+                continue
             w, h = max(xs) - min(xs), max(ys) - min(ys)
             if not (300 <= w <= 2500 and 300 <= h <= 2500):
                 continue

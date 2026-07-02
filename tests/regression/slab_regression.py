@@ -33,7 +33,9 @@ BASELINE = {
     "phase4": {"schedule_marks": 222, "matched": 1544, "plan_total": 1586},
     "phase5": {"schedule_symbols": 38, "matched": 133, "placements": 145},
     "phase6": {"lintels": 133},
-    "phase8": {"columns_B1F": 425, "columns_1F": 821,
+    # 기둥 수치 2026-07-02 2차 수정: 도곽 클리핑 추가 후 821→43
+    # (스케치업 육안 검증에서 도곽 밖 주차장 잔재 발견 → detect_columns 수정)
+    "phase8": {"columns_B1F": 41, "columns_1F": 43,
                "stair_riser_typ": "157.22x9", "stair_tread": "270.0x8"},
 }
 AREA_TOL_M2 = 1.0      # 슬라브 면적 허용오차

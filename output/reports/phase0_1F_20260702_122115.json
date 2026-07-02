@@ -1,0 +1,89 @@
+{
+  "floor": "1F",
+  "timestamp": "2026-07-02T12:21:15",
+  "source": "S30-001~010-101동 구조평면도.dxf",
+  "status": "OK",
+  "wall_style": {
+    "wall_segments": 725,
+    "method": "양면 외곽선(더블라인)"
+  },
+  "phase3_order": "classify_faces(①폐합→②내부검사) → boolean_cut(③제외) @ core/pipeline/slab_engine.py",
+  "snap_evidence": [
+    {
+      "snap_mm": 0,
+      "faces": 312,
+      "max_face_m2": 297.79,
+      "total_m2": 1188.5
+    },
+    {
+      "snap_mm": 5,
+      "faces": 305,
+      "max_face_m2": 198.06,
+      "total_m2": 1188.4
+    },
+    {
+      "snap_mm": 10,
+      "faces": 306,
+      "max_face_m2": 198.06,
+      "total_m2": 1188.4
+    },
+    {
+      "snap_mm": 20,
+      "faces": 305,
+      "max_face_m2": 198.06,
+      "total_m2": 1188.4
+    }
+  ],
+  "openings": [
+    {
+      "type": "EV",
+      "opening_m2": 5.63,
+      "removed_m2": 5.63,
+      "cut": "성공"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.05,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.15,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.15,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    },
+    {
+      "type": "STAIR",
+      "opening_m2": 12.74,
+      "removed_m2": 12.74,
+      "cut": "성공(face 제외)"
+    }
+  ],
+  "snap_mm_adopted": 5,
+  "overlap_check": {
+    "panels_checked": 80,
+    "violations": 0,
+    "detail": []
+  },
+  "faces_total": 305,
+  "slab_panels": 80,
+  "wall_slivers": 122,
+  "rejected_outer_faces": 7,
+  "openings_found": {
+    "EV_xmark": 1,
+    "PD_sopen": 3,
+    "stair_faces": 1
+  },
+  "area_before_m2": 1138.13,
+  "area_after_m2": 1119.75,
+  "area_cut_m2": 18.38,
+  "cut_consistency": "일치",
+  "precondition": "PASS"
+}

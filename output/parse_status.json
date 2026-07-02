@@ -1,6 +1,6 @@
 {
   "frame": {
-    "generated": "2026-07-02T12:06:26",
+    "generated": "2026-07-02T12:57:59",
     "phase": "-1",
     "floors": {
       "B2F": {
@@ -12,7 +12,7 @@
           "interpretation": "S-B1F-101-BASE = 기초 평면 — 푸팅/기초보 외곽이 상부 벽·기둥 배치와 일치. B2F(기초 레벨) 경계로 사용."
         },
         "column": "COMPLETE",
-        "column_count": 821,
+        "column_count": 43,
         "column_expected": "미확정 — 기둥일람표는 타입만 수록, 평면 배치 총수의 독립 소스 없음",
         "wall": "COMPLETE",
         "wall_segments": 725,
@@ -630,7 +630,7 @@
       "B1F": {
         "floor": "B1F",
         "column": "COMPLETE",
-        "column_count": 425,
+        "column_count": 41,
         "column_expected": "미확정 — 기둥일람표는 타입만 수록, 평면 배치 총수의 독립 소스 없음",
         "wall": "COMPLETE",
         "wall_segments": 702,
@@ -1248,7 +1248,7 @@
       "1F": {
         "floor": "1F",
         "column": "COMPLETE",
-        "column_count": 821,
+        "column_count": 43,
         "column_expected": "미확정 — 기둥일람표는 타입만 수록, 평면 배치 총수의 독립 소스 없음",
         "wall": "COMPLETE",
         "wall_segments": 725,
@@ -1884,7 +1884,7 @@
     }
   },
   "beam": {
-    "generated": "2026-07-02T12:10:11",
+    "generated": "2026-07-02T12:21:06",
     "phase": "-0.5",
     "floors": {
       "B2F": {

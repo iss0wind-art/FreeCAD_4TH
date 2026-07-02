@@ -1,0 +1,74 @@
+{
+  "generated": "2026-07-02T12:20:50",
+  "source_dxf": "S30-001~010-101동 구조평면도.dxf",
+  "dong": "101동",
+  "sheets": {
+    "B2F": [
+      22704,
+      148704
+    ],
+    "B1F": [
+      148704,
+      274704
+    ],
+    "1F": [
+      274704,
+      400704
+    ],
+    "2F": [
+      400704,
+      526772
+    ],
+    "TYP": [
+      526772,
+      651869
+    ],
+    "16F": [
+      651869,
+      841256
+    ],
+    "ROOF": [
+      841256,
+      1031614
+    ]
+  },
+  "floor_blocks": {
+    "B1F": {
+      "wall": "S-B2F-WALL COL-250523",
+      "girder": "S-B1F GIRDER",
+      "beam": "S-B2F-BEAM"
+    },
+    "1F": {
+      "wall": "S-B1F-WALL COL-250523",
+      "girder": "S-1F-GIRDER-1007",
+      "beam": "S-1F BEAM-1007"
+    },
+    "B2F": {
+      "wall": "S-B1F-101-BASE",
+      "girder": null,
+      "beam": null
+    }
+  },
+  "unmatched_blocks": [
+    {
+      "block": "S-B1F-PC",
+      "floor": "B1F",
+      "note": "[INFER 필요] 패턴 불일치 — 사람/모델 확인"
+    },
+    {
+      "block": "S-101-FOUND-PILE(25-0520)",
+      "floor": "B2F",
+      "note": "[INFER 필요] 패턴 불일치 — 사람/모델 확인"
+    },
+    {
+      "block": "S-101-FOUND-PILE(25-0520)",
+      "floor": "B1F",
+      "note": "[INFER 필요] 패턴 불일치 — 사람/모델 확인"
+    },
+    {
+      "block": "S-101-F-X-0418",
+      "floor": "B1F",
+      "note": "[INFER 필요] 패턴 불일치 — 사람/모델 확인"
+    }
+  ]
+}

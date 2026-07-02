@@ -1,0 +1,6 @@
+{
+  "floor": "2F",
+  "timestamp": "2026-07-02T12:21:15",
+  "status": "실행 거부 — 2F: 벽체(MISSING)/보(MISSING) 파싱 미완료 — 슬라브 처리 거부. Phase -1, -0.5 먼저 완료할 것.",
+  "precondition": "FAIL"
+}
