@@ -105,7 +105,7 @@ def precheck_closure(wall_segs, beam_segs, snap_mm=5):
         "closable_faces": len(faces),
         "closable_m2": round(sum(f.area for f in faces) / 1e6, 1),
         "open_endpoints": len(open_pts),
-        "open_coords": open_pts[:60],
+        "open_coords": open_pts[:500],
     }
 
 

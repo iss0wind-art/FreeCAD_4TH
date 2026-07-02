@@ -175,8 +175,8 @@ def run_floor(doc, floor):
         "wall_closure_faces": closure["faces"],
         "wall_closure_m2": closure["total_m2"],
         "wall_open_endpoints": len(closure["open_endpoints"]),
-        "closure_fail_coords": closure["open_endpoints"][:40],
-        "unpaired_detail": unpaired[:40],
+        "closure_fail_coords": closure["open_endpoints"][:500],
+        "unpaired_detail": unpaired[:500],
     })
     return out
 
