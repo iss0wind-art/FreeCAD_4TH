@@ -1,0 +1,2459 @@
+{
+  "timestamp": "2026-07-02T09:07:31",
+  "inputs": {
+    "phase4": "phase4_beam_schedule_20260702_085611.json",
+    "phase5": "phase5_windows_20260702_090405.json"
+  },
+  "lintels_placed": 133,
+  "lintels_by_floor": {
+    "지상1층": 26,
+    "기준층": 34,
+    "지상16층": 9,
+    "옥탑지붕2": 2,
+    "옥탑3": 7,
+    "옥상": 9,
+    "지하2층": 19,
+    "지하1층": 27
+  },
+  "inverted_beams_placed": 0,
+  "inverted_beams_status": "미확정 31건 전량 — 평면 치수 직접표기 방식으로 RB 위치 마크 부재. 임의 배치 금지(추정값0). 마크: ['RB50', 'RB1', 'RB1A', 'RB1B', 'RB1C', 'RB2', 'RB2A', 'RB2B', 'RB2C', 'RB3', 'RB3A', 'RB3B', 'RB3C', 'RB4', 'RB4A', 'RB4B', 'RB5', 'RB5A', 'RB6', 'RB7', 'RB7A', 'RB10', 'RB12', 'RB13', 'RB14', 'RB14A', 'RB2D', 'RB11', 'RB15', 'RB16', 'RB20']",
+  "openings_before": 145,
+  "openings_resolved_by_lintel": 133,
+  "openings_unresolved": 12,
+  "unresolved_detail": {
+    "기호_미해독": [
+      {
+        "floor": "기준층",
+        "symbol": "AW10",
+        "plan_w_mm": 1200,
+        "plan_h_mm": 1000,
+        "x": 549074.0,
+        "y": 1387743.0
+      },
+      {
+        "floor": "기준층",
+        "symbol": "AW10",
+        "plan_w_mm": 1200,
+        "plan_h_mm": 1000,
+        "x": 579975.2,
+        "y": 1373262.2
+      },
+      {
+        "floor": "지하2층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 47077.2,
+        "y": 1288946.2
+      },
+      {
+        "floor": "지하2층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 71511.8,
+        "y": 1314595.9
+      },
+      {
+        "floor": "지하2층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 70397.6,
+        "y": 1280632.9
+      },
+      {
+        "floor": "지하2층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 46068.4,
+        "y": 1378682.6
+      },
+      {
+        "floor": "지하2층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 67418.0,
+        "y": 1370287.3
+      },
+      {
+        "floor": "지하1층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 172068.4,
+        "y": 1378682.6
+      },
+      {
+        "floor": "지하1층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 193511.5,
+        "y": 1370333.2
+      },
+      {
+        "floor": "지하1층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 173272.6,
+        "y": 1288946.2
+      },
+      {
+        "floor": "지하1층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 199068.3,
+        "y": 1313919.7
+      },
+      {
+        "floor": "지하1층",
+        "symbol": null,
+        "plan_w_mm": 2200,
+        "plan_h_mm": 2400,
+        "x": 196023.7,
+        "y": 1280448.3
+      }
+    ],
+    "인방보_불필요_타입": []
+  },
+  "size_conflicts_carried": [
+    {
+      "symbol": "AW7",
+      "floor": "지상1층",
+      "plan": [
+        600,
+        1160
+      ],
+      "schedule": [
+        900,
+        1160
+      ]
+    },
+    {
+      "symbol": "AW13",
+      "floor": "옥탑3",
+      "plan": [
+        620,
+        920
+      ],
+      "schedule": [
+        600,
+        920
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하2층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하2층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하2층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하2층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하2층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하2층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하2층",
+      "plan": [
+        2200,
+        2400
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하2층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하2층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하2층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하2층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하1층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하1층",
+      "plan": [
+        2200,
+        2400
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하1층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하1층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하1층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하1층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하1층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하1층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하1층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "FSD1",
+      "floor": "지하1층",
+      "plan": [
+        1300,
+        2100
+      ],
+      "schedule": [
+        1100,
+        2200
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하1층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하1층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하2층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하2층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    },
+    {
+      "symbol": "AG1",
+      "floor": "지하1층",
+      "plan": [
+        1100,
+        1500
+      ],
+      "schedule": [
+        1000,
+        2190
+      ]
+    }
+  ],
+  "lintel_list": [
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AD2",
+      "x": 296761.2,
+      "y": 1390313.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW1",
+      "x": 297440.6,
+      "y": 1387707.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 800,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW9",
+      "x": 294497.3,
+      "y": 1389031.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "FSD4",
+      "x": 301844.0,
+      "y": 1385723.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW9",
+      "x": 313898.5,
+      "y": 1400881.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AD1",
+      "x": 315281.0,
+      "y": 1387557.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW3",
+      "x": 311839.3,
+      "y": 1395769.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW9",
+      "x": 333837.6,
+      "y": 1371261.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "FSD4",
+      "x": 323403.7,
+      "y": 1370557.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW1",
+      "x": 332115.6,
+      "y": 1372907.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 800,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AD2",
+      "x": 328424.7,
+      "y": 1377318.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "FSD4",
+      "x": 312076.8,
+      "y": 1398063.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 546474.0,
+      "y": 1388993.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 553744.0,
+      "y": 1385723.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 565890.4,
+      "y": 1400869.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 563847.5,
+      "y": 1395781.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 585837.6,
+      "y": 1371261.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 564076.8,
+      "y": 1398066.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "AW12",
+      "x": 675210.1,
+      "y": 1387691.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "AW13",
+      "x": 672474.0,
+      "y": 1388993.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "FSD4",
+      "x": 675056.0,
+      "y": 1381570.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑지붕2",
+      "opening_symbol": "AW13",
+      "x": 943673.1,
+      "y": 1397812.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑지붕2",
+      "opening_symbol": "AW12",
+      "x": 943450.2,
+      "y": 1394849.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑3",
+      "opening_symbol": "AW13",
+      "x": 961242.6,
+      "y": 1370313.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑3",
+      "opening_symbol": "FSD4",
+      "x": 955889.9,
+      "y": 1368423.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑3",
+      "opening_symbol": "FSD4",
+      "x": 947253.0,
+      "y": 1393175.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑3",
+      "opening_symbol": "AW12",
+      "x": 958634.6,
+      "y": 1371416.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 575403.7,
+      "y": 1370557.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "AW9",
+      "x": 691890.4,
+      "y": 1400869.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "AW3",
+      "x": 689847.5,
+      "y": 1395781.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "AW9",
+      "x": 711837.6,
+      "y": 1371261.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "FSD4",
+      "x": 690076.8,
+      "y": 1398066.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "AW3",
+      "x": 705975.2,
+      "y": 1373262.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상16층",
+      "opening_symbol": "FSD4",
+      "x": 701403.7,
+      "y": 1370557.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 1053074.0,
+      "y": 1387743.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 1050474.0,
+      "y": 1388993.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 1057744.0,
+      "y": 1385723.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 1069890.4,
+      "y": 1400869.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 1067847.5,
+      "y": 1395781.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 1089837.6,
+      "y": 1371261.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 1068076.8,
+      "y": 1398066.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 1083975.2,
+      "y": 1373262.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 1079403.7,
+      "y": 1370557.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AD2",
+      "x": 295595.0,
+      "y": 1300832.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW1",
+      "x": 301746.2,
+      "y": 1296954.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 800,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW9",
+      "x": 294428.7,
+      "y": 1298967.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "FSD4",
+      "x": 301775.5,
+      "y": 1294722.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW7",
+      "x": 315864.9,
+      "y": 1311888.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AD2",
+      "x": 314065.6,
+      "y": 1304714.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW9",
+      "x": 333687.2,
+      "y": 1282267.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "FSD4",
+      "x": 335042.3,
+      "y": 1280487.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW3",
+      "x": 331109.8,
+      "y": 1283131.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "FSD4",
+      "x": 317247.7,
+      "y": 1313852.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AD1",
+      "x": 321584.2,
+      "y": 1283838.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW1",
+      "x": 314645.0,
+      "y": 1309347.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 800,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 546428.7,
+      "y": 1298967.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 553775.5,
+      "y": 1294722.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 566832.2,
+      "y": 1308671.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 566860.4,
+      "y": 1306012.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 585624.8,
+      "y": 1282233.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 587068.1,
+      "y": 1280509.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 583160.4,
+      "y": 1283136.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 569250.6,
+      "y": 1312588.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 549093.8,
+      "y": 1297105.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "AW13",
+      "x": 920288.8,
+      "y": 1298555.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "AW13",
+      "x": 940715.3,
+      "y": 1308453.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "AW12",
+      "x": 940676.8,
+      "y": 1305536.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "AW13",
+      "x": 959484.2,
+      "y": 1281809.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "FSD4",
+      "x": 954090.6,
+      "y": 1279872.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "AW12",
+      "x": 956899.0,
+      "y": 1282848.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "AW12",
+      "x": 922953.9,
+      "y": 1296693.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "FSD4",
+      "x": 922808.5,
+      "y": 1291712.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥상",
+      "opening_symbol": "FSD4",
+      "x": 944481.1,
+      "y": 1304136.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 1050428.7,
+      "y": 1298967.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 1057775.5,
+      "y": 1294722.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 1070832.2,
+      "y": 1308671.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 1070860.4,
+      "y": 1306012.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW9",
+      "x": 1089624.8,
+      "y": 1282233.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 1091068.1,
+      "y": 1280509.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 1087160.4,
+      "y": 1283136.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "FSD4",
+      "x": 1073250.6,
+      "y": 1312588.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "기준층",
+      "opening_symbol": "AW3",
+      "x": 1053093.8,
+      "y": 1297105.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW2",
+      "x": 323441.5,
+      "y": 1389978.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지상1층",
+      "opening_symbol": "AW2",
+      "x": 320619.4,
+      "y": 1276678.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 600,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑3",
+      "opening_symbol": "FSD4",
+      "x": 977618.1,
+      "y": 1390105.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "옥탑3",
+      "opening_symbol": "AW13",
+      "x": 980506.2,
+      "y": 1394123.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 620,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "옥탑3",
+      "opening_symbol": "AW12",
+      "x": 978296.2,
+      "y": 1392723.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD4",
+      "x": 44726.1,
+      "y": 1299197.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD4",
+      "x": 60913.5,
+      "y": 1306577.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD1",
+      "x": 71643.7,
+      "y": 1305342.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD1",
+      "x": 53142.6,
+      "y": 1290487.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD4",
+      "x": 83151.3,
+      "y": 1281543.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD1",
+      "x": 72883.1,
+      "y": 1274888.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "AG1",
+      "x": 80280.4,
+      "y": 1274874.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "AG1",
+      "x": 71159.4,
+      "y": 1301735.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD4",
+      "x": 44726.1,
+      "y": 1389306.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD4",
+      "x": 60009.7,
+      "y": 1396918.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD1",
+      "x": 67559.1,
+      "y": 1390871.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD1",
+      "x": 66143.8,
+      "y": 1388533.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD1",
+      "x": 52047.6,
+      "y": 1380227.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD4",
+      "x": 80729.4,
+      "y": 1371288.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "FSD1",
+      "x": 69339.1,
+      "y": 1364597.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "AG1",
+      "x": 77357.5,
+      "y": 1364697.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "AG1",
+      "x": 68582.6,
+      "y": 1396032.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD4",
+      "x": 170984.6,
+      "y": 1389305.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 162682.8,
+      "y": 1373732.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 188666.4,
+      "y": 1387904.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD4",
+      "x": 186009.7,
+      "y": 1396918.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD1",
+      "x": 193559.1,
+      "y": 1390871.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD1",
+      "x": 192228.3,
+      "y": 1388551.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 2200,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD1",
+      "x": 179182.2,
+      "y": 1380987.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD4",
+      "x": 206822.2,
+      "y": 1371337.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD1",
+      "x": 192917.8,
+      "y": 1366307.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "AG1",
+      "x": 203257.4,
+      "y": 1364804.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 193974.9,
+      "y": 1362090.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "AG1",
+      "x": 165441.1,
+      "y": 1377556.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "AG1",
+      "x": 195129.4,
+      "y": 1397903.7,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD4",
+      "x": 170726.1,
+      "y": 1299041.4,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 158642.2,
+      "y": 1293730.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 188205.1,
+      "y": 1280631.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 201785.3,
+      "y": 1309978.2,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD4",
+      "x": 186913.5,
+      "y": 1306577.8,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD1",
+      "x": 197485.3,
+      "y": 1305295.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD1",
+      "x": 179190.9,
+      "y": 1290499.0,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD4",
+      "x": 209096.3,
+      "y": 1281390.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1150,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD1",
+      "x": 195802.7,
+      "y": 1276064.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1300,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "AG1",
+      "x": 206174.8,
+      "y": 1275411.9,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "AG1",
+      "x": 197126.6,
+      "y": 1301735.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 174617.9,
+      "y": 1375953.1,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "FSD3",
+      "x": 175688.8,
+      "y": 1285591.3,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "AG1",
+      "x": 39491.1,
+      "y": 1377556.5,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하2층",
+      "opening_symbol": "AG1",
+      "x": 40631.1,
+      "y": 1287782.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    },
+    {
+      "floor": "지하1층",
+      "opening_symbol": "AG1",
+      "x": 166579.9,
+      "y": 1287732.6,
+      "coord_system": "A40 평면도 modelspace",
+      "length_mm": 1100,
+      "bearing": "미확정 — 일람표에 걸침 수치 없음",
+      "section": {
+        "mark": "LB1",
+        "width_mm": 250.0,
+        "height_note": "일람표 표기값 — 실깊이는 개구부 상단~슬라브 하단 (변동)"
+      },
+      "size_check": "불일치"
+    }
+  ]
+}
