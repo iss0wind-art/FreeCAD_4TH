@@ -50,6 +50,7 @@ def _mark_type(mark):
 
 # ── 일람표 파싱 ───────────────────────────────────────────────────────────────
 
+# [AUTO] 텍스트 규칙 연산 — 정규식 마크 + DIMENSION 매칭
 def parse_lintel_schedule():
     """S30-561: 부호 행(EB1/LB1/SB1) + 열별 DIMENSION → 마크 사전."""
     doc = ezdxf.readfile(str(DXF_LINTEL))
@@ -94,6 +95,7 @@ def parse_lintel_schedule():
 _SIZE_TXT = re.compile(r"^(\d{3,4})\s*[xX×]\s*(\d{3,4})$")
 
 
+# [AUTO] 텍스트 규칙 연산 — 마크·치수 TEXT 근접 페어링
 def parse_text_schedule(dxf_path):
     """마크 TEXT ↔ 최근접 치수 TEXT(500X600) 페어링 일람표 파서.
 
@@ -142,6 +144,7 @@ SIZE_RE = re.compile(r"^(\d{3,4})[xX](\d{3,4})$")
 COMPO_RE = re.compile(r"([a-zA-Z]{1,4}\d{1,3}[a-dA-D]?)-(\d{3,4})[xX](\d{3,4})")
 
 
+# [AUTO] 텍스트 규칙 연산 — 정규식 라벨 추출
 def extract_plan_labels():
     """101동 구조평면 거더/보 블록의 라벨 추출.
 
@@ -174,6 +177,7 @@ def extract_plan_labels():
 
 # ── 매칭 ─────────────────────────────────────────────────────────────────────
 
+# [AUTO] 규칙 연산 — 규격 키 매칭, 모델 추론 없음
 def match_by_size(plan, schedule):
     """규격(W×H) 기반 매칭: 평면 치수 라벨 ↔ 일람표 단면.
 

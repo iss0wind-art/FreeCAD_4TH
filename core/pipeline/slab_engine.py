@@ -59,6 +59,41 @@ SNAP_STEPS = [5, 10, 20]          # Phase 2 단계별 스냅 거리 (mm)
 WALL_SLIVER_ERODE = 150           # 침식 후 소멸 → 벽 슬리버 판정 (벽두께≥180 기준)
 MIN_PANEL_AREA_MM2 = 0.5e6        # 0.5㎡ 미만 face는 노이즈
 
+STATUS_PATH = ROOT / "output" / "parse_status.json"
+
+
+class PreconditionError(RuntimeError):
+    """Phase -1/-0.5 미완료 층의 슬라브 처리 시도 시 발생."""
+
+
+# [AUTO] 순수 규칙 연산 — 사전조건 검사, 모델 추론 없음. 우회 금지 (개정 규칙 6).
+def get_parse_status(floor: str, member: str) -> str:
+    """parse_status.json 에서 층·부재 파싱 상태 조회."""
+    if not STATUS_PATH.exists():
+        return "NOT_RUN"
+    st = json.loads(STATUS_PATH.read_text(encoding="utf-8"))
+    section = {"wall": "frame", "column": "frame", "beam": "beam"}[member]
+    if section not in st:
+        return "NOT_RUN"
+    rec = st[section]["floors"].get(floor, {})
+    return rec.get(member, "MISSING")
+
+
+# [AUTO] 개정 지시서 2026-07-02 §2.4 — Phase 0 착수 조건 강제.
+def check_precondition_for_slab(floor: str) -> bool:
+    """Phase 0(slab_engine) 실행 전 필수 사전조건 검사.
+
+    벽체·보 파싱이 완료되지 않은 층은 슬라브 처리를 거부한다.
+    이 검사를 우회하는 플래그·스킵 코드를 추가하지 않는다 (진행규칙 6).
+    """
+    wall_status = get_parse_status(floor, "wall")
+    beam_status = get_parse_status(floor, "beam")
+    if wall_status != "COMPLETE" or beam_status != "COMPLETE":
+        raise PreconditionError(
+            f"{floor}: 벽체({wall_status})/보({beam_status}) 파싱 미완료 — "
+            f"슬라브 처리 거부. Phase -1, -0.5 먼저 완료할 것.")
+    return True
+
 
 # ── DXF 수집 ─────────────────────────────────────────────────────────────────
 
@@ -80,6 +115,7 @@ def _entity_lines(e):
     return []
 
 
+# [AUTO] 규칙 연산 — 레이어/블록 필터 수집, 모델 추론 없음
 def collect_floor_data(doc, floor):
     """시트 1장에서 경계선·개구부 원시 데이터 수집."""
     msp = doc.modelspace()
@@ -164,6 +200,7 @@ def collect_floor_data(doc, floor):
 
 # ── Phase 2: 끝점 스냅 ────────────────────────────────────────────────────────
 
+# [AUTO] 순수 기하 연산 — 끝점 그리드 스냅, 모델 추론 없음
 def snap_segments(segs, tol):
     """끝점 그리드 클러스터링 스냅. 반환: LineString 목록."""
     grid = {}
@@ -186,6 +223,7 @@ def snap_segments(segs, tol):
     return out
 
 
+# [AUTO] 순수 기하 연산 — Shapely 폐합 통계
 def closure_stats(segs, tol):
     """스냅 tol 적용 시 폐합 통계 (Phase 2 증거용)."""
     geoms = snap_segments(segs, tol) if tol > 0 else [
@@ -203,6 +241,7 @@ def closure_stats(segs, tol):
 
 # ── Phase 3: X마크 페어링 ─────────────────────────────────────────────────────
 
+# [AUTO] 순수 기하 연산 — 대각선 교차쌍 판정
 def pair_x_marks(diagonals):
     """교차 대각선 쌍 → 개구부 bbox 폴리곤. (순서 ②: 폐합 탐색 후 내부 검사에 사용)"""
     marks = []
@@ -241,6 +280,7 @@ MAX_STAIR_FACE_M2 = 40e6      # 계단실 face 상한 (초과 시 미확정)
 MAX_PANEL_M2 = 2000e6         # 단일 패널 상한 — 초과 face는 외곽 오폐합으로 간주
 
 
+# [AUTO] 순수 기하 연산 — face 분류 (침식·잉크 판정)
 def classify_faces(faces, stair_pts, wall_ink, envelope):
     """폐합 face 분류 (Phase 1 + Phase 3 ①②).
 
@@ -278,6 +318,7 @@ def classify_faces(faces, stair_pts, wall_ink, envelope):
     return slab_faces, wall_slivers, stair_faces, rejected
 
 
+# [AUTO] 순수 기하 연산 — Shapely difference 절삭
 def boolean_cut(slab_faces, stair_faces, ev_marks, pd_polys):
     """Phase 0 + Phase 3 ③: 명시적 개구부 폴리곤을 실제 difference 절삭.
 
@@ -331,6 +372,7 @@ def boolean_cut(slab_faces, stair_faces, ev_marks, pd_polys):
     return panels, log
 
 
+# [AUTO] 순수 기하 연산 — 겹침 회귀 검증
 def verify_no_overlap(panels, wall_slivers, tol_mm2=1.0):
     """Phase 1 회귀 검증: 슬라브 패널과 벽체 face의 겹침 면적 0 확인.
 
@@ -351,7 +393,11 @@ def verify_no_overlap(panels, wall_slivers, tol_mm2=1.0):
 
 
 def run_floor(floor, doc=None):
-    """층 1개 처리 → 리포트 dict."""
+    """층 1개 처리 → 리포트 dict.
+
+    개정 규칙 6: check_precondition_for_slab() 통과 없이는 실행 불가.
+    """
+    check_precondition_for_slab(floor)   # PreconditionError 시 즉시 중단
     if doc is None:
         doc = ezdxf.readfile(str(DXF_S30_101))
     data = collect_floor_data(doc, floor)
@@ -481,9 +527,21 @@ def main(argv):
     doc = ezdxf.readfile(str(DXF_S30_101))
     geos = {}
     for fl in floors:
+        try:
+            check_precondition_for_slab(fl)
+            print(f"\n=== {fl} === [사전조건 PASS]")
+        except PreconditionError as e:
+            print(f"\n=== {fl} === [사전조건 FAIL] {e}")
+            save_report({
+                "floor": fl,
+                "timestamp": datetime.now().isoformat(timespec="seconds"),
+                "status": f"실행 거부 — {e}",
+                "precondition": "FAIL",
+            })
+            continue
         report, geo = run_floor(fl, doc)
+        report["precondition"] = "PASS"
         p = save_report(report)
-        print(f"\n=== {fl} ===")
         print(f"  상태: {report['status']}")
         if report.get("snap_evidence"):
             for st in report["snap_evidence"]:

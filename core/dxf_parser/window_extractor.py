@@ -64,6 +64,7 @@ def _near(texts, x, y, radius):
 
 # ── 일람표 파싱 ───────────────────────────────────────────────────────────────
 
+# [AUTO] 규칙 연산 — 기호블록+근접텍스트 페어링 (스케일 비례 반경)
 def parse_schedule(dxf_path):
     """창호일람표 1매 → {기호: {w_mm, h_mm, type, type_name, spec}}."""
     doc = ezdxf.readfile(str(dxf_path))
@@ -116,6 +117,7 @@ def _sheet_titles(msp, dong="101동"):
     return titles
 
 
+# [AUTO] 규칙 연산 — 기호 배치 추출 + 최근접 타이틀 층 판정
 def extract_plan_symbols(dong="101동"):
     """A40 평면도에서 dong 창호 기호 배치 추출. 층 = 최근접 도면타이틀."""
     doc = ezdxf.readfile(str(DXF_PLAN_A40))
