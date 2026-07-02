@@ -215,8 +215,44 @@ def collect_floor_data(doc, floor):
             if not found:
                 data["status"] = f"미확정: 블록 {blk_name} INSERT 미발견"
 
-    # 3) 보 끊김 연결 [AUTO] — 벽체선과 동일 원칙의 공선 브리징.
-    #    기둥·벽 교차부에서 끊긴 보 선을 잇는다. 연결선은 별도 분류(감사용).
+    # 3) XR(구조) 노란 골조선 [AUTO] — 방부장 교본 2026-07-02:
+    #    노랑 = 해당층 바닥+1.2m 수평절단 골조선 (해당층에 서는 벽).
+    #    초록 = 배근 지시 (기초 도면 컨텍스트 외에는 골조 아님 — 제외).
+    layer_color = {ly.dxf.name: ly.dxf.color for ly in doc.layers}
+    yellow = []
+    for ins in msp.query("INSERT"):
+        if "평면도(구조)" not in ins.dxf.name:
+            continue
+        for ve in ins.virtual_entities():
+            if ve.dxftype() not in ("LINE", "LWPOLYLINE"):
+                continue
+            c = ve.dxf.color
+            if c == 256:
+                c = layer_color.get(ve.dxf.layer, 7)
+            if c != 2:          # 노랑만 골조선
+                continue
+            segs = _entity_lines(ve)
+            if not segs:
+                continue
+            mx = sum(s[0][0] + s[1][0] for s in segs) / (2 * len(segs))
+            my = sum(s[0][1] + s[1][1] for s in segs) / (2 * len(segs))
+            if _in_sheet(mx, my, floor):
+                yellow += segs
+    data["standing_wall_segs"] = yellow   # 해당층에 서는 벽 (골조선)
+
+    # 세대부 벽 블록이 없는 층(기준층 등)은 골조선이 유일한 벽 소스.
+    # 창 구간 끊김은 방부장 방식(벽체로 형성 후 공제)에 따라 브리징.
+    if not data["wall_segs"] and yellow:
+        win_bridges = bridge_collinear(yellow, max_gap=2600,
+                                       ang_tol=2.0, lateral_tol=60)
+        data["wall_segs"] = yellow + win_bridges
+        data["window_bridges"] = win_bridges
+        data["boundary_segs"] += data["wall_segs"]
+        data["status"] = ("OK(골조선) — XR노란선 " + str(len(yellow))
+                          + "세그 + 창구간 브리지 " + str(len(win_bridges))
+                          + "본. 창 공제는 Phase 5 창호와 결합 예정")
+
+    # 4) 보 끊김 연결 [AUTO] — 벽체선과 동일 원칙의 공선 브리징.
     data["bridge_segs"] = bridge_collinear(data["beam_segs"])
     data["boundary_segs"] += data["bridge_segs"]
     return data

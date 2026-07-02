@@ -113,10 +113,21 @@ def main():
                               "포함(Phase -1 벽 소스), 별도 보 블록 없음"}
                 print(f"  [{fl:4}] 보 0세그 — 기초 레벨 (base 블록이 경계 담당)")
             else:
-                status["floors"][fl] = {
-                    "beam": "MISSING",
-                    "detail": "보 블록 없음 — 세대부 S20 조합 필요"}
-                print(f"  [{fl:4}] 보 MISSING (S20 조합 필요)")
+                data = collect_floor_data(doc, fl)
+                if data.get("standing_wall_segs"):
+                    # [AUTO-규칙+확인요망] 아파트 세대부 벽식 구조 — 보 블록
+                    # 부재가 관례상 정상. 방부장 확인 대상으로 플래그 유지.
+                    status["floors"][fl] = {
+                        "beam": "COMPLETE",
+                        "beam_segments": 0,
+                        "detail": "벽식 구간 판정 — 보 블록 부재 + 골조선 벽 존재. "
+                                  "[확인요망] 방부장 검증 대상"}
+                    print(f"  [{fl:4}] 보 0세그 — 벽식 판정(확인요망)")
+                else:
+                    status["floors"][fl] = {
+                        "beam": "MISSING",
+                        "detail": "보 블록 없음 — 세대부 S20 조합 필요"}
+                    print(f"  [{fl:4}] 보 MISSING (S20 조합 필요)")
             continue
         data = collect_floor_data(doc, fl)
         edge, normal = classify_edge_beams(beam_segs, data["wall_segs"])
