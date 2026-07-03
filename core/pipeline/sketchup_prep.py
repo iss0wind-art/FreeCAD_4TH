@@ -59,20 +59,52 @@ def stair_tread_boxes(poly_coords, angle_deg):
 
 # [AUTO] 해당층 기립 벽 face — 골조선(노랑) 페어 폐합 슬리버 추출
 def standing_wall_faces(doc, floor):
+    """반환: (벽 발자국 목록, 창구간 브리지 목록) — 브리지 = 창 위치 실측."""
     data = collect_floor_data(doc, floor)
     segs = data.get("standing_wall_segs", [])
     if not segs:
-        return []
-    segs = segs + bridge_collinear(segs, max_gap=2600, ang_tol=2.0,
-                                   lateral_tol=60)
-    faces = polygonize(unary_union(snap_segments(segs, 5)))
+        return [], []
+    bridges = bridge_collinear(segs, max_gap=2600, ang_tol=2.0,
+                               lateral_tol=60)
+    faces = polygonize(unary_union(snap_segments(segs + bridges, 5)))
     out = []
     for f in faces:
         if f.area < 0.05e6 or f.area > 60e6:
             continue
         if f.buffer(-150).is_empty:          # 슬리버 = 벽 발자국
             out.append(list(f.exterior.coords))
-    return out
+    return out, bridges
+
+
+# [AUTO] 창 오픈 — 방부장 방식: 벽체 형성(브리지) 후 창 위치만큼 공제.
+# 브리지 세그 = 골조선이 끊긴 창 구간 실측. 1차는 전높이 오픈,
+# 인방·씰 높이는 [미확정 — A50 창호도 단면 파싱 후 채움].
+def subtract_windows(faces_coords, bridges, pad=200, min_w=400):
+    from shapely.geometry import LineString, Polygon as SPoly
+    # 창 판정: 브리지 길이 >= min_w (미세 끊김 10~400mm는 벽 연결선 — 공제 제외)
+    bridges = [(a, b) for a, b in bridges
+               if ((b[0]-a[0])**2 + (b[1]-a[1])**2) ** 0.5 >= min_w]
+    if not bridges:
+        return faces_coords, []
+    zones = [LineString([a, b]).buffer(pad, cap_style=2) for a, b in bridges]
+    zone_u = unary_union(zones)
+    out = []
+    for fc in faces_coords:
+        try:
+            poly = SPoly(fc)
+            if not poly.is_valid:
+                poly = poly.buffer(0)
+            d = poly.difference(zone_u)
+            geoms = list(d.geoms) if d.geom_type == "MultiPolygon" else [d]
+            out += [list(g.exterior.coords) for g in geoms
+                    if not g.is_empty and g.area > 0.02e6]
+        except Exception:
+            out.append(fc)
+    openings = [{"x1": round(a[0], 1), "y1": round(a[1], 1),
+                 "x2": round(b[0], 1), "y2": round(b[1], 1),
+                 "width_mm": round(((b[0]-a[0])**2 + (b[1]-a[1])**2) ** 0.5)}
+                for a, b in bridges]
+    return out, openings
 
 ROOT = Path(__file__).resolve().parents[2]
 GEO_PATH = ROOT / "output" / "slab_precise_101동.json"
@@ -139,6 +171,13 @@ def main():
             z_sl = LEVELS.get(fl, LEVELS["PH"] if fl == "16F" else None)
             wz0, wz1 = WALL_SPAN[fl]
             repeat = None
+        # 창 오픈: 골조선 벽 층(2F/TYP/16F) — 브리지 구간을 벽에서 공제
+        wall_faces_raw = g.get("wall_faces", [])
+        win_open = []
+        if fl in ("2F", "TYP", "16F"):
+            fdata = collect_floor_data(doc, fl)
+            wb = fdata.get("window_bridges", [])
+            wall_faces_raw, win_open = subtract_windows(wall_faces_raw, wb)
         build["floors"][fl] = {
             "z_sl": z_sl,
             "repeat": repeat,
@@ -149,10 +188,18 @@ def main():
                           "기초 발자국 — 깊이 미확정, 붉은 플래그"),
             "slab_thk": thk,
             "slab_thk_source": thk_src,
+            "window_bridge_count": len(win_open),
+            "window_openings": [
+                {**w, "x1": round(w["x1"]-anc[0], 1),
+                 "y1": round(w["y1"]-anc[1], 1),
+                 "x2": round(w["x2"]-anc[0], 1),
+                 "y2": round(w["y2"]-anc[1], 1),
+                 "note": "전높이 오픈 — 인방·씰 [미확정: A50 단면 필요]"}
+                for w in win_open],
             "slabs": [{"exterior": _shift(p["exterior"], anc),
                        "holes": [_shift(h, anc) for h in p["holes"]]}
                       for p in g["slab_panels"]],
-            "wall_faces": [_shift(w, anc) for w in g.get("wall_faces", [])],
+            "wall_faces": [_shift(w, anc) for w in wall_faces_raw],
             "columns": [{"cx": round(c["cx"] - anc[0], 1),
                          "cy": round(c["cy"] - anc[1], 1),
                          "w": c["w"], "h": c["h"]} for c in cols],
@@ -161,13 +208,15 @@ def main():
                           **({"angle": o["angle"]} if "angle" in o else {})}
                          for o in g.get("openings", [])],
         }
-        # 1F: 해당층 기립 벽(골조선 612본) 추가 — "1층 비었음" 수정
+        # 1F: 해당층 기립 벽(골조선 612본) 추가 — 창구간 공제 포함
         if fl == "1F":
-            sw = standing_wall_faces(doc, "1F")
+            sw, sw_bridges = standing_wall_faces(doc, "1F")
+            sw, sw_open = subtract_windows(sw, sw_bridges)
             build["floors"][fl]["standing_walls"] = {
                 "z0": 370, "z1": 3300,
                 "faces": [_shift(w, anc) for w in sw],
-                "note": "1F 골조선 기립 벽 (필로티 개방부는 도면 그대로)",
+                "window_openings": len(sw_open),
+                "note": "1F 골조선 기립 벽 — 창구간 공제 적용",
             }
         # 계단: 방부장 순서 — ①오픈(정확) 유지, ②채움은 코어 도면 실측 매핑 후.
         # 코아#1 실측(2026-07-03): UP런 서측열 +Y 8단 / DN런 동측열 -Y,

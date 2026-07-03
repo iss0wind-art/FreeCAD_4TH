@@ -254,13 +254,26 @@ def collect_floor_data(doc, floor):
                 if 25 < ang < 65 and 800 < math.hypot(dx, dy) < 6000:
                     data["diag_all"].append((p0, p1))
 
+    # 재귀 explode [AUTO] — virtual_entities는 중첩 INSERT를 풀지 않음.
+    # 계단(주동계단 블록)·지하 코어 등이 2중 블록이라 1단계 스캔이 놓쳤음
+    # (2026-07-03 계단 3개소 누락 근본 원인). depth 3까지 재귀.
+    def _walk(ve, is_xr, depth):
+        if ve.dxftype() == "INSERT" and depth < 3:
+            try:
+                for sub in ve.virtual_entities():
+                    _walk(sub, is_xr, depth + 1)
+            except Exception:
+                pass
+            return
+        _scan_entity(ve, is_xr)
+
     for e in msp:
         _scan_entity(e, False)
     for ins in msp.query("INSERT"):
         is_xr = "평면도(구조)" in ins.dxf.name
         try:
             for ve in ins.virtual_entities():
-                _scan_entity(ve, is_xr)
+                _walk(ve, is_xr, 1)
         except Exception:
             pass
     data["standing_wall_segs"] = yellow   # 해당층에 서는 벽 (골조선)
