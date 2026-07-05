@@ -60,6 +60,28 @@ def place(symbols, origin, cx, cy, rot_deg, mirror=False):
     return out
 
 
+# [AUTO] offset 보정 — 배치 창을 골조선 끊김(실제 창자리)에 평행이동 정합.
+# 세대참조 텍스트 위치≠A30 창호 원점이라 생기는 전체 밀림을 제거.
+def snap_offset(pts, gaps, max_snap=4000):
+    """각 창→최근접 골조끊김 offset의 중앙값만큼 전체 평행이동."""
+    dxs, dys = [], []
+    for p in pts:
+        if p["kind"] != "창":
+            continue
+        best = min(gaps, key=lambda g: math.hypot(g[0]-p["gx"], g[1]-p["gy"]),
+                   default=None)
+        if best and math.hypot(best[0]-p["gx"], best[1]-p["gy"]) < max_snap:
+            dxs.append(best[0]-p["gx"])
+            dys.append(best[1]-p["gy"])
+    if not dxs:
+        return pts, (0.0, 0.0)
+    dxs.sort()
+    dys.sort()
+    ox, oy = dxs[len(dxs)//2], dys[len(dys)//2]   # 중앙값(로버스트)
+    return [{**p, "gx": round(p["gx"]+ox, 1), "gy": round(p["gy"]+oy, 1)}
+            for p in pts], (round(ox), round(oy))
+
+
 def _type_keys(unit_types, type_code):
     """세대타입(59A)의 모든 변형 키 (기본형/확장형/주거약자)."""
     return [k for k in unit_types if k.startswith(type_code + "_")]
@@ -71,10 +93,11 @@ def main():
     units = floor_units(doc, "TYP")
     unit_db = load_or_extract()["types"]
 
-    # 골조선 끊김(창/문 실위치) — 배치 검증용
+    # 매칭 기준 = 골조선 끊김 (창/문 실위치). 외벽개구부(39)는 세대내부창과
+    # 성격 달라 부적합 확인(2026-07-05) → 골조끊김 유지.
     data = collect_floor_data(doc, "TYP")
     segs = data["standing_wall_segs"]
-    gaps = [(( a[0]+b[0])/2, (a[1]+b[1])/2)
+    gaps = [((a[0]+b[0])/2, (a[1]+b[1])/2)
             for a, b in bridge_collinear(segs, max_gap=2600, ang_tol=2,
                                          lateral_tol=60)
             if math.hypot(b[0]-a[0], b[1]-a[1]) >= 400]
@@ -90,24 +113,29 @@ def main():
         for key in keys:
             db = unit_db[key]
             for mirror in (False, True):
-                pts = place(db["symbols"], db["origin"], u["x"], u["y"],
-                            u["rot"], mirror)
+                pts0 = place(db["symbols"], db["origin"], u["x"], u["y"],
+                             u["rot"], mirror)
+                pts, off = snap_offset(pts0, gaps)
                 wins = [p for p in pts if p["kind"] == "창"]
                 if not wins:
                     continue
-                score = sum(min((math.hypot(p["gx"]-g[0], p["gy"]-g[1])
-                                 for g in gaps), default=9e9)
-                            for p in wins) / len(wins)
-                if best is None or score < best[0]:
-                    best = (score, key, mirror, wins)
+                dists = [min((math.hypot(p["gx"]-g[0], p["gy"]-g[1])
+                             for g in gaps), default=9e9) for p in wins]
+                n_hit = sum(1 for d in dists if d < 1000)   # 벽끊김에 붙은 창
+                avg = sum(dists) / len(dists)
+                # 1순위 매칭창수(많을수록), 2순위 평균거리(작을수록)
+                key_score = (-n_hit, avg)
+                if best is None or key_score < best[0]:
+                    best = (key_score, key, mirror, wins, off, n_hit, avg)
         if best is None:
             placed.append({**u, "status": "미확정: 창 없음"})
             continue
-        avg, key, mirror, wins = best
+        _, key, mirror, wins, off, n_hit, avg = best
         placed.append({
             "type": u["type"], "key": key, "x": u["x"], "y": u["y"],
             "rot": u["rot"], "mirror": mirror,
             "n_window": len(wins),
+            "n_hit": n_hit,
             "avg_gap_dist_mm": round(avg),
             "match": "OK" if avg < 2000 else "확인요망",
             "windows": [{"symbol": p["symbol"], "gx": p["gx"], "gy": p["gy"],
@@ -120,8 +148,8 @@ def main():
     print(f"  기준층 세대 {len(units)}개 / 골조선 끊김 {len(gaps)}곳")
     for p in placed:
         if "windows" in p:
-            print(f"  [{p['type']}] rot{p['rot']:.0f}° mirror={p['mirror']} "
-                  f"창 {p['n_window']}개 / 골조선끊김 평균거리 "
+            print(f"  [{p['type']}] rot{p['rot']:.0f}° mir={p['mirror']} "
+                  f"창 {p['n_window']}개(붙음 {p.get('n_hit','?')}) 평균 "
                   f"{p['avg_gap_dist_mm']}mm [{p['match']}]")
         else:
             print(f"  [{p['type']}] {p['status']}")

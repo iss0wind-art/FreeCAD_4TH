@@ -9,34 +9,35 @@
       "rot": 0,
       "mirror": false,
       "n_window": 4,
-      "avg_gap_dist_mm": 920,
+      "n_hit": 2,
+      "avg_gap_dist_mm": 864,
       "match": "OK",
       "windows": [
         {
           "symbol": "PW6",
-          "gx": 553056.2,
-          "gy": 2116647.2,
+          "gx": 553214.0,
+          "gy": 2117454.3,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "AG1",
-          "gx": 550856.2,
-          "gy": 2116647.2,
+          "gx": 551014.0,
+          "gy": 2117454.3,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW5",
-          "gx": 556016.2,
-          "gy": 2116647.2,
+          "gx": 556174.0,
+          "gy": 2117454.3,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW5",
-          "gx": 558991.2,
-          "gy": 2115977.2,
+          "gx": 559149.0,
+          "gy": 2116784.3,
           "w_mm": null,
           "h_mm": null
         }
@@ -50,62 +51,63 @@
       "rot": 327.0,
       "mirror": true,
       "n_window": 8,
-      "avg_gap_dist_mm": 2012,
-      "match": "확인요망",
+      "n_hit": 3,
+      "avg_gap_dist_mm": 1499,
+      "match": "OK",
       "windows": [
         {
           "symbol": "PW4",
-          "gx": 561398.0,
-          "gy": 2114488.7,
+          "gx": 560576.9,
+          "gy": 2113418.5,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "AG1",
-          "gx": 562693.7,
-          "gy": 2113647.2,
+          "gx": 561872.6,
+          "gy": 2112577.0,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW5",
-          "gx": 564920.3,
-          "gy": 2112439.7,
+          "gx": 564099.2,
+          "gy": 2111369.5,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW6",
-          "gx": 566824.1,
-          "gy": 2111203.4,
+          "gx": 566003.0,
+          "gy": 2110133.2,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW1",
-          "gx": 570173.8,
-          "gy": 2119923.4,
+          "gx": 569352.7,
+          "gy": 2118853.2,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW2",
-          "gx": 567590.7,
-          "gy": 2121600.9,
+          "gx": 566769.6,
+          "gy": 2120530.7,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW3",
-          "gx": 575063.2,
-          "gy": 2116748.2,
+          "gx": 574242.1,
+          "gy": 2115678.0,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW3",
-          "gx": 572807.2,
-          "gy": 2118213.3,
+          "gx": 571986.1,
+          "gy": 2117143.1,
           "w_mm": null,
           "h_mm": null
         }
@@ -113,19 +115,69 @@
     },
     {
       "type": "59A",
-      "key": "59A_기본형",
+      "key": "59A_확장형",
       "x": 567509.1656350736,
       "y": 2101208.018384473,
       "rot": 37.99999999643346,
       "mirror": false,
-      "n_window": 1,
-      "avg_gap_dist_mm": 223,
+      "n_window": 8,
+      "n_hit": 3,
+      "avg_gap_dist_mm": 1522,
       "match": "OK",
       "windows": [
         {
+          "symbol": "PW4",
+          "gx": 561757.6,
+          "gy": 2108491.6,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
           "symbol": "AG1",
-          "gx": 563997.3,
-          "gy": 2108553.6,
+          "gx": 562975.0,
+          "gy": 2109442.8,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW5",
+          "gx": 565087.9,
+          "gy": 2110839.8,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW6",
+          "gx": 566876.7,
+          "gy": 2112237.3,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW1",
+          "gx": 570973.6,
+          "gy": 2103842.4,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW2",
+          "gx": 568546.5,
+          "gy": 2101946.2,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 575567.7,
+          "gy": 2107431.7,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 573448.0,
+          "gy": 2105775.6,
           "w_mm": null,
           "h_mm": null
         }
@@ -139,41 +191,42 @@
       "rot": 0,
       "mirror": false,
       "n_window": 5,
-      "avg_gap_dist_mm": 2296,
-      "match": "확인요망",
+      "n_hit": 1,
+      "avg_gap_dist_mm": 1787,
+      "match": "OK",
       "windows": [
         {
           "symbol": "PW7",
-          "gx": 539513.5,
-          "gy": 2111015.3,
+          "gx": 540276.2,
+          "gy": 2112014.3,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "AG1",
-          "gx": 536761.3,
-          "gy": 2112684.0,
+          "gx": 537524.0,
+          "gy": 2113683.0,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW4",
-          "gx": 542003.9,
-          "gy": 2111015.3,
+          "gx": 542766.6,
+          "gy": 2112014.3,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW3",
-          "gx": 544743.9,
-          "gy": 2112715.3,
+          "gx": 545506.6,
+          "gy": 2113714.3,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW3",
-          "gx": 547733.9,
-          "gy": 2112715.3,
+          "gx": 548496.6,
+          "gy": 2113714.3,
           "w_mm": null,
           "h_mm": null
         }
@@ -185,43 +238,44 @@
       "x": 576805.0298901971,
       "y": 2093007.386848148,
       "rot": 37.99999999643346,
-      "mirror": true,
+      "mirror": false,
       "n_window": 5,
-      "avg_gap_dist_mm": 1393,
+      "n_hit": 5,
+      "avg_gap_dist_mm": 57,
       "match": "OK",
       "windows": [
         {
           "symbol": "PW4",
-          "gx": 578209.6,
-          "gy": 2094104.7,
+          "gx": 579212.2,
+          "gy": 2091940.7,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "AG1",
-          "gx": 577346.8,
-          "gy": 2092313.9,
+          "gx": 577265.8,
+          "gy": 2091536.8,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW5",
-          "gx": 579320.7,
-          "gy": 2094972.8,
+          "gx": 580323.3,
+          "gy": 2092808.8,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW3",
-          "gx": 582448.4,
-          "gy": 2095728.7,
+          "gx": 581813.3,
+          "gy": 2095660.8,
           "w_mm": null,
           "h_mm": null
         },
         {
           "symbol": "PW3",
-          "gx": 584280.5,
-          "gy": 2097160.1,
+          "gx": 583645.4,
+          "gy": 2097092.2,
           "w_mm": null,
           "h_mm": null
         }
@@ -229,47 +283,20 @@
     },
     {
       "type": "59B",
-      "key": "59B_확장형",
+      "key": "59B_기본형",
       "x": 572877.801121127,
       "y": 2132172.574552843,
       "rot": 327.0,
-      "mirror": true,
-      "n_window": 5,
-      "avg_gap_dist_mm": 1562,
+      "mirror": false,
+      "n_window": 1,
+      "n_hit": 1,
+      "avg_gap_dist_mm": 0,
       "match": "OK",
       "windows": [
         {
-          "symbol": "PW4",
-          "gx": 574372.6,
-          "gy": 2131201.8,
-          "w_mm": null,
-          "h_mm": null
-        },
-        {
           "symbol": "AG1",
-          "gx": 572398.5,
-          "gy": 2131434.5,
-          "w_mm": null,
-          "h_mm": null
-        },
-        {
-          "symbol": "PW5",
-          "gx": 575555.2,
-          "gy": 2130433.9,
-          "w_mm": null,
-          "h_mm": null
-        },
-        {
-          "symbol": "PW3",
-          "gx": 577288.1,
-          "gy": 2127722.6,
-          "w_mm": null,
-          "h_mm": null
-        },
-        {
-          "symbol": "PW3",
-          "gx": 579238.0,
-          "gy": 2126456.4,
+          "gx": 570324.3,
+          "gy": 2131277.6,
           "w_mm": null,
           "h_mm": null
         }
