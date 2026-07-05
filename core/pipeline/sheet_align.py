@@ -98,23 +98,28 @@ def rigid_align(src, dst):
     dsamp = D[np.random.default_rng(0).choice(
         len(D), min(len(D), 1500), replace=False)] if len(D) > 1500 else D
 
+    # 반사(flip) 포함 4후보 — DXF import 시 y반전 대비
     best = None
-    for extra in (0, math.pi):
-        ang = a_d - a_s + extra
-        R = np.array([[math.cos(ang), -math.sin(ang)],
-                      [math.sin(ang), math.cos(ang)]])
-        Srot = S @ R.T
-        # 평균 최근접거리 (Srot → dsamp)
-        ssub = Srot[np.random.default_rng(1).choice(
-            len(Srot), min(len(Srot), 1500), replace=False)] \
-            if len(Srot) > 1500 else Srot
-        d = np.sqrt(((ssub[:, None, :] - dsamp[None, :, :]) ** 2)
-                    .sum(2)).min(1).mean()
-        if best is None or d < best[0]:
-            best = (d, R, ang)
-    err, R, ang = best
+    for flip in (1.0, -1.0):
+        F = np.array([[1.0, 0.0], [0.0, flip]])
+        Sf = S @ F.T
+        a_sf = pca_angle(Sf)
+        for extra in (0, math.pi):
+            ang = a_d - a_sf + extra
+            Rr = np.array([[math.cos(ang), -math.sin(ang)],
+                           [math.sin(ang), math.cos(ang)]])
+            R = Rr @ F                       # 회전∘반사 (강체+반사)
+            Srot = S @ R.T
+            ssub = Srot[np.random.default_rng(1).choice(
+                len(Srot), min(len(Srot), 1500), replace=False)] \
+                if len(Srot) > 1500 else Srot
+            d = np.sqrt(((ssub[:, None, :] - dsamp[None, :, :]) ** 2)
+                        .sum(2)).min(1).mean()
+            if best is None or d < best[0]:
+                best = (d, R)
+    err, R = best
     t = cd - R @ cs
-    return R, t, err, math.degrees(ang)
+    return R, t, err, math.degrees(math.atan2(R[1, 0], R[0, 0]))
 
 
 def make_transform():
