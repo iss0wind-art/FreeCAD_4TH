@@ -1,0 +1,279 @@
+{
+  "floor": "TYP",
+  "units": [
+    {
+      "type": "84A",
+      "key": "84A_기본형",
+      "x": 550856.19943401,
+      "y": 2111015.252324046,
+      "rot": 0,
+      "mirror": false,
+      "n_window": 4,
+      "avg_gap_dist_mm": 920,
+      "match": "OK",
+      "windows": [
+        {
+          "symbol": "PW6",
+          "gx": 553056.2,
+          "gy": 2116647.2,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "AG1",
+          "gx": 550856.2,
+          "gy": 2116647.2,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW5",
+          "gx": 556016.2,
+          "gy": 2116647.2,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW5",
+          "gx": 558991.2,
+          "gy": 2115977.2,
+          "w_mm": null,
+          "h_mm": null
+        }
+      ]
+    },
+    {
+      "type": "59A",
+      "key": "59A_확장형",
+      "x": 566483.6133553335,
+      "y": 2122319.830527282,
+      "rot": 327.0,
+      "mirror": true,
+      "n_window": 8,
+      "avg_gap_dist_mm": 2012,
+      "match": "확인요망",
+      "windows": [
+        {
+          "symbol": "PW4",
+          "gx": 561398.0,
+          "gy": 2114488.7,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "AG1",
+          "gx": 562693.7,
+          "gy": 2113647.2,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW5",
+          "gx": 564920.3,
+          "gy": 2112439.7,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW6",
+          "gx": 566824.1,
+          "gy": 2111203.4,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW1",
+          "gx": 570173.8,
+          "gy": 2119923.4,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW2",
+          "gx": 567590.7,
+          "gy": 2121600.9,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 575063.2,
+          "gy": 2116748.2,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 572807.2,
+          "gy": 2118213.3,
+          "w_mm": null,
+          "h_mm": null
+        }
+      ]
+    },
+    {
+      "type": "59A",
+      "key": "59A_기본형",
+      "x": 567509.1656350736,
+      "y": 2101208.018384473,
+      "rot": 37.99999999643346,
+      "mirror": false,
+      "n_window": 1,
+      "avg_gap_dist_mm": 223,
+      "match": "OK",
+      "windows": [
+        {
+          "symbol": "AG1",
+          "gx": 563997.3,
+          "gy": 2108553.6,
+          "w_mm": null,
+          "h_mm": null
+        }
+      ]
+    },
+    {
+      "type": "84D",
+      "key": "84D_확장형",
+      "x": 536761.2707829165,
+      "y": 2111015.252324046,
+      "rot": 0,
+      "mirror": false,
+      "n_window": 5,
+      "avg_gap_dist_mm": 2296,
+      "match": "확인요망",
+      "windows": [
+        {
+          "symbol": "PW7",
+          "gx": 539513.5,
+          "gy": 2111015.3,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "AG1",
+          "gx": 536761.3,
+          "gy": 2112684.0,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW4",
+          "gx": 542003.9,
+          "gy": 2111015.3,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 544743.9,
+          "gy": 2112715.3,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 547733.9,
+          "gy": 2112715.3,
+          "w_mm": null,
+          "h_mm": null
+        }
+      ]
+    },
+    {
+      "type": "59B",
+      "key": "59B_확장형",
+      "x": 576805.0298901971,
+      "y": 2093007.386848148,
+      "rot": 37.99999999643346,
+      "mirror": true,
+      "n_window": 5,
+      "avg_gap_dist_mm": 1393,
+      "match": "OK",
+      "windows": [
+        {
+          "symbol": "PW4",
+          "gx": 578209.6,
+          "gy": 2094104.7,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "AG1",
+          "gx": 577346.8,
+          "gy": 2092313.9,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW5",
+          "gx": 579320.7,
+          "gy": 2094972.8,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 582448.4,
+          "gy": 2095728.7,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 584280.5,
+          "gy": 2097160.1,
+          "w_mm": null,
+          "h_mm": null
+        }
+      ]
+    },
+    {
+      "type": "59B",
+      "key": "59B_확장형",
+      "x": 572877.801121127,
+      "y": 2132172.574552843,
+      "rot": 327.0,
+      "mirror": true,
+      "n_window": 5,
+      "avg_gap_dist_mm": 1562,
+      "match": "OK",
+      "windows": [
+        {
+          "symbol": "PW4",
+          "gx": 574372.6,
+          "gy": 2131201.8,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "AG1",
+          "gx": 572398.5,
+          "gy": 2131434.5,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW5",
+          "gx": 575555.2,
+          "gy": 2130433.9,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 577288.1,
+          "gy": 2127722.6,
+          "w_mm": null,
+          "h_mm": null
+        },
+        {
+          "symbol": "PW3",
+          "gx": 579238.0,
+          "gy": 2126456.4,
+          "w_mm": null,
+          "h_mm": null
+        }
+      ]
+    }
+  ]
+}
