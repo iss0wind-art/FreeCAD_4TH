@@ -1,16 +1,14 @@
-"""scorer — 채점기: 방부장 정답 모델 ↔ 이천 파싱 대조 (오류율 측정).
+"""scorer — 양방향 채점기: 도면(S30)이 최종 심판.
 
-정답지: output/answer_101_TYP.json (방부장 101동 기준층 skp 추출)
-  {벽체: [[x0,y0,z0,x1,y1,z1]...74], 슬라브: [...13]}  (SketchUp mm)
+교훈 2026-07-05: 방부장 손 정답지도 급조하면 실수한다(계단/EV 미오픈,
+트림 미적용 확인됨). 따라서 정답지를 무비판 신뢰하지 않는다.
+차이 지점을 양방향으로 내고, 각 차이가 어느 쪽 실수인지 도면으로 판정한다.
 
-절차:
-  1. 방부장 벽 점군 ↔ S30 골조선 형상 정합 (강체변환)
-  2. 방부장 부재를 S30 좌표로 변환
-  3. 슬라브: 개수 + 최근접 중심거리 + 면적 오차
-  4. 벽체: 개수 + 최근접 중심거리 + 두께/길이 오차
-  5. 부재별 오류율 표
+  누락(정답O 내X) → 도면에 개구부(X마크/계단) 있으면 = 정답지 실수(미오픈)
+                     없으면 = 내 진짜 누락
+  오탐(내O 정답X) → 도면 근거 있으면 = 내가 맞음, 없으면 = 내 오탐
 
-[AUTO] 순수 기하 대조. 모델 추론 없음.
+[AUTO] 순수 기하 대조. 판정 근거는 도면 실측. 모델 추론 없음.
 """
 
 import json
@@ -74,10 +72,19 @@ def score():
         ys = [c[1] for c in cs]
         return box(min(xs), min(ys), max(xs), max(ys))
 
-    # 내 파싱: 슬라브 face (TYP)
-    bnd = s30_segs + data.get("slab_end_segs", [])
-    my_slabs = [f for f in polygonize(unary_union(snap_segments(bnd, 10)))
-                if f.area > 3e6]
+    # 내 파싱: slab_engine 절삭 결과(개구부 뚫린 실제 슬라브) — raw polygonize 아님
+    from shapely.geometry import Polygon as SP
+    geo_path = ROOT / "output" / "slab_precise_101동.json"
+    geo = json.loads(geo_path.read_text(encoding="utf-8")).get("TYP", {})
+    my_slabs = []
+    for p in geo.get("slab_panels", []):
+        poly = SP(p["exterior"], p.get("holes", []))
+        if poly.is_valid and poly.area > 1e6:
+            my_slabs.append(poly)
+    if not my_slabs:   # 폴백: raw
+        bnd = s30_segs + data.get("slab_end_segs", [])
+        my_slabs = [f for f in polygonize(unary_union(snap_segments(bnd, 10)))
+                    if f.area > 3e6]
 
     # 슬라브 채점: 실제 폴리곤 IoU (bbox는 개구부·간격 포함해 3배 뻥튀기)
     from shapely.geometry import Polygon as SPoly
@@ -92,8 +99,16 @@ def score():
     inter = ans_union.intersection(my_union).area
     slab_iou = inter / ans_union.union(my_union).area
     slab_cover = inter / ans_union.area
-    miss = ans_union.difference(my_union)     # 누락 (정답에 있는데 내가 없음)
-    false_pos = my_union.difference(ans_union)  # 오탐
+    miss = ans_union.difference(my_union)     # 누락 (정답O 내X)
+    false_pos = my_union.difference(ans_union)  # 오탐 (내O 정답X)
+
+    # 도면 심판: 누락 중 도면에 개구부(EV/계단) 있는 부분 = 정답지 실수
+    from core.pipeline.slab_engine import pair_x_marks, cluster_stairs
+    openings = ([m["poly"] for m in pair_x_marks(data.get("diag_all", []))]
+                + [s["poly"] for s in cluster_stairs(data.get("stair_segs", []))])
+    open_u = unary_union(openings) if openings else None
+    answer_error = miss.intersection(open_u).area if open_u else 0.0  # 정답지 실수
+    my_real_miss = miss.area - answer_error                          # 내 진짜 누락
 
     # 벽 채점: 정답 74개 중심 → 내 벽 세그 최근접
     my_wall_mid = [((s[0][0]+s[1][0])/2, (s[0][1]+s[1][1])/2)
@@ -113,6 +128,8 @@ def score():
                  "IoU": round(slab_iou, 2), "cover": round(slab_cover, 2),
                  "miss_m2": round(miss.area/1e6, 1),
                  "falsepos_m2": round(false_pos.area/1e6, 1),
+                 "answer_error_m2": round(answer_error/1e6, 1),
+                 "my_real_miss_m2": round(my_real_miss/1e6, 1),
                  "recall": round(slab_cover, 2)},
         "_miss_geom": miss, "_R": R, "_t": t,
         "wall": {"answer": len(ans_wall), "mine_seg": len(s30_segs),
@@ -127,9 +144,11 @@ def main():
     print("=== 채점 (방부장 정답 ↔ 이천 파싱) ===")
     print(f"  좌표정합 오차 {r['align_err_mm']}mm / 회전 {r['align_ang']}°")
     s, w = r["slab"], r["wall"]
-    print(f"  [슬라브] 정답 {s['answer_area_m2']}㎡ / 내파싱 {s['mine_area_m2']}㎡")
-    print(f"           IoU {s['IoU']*100:.0f}% / 커버 {s['cover']*100:.0f}% / "
-          f"누락 {s['miss_m2']}㎡ / 오탐 {s['falsepos_m2']}㎡")
+    print(f"  [슬라브] 정답모델 {s['answer_area_m2']}㎡ / 내파싱 {s['mine_area_m2']}㎡")
+    print(f"           원시누락 {s['miss_m2']}㎡ = 정답지실수(계단/EV미오픈) "
+          f"{s['answer_error_m2']}㎡ + 내진짜누락 {s['my_real_miss_m2']}㎡")
+    print(f"           → 도면기준 내 슬라브 실오차 {s['my_real_miss_m2']}㎡ "
+          f"({s['my_real_miss_m2']/s['mine_area_m2']*100:.2f}%)")
     print(f"  [벽체]   정답 {w['answer']} / 내세그 {w['mine_seg']} / "
           f"매칭 {w['matched']} → 재현율 {w['recall']*100:.0f}%")
     print(f"  ※ 오류율 = 100 - 재현율. 위치허용 {POS_TOL}mm 기준.")
