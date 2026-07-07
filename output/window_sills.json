@@ -1,0 +1,137 @@
+{
+  "file_a50": "A50-001~018 단위세대 창호일람표.dxf",
+  "file_a30": "A30-101~118 단위세대 발코니 평,입,단면도.dxf",
+  "n": 19,
+  "n_resolved": 19,
+  "n_from_drawing": 12,
+  "n_convention": 7,
+  "a30_data": {
+    "balcony_sill": 1200,
+    "distribution": {
+      "120": 56,
+      "40": 14,
+      "60": 10,
+      "50": 3,
+      "-50": 1,
+      "80": 8,
+      "-100": 7,
+      "10": 1
+    }
+  },
+  "sills": {
+    "PW6": {
+      "sill_mm": 900,
+      "method": "convention",
+      "type": "PW",
+      "h_m": 1.15
+    },
+    "AG1": {
+      "sill_mm": 1200,
+      "method": "dim",
+      "type": "AG",
+      "h_m": 2.19
+    },
+    "FSD1": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "FSD",
+      "h_m": 2.2
+    },
+    "PD4": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "PD",
+      "h_m": 2.0
+    },
+    "PD2": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "PD",
+      "h_m": 2.2
+    },
+    "PW5": {
+      "sill_mm": 900,
+      "method": "convention",
+      "type": "PW",
+      "h_m": 0.45
+    },
+    "PD1": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "PD",
+      "h_m": 2.18
+    },
+    "PW4": {
+      "sill_mm": 900,
+      "method": "convention",
+      "type": "PW",
+      "h_m": 1.15
+    },
+    "SD1": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "SD",
+      "h_m": 2.1
+    },
+    "PW1": {
+      "sill_mm": 900,
+      "method": "convention",
+      "type": "PW",
+      "h_m": 2.0
+    },
+    "PW3": {
+      "sill_mm": 900,
+      "method": "convention",
+      "type": "PW",
+      "h_m": 1.15
+    },
+    "PW2": {
+      "sill_mm": 900,
+      "method": "convention",
+      "type": "PW",
+      "h_m": 2.0
+    },
+    "PD3": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "PD",
+      "h_m": 2.3
+    },
+    "WD1": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "WD",
+      "h_m": 2.3
+    },
+    "WD2": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "WD",
+      "h_m": 2.3
+    },
+    "PW7": {
+      "sill_mm": 900,
+      "method": "convention",
+      "type": "PW",
+      "h_m": 1.15
+    },
+    "PD5": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "PD",
+      "h_m": 2.3
+    },
+    "PD6": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "PD",
+      "h_m": 2.15
+    },
+    "PD7": {
+      "sill_mm": 0,
+      "method": "door_rule",
+      "type": "PD",
+      "h_m": 2.0
+    }
+  }
+}
