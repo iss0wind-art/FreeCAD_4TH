@@ -1,0 +1,204 @@
+{
+  "floor": "TYP",
+  "timestamp": "2026-07-09T15:45:41",
+  "source": "S30-001~010-101동 구조평면도.dxf",
+  "status": "OK(확정캐시 101동 2026-07-09) — keep 807세그 적용",
+  "wall_style": {
+    "wall_segments": 807,
+    "method": "양면 외곽선(더블라인)"
+  },
+  "phase3_order": "classify_faces(①폐합→②내부검사) → boolean_cut(③제외) @ core/pipeline/slab_engine.py",
+  "snap_evidence": [
+    {
+      "snap_mm": 0,
+      "faces": 308,
+      "max_face_m2": 199.46,
+      "total_m2": 737.7
+    },
+    {
+      "snap_mm": 5,
+      "faces": 298,
+      "max_face_m2": 132.75,
+      "total_m2": 870.4
+    },
+    {
+      "snap_mm": 10,
+      "faces": 299,
+      "max_face_m2": 132.75,
+      "total_m2": 870.4
+    },
+    {
+      "snap_mm": 20,
+      "faces": 303,
+      "max_face_m2": 132.75,
+      "total_m2": 870.4
+    }
+  ],
+  "openings": [
+    {
+      "type": "EV",
+      "opening_m2": 5.64,
+      "removed_m2": 5.64,
+      "cut": "성공"
+    },
+    {
+      "type": "EV",
+      "opening_m2": 3.61,
+      "removed_m2": 3.59,
+      "cut": "성공"
+    },
+    {
+      "type": "EV",
+      "opening_m2": 3.4,
+      "removed_m2": 3.4,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.49,
+      "removed_m2": 0.49,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.33,
+      "removed_m2": 0.33,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.52,
+      "removed_m2": 0.52,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.57,
+      "removed_m2": 0.57,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 1.34,
+      "removed_m2": 1.09,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 1.02,
+      "removed_m2": 1.02,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.89,
+      "removed_m2": 0.89,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 1.0,
+      "removed_m2": 0.75,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 1.04,
+      "removed_m2": 0.99,
+      "cut": "성공"
+    },
+    {
+      "type": "SHAFT",
+      "opening_m2": 0.95,
+      "removed_m2": 0.92,
+      "cut": "성공"
+    },
+    {
+      "type": "STAIR",
+      "opening_m2": 12.61,
+      "removed_m2": 10.7,
+      "cut": "성공"
+    },
+    {
+      "type": "STAIR",
+      "opening_m2": 12.87,
+      "removed_m2": 12.87,
+      "cut": "성공"
+    },
+    {
+      "type": "STAIR",
+      "opening_m2": 12.61,
+      "removed_m2": 10.7,
+      "cut": "성공"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.12,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.04,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    },
+    {
+      "type": "PD",
+      "opening_m2": 0.04,
+      "removed_m2": 0.0,
+      "cut": "성공(자체 폐합으로 기제외)"
+    }
+  ],
+  "snap_mm_adopted": 5,
+  "opening_boundary": {
+    "face_내벽": 4,
+    "bbox_폴백": 12
+  },
+  "overlap_check": {
+    "panels_checked": 14,
+    "violations": 0,
+    "detail": []
+  },
+  "faces_total": 298,
+  "slab_panels": 14,
+  "wall_slivers": 155,
+  "rejected_outer_faces": 3,
+  "openings_found": {
+    "EV_xmark": 3,
+    "SHAFT_xmark": 10,
+    "PD_sopen": 3,
+    "stair_clusters": 3
+  },
+  "stair_zones": [
+    {
+      "x0": 579593.1391400951,
+      "y0": 2101337.044079504,
+      "x1": 582971.7958861802,
+      "y1": 2104639.867143164,
+      "angle": 38.0,
+      "n_lines": 105
+    },
+    {
+      "x0": 545173.9805179486,
+      "y0": 2117554.305903958,
+      "x1": 547773.9805179576,
+      "y1": 2119914.3059039623,
+      "angle": 0.0,
+      "n_lines": 104
+    },
+    {
+      "x0": 566383.5650980397,
+      "y0": 2131058.650722814,
+      "x1": 569740.5288903292,
+      "y1": 2134315.643800703,
+      "angle": 57.0,
+      "n_lines": 98
+    }
+  ],
+  "area_before_m2": 808.33,
+  "area_after_m2": 753.86,
+  "area_cut_m2": 54.47,
+  "cut_consistency": "일치",
+  "precondition": "PASS"
+}

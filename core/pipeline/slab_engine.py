@@ -112,6 +112,86 @@ def check_precondition_for_slab(floor: str) -> bool:
     return True
 
 
+VERDICTS_PATH = ROOT / "output" / "confirmed_verdicts_101.json"
+# 101동 벽체 재파싱 확정캐시(2026-07-09 방부장 검수) — A-CEN 중심선·00_SLAB END 단부선·
+# 근거없는 브리지를 사람이 골조대조_101/*_refilter.png로 검수해 확정한 keep 목록.
+# 원 판정 로직(불연속 조각 판정)은 세션 간 유실 — 결과 재현이 우선이므로 캐시를 그대로 적용.
+WALL_KEEP_CACHE_PATH = ROOT / "output" / "trace_wall_filtered_101.json"
+
+
+# [AUTO] 순수 규칙 연산 — 판정 DB 조회, 모델 추론 없음
+def _load_wall_verdicts(floor):
+    """confirmed_verdicts_101.json에서 해당 층의 phantom_wall_remove 판정 로드."""
+    if not VERDICTS_PATH.exists():
+        return []
+    verdicts = json.loads(VERDICTS_PATH.read_text(encoding="utf-8")).get("verdicts", [])
+    return [v for v in verdicts
+            if v.get("kind") == "phantom_wall_remove" and floor in v.get("floors", [])]
+
+
+# [AUTO] 순수 기하 연산 — 좌표 매칭 벽 브리지 거부(veto)
+def _veto_phantom_walls(bridges, floor):
+    """방부장 확정판정 DB(원칙4: 재생성 시 자동 적용) — 근거 없는 벽 브리지 제거.
+
+    seg_mm은 FLOOR_ANCHOR 기준 상대좌표(overlay_prep 표기와 동일)이므로
+    앵커를 더해 절대좌표로 환산 후 비교한다.
+    """
+    vetoes = _load_wall_verdicts(floor)
+    if not vetoes or floor not in FLOOR_ANCHOR:
+        return bridges
+    ax, ay = FLOOR_ANCHOR[floor]
+    out = []
+    for (p0, p1) in bridges:
+        vetoed = False
+        for v in vetoes:
+            x1, y1, x2, y2 = v["seg_mm"]
+            tol = v.get("tol_mm", 100)
+            va, vb = (x1 + ax, y1 + ay), (x2 + ax, y2 + ay)
+            d_direct = (math.hypot(p0[0] - va[0], p0[1] - va[1])
+                        + math.hypot(p1[0] - vb[0], p1[1] - vb[1]))
+            d_cross = (math.hypot(p0[0] - vb[0], p0[1] - vb[1])
+                       + math.hypot(p1[0] - va[0], p1[1] - va[1]))
+            if min(d_direct, d_cross) <= tol * 2:
+                vetoed = True
+                break
+        if not vetoed:
+            out.append((p0, p1))
+    return out
+
+
+# [AUTO] 순수 규칙 연산 — 확정캐시 조회, 모델 추론 없음
+def _load_confirmed_wall_segments(floor):
+    """WALL_KEEP_CACHE_PATH의 keep 목록을 절대좌표로 환산해 반환. 없으면 None."""
+    if not WALL_KEEP_CACHE_PATH.exists() or floor not in FLOOR_ANCHOR:
+        return None
+    cache = json.loads(WALL_KEEP_CACHE_PATH.read_text(encoding="utf-8"))
+    rec = cache.get(floor)
+    if not rec or "keep" not in rec:
+        return None
+    ax, ay = FLOOR_ANCHOR[floor]
+    return [((x1 + ax, y1 + ay), (x2 + ax, y2 + ay)) for x1, y1, x2, y2 in rec["keep"]]
+
+
+# [AUTO] 규칙 연산 — 확정캐시로 wall_segs·boundary_segs 치환 (해당 부분만 delta 교체)
+def _apply_confirmed_wall_cache(data, floor):
+    """101동 재파싱 확정캐시가 있으면 원시 wall_segs를 keep 목록으로 대체.
+
+    boundary_segs는 원본 wall_segs 항목만 제거하고 keep 목록을 추가한다
+    (00_SLAB END·S-OPEN·보 등 다른 소스는 그대로 유지).
+    """
+    confirmed = _load_confirmed_wall_segments(floor)
+    if confirmed is None:
+        return
+    old_wall = data["wall_segs"]
+    remaining = list(data["boundary_segs"])
+    for seg in old_wall:
+        if seg in remaining:
+            remaining.remove(seg)
+    data["boundary_segs"] = remaining + confirmed
+    data["wall_segs"] = confirmed
+    data["status"] = f"OK(확정캐시 101동 2026-07-09) — keep {len(confirmed)}세그 적용"
+
+
 # ── DXF 수집 ─────────────────────────────────────────────────────────────────
 
 def _in_sheet(x, y, floor):
@@ -283,12 +363,16 @@ def collect_floor_data(doc, floor):
     if not data["wall_segs"] and yellow:
         win_bridges = bridge_collinear(yellow, max_gap=2600,
                                        ang_tol=2.0, lateral_tol=60)
+        win_bridges = _veto_phantom_walls(win_bridges, floor)
         data["wall_segs"] = yellow + win_bridges
         data["window_bridges"] = win_bridges
         data["boundary_segs"] += data["wall_segs"]
         data["status"] = ("OK(골조선) — XR노란선 " + str(len(yellow))
                           + "세그 + 창구간 브리지 " + str(len(win_bridges))
                           + "본. 창 공제는 Phase 5 창호와 결합 예정")
+
+    # 3.5) 101동 벽체 재파싱 확정캐시 적용 (2026-07-09 방부장 검수) — 있으면 최종 우선.
+    _apply_confirmed_wall_cache(data, floor)
 
     # 4) 보 끊김 연결 [AUTO] — 벽체선과 동일 원칙의 공선 브리징.
     data["bridge_segs"] = bridge_collinear(data["beam_segs"])
