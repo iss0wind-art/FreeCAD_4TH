@@ -1,0 +1,252 @@
+{
+ "dong": "101",
+ "source": "A40-008~239 동입면도.dxf",
+ "method": "높이(SILL/HEAD)=입면 A-WALL-ELE 개구부 실측 / 사이즈(W,H)=일람표 A50과 대조",
+ "verified": "기준층 블록원점=층선(y0~2830), 개구부=A-WALL-ELE 레이어",
+ "floor_height_mm": 2830,
+ "directions": {
+  "배면도": {
+   "n_floors": 13,
+   "floor_pitch_mm": 2830,
+   "n_windows_per_floor": 7,
+   "windows_per_floor": [
+    {
+     "block": "2280 그릴창(24-0110)",
+     "code": "AG1",
+     "x_center": 2145.0,
+     "opening_W_mm": 1020.0,
+     "sill_mm": 210.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2210.0
+    },
+    {
+     "block": "1160 코어창-2(24-0110)",
+     "code": null,
+     "x_center": 23350.0,
+     "opening_W_mm": 620.0,
+     "sill_mm": 1240.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 1180.0
+    },
+    {
+     "block": "2250 코어창-1(24-0110)",
+     "code": null,
+     "x_center": 25060.0,
+     "opening_W_mm": 1220.0,
+     "sill_mm": 150.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2270.0
+    },
+    {
+     "block": "2280 그릴창(24-0110)",
+     "code": "AG1",
+     "x_center": 33795.0,
+     "opening_W_mm": 1020.0,
+     "sill_mm": 210.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2210.0
+    },
+    {
+     "block": "2280 그릴창(24-0110)",
+     "code": "AG1",
+     "x_center": 38852.4,
+     "opening_W_mm": 1020.0,
+     "sill_mm": 210.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2210.0
+    },
+    {
+     "block": "2250 코어창-1(24-0110)",
+     "code": null,
+     "x_center": 51327.4,
+     "opening_W_mm": 1220.0,
+     "sill_mm": 150.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2270.0
+    },
+    {
+     "block": "1160 코어창-2(24-0110)",
+     "code": null,
+     "x_center": 53727.4,
+     "opening_W_mm": 620.0,
+     "sill_mm": 2655.0,
+     "head_mm": 3835.0,
+     "opening_H_mm": 1180.0
+    }
+   ]
+  },
+  "좌측면도": {
+   "n_floors": 12,
+   "floor_pitch_mm": 2830,
+   "n_windows_per_floor": 0,
+   "windows_per_floor": []
+  },
+  "정면도": {
+   "n_floors": 13,
+   "floor_pitch_mm": 2830,
+   "n_windows_per_floor": 10,
+   "windows_per_floor": [
+    {
+     "block": "2280 그릴창(24-0110)",
+     "code": "AG1",
+     "x_center": 1345.0,
+     "opening_W_mm": 1020.0,
+     "sill_mm": 210.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2210.0
+    },
+    {
+     "block": "84 PW1",
+     "code": "PW1",
+     "x_center": 4580.0,
+     "opening_W_mm": 3320.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "84 PW2",
+     "code": "PW2",
+     "x_center": 7930.0,
+     "opening_W_mm": 1620.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "84 PW1",
+     "code": "PW1",
+     "x_center": 20900.0,
+     "opening_W_mm": 3320.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "84 PW2",
+     "code": "PW2",
+     "x_center": 24380.0,
+     "opening_W_mm": 1620.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "84 PW2",
+     "code": "PW2",
+     "x_center": 31280.0,
+     "opening_W_mm": 1620.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "59 PW1",
+     "code": "PW1",
+     "x_center": 32740.0,
+     "opening_W_mm": 3020.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "59 PW2",
+     "code": "PW2",
+     "x_center": 42380.0,
+     "opening_W_mm": 1620.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "59 PW1",
+     "code": "PW1",
+     "x_center": 45420.0,
+     "opening_W_mm": 3020.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "2280 그릴창(24-0110)",
+     "code": "AG1",
+     "x_center": 51885.0,
+     "opening_W_mm": 1020.0,
+     "sill_mm": 210.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2210.0
+    }
+   ]
+  },
+  "우측면도": {
+   "n_floors": 13,
+   "floor_pitch_mm": 2830,
+   "n_windows_per_floor": 7,
+   "windows_per_floor": [
+    {
+     "block": "1160 코어창-2(24-0110)",
+     "code": null,
+     "x_center": 9380.0,
+     "opening_W_mm": 620.0,
+     "sill_mm": 1240.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 1180.0
+    },
+    {
+     "block": "2250 코어창-1(24-0110)",
+     "code": null,
+     "x_center": 11090.0,
+     "opening_W_mm": 1220.0,
+     "sill_mm": 150.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2270.0
+    },
+    {
+     "block": "2280 그릴창(24-0110)",
+     "code": "AG1",
+     "x_center": 19825.0,
+     "opening_W_mm": 1020.0,
+     "sill_mm": 210.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2210.0
+    },
+    {
+     "block": "84 PW2",
+     "code": "PW2",
+     "x_center": 28101.7,
+     "opening_W_mm": 1620.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "59 PW1",
+     "code": "PW1",
+     "x_center": 29561.7,
+     "opening_W_mm": 3020.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "84 PW2",
+     "code": "PW2",
+     "x_center": 40821.7,
+     "opening_W_mm": 1620.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    },
+    {
+     "block": "59 PW1",
+     "code": "PW1",
+     "x_center": 42241.7,
+     "opening_W_mm": 3020.0,
+     "sill_mm": 400.0,
+     "head_mm": 2420.0,
+     "opening_H_mm": 2020.0
+    }
+   ]
+  }
+ }
+}

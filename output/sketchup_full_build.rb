@@ -187,5 +187,5 @@ ovl['floors'].each do |fl, f|
 end
 
 model.active_view.zoom_extents
-ok = model.save('D:/Git/FreeCAD_4TH/output/101동_골조_파이프라인_2026-07-02.skp')
+ok = model.save('D:/Git/FreeCAD_4TH/output/101동_골조_창호_v6.skp')
 puts "저장: #{ok}"
