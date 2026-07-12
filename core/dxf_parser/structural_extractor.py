@@ -424,6 +424,6 @@ def extract_structural(dxf_path: str,
                        encoding: str = 'cp949',
                        clip=None,
                        **kwargs) -> StructuralData:
-    """파일 경로에서 직접 추출."""
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    from core.dxf_parser.encoding_helper import safe_read_dxf
+    doc = safe_read_dxf(dxf_path, default_encoding=encoding)
     return StructuralExtractor(**kwargs).extract(doc, clip=clip)

@@ -158,8 +158,9 @@ def parse_structural_frame(
     Returns:
         FrameData — 골조 데이터 전체
     """
-    # 1. DXF 로드
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    # 1. DXF 로드 (바이너리 바이트 스트림 가로채기 적용)
+    from core.dxf_parser.encoding_helper import safe_read_dxf
+    doc = safe_read_dxf(dxf_path, default_encoding=encoding)
 
     # 2. 골조 부재 추출
     extractor = StructuralExtractor(

@@ -137,7 +137,8 @@ def scan(dxf_path: str, encoding: str = 'cp949',
         encoding: 인코딩 (한국 도면 = cp949)
         clip: (xmin,ymin,xmax,ymax) — 특정 영역만 집계 (None=전체)
     """
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    from core.dxf_parser.encoding_helper import safe_read_dxf
+    doc = safe_read_dxf(dxf_path, default_encoding=encoding)
     msp = doc.modelspace()
 
     result = ScanResult()
@@ -217,7 +218,8 @@ def quick_text_grep(dxf_path: str, pattern: str,
     """
     import re
     pat = re.compile(pattern, re.IGNORECASE)
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    from core.dxf_parser.encoding_helper import safe_read_dxf
+    doc = safe_read_dxf(dxf_path, default_encoding=encoding)
     msp = doc.modelspace()
     results = []
 

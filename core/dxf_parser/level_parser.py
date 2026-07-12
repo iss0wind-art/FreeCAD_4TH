@@ -128,7 +128,8 @@ def parse_dxf(dxf_path: str, encoding: str = 'cp949',
     Returns:
         LevelSet — 층 SL 딕셔너리 + 단차 목록
     """
-    doc = ezdxf.readfile(dxf_path, encoding=encoding)
+    from core.dxf_parser.encoding_helper import safe_read_dxf
+    doc = safe_read_dxf(dxf_path, default_encoding=encoding)
     msp = doc.modelspace()
     return parse_msp(msp, clip)
 

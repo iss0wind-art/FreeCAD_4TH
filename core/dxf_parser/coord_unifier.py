@@ -113,7 +113,8 @@ class CoordUnifier:
             dong_clip: 해당 동 영역 제한 (xmin,ymin,xmax,ymax)
             manual_anchor: (x, y) 수동 앵커 — 자동 검출 실패 시 사용
         """
-        doc = ezdxf.readfile(dxf_path, encoding=encoding)
+        from core.dxf_parser.encoding_helper import safe_read_dxf
+        doc = safe_read_dxf(dxf_path, default_encoding=encoding)
         anchor = self._auto_detect(doc, dong, floor, sheet_id, dong_clip)
 
         if anchor is None and manual_anchor is not None:
