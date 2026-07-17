@@ -64,6 +64,8 @@ def main():
         beam_segs = data.get("beam_segs", [])
         bridge_segs = data.get("bridge_segs", [])
         slab_end_segs = data.get("slab_end_segs", [])
+        # 창구간 벽 브리지 = 파싱 추론선 (방부장 검수: 원본선과 색 구분 필수)
+        window_bridges = data.get("window_bridges", [])
         g = geo.get(fl, {})
         errors = []
 
@@ -107,6 +109,7 @@ def main():
             "trace_wall": _seg_shift(data["wall_segs"], anc),
             "trace_beam": _seg_shift(beam_segs, anc),
             "trace_bridge": _seg_shift(bridge_segs, anc),
+            "trace_window_bridge": _seg_shift(window_bridges, anc),
             "trace_slab_end": _seg_shift(slab_end_segs, anc),
             "trace_slab": [
                 [[round(x - ax, 1), round(y - ay, 1)]
@@ -116,7 +119,8 @@ def main():
         }
         f = out["floors"][fl]
         print(f"[{fl}] 덧그림: 벽 {len(f['trace_wall'])} / 보 {len(f['trace_beam'])} / "
-              f"연결선 {len(f['trace_bridge'])} / 단부선 {len(f['trace_slab_end'])} / "
+              f"연결선 {len(f['trace_bridge'])} / 창브리지 {len(f['trace_window_bridge'])} / "
+              f"단부선 {len(f['trace_slab_end'])} / "
               f"슬라브링 {len(f['trace_slab'])} / 오류 {len(errors)}건")
 
     OUT_PATH.write_text(json.dumps(out, ensure_ascii=False),
