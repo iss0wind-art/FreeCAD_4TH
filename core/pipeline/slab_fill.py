@@ -24,8 +24,8 @@ from datetime import datetime
 from pathlib import Path
 
 import ezdxf
-from shapely.geometry import LineString, Polygon
-from shapely.ops import unary_union
+from shapely.geometry import LineString, Point, Polygon
+from shapely.ops import polygonize, unary_union
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from core.pipeline.slab_engine import (  # noqa: E402
@@ -47,27 +47,70 @@ def outer_plate(segs, buf=GAP_BRIDGE_MM):
     """
     if not segs:
         return None
-    band = unary_union([LineString([a, b]).buffer(buf) for a, b in segs])
+    # mitre 조인 — 둥근 모서리가 20~180mm 자투리를 수백 개 만들던 문제 차단
+    # (방부장 2026-07-20 지적: "전혀 뜬금없는 초록 짜투리")
+    band = unary_union([LineString([a, b]).buffer(buf, join_style=2, mitre_limit=2.0)
+                        for a, b in segs])
     if band.geom_type == "MultiPolygon":
         band = max(band.geoms, key=lambda g: g.area)   # 최대 연결성분(=건물)
     plate = Polygon(band.exterior)                     # 내부 홀 전부 메움
-    plate = plate.buffer(-buf)                         # 버퍼분 되돌림
+    plate = plate.buffer(-buf, join_style=2, mitre_limit=2.0)
     if plate.geom_type == "MultiPolygon":              # 침식으로 갈라지면 본체만
         plate = max(plate.geoms, key=lambda g: g.area)
-    return plate
+    return plate.simplify(30)                          # 잔여 미세 정점 정리 [T]
+
+
+# [AUTO] 순수 기하 — 골조선을 셀(방)로 분할. 개구부 경계의 진짜 출처.
+def wall_cells(segs):
+    """벽선 polygonize → 닫힌 셀 목록. 방부장 지시(2026-07-20):
+    'X마크·계단선은 신호일 뿐, 슬라브선은 실제 골조선에서 따와야 한다.'
+    """
+    if not segs:
+        return []
+    noded = unary_union([LineString([a, b]) for a, b in segs])
+    return [c for c in polygonize(noded) if c.area > 1e5]   # 0.1㎡ 미만 제외
+
+
+CELL_RATIO_MAX = 3.0     # 셀이 씨앗(X마크)보다 이 배수 넘게 크면 벽 미폐합으로 판단 [T]
+CELL_AREA_MAX = 40e6     # 절대 상한 40㎡ — 개구부가 이보다 클 수 없음 [T]
+
+
+# [AUTO] 순수 규칙 — 씨앗을 품은 최소 셀. 단, 벽 미폐합으로 셀이 비대하면 거부.
+def cell_at(cells, seed):
+    hits = [c for c in cells if c.contains(seed.centroid)]
+    if not hits:
+        return None
+    cell = min(hits, key=lambda c: c.area)
+    if cell.area > CELL_AREA_MAX or cell.area > seed.area * CELL_RATIO_MAX:
+        return None      # 벽이 안 닫혀 셀이 건물 전체로 번짐 → 폴백
+    return cell
 
 
 # [AUTO] 순수 규칙 — 도면 표기에서 비피복 구역 수집
-def uncovered_zones(data):
-    """안 덮이는 곳 4종 수집. 반환 [(kind, polygon, note)]."""
+def uncovered_zones(data, cells):
+    """안 덮이는 곳 수집. X마크·계단선은 '씨앗'일 뿐 — 경계는 골조 셀에서 확정.
+
+    반환 [(kind, polygon, note, src)] · src=cell(골조선 확정) | bbox(미확정 폴백)
+    """
     zones = []
+    seeds = []
     for m in pair_x_marks(data.get("diag_all", [])):
-        kind = "EV실" if m["kind"] == "EV" else "X표시(샤프트·설비)"
-        zones.append((kind, m["poly"], f"{round(m['w'])}x{round(m['h'])}mm"))
+        seeds.append(("EV·샤프트(X표시)", m["poly"], f"X마크 {round(m['w'])}x{round(m['h'])}mm"))
     for s in cluster_stairs(data.get("stair_segs", [])):
-        zones.append(("계단실", s["poly"], f"계단선 {s['n_lines']}본"))
+        seeds.append(("계단실", s["poly"], f"계단선 {s['n_lines']}본"))
     for p in data.get("pd_polys", []):
-        zones.append(("X표시(S-OPEN)", p, "S-OPEN 개구부"))
+        seeds.append(("X표시(S-OPEN)", p, "S-OPEN 개구부"))
+
+    used = []
+    for kind, seed, note in seeds:
+        cell = cell_at(cells, seed)
+        if cell is not None:
+            if any(cell.equals(u) for u in used):     # 한 셀에 씨앗 여럿 → 1회만
+                continue
+            used.append(cell)
+            zones.append((kind, cell, f"{note} → 골조셀 {round(cell.area/1e6,2)}㎡", "cell"))
+        else:
+            zones.append((kind, seed, f"{note} → [미확정] 골조셀 없음, 씨앗범위 사용", "bbox"))
     return zones
 
 
@@ -82,17 +125,20 @@ def run_floor(doc, floor):
     gross = plate.area
     slab = plate
     cuts = []
-    for kind, poly, note in uncovered_zones(data):
+    cells = wall_cells(segs)
+    for kind, poly, note, src in uncovered_zones(data, cells):
         if poly.area / 1e6 < MIN_HOLE_M2:
             continue
         before = slab.area
         slab = slab.difference(poly)
         cut = before - slab.area
-        cuts.append({"kind": kind, "note": note,
+        cuts.append({"kind": kind, "note": note, "src": src,
                      "zone_m2": round(poly.area / 1e6, 2),
                      "cut_m2": round(cut / 1e6, 2),
                      "cx": round(poly.centroid.x, 1),
-                     "cy": round(poly.centroid.y, 1)})
+                     "cy": round(poly.centroid.y, 1),
+                     "ring": [[round(x, 1), round(y, 1)]
+                              for x, y in poly.exterior.coords]})
 
     parts = list(slab.geoms) if slab.geom_type == "MultiPolygon" else [slab]
     report = {
