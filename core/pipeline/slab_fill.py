@@ -128,7 +128,41 @@ def sheet_texts(doc, floor):
 # 방부장 2026-07-20: "해치를 읽어내야 정확히 어디가 화장실 자리인지,
 #   어디만큼 다운해야 하는지 알 수 있다." — 종전엔 LINE/LWPOLYLINE만 읽어 놓쳤음.
 # 화장실·전실 레벨다운 구역은 SOLID 해치로 칠해져 있고 곁에 SL.-xx 텍스트가 붙는다.
+def _path_points(path):
+    """HATCH 경계 path → 점 목록. PolylinePath(.vertices)와 EdgePath(.edges) 모두 지원.
+    종전엔 .vertices만 읽어 EdgePath 해치(화장실 다수)를 통째로 놓쳤음."""
+    vs = getattr(path, "vertices", None)
+    if vs:
+        return [(v[0], v[1]) for v in vs]
+    pts = []
+    for e in getattr(path, "edges", []) or []:
+        t = type(e).__name__
+        try:
+            if t == "LineEdge":
+                pts.append((e.start[0], e.start[1]))
+                pts.append((e.end[0], e.end[1]))
+            elif t == "ArcEdge":
+                import math as _m
+                cx, cy = e.center[0], e.center[1]
+                a0, a1 = _m.radians(e.start_angle), _m.radians(e.end_angle)
+                if a1 < a0:
+                    a1 += 2 * _m.pi
+                for i in range(9):
+                    a = a0 + (a1 - a0) * i / 8
+                    pts.append((cx + e.radius * _m.cos(a), cy + e.radius * _m.sin(a)))
+            elif t in ("SplineEdge", "EllipseEdge"):
+                for q in (getattr(e, "control_points", None) or
+                          getattr(e, "fit_points", None) or []):
+                    pts.append((q[0], q[1]))
+        except Exception:
+            continue
+    return pts
+
+
 def sheet_hatches(doc, floor):
+    """해당 층 시트의 HATCH 경계 폴리곤.
+    방부장 2026-07-20: "해치를 읽어내야 어디가 화장실 자리인지, 얼마나 다운인지 안다."
+    """
     x0, x1 = SHEETS[floor]
     out = []
 
@@ -137,13 +171,13 @@ def sheet_hatches(doc, floor):
         if t == "HATCH":
             try:
                 for path in e.paths:
-                    vs = [(v[0], v[1]) for v in (getattr(path, "vertices", []) or [])]
+                    vs = _path_points(path)
                     if len(vs) < 3:
                         continue
                     poly = Polygon(vs)
                     if not poly.is_valid:
                         poly = poly.buffer(0)
-                    if poly.is_empty:
+                    if poly.is_empty or poly.geom_type != "Polygon":
                         continue
                     if x0 < poly.centroid.x < x1:
                         out.append(poly)
