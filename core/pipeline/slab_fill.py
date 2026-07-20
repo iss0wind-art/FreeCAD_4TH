@@ -89,7 +89,9 @@ def local_room(segs, seed, tol=ROOM_TOL, pad=ROOM_PAD):
     return None
 
 
-EV_MAX_M2 = 20.0         # 이보다 큰 방은 EV·샤프트로 보지 않음 [T]
+EV_MAX_M2 = 20.0         # 이보다 큰 방은 EV로 보지 않음 [T]
+STAIR_MAX_M2 = 60.0      # 계단실 상한 — 초과하면 벽 미폐합으로 방이 층 전체로 번진 것 [T]
+                         # (B2F에서 980㎡ 계단실이 층 전체를 도려낸 사고 방지)
 LABEL_R = 1600           # 부호 텍스트 인정 반경 [T]
 
 
@@ -187,11 +189,19 @@ def uncovered_zones(data, segs, texts, hatches):
     stair_pts = [s["poly"].centroid for s in cluster_stairs(data.get("stair_segs", []))]
     diag_pts = [Point((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
                 for a, b in (data.get("diag_all") or [])]
-    zones, claimed = [], []
+    zones, claimed, oversize = [], [], []
     for rm in rooms:
         n_st = sum(1 for q in stair_pts if rm.contains(q))
         n_dg = sum(1 for q in diag_pts if rm.contains(q))
         if n_st:
+            if rm.area / 1e6 > STAIR_MAX_M2:
+                oversize.append({"type": "계단실 경계 미확정(방 과대)",
+                                 "note": f"계단선 {n_st}개 → 방 {round(rm.area/1e6)}㎡ "
+                                         f"(상한 {STAIR_MAX_M2:.0f}㎡ 초과, 벽 미폐합)",
+                                 "cx": round(rm.centroid.x, 1),
+                                 "cy": round(rm.centroid.y, 1),
+                                 "seed_m2": round(rm.area / 1e6, 2)})
+                continue                 # 공제하지 않음 — 원칙⑤ 방부장 토스
             zones.append(("계단실", rm, f"계단선 클러스터 {n_st}개 [예외규칙: 도면상 "
                                         f"슬라브 있으나 계단 별도 모델링 위해 비움]"))
             claimed.append(rm)
@@ -212,7 +222,7 @@ def uncovered_zones(data, segs, texts, hatches):
                                 "seed_m2": round(h.area / 1e6, 2),
                                 "ring": [[round(x, 1), round(y, 1)]
                                          for x, y in h.exterior.coords]})
-    unresolved = []
+    unresolved = list(oversize)
     for m in pair_x_marks(data.get("diag_all", [])):
         poly, c = m["poly"], m["poly"].centroid
         if any(rm.contains(c) for rm in claimed):
@@ -236,6 +246,8 @@ def run_floor(doc, floor):
     segs = data.get("wall_segs") or []
     segs = segs + data.get("slab_end_segs", [])
     plate = outer_plate(segs)
+    if plate is not None and not plate.is_valid:
+        plate = plate.buffer(0)
     if plate is None or plate.is_empty:
         return {"floor": floor, "status": "미확정: 골조선 0건"}, None
 
@@ -248,8 +260,16 @@ def run_floor(doc, floor):
     for kind, poly, note in zones:
         if poly.area / 1e6 < MIN_HOLE_M2:
             continue
+        if not poly.is_valid:
+            poly = poly.buffer(0)
+        if poly.is_empty:
+            continue
         before = slab.area
-        slab = slab.difference(poly)
+        try:
+            slab = slab.difference(poly)
+        except Exception as e:            # 기하 예외로 층 전체가 죽지 않게
+            print(f"    [경고] {kind} 공제 실패({e.__class__.__name__}) — 건너뜀")
+            continue
         cut = before - slab.area
         cuts.append({"kind": kind, "note": note,
                      "zone_m2": round(poly.area / 1e6, 2),
