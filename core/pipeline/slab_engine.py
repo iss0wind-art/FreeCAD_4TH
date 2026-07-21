@@ -361,7 +361,7 @@ def collect_floor_data(doc, floor):
     # 세대부 벽 블록이 없는 층(기준층 등)은 골조선이 유일한 벽 소스.
     # 창 구간 끊김은 방부장 방식(벽체로 형성 후 공제)에 따라 브리징.
     if not data["wall_segs"] and yellow:
-        win_bridges = bridge_collinear(yellow, max_gap=2600,
+        win_bridges = bridge_collinear(yellow, max_gap=3500,  # [T] 2026-07-21 방부장 확정(구 2600)
                                        ang_tol=2.0, lateral_tol=60)
         win_bridges = _veto_phantom_walls(win_bridges, floor)
         data["wall_segs"] = yellow + win_bridges

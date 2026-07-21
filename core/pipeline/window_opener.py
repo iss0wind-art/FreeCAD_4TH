@@ -30,7 +30,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "output" / "window_openings_TYP.json"
 
 SLAB_NEAR = 400        # 슬라브 단부선 이 거리 내 = 진짜 개구부 [T]
-MIN_W, MAX_W = 500, 3000   # 창/문 폭 범위 [T]
+MIN_W, MAX_W = 500, 3500   # 창/문 폭 범위 [T] — 2026-07-21 방부장 확정(거실창 PW1 3,320 실측, 구 3,000은 6곳 누락)
 
 
 # [AUTO] A50 규격 테이블 → 폭 리스트 (폭 매칭용)
