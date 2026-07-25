@@ -1,12 +1,12 @@
 {
-  "112동": {
-    "beams": 3248,
+  "116동": {
+    "beams": 2409,
     "columns": 0,
-    "walls": 13,
+    "walls": 47,
     "slabs": 5,
-    "levels": 18,
+    "levels": 13,
     "step_changes": 36,
     "errors": 0,
-    "elapsed": 153.0
+    "elapsed": 375.9
   }
 }

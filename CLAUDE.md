@@ -131,3 +131,39 @@ CAD 파싱 결과는 자동으로 wiki에 반영됨 (cad_to_wiki.py).
 4. **Assumption.md 의무화** — **모든 새 작업 전 가정 명세 작성**. 템플릿: `/home/nas/DREAM_FAC/dangun/templates/ASSUMPTION_TEMPLATE.md`
 
 작성하지 않고 코드부터 시작하면 — 그것이 곧 썩은 씨앗이다.
+
+
+---
+
+# [SECTION B] BOQ EasyFrame 현장 운영 규칙
+
+## 3지국 철칙
+- **추정값 0**: 불확실 좌표·수량 추정 금지 → [빨간 원] 마킹 후 반려
+- **역행 금지**: 확정 순서 역행 불가
+- **교차검증 우선**: Z축 데이터는 출처 간 검증 완료 후에만 확정
+
+## 모델 운영
+- **기본 = Sonnet 4.6** / 단순 작업 `/effort low`
+- **Opus = 3종만**: 특허 청구항 · 아키텍처 결정 · 마지막 디버깅 → 즉시 Sonnet 복귀
+- **전처리 = 로컬 qwen2.5:7b** — DXF·로그 날것 Claude 투입 절대 금지
+
+## 입출력
+- 입력: 4,000자 마크다운 엑기스만
+- 출력: "코드만" / "diff만" / "결론 3줄" 항상 제약
+- 파일 지정: 검색 말고 `@파일명` 직접
+
+## 컨텍스트
+- 더러운 탐색·파싱 → `@dxf-parser` 서브에이전트 위임
+- 무거워지면 → `/compact 다음작업: OOO 위주로` (자동압축 기다리지 말 것)
+- 작업 전환 → `/clear` / 잘못된 경로 → Esc 2번
+
+## /compact 보존 목록
+- 특허 결정·청구항 근거
+- 에러 메시지·해결책
+- 수정 파일 목록
+압축 가능: 탐색 시도·셸 출력 날것·핑퐁
+
+## 3지국 파서 연동 규칙
+- `@dxf-parser`는 3지국 StructuralExtractor·safe_reader 결과를 입력으로 받음
+- 독립 파싱 금지 — 반드시 3지국 파이프라인 출력 → dxf-parser 순서
+- `parse_structural_frame` → BOQ 산출은 `@boq-workflow` 스킬 참조

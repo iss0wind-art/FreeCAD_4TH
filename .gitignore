@@ -36,3 +36,9 @@ output/v13_walls.step
 *.FCStd1
 *.fcstd1
 .venv/
+
+# 런타임 자국 (2026-07-25)
+.bridge/
+.obsidian/
+tmp_*.py
+*.log

@@ -1,0 +1,50 @@
+{
+  "standard_floor": {
+    "height": 2830,
+    "slab_types": {
+      "unit_standard": {
+        "thickness": 210,
+        "note": "단위세대 기준층"
+      },
+      "bathroom": {
+        "thickness": 160,
+        "note": "욕실 (전층), SL.-50"
+      },
+      "ev_hall": {
+        "thickness": 150,
+        "note": "E.V.HALL (전층)"
+      },
+      "stairs": {
+        "thickness": 150,
+        "note": "계단실 (전층)"
+      }
+    },
+    "sl_offsets": {
+      "-1800": "B2F slab bottom offset",
+      "-1570": "주차장 상부 SL",
+      "-140": "local drop (balcony?)",
+      "-120": "local drop",
+      "-90": "local drop",
+      "-50": "bathroom/balcony drop",
+      "-40": "local drop",
+      "0": "기준 SL (main slab)",
+      "100": "local step-up",
+      "2350": "PH/roof structure",
+      "2690": "roof/PH slab"
+    }
+  },
+  "special_floors": {
+    "B1F_main": {
+      "thickness": 180,
+      "note": "지하1층 주동부"
+    },
+    "1F_piloti": {
+      "thickness": 210,
+      "note": "1층 필로티 및 단위세대"
+    },
+    "roof": {
+      "thickness": 200,
+      "note": "지붕 단위세대"
+    }
+  }
+}

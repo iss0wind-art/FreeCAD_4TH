@@ -1,0 +1,1 @@
+MCP issues detected. Run /mcp list for status.저는 구글에서 만든 대규모 언어 모델인 Gemini입니다.

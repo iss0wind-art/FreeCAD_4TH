@@ -1,0 +1,12 @@
+{
+  "dong": "105동",
+  "dxf": "S30-081~089-105동 구조평면도.dxf",
+  "out": "skeleton_105동.dxf",
+  "extracted": 55913,
+  "deduped": 53916,
+  "clean": 41125,
+  "isolated_before": 12791,
+  "bridges": 16932,
+  "isolated_after": 795,
+  "target_met": true
+}

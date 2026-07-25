@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>코란도 스포츠 캠핑 시스템 3D</title>
+<style>
+body { margin:0; overflow:hidden; font-family:'Malgun Gothic',sans-serif; background:#2a2a2a; color:#fff; }
+#info { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); background:rgba(0,0,0,.8); padding:12px 24px; border-radius:8px; font-size:14px; text-align:center; z-index:10; }
+#controls { position:absolute; bottom:80px; left:50%; transform:translateX(-50%); z-index:10; display:flex; gap:8px; }
+button { padding:10px 24px; border:none; border-radius:6px; cursor:pointer; font-size:14px; font-weight:bold; transition:.2s; }
+.btn-basic { background:#666; color:#fff; }
+.btn-camping { background:#e67e22; color:#fff; }
+.btn-auto { background:#3498db; color:#fff; }
+button:hover { opacity:.8; }
+#progress { position:absolute; top:0; left:0; height:3px; background:#e67e22; z-index:20; transition:width .1s; }
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<div id="controls">
+  <button class="btn-basic" onclick="setMode(0)">기본</button>
+  <button class="btn-camping" onclick="setMode(1)">캠핑</button>
+  <button class="btn-auto" onclick="toggleAuto()">▶ 자동변신</button>
+</div>
+<div id="info">🔄 드래그로 회전 | 휠로 확대/축소</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+<script>
+// ── Scene Setup ──
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x87CEEB);
+const camera = new THREE.PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 10000);
+camera.position.set(2500, 1500, 2500);
+const renderer = new THREE.WebGLRenderer({ antialias:true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.shadowMap.enabled = true;
+document.body.appendChild(renderer.domElement);
+const controls = new THREE.OrbitControls(camera, renderer.domElement);
+controls.target.set(810, 650, 0);
+controls.update();
+
+// Lights
+const ambient = new THREE.AmbientLight(0x404060);
+scene.add(ambient);
+const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+dirLight.position.set(2000, 3000, 2000);
+dirLight.castShadow = true;
+scene.add(dirLight);
+const backLight = new THREE.DirectionalLight(0xffffff, .4);
+backLight.position.set(-1000, 1000, -2000);
+scene.add(backLight);
+
+// Ground
+const grid = new THREE.GridHelper(4000, 20, 0x888888, 0x444444);
+grid.position.y = -540;
+scene.add(grid);
+
+// ── Materials ──
+const matBed = new THREE.MeshPhongMaterial({ color:0xcc3333, transparent:true, opacity:1 });
+const matFrame = new THREE.MeshPhongMaterial({ color:0x888888 });
+const matRoof = new THREE.MeshPhongMaterial({ color:0xffdd44, transparent:true, opacity:.5 });
+const matKitchen = new THREE.MeshPhongMaterial({ color:0x3399ff });
+const matTent = new THREE.MeshPhongMaterial({ color:0x66ccff, transparent:true, opacity:.6 });
+const matBedBase = new THREE.MeshPhongMaterial({ color:0x555555 });
+const matWheel = new THREE.MeshPhongMaterial({ color:0x333333 });
+
+// ── Build Model ──
+const model = new THREE.Group();
+scene.add(model);
+
+// Cargo bed base
+function addBox(w,h,d,color,pos) {
+  const g = new THREE.BoxGeometry(w,h,d);
+  const m = new THREE.Mesh(g, color);
+  m.position.set(pos[0], pos[1], pos[2]);
+  m.castShadow = true; m.receiveShadow = true;
+  model.add(m);
+  return m;
+}
+
+// Bed floor
+addBox(1620, 20, 1312, matBedBase, [810, -530, 656]);
+
+// Bed walls
+addBox(1620, 540, 20, matBedBase, [810, -270, 0]);    // front
+addBox(20, 540, 1312, matBedBase, [0, -270, 656]);     // left
+addBox(20, 540, 1312, matBedBase, [1620, -270, 656]);  // right
+
+// Rear wall (tailgate, open)
+const tailgate = new THREE.Mesh(new THREE.BoxGeometry(1620, 540, 20), matBedBase);
+tailgate.position.set(810, -270, 1312);
+tailgate.rotation.x = -Math.PI/2;
+model.add(tailgate);
+
+// ── Animated Parts ──
+const parts = {};
+
+// Red sofa left
+const sofaL = new THREE.Mesh(new THREE.BoxGeometry(700, 200, 1312), matBed);
+sofaL.position.set(350, -400, 656);
+model.add(sofaL);
+parts.sofaL = sofaL;
+
+// Red sofa right  
+const sofaR = new THREE.Mesh(new THREE.BoxGeometry(700, 200, 1312), matBed);
+sofaR.position.set(1270, -400, 656);
+model.add(sofaR);
+parts.sofaR = sofaR;
+
+// Center column (structural frame)
+const colFrames = [];
+for (let x of [705, 915]) {
+  for (let z of [10, 1302]) {
+    const col = new THREE.Mesh(new THREE.BoxGeometry(10, 740, 10), matFrame);
+    col.position.set(x, -100, z);
+    model.add(col);
+    colFrames.push(col);
+  }
+}
+// Cross beams at top
+for (let z of [10, 1302]) {
+  const beam = new THREE.Mesh(new THREE.BoxGeometry(210, 10, 10), matFrame);
+  beam.position.set(810, 240, z);
+  model.add(beam);
+}
+
+// Roof panel (folded at rear initially)
+const roof = new THREE.Mesh(new THREE.BoxGeometry(1620, 4, 1312), matRoof);
+roof.position.set(810, 200, 656);
+roof.rotation.x = Math.PI/2;
+model.add(roof);
+parts.roof = roof;
+
+// Roof side walls (folded)
+const roofWallL = new THREE.Mesh(new THREE.BoxGeometry(4, 450, 1312), matRoof);
+roofWallL.position.set(0, 200, 656);
+model.add(roofWallL);
+parts.roofWallL = roofWallL;
+
+const roofWallR = new THREE.Mesh(new THREE.BoxGeometry(4, 450, 1312), matRoof);
+roofWallR.position.set(1620, 200, 656);
+model.add(roofWallR);
+parts.roofWallR = roofWallR;
+
+// Wheel houses
+addBox(285, 340, 500, matWheel, [142, -370, 650]);
+addBox(285, 340, 500, matWheel, [1478, -370, 650]);
+
+// Kitchen module (slides rearward)
+const kitchen = new THREE.Mesh(new THREE.BoxGeometry(700, 540, 600), matKitchen);
+kitchen.position.set(1270, -270, 1312);
+model.add(kitchen);
+parts.kitchen = kitchen;
+
+// Tent (deploys from left lower)
+const tent = new THREE.Mesh(new THREE.BoxGeometry(920, 300, 1), matTent);
+tent.position.set(460, -150, 1312);
+tent.visible = false;
+model.add(tent);
+parts.tent = tent;
+parts.tentVis = false;
+
+// ── Animation State ──
+let mode = 0; // 0=basic, 1=camping
+let progress = 0;
+let animating = false;
+let autoPlay = false;
+
+function setMode(m) {
+  mode = m;
+  progress = mode === 0 ? 0 : 1;
+  updateModel();
+}
+
+function toggleAuto() {
+  autoPlay = !autoPlay;
+  document.querySelector('.btn-auto').textContent = autoPlay ? '■ 정지' : '▶ 자동변신';
+  if (autoPlay) progress = 0;
+}
+
+function updateModel() {
+  const t = Math.min(1, Math.max(0, progress));
+  
+  // Sofas slide apart (basic→camping: left goes left, right stays)
+  parts.sofaL.position.x = 350 - t * 350; // 350→0
+  parts.sofaR.position.x = 1270; // stays
+  
+  // Center column rises
+  colFrames.forEach(c => {
+    c.position.y = -100 + t * 200; // rises 200mm
+    c.scale.y = 1 + t * 0.5; // extends
+  });
+  
+  // Roof rises then unfolds
+  parts.roof.position.y = 200 + t * 400; // rises to 600
+  parts.roof.rotation.x = Math.PI/2 - t * Math.PI/2 * 0; // slight unfold
+  
+  // Roof walls rise
+  parts.roofWallL.position.y = 200 + t * 400;
+  parts.roofWallR.position.y = 200 + t * 400;
+  
+  // Kitchen slides rearward
+  parts.kitchen.position.z = 1312 + t * 800;
+  
+  // Tent deploys at t>0.6
+  const tentT = Math.max(0, (t - 0.6) / 0.4);
+  parts.tent.visible = tentT > 0;
+  if (tentT > 0) {
+    parts.tent.position.z = 1312 + tentT * 800;
+    parts.tent.scale.z = tentT;
+    parts.tent.scale.y = tentT;
+  }
+  
+  // Red sofa opacity changes (highlight camping mode)
+  parts.sofaL.material.opacity = 1 - t * 0.3;
+  parts.sofaR.material.opacity = 1 - t * 0.3;
+}
+
+// Auto animation loop
+function animate() {
+  requestAnimationFrame(animate);
+  
+  if (autoPlay) {
+    progress += 0.005;
+    if (progress >= 1) {
+      progress = 0;
+    }
+    updateModel();
+  }
+  
+  controls.update();
+  renderer.render(scene, camera);
+}
+animate();
+
+// Resize
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// Initial state
+updateModel();
+
+// Progress bar
+document.getElementById('progress').style.display = 'none';
+</script>
+</body>
+</html>

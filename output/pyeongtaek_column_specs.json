@@ -1,0 +1,456 @@
+{
+  "C1": [
+    {
+      "floor": "지하1~지상1층",
+      "width": 1000,
+      "height": 1100,
+      "section": "1000x1100"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1400,
+      "section": "800x1400"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1100,
+      "height": 1000,
+      "section": "1100x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1400,
+      "height": 800,
+      "section": "1400x800"
+    }
+  ],
+  "C10": [
+    {
+      "floor": "지하1~지상1층",
+      "width": 600,
+      "height": 1000,
+      "section": "600x1000"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1000,
+      "height": 600,
+      "section": "1000x600"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1000,
+      "height": 800,
+      "section": "1000x800"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 800,
+      "section": "800x800"
+    }
+  ],
+  "C11": [
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 800,
+      "section": "800x800"
+    },
+    {
+      "floor": "10층",
+      "width": 600,
+      "height": 1000,
+      "section": "600x1000"
+    },
+    {
+      "floor": "only 지하1층",
+      "width": 600,
+      "height": 600,
+      "section": "600x600"
+    }
+  ],
+  "C2": [
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1200,
+      "section": "800x1200"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 1000,
+      "height": 1100,
+      "section": "1000x1100"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1400,
+      "section": "800x1400"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1200,
+      "height": 800,
+      "section": "1200x800"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1100,
+      "height": 1000,
+      "section": "1100x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1400,
+      "height": 800,
+      "section": "1400x800"
+    }
+  ],
+  "C3": [
+    {
+      "floor": "9층",
+      "width": 800,
+      "height": 800,
+      "section": "800x800"
+    },
+    {
+      "floor": "9층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 1100,
+      "height": 900,
+      "section": "1100x900"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 1000,
+      "height": 1000,
+      "section": "1000x1000"
+    },
+    {
+      "floor": "2~5층",
+      "width": 1000,
+      "height": 800,
+      "section": "1000x800"
+    },
+    {
+      "floor": "2~5층",
+      "width": 900,
+      "height": 1100,
+      "section": "900x1100"
+    },
+    {
+      "floor": "2~5층",
+      "width": 1000,
+      "height": 1000,
+      "section": "1000x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1000,
+      "height": 800,
+      "section": "1000x800"
+    },
+    {
+      "floor": "2~3층",
+      "width": 900,
+      "height": 1100,
+      "section": "900x1100"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1000,
+      "height": 1000,
+      "section": "1000x1000"
+    }
+  ],
+  "C4": [
+    {
+      "floor": "지하1~지상1층",
+      "width": 1200,
+      "height": 800,
+      "section": "1200x800"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1200,
+      "section": "800x1200"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1200,
+      "height": 800,
+      "section": "1200x800"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1000,
+      "height": 800,
+      "section": "1000x800"
+    },
+    {
+      "floor": "9층",
+      "width": 800,
+      "height": 800,
+      "section": "800x800"
+    },
+    {
+      "floor": "2~5층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "2~5층",
+      "width": 1200,
+      "height": 800,
+      "section": "1200x800"
+    },
+    {
+      "floor": "2~5층",
+      "width": 1000,
+      "height": 800,
+      "section": "1000x800"
+    }
+  ],
+  "C5": [
+    {
+      "floor": "8~9층",
+      "width": 800,
+      "height": 2000,
+      "section": "800x2000"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 1800,
+      "section": "800x1800"
+    },
+    {
+      "floor": "지하1층",
+      "width": 800,
+      "height": 2000,
+      "section": "800x2000"
+    },
+    {
+      "floor": "지상1층",
+      "width": 2000,
+      "height": 800,
+      "section": "2000x800"
+    },
+    {
+      "floor": "9층",
+      "width": 800,
+      "height": 800,
+      "section": "800x800"
+    },
+    {
+      "floor": "8~9층",
+      "width": 800,
+      "height": 1200,
+      "section": "800x1200"
+    },
+    {
+      "floor": "10층",
+      "width": 600,
+      "height": 1200,
+      "section": "600x1200"
+    }
+  ],
+  "C6": [
+    {
+      "floor": "지하1층",
+      "width": 800,
+      "height": 2000,
+      "section": "800x2000"
+    },
+    {
+      "floor": "지상1층",
+      "width": 2000,
+      "height": 800,
+      "section": "2000x800"
+    },
+    {
+      "floor": "7층",
+      "width": 800,
+      "height": 1200,
+      "section": "800x1200"
+    },
+    {
+      "floor": "8~9층",
+      "width": 800,
+      "height": 2000,
+      "section": "800x2000"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 1800,
+      "section": "800x1800"
+    },
+    {
+      "floor": "8~9층",
+      "width": 800,
+      "height": 1200,
+      "section": "800x1200"
+    },
+    {
+      "floor": "10층",
+      "width": 600,
+      "height": 1200,
+      "section": "600x1200"
+    }
+  ],
+  "C7": [
+    {
+      "floor": "지하1층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "지하1층",
+      "width": 800,
+      "height": 1800,
+      "section": "800x1800"
+    },
+    {
+      "floor": "지상1층",
+      "width": 1800,
+      "height": 800,
+      "section": "1800x800"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 1800,
+      "section": "800x1800"
+    },
+    {
+      "floor": "지하1층",
+      "width": 1200,
+      "height": 1200,
+      "section": "1200x1200"
+    },
+    {
+      "floor": "지상1층",
+      "width": 1200,
+      "height": 1100,
+      "section": "1200x1100"
+    },
+    {
+      "floor": "10층",
+      "width": 1200,
+      "height": 1200,
+      "section": "1200x1200"
+    }
+  ],
+  "C8": [
+    {
+      "floor": "7~9층",
+      "width": 1000,
+      "height": 800,
+      "section": "1000x800"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1200,
+      "section": "800x1200"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1200,
+      "height": 800,
+      "section": "1200x800"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 1200,
+      "section": "800x1200"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    }
+  ],
+  "C9": [
+    {
+      "floor": "지하1~지상1층",
+      "width": 600,
+      "height": 1000,
+      "section": "600x1000"
+    },
+    {
+      "floor": "지하1~지상1층",
+      "width": 800,
+      "height": 1000,
+      "section": "800x1000"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1000,
+      "height": 600,
+      "section": "1000x600"
+    },
+    {
+      "floor": "2~3층",
+      "width": 1000,
+      "height": 800,
+      "section": "1000x800"
+    },
+    {
+      "floor": "10층",
+      "width": 800,
+      "height": 800,
+      "section": "800x800"
+    }
+  ]
+}

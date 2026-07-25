@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BOQ 3D Formwork Viewer</title>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #1a1a1a; font-family: 'Inter', sans-serif; }
+        #canvas-container { width: 100vw; height: 100vh; }
+        #ui { position: absolute; top: 20px; left: 20px; color: white; background: rgba(0,0,0,0.7); padding: 20px; border-radius: 10px; backdrop-filter: blur(10px); }
+        h1 { margin: 0 0 10px 0; font-size: 20px; color: #4ade80; }
+        .stats { margin-bottom: 5px; font-size: 14px; color: #ccc; }
+        select { background: #333; color: white; border: 1px solid #555; padding: 5px 10px; border-radius: 5px; margin-top: 10px; width: 100%; }
+        button { background: #4ade80; color: #000; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; font-weight: bold; width: 100%; }
+        button:hover { background: #22c55e; }
+    </style>
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+</head>
+<body>
+    <div id="ui">
+        <h1>🏗️ 거푸집 3D 검증 뷰어</h1>
+        <div id="stats_col" class="stats">기둥: 대기 중</div>
+        <div id="stats_beam" class="stats">보: 대기 중</div>
+        <div id="stats_wall" class="stats">벽체: 대기 중</div>
+        <div id="stats_slab" class="stats">슬래브: 대기 중</div>
+        
+        <select id="fileSelect">
+            <option value="101_stacked_formwork_3d.json">101동 풀-스택 (1F~옥상)</option>
+            <option value="101_dong_formwork_3d.json">101동 평면도 원본</option>
+            <option value="basement_formwork_3d.json">지하 주차장 평면도 원본</option>
+        </select>
+        <button id="loadBtn">데이터 로드</button>
+    </div>
+    
+    <div id="canvas-container"></div>
+
+    <script>
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x1a1a1a);
+        
+        // Grid Helper
+        const gridHelper = new THREE.GridHelper(200000, 100, 0x444444, 0x222222);
+        gridHelper.position.y = -8000;
+        scene.add(gridHelper);
+
+        const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 10, 500000);
+        camera.position.set(0, 50000, 50000);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+
+        const controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+
+        // Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+        scene.add(ambientLight);
+        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        dirLight.position.set(10000, 50000, 10000);
+        scene.add(dirLight);
+
+        let currentGroup = new THREE.Group();
+        scene.add(currentGroup);
+        // 재질 설정 (투명도 및 프리미엄 느낌 강화)
+        const matCol = new THREE.MeshPhongMaterial({ color: 0xef4444, transparent: true, opacity: 0.9 });
+        const matBeam = new THREE.MeshPhongMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.9 });
+        const matWall = new THREE.MeshPhongMaterial({ color: 0xeab308, transparent: true, opacity: 0.8, side: THREE.DoubleSide });
+        
+        // 초록색 선(wireframe) 대신 반투명한 유리(Glass) 느낌의 솔리드로 변경하여 시인성 확보
+        const matSlab = new THREE.MeshBasicMaterial({ color: 0x22c55e, wireframe: false, transparent: true, opacity: 0.15, side: THREE.DoubleSide });
+
+
+        document.getElementById('loadBtn').addEventListener('click', () => {
+            const file = document.getElementById('fileSelect').value;
+            loadJSON(file);
+        });
+
+        function loadJSON(filename) {
+            fetch(filename)
+                .then(response => response.json())
+                .then(data => {
+                    renderData(data);
+                })
+                .catch(err => alert("데이터 로드 실패: " + err));
+        }
+
+        function renderData(data) {
+            scene.remove(currentGroup);
+            currentGroup = new THREE.Group();
+            scene.add(currentGroup);
+
+            let colCount = 0, beamCount = 0, wallCount = 0, slabCount = 0;
+            const defHeight = 2900;
+
+            // Columns
+            if(data.columns) {
+                const geom = new THREE.BoxGeometry(1, 1, 1);
+                data.columns.forEach(c => {
+                    if(c.symbol === "NOCOL") return;
+                    const zBase = c.z !== undefined ? c.z : 0;
+                    const mesh = new THREE.Mesh(geom, matCol);
+                    mesh.scale.set(c.w, defHeight, c.h);
+                    mesh.position.set(c.cx, zBase + defHeight/2, -c.cy);
+                    mesh.rotation.y = -c.rotation * Math.PI / 180;
+                    currentGroup.add(mesh);
+                    colCount++;
+                });
+            }
+
+            // Beams
+            if(data.beams) {
+                data.beams.forEach(b => {
+                    const zBase = b.z !== undefined ? b.z : 0;
+                    const length = Math.hypot(b.x1 - b.x0, b.y1 - b.y0);
+                    const angle = Math.atan2(-(b.y1 - b.y0), b.x1 - b.x0);
+                    const bHeight = b.height || 600;
+                    const geom = new THREE.BoxGeometry(length, bHeight, b.width || 400);
+                    const mesh = new THREE.Mesh(geom, matBeam);
+                    mesh.position.set((b.x0 + b.x1)/2, zBase + defHeight - bHeight/2, -(b.y0 + b.y1)/2);
+                    mesh.rotation.y = angle;
+                    currentGroup.add(mesh);
+                    beamCount++;
+                });
+            }
+
+            // Walls
+            if(data.walls) {
+                data.walls.forEach(w => {
+                    if(!w.p1 || !w.p2) return;
+                    const zBase = w.z !== undefined ? w.z : 0;
+                    const length = Math.hypot(w.p2[0] - w.p1[0], w.p2[1] - w.p1[1]);
+                    const angle = Math.atan2(-(w.p2[1] - w.p1[1]), w.p2[0] - w.p1[0]);
+                    const geom = new THREE.BoxGeometry(length, defHeight, w.thickness || 200);
+                    const mesh = new THREE.Mesh(geom, matWall);
+                    mesh.position.set((w.p1[0] + w.p2[0])/2, zBase + defHeight/2, -(w.p1[1] + w.p2[1])/2);
+                    mesh.rotation.y = angle;
+                    currentGroup.add(mesh);
+                    wallCount++;
+                });
+            }
+
+            // Slabs
+            if(data.slabs) {
+                data.slabs.forEach(s => {
+                    if(!s.pts || s.pts.length < 3) return;
+                    const zBase = s.z !== undefined ? s.z : 0;
+                    const shape = new THREE.Shape();
+                    shape.moveTo(s.pts[0][0], s.pts[0][1]);
+                    for(let i=1; i<s.pts.length; i++) {
+                        shape.lineTo(s.pts[i][0], s.pts[i][1]);
+                    }
+                    const geom = new THREE.ShapeGeometry(shape);
+                    const mesh = new THREE.Mesh(geom, matSlab);
+                    mesh.rotation.x = -Math.PI / 2;
+                    mesh.position.y = zBase + defHeight;
+                    currentGroup.add(mesh);
+                    slabCount++;
+                });
+            }
+
+            document.getElementById('stats_col').innerText = `기둥: ${colCount} 개`;
+            document.getElementById('stats_beam').innerText = `보: ${beamCount} 개`;
+            document.getElementById('stats_wall').innerText = `벽체: ${wallCount} 개`;
+            document.getElementById('stats_slab').innerText = `슬래브: ${slabCount} 개`;
+
+            const box = new THREE.Box3().setFromObject(currentGroup);
+            const center = box.getCenter(new THREE.Vector3());
+            const size = box.getSize(new THREE.Vector3());
+            
+            controls.target.copy(center);
+            camera.position.set(center.x + size.x, center.y + size.y, center.z + size.z * 1.5);
+            camera.far = Math.max(size.x, size.z, size.y) * 10;
+            camera.updateProjectionMatrix();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // Initial load
+        setTimeout(() => loadJSON('101_stacked_formwork_3d.json'), 500);
+    </script>
+</body>
+</html>

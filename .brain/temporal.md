@@ -145,8 +145,13 @@
   `tests/test_safe_reader.py`를 포함한 41개 단위 테스트 전원 통과 완료. DONG 도면의 헤더 인코딩 모순 보정(`safe_reader.py`) 및 한글 레이어 디코딩 복구를 수학적으로 검증 완료.
 - **3D 모델 및 BOQ 수량 갱신**: 
   `tests/classify_all_members.py` 및 `tests/build_v15_integrated.py`를 재가동하여 `members_accumulated.json` 및 `v15_integrated.step`, `v15_integrated_boq.json`을 성공적으로 빌드 완료.
+- **평택 고덕 3D 통합 빌드 및 1:1 기하 라벨 매칭 완료**:
+  - `classify_pyeongtaek_members.py`와 `build_pyeongtaek_integrated.py`를 이식하여 12개 시트(층고 16,850mm ~ 87,600mm) 통합 3D 빌드 성공.
+  - 라벨 기준 1:1 최단거리 매칭 필터를 도입하여 중복 기둥(3,789개 -> 1,916개) 필터링 교정 완료.
+  - 산출물: `pyeongtaek_members_accumulated.json` (11,164건), `pyeongtaek_integrated.step` (60.3 MB), `pyeongtaek_integrated_boq.json` (COLUMN 1,916개 / BEAM 5,556개) 생성 완료.
 
 ### 당면 남은 과제
-1. **DONG↔PKG 정밀 정합 및 주차장 보, 슬래브 미완성 구간 처리**. (X축 1.4km에 달하는 주차장 전체 영역 정합 및 미완성 부재 추가 연산)
+1. **에코델타 주차장 1.4km 및 평택 고덕 3D 모델 최종 시각화 검증**.
+2. **도면 데이터 품질 대책 표준 전처리 필터셋의 core/v2 엔진 이식**.
 
 

@@ -1,0 +1,20 @@
+"""
+FreeCAD Macro: View Fit All + Axonometric
+Run after opening 101dong_parking.fcstd
+"""
+import FreeCAD, FreeCADGui
+from FreeCAD import Base
+
+# Get active view
+v = FreeCADGui.activeDocument().activeView()
+
+# Zoom to fit all objects
+v.viewFit()
+
+# Set axonometric view
+v.viewAxonometric()
+
+# Optionally rotate for better angle
+# v.setCamera(Base.Rotation(45, 35, 0))
+
+print("View set: Fit All + Axonometric")
