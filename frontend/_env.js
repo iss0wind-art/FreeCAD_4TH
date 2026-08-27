@@ -6,4 +6,5 @@
  * 배포 시 이 값을 수정하거나 Cloudflare Pages 환경변수로 주입한다.
  * 기본값은 N100 DuckDNS 주소.
  */
-window.BOQ_API_BASE = "https://freecad4th.duckdns.org";
+// 나스 상주 서버(:3103, freecad.iss0wind.kr)가 프론트·API를 한 오리진에서 서빙 → 빈 문자열
+window.BOQ_API_BASE = "";
