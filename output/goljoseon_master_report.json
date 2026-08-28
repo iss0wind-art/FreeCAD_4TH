@@ -1,0 +1,258 @@
+{
+  "101동": {
+    "status": "OK",
+    "floors": 17,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_101동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 617,
+    "STD_count": 665,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 97.8,
+    "STD_connectivity": 99.0
+  },
+  "102동": {
+    "status": "OK",
+    "floors": 17,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_102동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 641,
+    "STD_count": 640,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 98.0,
+    "STD_connectivity": 98.0
+  },
+  "103동": {
+    "status": "OK",
+    "floors": 16,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_103동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 631,
+    "STD_count": 646,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 97.8,
+    "STD_connectivity": 98.0
+  },
+  "104동": {
+    "status": "OK",
+    "floors": 16,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_104동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 421,
+    "STD_count": 413,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 97.5,
+    "STD_connectivity": 97.5
+  },
+  "105동": {
+    "status": "OK",
+    "floors": 17,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_105동_full.json",
+    "sources_found": [
+      "STD",
+      "1F",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 632,
+    "STD_count": 630,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 97.8,
+    "STD_connectivity": 97.7
+  },
+  "106동": {
+    "status": "OK",
+    "floors": 17,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_106동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 604,
+    "STD_count": 643,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 97.4,
+    "STD_connectivity": 98.2
+  },
+  "107동": {
+    "status": "OK",
+    "floors": 10,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_107동_full.json",
+    "sources_found": [
+      "STD",
+      "1F",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 212,
+    "STD_count": 199,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 98.6,
+    "STD_connectivity": 98.5
+  },
+  "108동": {
+    "status": "OK",
+    "floors": 14,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_108동_full.json",
+    "sources_found": [
+      "STD",
+      "1F",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 309,
+    "STD_count": 294,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 98.7,
+    "STD_connectivity": 98.5
+  },
+  "109동": {
+    "status": "OK",
+    "floors": 14,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_109동_full.json",
+    "sources_found": [
+      "STD",
+      "1F",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 610,
+    "STD_count": 602,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 98.9,
+    "STD_connectivity": 98.9
+  },
+  "110동": {
+    "status": "OK",
+    "floors": 13,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_110동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 633,
+    "STD_count": 621,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 99.8,
+    "STD_connectivity": 99.8
+  },
+  "111동": {
+    "status": "OK",
+    "floors": 15,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_111동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 430,
+    "STD_count": 408,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 98.7,
+    "STD_connectivity": 98.8
+  },
+  "112동": {
+    "status": "OK",
+    "floors": 17,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_112동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 628,
+    "STD_count": 609,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 99.0,
+    "STD_connectivity": 99.0
+  },
+  "113동": {
+    "status": "OK",
+    "floors": 17,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_113동_full.json",
+    "sources_found": [
+      "STD",
+      "1F",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 571,
+    "STD_count": 621,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 99.7,
+    "STD_connectivity": 99.8
+  },
+  "114동": {
+    "status": "OK",
+    "floors": 12,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_114동_full.json",
+    "sources_found": [
+      "STD",
+      "1F",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 224,
+    "STD_count": 636,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 91.3,
+    "STD_connectivity": 98.7
+  },
+  "115동": {
+    "status": "OK",
+    "floors": 11,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_115동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 200,
+    "STD_count": 456,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 91.8,
+    "STD_connectivity": 98.6
+  },
+  "116동": {
+    "status": "OK",
+    "floors": 13,
+    "output": "D:/Git/FreeCAD_4TH/output\\goljoseon_116동_full.json",
+    "sources_found": [
+      "1F",
+      "STD",
+      "B1F"
+    ],
+    "B1F_count": 0,
+    "1F_count": 324,
+    "STD_count": 403,
+    "B1F_connectivity": 0,
+    "1F_connectivity": 95.8,
+    "STD_connectivity": 99.8
+  }
+}

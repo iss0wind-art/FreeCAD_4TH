@@ -57,12 +57,12 @@
 ## Phase 1 트랙 (5개 병렬)
 
 ### Track A — DB 마이그레이션
-**산출물**: `api/database.py` 수정 + 새 테이블 3개 자동 생성  
-**입력**: [db_schema.sql](db_schema.sql)  
+**산출물**: `api/database.py` 수정 + 새 테이블 3개 자동 생성
+**입력**: [db_schema.sql](db_schema.sql)
 **검증**: `init_db()` 호출 후 테이블 존재 확인 테스트
 
 ### Track B — BOQ Spec 임포터
-**산출물**: `scripts/import_boq_specs.py` (1회성 스크립트)  
+**산출물**: `scripts/import_boq_specs.py` (1회성 스크립트)
 **입력**:
 - 원본: `D:\GIT\BOQ\sketchup_plugins\boq_easyframe\boq_member_specs.json`
 - 변환 매핑:
@@ -77,7 +77,7 @@
 
 ### Track C — Manifest 파서 (TDD)
 **산출물**: `core/manifest_parser.py` + Pydantic 모델
-**입력**: [member_manifest_schema.md](member_manifest_schema.md)  
+**입력**: [member_manifest_schema.md](member_manifest_schema.md)
 **기능**:
 - `parse_manifest(yaml_text: str) -> ManifestModel`
 - 스키마 검증 (Pydantic)
@@ -86,8 +86,8 @@
 **검증**: [sample_project.boq.yaml](sample_project.boq.yaml) 파싱 성공
 
 ### Track D — CRUD API (TDD)
-**산출물**: `api/routes/specs.py` + `api/routes/projects.py`  
-**입력**: [api_contract.md](api_contract.md)  
+**산출물**: `api/routes/specs.py` + `api/routes/projects.py`
+**입력**: [api_contract.md](api_contract.md)
 **P0 엔드포인트**:
 - `GET /api/specs`
 - `GET /api/specs/{symbol}`
@@ -95,7 +95,7 @@
 - `POST /api/projects/{id}/calculate`
 
 ### Track E — 그리드 → 절대 좌표 어댑터
-**산출물**: `core/grid_resolver.py`  
+**산출물**: `core/grid_resolver.py`
 **기능**:
 - `resolve_at(grid_ref, grid_config) -> (x, y)`
 - `resolve_member_to_input(instance, project) -> MemberInput`

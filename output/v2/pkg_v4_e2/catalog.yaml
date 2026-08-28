@@ -1,0 +1,280 @@
+E:
+  width_mm: 200
+  height_mm: 0
+  member_type: slab
+A:
+  width_mm: 400
+  height_mm: 0
+  member_type: slab
+F:
+  width_mm: 400
+  height_mm: 0
+  member_type: slab
+B:
+  width_mm: 450
+  height_mm: 0
+  member_type: slab
+G:
+  width_mm: 200
+  height_mm: 0
+  member_type: slab
+C:
+  width_mm: 400
+  height_mm: 0
+  member_type: slab
+H:
+  width_mm: 200
+  height_mm: 0
+  member_type: slab
+D:
+  width_mm: 200
+  height_mm: 0
+  member_type: slab
+RG2:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG2A:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG2B:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG2C:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG3:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG3A:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RG4:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RG10:
+  width_mm: 900.0
+  height_mm: 900.0
+  member_type: beam
+RG10A:
+  width_mm: 1000.0
+  height_mm: 900.0
+  member_type: beam
+RG11:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RG11A:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RG12:
+  width_mm: 1100.0
+  height_mm: 900.0
+  member_type: beam
+RG12A:
+  width_mm: 1200.0
+  height_mm: 900.0
+  member_type: beam
+RG13:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RG13A:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RG13B:
+  width_mm: 1000.0
+  height_mm: 900.0
+  member_type: beam
+RG14:
+  width_mm: 800.0
+  height_mm: 900.0
+  member_type: beam
+RG14A:
+  width_mm: 800.0
+  height_mm: 900.0
+  member_type: beam
+RG15:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RG15A:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RG15B:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RG16A:
+  width_mm: 1200.0
+  height_mm: 900.0
+  member_type: beam
+RB1:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB1A:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB1B:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB1C:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RB2:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB2A:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB2B:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB2C:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RB3:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RB3A:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RB3B:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RB3C:
+  width_mm: 800.0
+  height_mm: 900.0
+  member_type: beam
+RB4:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB4A:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB4B:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB5:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB5A:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB6:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB7:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB7A:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB10:
+  width_mm: 900.0
+  height_mm: 900.0
+  member_type: beam
+RB12:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB13:
+  width_mm: 1000.0
+  height_mm: 900.0
+  member_type: beam
+RB14:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RB14A:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RG1:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG1A:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG1B:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RG1C:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RG1D:
+  width_mm: 700.0
+  height_mm: 900.0
+  member_type: beam
+RB2D:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB11:
+  width_mm: 600.0
+  height_mm: 900.0
+  member_type: beam
+RB15:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB16:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RB20:
+  width_mm: 400.0
+  height_mm: 900.0
+  member_type: beam
+RWG1:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: unknown
+RWG2:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: unknown
+FG1:
+  width_mm: 400.0
+  height_mm: 600.0
+  member_type: foundation
+RG20:
+  width_mm: 500.0
+  height_mm: 900.0
+  member_type: beam
+RG21:
+  width_mm: 800.0
+  height_mm: 900.0
+  member_type: beam

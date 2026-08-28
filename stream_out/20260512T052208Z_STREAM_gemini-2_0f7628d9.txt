@@ -1,0 +1,1 @@
+MCP issues detected. Run /mcp list for status.gemini-2.0-flash-thinking-exp-001

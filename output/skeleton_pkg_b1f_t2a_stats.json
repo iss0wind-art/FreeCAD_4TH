@@ -1,0 +1,12 @@
+{
+  "input": "output/skeleton_pkg_b1f.dxf",
+  "output": "output/skeleton_pkg_b1f_t2a.dxf",
+  "clean_lines": 38430,
+  "isolated_before": 11226,
+  "bridges_added": 17039,
+  "isolated_connected": 10708,
+  "isolated_remaining": 518,
+  "target_met": true,
+  "gap_max_mm": 800.0,
+  "angle_tol_deg": 5.0
+}

@@ -28,7 +28,7 @@ def extract_beams(
     beam_layers: List[str],
     section_specs: Optional[Dict] = None,    # {symbol: SectionSpec}
     section_label_positions: Optional[List[Tuple[str, float, float]]] = None,
-    label_match_radius_mm: float = 1500.0,
+    label_match_radius_mm: float = 5000.0,
     min_length_mm: float = 300.0,
 ) -> List[ExtractedBeam]:
     """BEAM 레이어 LINE → 보."""

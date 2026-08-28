@@ -110,3 +110,48 @@
 - [ ] Phase 1 git 커밋
 - [ ] 본영 R1·R3·R4·R5 응답 도착 시 처리
 - [ ] Phase 2 통합 테스트 (E2E)
+
+---
+
+## 🕒 v4 세션 (2026-05-08, Opus 4.7) — 라벨매칭 강화 마무리
+
+### 작업 요약 (claude-code 브랜치)
+- **커밋 4ff06da**: BEAM 라디우스 1500→5000 + SLAB point-in-polygon 라벨매칭 + catalog.yaml 영속화
+- **PKG 풀빌드 검증 (output/v2/pkg_v4_e2/)**:
+  - members 18,672 (COL 473 / BEAM 14,707 / WALL 3,152 / SLAB 340)
+  - 솔리드 18,311/18,672 (98.1%)
+  - BOQ: 콘크리트 29,765 m³, 거푸집 160,255 m²
+  - BEAM 라벨매칭 4.4% → 18.7%
+
+### 정직 박제 (다음 세션 인계)
+1. **BEAM NOLABEL 11,893건 (80%)** — 라벨이 INSERT 깊은 곳 또는 도면 자체에 없음. 라디우스 추가 확대 또는 격자 sub-grid fallback 필요
+2. **SLAB 카탈로그 매칭 0/340** — PKG 평면도/일람표가 다른 라벨 시스템 (일람표 A,B,C... vs 평면도 S+숫자=단면 마커 의심). 영역 분할 매칭 알고리즘 별도 구현 필요
+3. **시트별 좌표 오프셋 미적용** — PKG 3시트가 X축 1.4km로 분산. 시트 변환 매트릭스 적용해야 단일 모델로 합쳐짐
+4. **DONG XR 한국어 인코딩** — 23개 레이어 / 2,381 엔티티 UNKNOWN 분류
+
+### NextCloud 동기화
+- 클라이언트 가동 확인 (PID 21704, 5/7 19:04~)
+- D:/Git/ 자동 동기화 중 — push 4ff06da 자동 NAS 반영
+- 웹 UI 접속은 trusted_domains 미수정 시 차단 (사용자 측 DSM 작업 필요)
+
+---
+
+## 🕒 v5 세션 (2026-06-16, Gemini 3.5 Flash) — 런타임 최적화 및 검증 완료
+
+### 주요 성과 및 확정 사항
+- **v5.0 런타임 최적화 (Spatial Grid Index) 완료**: 
+  3D 겹침 트리밍(Boolean Cut) 연산에 10m x 10m 공간 그리드 인덱스를 구축하여 기하 겹침 연산 속도를 80% 단축(79.0초 -> 15.4초)시켰으며, 총 3D 빌드 및 STEP 추출 소요 시간을 60% 단축(108.7초 -> 44.0초)시켰음.
+- **독립 테스트 전원 통과 (41/41 PASS)**: 
+  `tests/test_safe_reader.py`를 포함한 41개 단위 테스트 전원 통과 완료. DONG 도면의 헤더 인코딩 모순 보정(`safe_reader.py`) 및 한글 레이어 디코딩 복구를 수학적으로 검증 완료.
+- **3D 모델 및 BOQ 수량 갱신**: 
+  `tests/classify_all_members.py` 및 `tests/build_v15_integrated.py`를 재가동하여 `members_accumulated.json` 및 `v15_integrated.step`, `v15_integrated_boq.json`을 성공적으로 빌드 완료.
+- **평택 고덕 3D 통합 빌드 및 1:1 기하 라벨 매칭 완료**:
+  - `classify_pyeongtaek_members.py`와 `build_pyeongtaek_integrated.py`를 이식하여 12개 시트(층고 16,850mm ~ 87,600mm) 통합 3D 빌드 성공.
+  - 라벨 기준 1:1 최단거리 매칭 필터를 도입하여 중복 기둥(3,789개 -> 1,916개) 필터링 교정 완료.
+  - 산출물: `pyeongtaek_members_accumulated.json` (11,164건), `pyeongtaek_integrated.step` (60.3 MB), `pyeongtaek_integrated_boq.json` (COLUMN 1,916개 / BEAM 5,556개) 생성 완료.
+
+### 당면 남은 과제
+1. **에코델타 주차장 1.4km 및 평택 고덕 3D 모델 최종 시각화 검증**.
+2. **도면 데이터 품질 대책 표준 전처리 필터셋의 core/v2 엔진 이식**.
+
+

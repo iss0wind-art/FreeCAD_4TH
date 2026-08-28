@@ -28,10 +28,10 @@ class CoordSystem:
 
 
 def build_coord_system(meta: DrawingMeta) -> CoordSystem:
-    """모든 좌표 분석 한 번에."""
+    """모든 좌표 분석 한 번에 (Z축 포함)."""
     grids = resolve_grid_per_sheet(meta)
     anchors = find_canonical_anchors(meta, grids)
-    transforms = align_sheets_within_drawing(anchors)
+    transforms = align_sheets_within_drawing(anchors, sl_per_sheet=meta.sl_per_sheet)
 
     return CoordSystem(
         drawing_path=meta.path,

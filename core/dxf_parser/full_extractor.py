@@ -31,7 +31,7 @@ from typing import Dict, Iterator, List, Optional, Tuple
 
 import ezdxf
 
-from core.dxf_parser.entity_scanner import iter_all
+from core.dxf_parser.entity_scanner import iter_all, iter_clip
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
@@ -48,11 +48,11 @@ _COL_BLOCK = re.compile(
     r'|[EP]?C\d{1,2}\b',  # EC1, PC2, C2 단독
     re.IGNORECASE,
 )
-_COL_LAYER = re.compile(r'S[-_]?기둥|S[-_]?COL|STRUCT[-_]?COL', re.IGNORECASE)
-_BEAM_LAYER = re.compile(r'S[-_]?보|BEAM|GIRDER|S[-_]?B\d', re.IGNORECASE)
-_SLAB_LAYER = re.compile(r'S[-_]?슬|SLAB|FLOOR|S[-_]?SL|S[-_]?F\d', re.IGNORECASE)
-_WALL_LAYER = re.compile(r'WALL|벽|S[-_]?W\d|전단벽|SHEAR', re.IGNORECASE)
-_OUTLINE_LAYER = re.compile(r'A[-_]?외곽|OUTLINE|건물외벽|BLDG[-_]?OUT', re.IGNORECASE)
+_COL_LAYER = re.compile(r'S[-_]?기둥|S[-_]?COL|STRUCT[-_]?COL|A[-_]?COL', re.IGNORECASE)
+_BEAM_LAYER = re.compile(r'S[-_]?보|BEAM|GIRDER|S[-_]?B\d|S[-_]?G\d', re.IGNORECASE)
+_SLAB_LAYER = re.compile(r'S[-_]?슬|SLAB|FLOOR|S[-_]?SL|S[-_]?F\d|00_SLAB', re.IGNORECASE)
+_WALL_LAYER = re.compile(r'WALL|벽|S[-_]?W\d|전단벽|SHEAR|00_SHEAR', re.IGNORECASE)
+_OUTLINE_LAYER = re.compile(r'A[-_]?외곽|OUTLINE|건물외벽|BLDG[-_]?OUT|00_SLAB', re.IGNORECASE)
 
 _SECTION_SIZE = re.compile(r'(\d{3,4})[xX×*](\d{3,4})', re.IGNORECASE)
 _SECTION_SQ = re.compile(r'[Cc](\d{3,4})\b')
@@ -86,6 +86,7 @@ class SlabOutline:
     area_m2: float = 0.0
     layer: str = ''
     is_closed: bool = True
+    symbol: str = "NOSLAB" # 추출된 슬래브 기호 (S1, S2 등)
 
     def bbox(self) -> Tuple[float,float,float,float]:
         xs = [p[0] for p in self.pts]
@@ -168,14 +169,25 @@ class FullExtractor:
         result = ExtractResult()
         layer_stats: Dict[str, int] = defaultdict(int)
         seen_cols: set = set()  # 중복 제거
+        text_entities: List[Tuple[float, float, str]] = [] # (x, y, text)
 
-        for e in iter_all(msp):
+        for e in iter_clip(msp, clip):
             t = e.dxftype()
             try:
                 layer = e.dxf.layer
             except Exception:
                 layer = ''
             layer_stats[layer] += 1
+
+            if t in ('TEXT', 'MTEXT'):
+                try:
+                    txt = (e.dxf.text if t == 'TEXT' else e.text).strip()
+                    if txt:
+                        pos = e.dxf.insert
+                        if _in_clip(pos.x, pos.y, clip):
+                            text_entities.append((pos.x, pos.y, txt))
+                except:
+                    pass
 
             if t == 'INSERT':
                 col = self._col_from_insert(e, clip, seen_cols)
@@ -210,6 +222,12 @@ class FullExtractor:
 
         # 슬라브 외곽 정렬 (큰 것 먼저)
         result.slab_outlines.sort(key=lambda s: -s.area_m2)
+
+        print(f"  [DEBUG] Found {len(text_entities)} text entities and {len(result.slab_outlines)} slabs.")
+
+        # ── 슬래브 라벨 매칭 (김철수 소장) ──────────────────────
+        if text_entities and result.slab_outlines:
+            self._match_slab_labels(result.slab_outlines, text_entities)
 
         return result
 
@@ -291,6 +309,9 @@ class FullExtractor:
     def _slab_from_lwpoly(self, e, clip) -> Optional[SlabOutline]:
         try:
             layer = e.dxf.layer
+            # 슬래브 관련 레이어인지 확인
+            if not (_SLAB_LAYER.search(layer) or _OUTLINE_LAYER.search(layer)):
+                return None
             if self._EXCLUDE_LAYERS.search(layer):
                 return None
             flags = e.dxf.flags
@@ -355,6 +376,43 @@ class FullExtractor:
 # ─────────────────────────────────────────────────────────────
 # 유틸
 # ─────────────────────────────────────────────────────────────
+
+    def _match_slab_labels(self, slabs: List[SlabOutline],
+                           texts: List[Tuple[float, float, str]]):
+        """슬래브 폴리곤 내부의 텍스트에서 라벨(S1, S2 등) 추출.
+        김철수 소장: "슬래브는 텍스트가 폴리곤 한가운데 박혀 있는 경우가 많지."
+        """
+        from shapely.geometry import Polygon, Point
+        
+        # 슬래브 라벨 정규식 (S1, S2, SS1, PHS2 등. 단, SB1 등 보 라벨 제외)
+        slab_pat = re.compile(r'^([A-Z0-9-]{0,5})S\d+[A-Z]?$', re.IGNORECASE)
+        beam_exclude = re.compile(r'[GB]', re.IGNORECASE)
+        
+        for s in slabs:
+            if len(s.pts) < 3: continue
+            poly = Polygon(s.pts)
+            
+            best_label = None
+            b = s.bbox()
+            print(f"  [DEBUG] Slab Layer: {s.layer}, BBox: ({b[0]:.0f}, {b[1]:.0f}, {b[2]:.0f}, {b[3]:.0f})")
+            
+            for tx, ty, txt in texts:
+                # 1) 간단한 BBox 필터링
+                if not (b[0] <= tx <= b[2] and b[1] <= ty <= b[3]):
+                    continue
+                
+                print(f"    - Found Text near Slab: '{txt}' at ({tx:.0f}, {ty:.0f})")
+                
+                # 2) 폴리곤 내부 여부 확인
+                if poly.contains(Point(tx, ty)):
+                    print(f"      * Text is INSIDE polygon")
+                    if slab_pat.match(txt) and not beam_exclude.search(txt):
+                        best_label = txt
+                        print(f"      * Symbol MATCHED: {best_label}")
+                        break 
+            
+            if best_label:
+                s.symbol = best_label
 
 def _in_clip(x: float, y: float,
              clip: Optional[Tuple[float,float,float,float]]) -> bool:

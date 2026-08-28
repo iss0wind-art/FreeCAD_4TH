@@ -33,7 +33,7 @@ def infer_layer_role(
     layer: str,
     stat: LayerStat,
 ) -> LayerRole:
-    """레이어명 + 통계 → 역할.
+    """레이어명 + 통계 → 역할 (엄격한 규칙 적용).
 
     Args:
         layer: 레이어명
@@ -41,27 +41,25 @@ def infer_layer_role(
     """
     derivation = []
 
-    # 1. 키워드
+    # 1. 키워드 기반 하드코어 분류 (ks_lexicon.py에 정의된 명확한 구조 레이어만 허용)
     keyword_type = classify_layer_by_keyword(layer)
-    if keyword_type != MemberType.UNKNOWN:
+    
+    # 2. 건축 도면의 잡선(A-TEXT, DEFPOINT, DIM 등) 원천 차단
+    if layer.upper().startswith("A-") or "DEFPOINT" in layer.upper() or "DIM" in layer.upper() or "TEXT" in layer.upper():
+        keyword_type = MemberType.IGNORE
+        derivation.append("rule:architecture_or_anno_ignored")
+    elif keyword_type != MemberType.UNKNOWN:
         derivation.append(f"keyword:{keyword_type.value}")
+    else:
+        # [삭제됨] 이전의 'LWPOLYLINE이면 무조건 기둥' 같은 억측 로직 완전 폐기
+        # 모르는 레이어는 모른다고 확실히 분류해야 쓰레기 데이터가 섞이지 않음.
+        derivation.append("unknown:no_matching_pattern")
 
-    # 2. dominant type 보정
-    dom = stat.dominant_type
-    if keyword_type == MemberType.UNKNOWN:
-        # 키워드 없으면 dominant로 추정
-        if dom == "LWPOLYLINE":
-            keyword_type = MemberType.COLUMN     # 기본 가정
-            derivation.append("dom:LWPOLYLINE→COLUMN")
-        elif dom == "LINE":
-            keyword_type = MemberType.BEAM
-            derivation.append("dom:LINE→BEAM")
-
-    # 3. confidence
+    # 3. 신뢰도 (Confidence) 책정
     if "keyword" in str(derivation):
-        confidence = 0.9
-    elif "dom:" in str(derivation):
-        confidence = 0.5
+        confidence = 0.95
+    elif "rule" in str(derivation):
+        confidence = 0.99 # 명확히 거를 것은 신뢰도 높음
     else:
         confidence = 0.0
 

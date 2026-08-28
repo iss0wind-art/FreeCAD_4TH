@@ -30,3 +30,15 @@ tmp_analysis/
 
 # GitHub 100MB 단일 파일 제한 초과 (push 거부됨)
 output/v13_walls.step
+
+# CAD 산출물 (대용량)
+*.step
+*.FCStd1
+*.fcstd1
+.venv/
+
+# 런타임 자국 (2026-07-25)
+.bridge/
+.obsidian/
+tmp_*.py
+*.log

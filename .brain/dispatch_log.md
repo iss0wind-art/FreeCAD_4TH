@@ -478,4 +478,3 @@ with urllib.request.urlopen(req, timeout=120) as resp:
 | `GET 100.89.221.23:8020/api/messages/inbox` | 🔐 device 인증 필요 | 미시도 |
 | `SSH 100.89.221.23:22` | 🔐 키 미설정 | 미시도 |
 | `폴더 봉인 + git push` | ✅ 가능 (NAS git pull 시) | 보조 채널 |
-

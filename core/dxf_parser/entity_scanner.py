@@ -29,40 +29,86 @@ def iter_all(container, depth: int = 0, max_depth: int = 8) -> Iterator:
     """모든 엔티티 재귀 순회 — INSERT 내부까지.
 
     한국 구조도면은 INSERT(블록 참조) 안에 INSERT가 중첩된다.
-    max_depth=8로 충분히 깊이 파고든다.
+    부모 INSERT의 레이어가 '0'이 아닌 경우 자식에게 상속해 필터 누락을 방지합니다.
     """
     if depth > max_depth:
         return
     for e in container:
+        if e.dxftype() == 'DIMASSOC':  # causes iter hang on some DXF files (108/116동)
+            continue
         yield e
         if e.dxftype() == 'INSERT':
             try:
-                yield from iter_all(list(e.virtual_entities()), depth + 1, max_depth)
+                parent_layer = getattr(e.dxf, 'layer', '0')
+                virtuals = list(e.virtual_entities())
+                for sub_e in virtuals:
+                    sub_layer = getattr(sub_e.dxf, 'layer', '0')
+                    if sub_layer == '0' or not sub_layer:
+                        sub_e.dxf.layer = parent_layer
+                yield from iter_all(virtuals, depth + 1, max_depth)
             except Exception:
                 pass
 
 
 def iter_clip(container, clip: Optional[Tuple[float,float,float,float]],
               depth: int = 0, max_depth: int = 8) -> Iterator:
-    """클립 영역 안 엔티티만 순회."""
+    """클립 영역 안 엔티티만 순회. 블록 내부 엔티티도 개별 좌표 체크."""
     if depth > max_depth:
         return
     for e in container:
+        t = e.dxftype()
+
+        if t == 'DIMASSOC':  # causes iter hang on some DXF files (108/116동)
+            continue
+
+        # 블록(INSERT)인 경우, 자식 전개 및 레이어 상속 적용
+        if t == 'INSERT':
+            yield e  # INSERT 본체 방출
+            try:
+                parent_layer = getattr(e.dxf, 'layer', '0')
+                block_name = getattr(e.dxf, 'name', '')
+                # XR 외부참조 INSERT는 내부 전개 생략
+                if ('$0$' in parent_layer or parent_layer.startswith('XR') or
+                        '$0$' in block_name or block_name.startswith('XR')):
+                    continue
+                virtuals = list(e.virtual_entities())
+                for sub_e in virtuals:
+                    sub_layer = getattr(sub_e.dxf, 'layer', '0')
+                    if sub_layer == '0' or not sub_layer:
+                        sub_e.dxf.layer = parent_layer
+                yield from iter_clip(virtuals, clip, depth + 1, max_depth)
+            except Exception:
+                pass
+            continue
+
+        # 일반 엔티티는 클립 체크
         if clip is not None:
             try:
-                pos = e.dxf.insert
-                if not (clip[0] <= pos.x <= clip[2] and clip[1] <= pos.y <= clip[3]):
-                    if e.dxftype() != 'INSERT':
+                # 엔티티 종류별 위치 파악 (LWPOLYLINE/LINE 포함)
+                if t == 'LWPOLYLINE':
+                    pts = e.get_points()
+                    if pts:
+                        cx = sum(p[0] for p in pts) / len(pts)
+                        cy = sum(p[1] for p in pts) / len(pts)
+                        if not (clip[0] <= cx <= clip[2] and clip[1] <= cy <= clip[3]):
+                            continue
+                elif t == 'LINE':
+                    s, en = e.dxf.start, e.dxf.end
+                    cx, cy = (s.x + en.x) / 2, (s.y + en.y) / 2
+                    if not (clip[0] <= cx <= clip[2] and clip[1] <= cy <= clip[3]):
                         continue
+                else:
+                    pos = None
+                    if hasattr(e.dxf, 'insert'): pos = e.dxf.insert
+                    elif hasattr(e.dxf, 'start'): pos = e.dxf.start
+                    elif hasattr(e.dxf, 'center'): pos = e.dxf.center
+                    if pos:
+                        if not (clip[0] <= pos.x <= clip[2] and clip[1] <= pos.y <= clip[3]):
+                            continue
             except Exception:
                 pass
+        
         yield e
-        if e.dxftype() == 'INSERT':
-            try:
-                yield from iter_clip(list(e.virtual_entities()), clip,
-                                     depth + 1, max_depth)
-            except Exception:
-                pass
 
 
 # ─────────────────────────────────────────────────────────────
@@ -128,17 +174,20 @@ class ScanResult:
 # 3. 스캔 실행
 # ─────────────────────────────────────────────────────────────
 
-def scan(dxf_path: str, encoding: str = 'cp949',
+def scan(dxf_path: str, encoding: str = 'auto',
          clip: Optional[Tuple[float,float,float,float]] = None) -> ScanResult:
     """DXF 전수 스캔. INSERT 재귀 포함.
 
     Args:
         dxf_path: DXF 파일 경로
-        encoding: 인코딩 (한국 도면 = cp949)
+        encoding: 'auto'(utf-8/cp949 자동 판별, 기본) | 'cp949' | 'utf-8'
         clip: (xmin,ymin,xmax,ymax) — 특정 영역만 집계 (None=전체)
     """
-    from core.dxf_parser.encoding_helper import safe_read_dxf
-    doc = safe_read_dxf(dxf_path, default_encoding=encoding)
+    if encoding == 'auto':
+        from core.dxf_parser.safe_reader import safe_readfile
+        doc = safe_readfile(dxf_path)
+    else:
+        doc = ezdxf.readfile(dxf_path, encoding=encoding)
     msp = doc.modelspace()
 
     result = ScanResult()
@@ -210,7 +259,7 @@ def scan(dxf_path: str, encoding: str = 'cp949',
 
 
 def quick_text_grep(dxf_path: str, pattern: str,
-                    encoding: str = 'cp949') -> List[Tuple[str, float, float]]:
+                    encoding: str = 'auto') -> List[Tuple[str, float, float]]:
     """DXF에서 특정 패턴 텍스트만 빠르게 검색.
 
     Returns:
@@ -218,8 +267,11 @@ def quick_text_grep(dxf_path: str, pattern: str,
     """
     import re
     pat = re.compile(pattern, re.IGNORECASE)
-    from core.dxf_parser.encoding_helper import safe_read_dxf
-    doc = safe_read_dxf(dxf_path, default_encoding=encoding)
+    if encoding == 'auto':
+        from core.dxf_parser.safe_reader import safe_readfile
+        doc = safe_readfile(dxf_path)
+    else:
+        doc = ezdxf.readfile(dxf_path, encoding=encoding)
     msp = doc.modelspace()
     results = []
 

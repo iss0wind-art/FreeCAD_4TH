@@ -1,7 +1,7 @@
 # 도면 → FreeCAD 빠른 참조 (1쪽 요약) — v2 갱신
 
-> 전문: `docs/MANUAL_DRAWING_TO_FREECAD_v2.md` (v1: `docs/MANUAL_DRAWING_TO_FREECAD_v1.md`)  
-> 근거: 방부장 친명 2026-05-06  
+> 전문: `docs/MANUAL_DRAWING_TO_FREECAD_v2.md` (v1: `docs/MANUAL_DRAWING_TO_FREECAD_v1.md`)
+> 근거: 방부장 친명 2026-05-06
 > v2 갱신: 2026-05-06 — 101동 통합 PoC 반영
 
 ---

@@ -1,0 +1,281 @@
+{
+  "generated": "2026-06-28 (corrected v2)",
+  "project": "부산에코델타시티 24BL 공공분양주택",
+  "classification_note": "B1F=RG/REG/RB series(H=900mm), B2F=-1G/-1EG/-1B series(H=600mm)",
+  "beams": {
+    "B1F (RG/REG/RB/RaG/RWG)": {
+      "count": 53,
+      "main_dimensions": [
+        {
+          "w": 600,
+          "h": 900,
+          "count": 17,
+          "pct": 32
+        },
+        {
+          "w": 500,
+          "h": 900,
+          "count": 12,
+          "pct": 22
+        },
+        {
+          "w": 700,
+          "h": 900,
+          "count": 8,
+          "pct": 15
+        },
+        {
+          "w": 500,
+          "h": 600,
+          "count": 5,
+          "pct": 9
+        }
+      ],
+      "source": "S40-151~156",
+      "note": "H=900mm 주류 (77%). RG/REG = 주차장 주보, RB = 일반보, RaG/RWG = 램프보"
+    },
+    "B2F (-1G/-1EG/-1B/-1WG)": {
+      "count": 47,
+      "main_dimensions": [
+        {
+          "w": 500,
+          "h": 600,
+          "count": 36,
+          "pct": 77
+        },
+        {
+          "w": 600,
+          "h": 600,
+          "count": 8,
+          "pct": 17
+        },
+        {
+          "w": 700,
+          "h": 600,
+          "count": 2,
+          "pct": 4
+        }
+      ],
+      "source": "S40-151~156",
+      "note": "전체 H=600mm. -1G = 거더, -1EG = 단부거더, -1B = 보, -1WG = 벽체거더"
+    },
+    "1F (1TG/1TB/1EG/1B)": {
+      "count": 14,
+      "main_dimensions": [
+        {
+          "w": 500,
+          "h": 600,
+          "count": 6,
+          "pct": 42
+        },
+        {
+          "w": 500,
+          "h": 900,
+          "count": 4,
+          "pct": 28
+        }
+      ],
+      "source": "S40-151~156",
+      "note": "주차장 1층 보 (소형). 진짜 전이보는 S30-531~551"
+    },
+    "TG_transfer (S30)": {
+      "count": 231,
+      "subtypes": {
+        "1TG (1층 전이보, H=1500)": {
+          "count": 61,
+          "range": "800~1700x1500"
+        },
+        "2TG (2층 전이보, H=1250/1400)": {
+          "count": 103,
+          "range": "800~1700x1250/1400"
+        },
+        "TG (무접두)": {
+          "count": 7,
+          "range": "800~1100x1250"
+        },
+        "1TB (1층 T보, H=1500)": {
+          "count": 15,
+          "range": "800~1800x1500"
+        },
+        "2TB (2층 T보, H=1250)": {
+          "count": 45,
+          "range": "800~1500x1250"
+        }
+      },
+      "source": "S30-531~551",
+      "note": "주동 전이보 리스트. 층별 단면분포는 output/tg_beam_catalog.json"
+    },
+    "lowrise (S30)": {
+      "count": 138,
+      "main_dimensions": [
+        {
+          "w": 500,
+          "h": 900,
+          "count": 81,
+          "pct": 59
+        },
+        {
+          "w": 500,
+          "h": 600,
+          "count": 38,
+          "pct": 28
+        }
+      ],
+      "source": "S30-521~525",
+      "note": "저층부 보 리스트. TG 없음"
+    }
+  },
+  "columns": {
+    "TC_transfer (101~112동)": {
+      "count": 23,
+      "types": {
+        "-2~1TC1~TC16": "B2F~1F 전이기둥, 600x1000~2650",
+        "1TC1~1TC24": "1F 전이기둥, 600~1000mm",
+        "C2": "일반기둥, 600x1000"
+      },
+      "source": "S30-471~491",
+      "note": "전체 단면은 output/column_wall_slab_parsed.json"
+    },
+    "parking (S40)": {
+      "count": 28,
+      "subtypes": {
+        "-2~-1C1~C5": "B2F~B1F 일반기둥, 400x800",
+        "-2~-1EC1~EC7": "B2F~B1F 단부기둥, 400x800",
+        "-1C6~C8": "B1F 전용, 400x800~900",
+        "-1TC1~TC2": "B1F 전이기둥, 400x800~900",
+        "-2~-1AC1~AC2": "건축기둥, 500x700",
+        "1EC8~EC11": "1F 단부기둥, Ø500(원형)"
+      },
+      "source": "S40-111~112",
+      "note": "B2F~B1F 관통기둥(-2~-1)과 B1F 전용(-1), 1F(1) 구분"
+    }
+  },
+  "walls": {
+    "parking (S40)": {
+      "types": {
+        "-2~-1W1": {
+          "thickness": 250,
+          "location": "B2F~B1F",
+          "type": "내력벽"
+        },
+        "-2~-1W2": {
+          "thickness": 200,
+          "location": "B2F~B1F",
+          "type": "내력벽"
+        },
+        "-2~-1W3": {
+          "thickness": 200,
+          "location": "B2F~B1F",
+          "type": "내력벽"
+        },
+        "-2~-1W10": {
+          "thickness": 250,
+          "location": "B2F~B1F",
+          "type": "내력벽"
+        },
+        "-2~-1W20": {
+          "thickness": 250,
+          "location": "B2F~B1F",
+          "type": "내력벽"
+        },
+        "RaW1": {
+          "thickness": 200,
+          "location": "램프",
+          "type": "램프벽"
+        },
+        "PBW1": {
+          "thickness": 400,
+          "location": "주차장",
+          "type": "지하외벽"
+        },
+        "BW5": {
+          "thickness": 500,
+          "location": "주차장",
+          "type": "지하외벽"
+        },
+        "W0": {
+          "thickness": null,
+          "location": "주차장",
+          "type": "비내력벽"
+        }
+      },
+      "source": "S40-131~143",
+      "note": "주차장 벽체 일람표. OLE 아님, TEXT 직접 추출"
+    },
+    "apartment_external (S30)": {
+      "types": {
+        "ARW1": {
+          "thickness": 500,
+          "location": "지하층",
+          "type": "지하외벽"
+        },
+        "ARW1A": {
+          "thickness": 600,
+          "location": "지하층",
+          "type": "지하외벽"
+        },
+        "ARW2": {
+          "thickness": 400,
+          "location": "지하층",
+          "type": "지하외벽"
+        }
+      },
+      "source": "S30-571~575 + S30-001~010",
+      "note": "주동 지하외벽 일람표. THK 400~600"
+    },
+    "apartment_internal (S30)": {
+      "status": "FAILED - OLE2FRAME",
+      "type_codes_from_revision_notes": [
+        "CW0",
+        "CW2",
+        "CW32",
+        "ABW1",
+        "HW2"
+      ],
+      "boq2_reference": {
+        "path": "D:\\Git\\BOQ_2\\boq_member_specs.json",
+        "types": [
+          "-1W1",
+          "-1W10",
+          "-1W2",
+          "-1W20",
+          "-1W3",
+          "ARW1",
+          "ARW1A",
+          "ARW2"
+        ],
+        "note": "기호는 있으나 W/H/T 값 모두 0. 실제 두께 데이터 없음"
+      },
+      "source": "S30-311~463",
+      "note": "OLE2FRAME(엑셀 임베드)으로 ezdxf 파싱 불가. 두께 데이터를 얻으려면 엑셀 원본 필요"
+    }
+  },
+  "slabs": {
+    "parking_B1F (S40)": {
+      "count": 18,
+      "thickness": "150mm (17개), 180mm (1개)",
+      "names": "-1S1~-1S20",
+      "source": "S40-121~124"
+    },
+    "parking_roof (S40)": {
+      "count": 22,
+      "thickness": "250mm (16), 200mm (4), 280mm (1), 150mm (1)",
+      "names": "RS1~RS16, RS51~RS54, RCS1, RaS1",
+      "source": "S40-121~124"
+    },
+    "apartment (S30)": {
+      "count": 5,
+      "thickness": "150mm (4), 200mm (1)",
+      "note": "S30-581 주동 슬라브 배근일람표. 실제 슬라브 두께는 S30-001~010 구조평면도 참조",
+      "detail_from_plan": {
+        "지하1층 주동부": "180mm",
+        "계단실": "150mm (전층)",
+        "E.V.HALL": "150mm (전층)",
+        "1층 필로티 및 단위세대": "210mm",
+        "단위세대 (기준층)": "210mm",
+        "단위세대 욕실": "160mm (전층)"
+      },
+      "source": "S30-581 + S30-001~010"
+    }
+  }
+}

@@ -145,14 +145,14 @@ class TestExtrudeRegions:
 
     @freecad_only
     def test_material_preserved_in_result(self):
-        """입력 material이 MeshResult에 적절한 PBR로 매핑됨"""
+        """입력 material이 MeshResult에 그대로 보존됨"""
         region = ExtrudeRegion(
             region_id="FM",
             vertices_2d=[(-300, -300), (300, -300), (300, 300), (-300, 300)],
             height=3000.0, z_base=0.0, material="FORMWORK",
         )
         results = extrude_regions([region])
-        assert results[0].material == "ALFORM"
+        assert results[0].material == "FORMWORK"
 
 
 # ─────────────────────────────────────
@@ -296,4 +296,4 @@ class TestPipelineIntegration:
             assert isinstance(r, ExtrudeRegion)
             assert r.height > 0
             assert len(r.vertices_2d) >= 3
-            assert r.material in ("CONCRETE", "FORMWORK", "EUROFORM", "PLYWOOD", "GANGFORM", "ALFORM")
+            assert r.material in ("CONCRETE", "FORMWORK")

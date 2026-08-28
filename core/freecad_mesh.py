@@ -41,67 +41,6 @@ class ExtrudeRegion:
     height: float           # Extrude 높이 (mm)
     z_base: float           # 시작 Z값 (mm, 기본 0)
     material: str           # "CONCRETE" / "FORMWORK"
-    member_type: Optional[str] = None
-    is_external: bool = False
-
-
-def determine_pbr_material(region: ExtrudeRegion) -> str:
-    """
-    Determine PBR material based on spec/MATERIAL_RULES.md.
-    Underground (Z < 0):
-      - Vertical: EUROFORM
-      - Horizontal: PLYWOOD
-    Ground (Z >= 0):
-      - Vertical:
-        - External: GANGFORM
-        - Internal: ALFORM
-      - Horizontal: ALFORM
-    """
-    # If material is already one of the custom PBR materials, keep it.
-    if region.material in ("EUROFORM", "PLYWOOD", "GANGFORM", "ALFORM", "CONCRETE_JOINT"):
-        return region.material
-
-    # We only map CONCRETE / FORMWORK
-    if region.material not in ("CONCRETE", "FORMWORK"):
-        return region.material
-
-    # 1. Determine underground vs ground
-    is_underground = (region.z_base < 0.0)
-    rid = region.region_id.upper()
-    if any(f in rid for f in ["B1F", "B2F", "B3F", "B4F", "B5F", "BASEMENT", "지하"]):
-        is_underground = True
-
-    # 2. Determine vertical vs horizontal
-    is_vertical = False
-    if region.member_type:
-        is_vertical = region.member_type.upper() in ["VERTICAL", "COLUMN", "WALL"]
-    else:
-        # Parse from region_id
-        if rid.startswith("C") or rid.startswith("W") or "COLUMN" in rid or "WALL" in rid or "COL" in rid or "기둥" in rid or "벽" in rid:
-            is_vertical = True
-        elif rid.startswith("B") or rid.startswith("S") or "BEAM" in rid or "SLAB" in rid or "GIRDER" in rid or "보" in rid or "슬라브" in rid:
-            is_vertical = False
-        else:
-            is_vertical = region.height > 1000.0
-
-    # 3. Determine external vs internal
-    is_external = region.is_external
-    if any(k in rid for k in ["EXT", "OUT", "EXTERNAL", "GANG", "외벽", "외기둥"]):
-        is_external = True
-
-    if is_underground:
-        if is_vertical:
-            return "EUROFORM"
-        else:
-            return "PLYWOOD"
-    else:
-        if is_vertical:
-            if is_external:
-                return "GANGFORM"
-            else:
-                return "ALFORM"
-        else:
-            return "ALFORM"
 
 
 @dataclass
@@ -194,7 +133,6 @@ def extrude_regions(regions: list[ExtrudeRegion]) -> list[MeshResult]:
         shape = extrude_region_to_shape(region)
         mesh = shape_to_mesh(shape)
         result = mesh_to_result(mesh, region)
-        result.material = determine_pbr_material(region)
         results.append(result)
     return results
 
@@ -221,28 +159,24 @@ def export_gltf(mesh_results: list[MeshResult], output_path: str) -> GltfOutput:
     meshes = []
     nodes = []
 
-    MATERIAL_PBR = {
-        "CONCRETE": {"color": [0.6, 0.6, 0.6, 1.0], "metallic": 0.0, "roughness": 0.8},
-        "EUROFORM": {"color": [1.0, 0.95, 0.65, 1.0], "metallic": 0.1, "roughness": 0.6},
-        "PLYWOOD": {"color": [0.78, 0.65, 0.50, 1.0], "metallic": 0.0, "roughness": 0.9},
-        "GANGFORM": {"color": [0.40, 0.25, 0.10, 1.0], "metallic": 0.6, "roughness": 0.3},
-        "ALFORM": {"color": [0.80, 0.80, 0.80, 1.0], "metallic": 0.7, "roughness": 0.2},
-        "CONCRETE_JOINT": {"color": [0.3, 0.3, 0.8, 1.0], "metallic": 0.0, "roughness": 0.8},
-        "FORMWORK": {"color": [0.8, 0.5, 0.2, 1.0], "metallic": 0.0, "roughness": 0.8},
+    MATERIAL_COLORS = {
+        "CONCRETE": [0.6, 0.6, 0.6, 1.0],
+        "FORMWORK":  [0.8, 0.5, 0.2, 1.0],
+        "CONCRETE_JOINT": [0.3, 0.3, 0.8, 1.0],
     }
 
     gltf.materials = [
         pygltflib.Material(
             name=mat,
             pbrMetallicRoughness=pygltflib.PbrMetallicRoughness(
-                baseColorFactor=params["color"],
-                metallicFactor=params["metallic"],
-                roughnessFactor=params["roughness"],
+                baseColorFactor=color,
+                metallicFactor=0.0,
+                roughnessFactor=0.8,
             )
         )
-        for mat, params in MATERIAL_PBR.items()
+        for mat, color in MATERIAL_COLORS.items()
     ]
-    material_index = {name: i for i, name in enumerate(MATERIAL_PBR)}
+    material_index = {name: i for i, name in enumerate(MATERIAL_COLORS)}
 
     total_volume_m3 = 0.0
     total_area_m2 = 0.0
@@ -335,9 +269,7 @@ def export_gltf(mesh_results: list[MeshResult], output_path: str) -> GltfOutput:
 
 
 def regions_from_clip_result(clip_result, column_height: float, beam_height: float,
-                             column_polygon, beam_polygon,
-                             z_base: float = 0.0,
-                             is_external: bool = False) -> list[ExtrudeRegion]:
+                              column_polygon, beam_polygon) -> list[ExtrudeRegion]:
     """
     polygon_clip.JointResult + Shapely 폴리곤 → ExtrudeRegion 목록 생성 헬퍼.
     A영역(교차): beam_height까지 / B영역(잔여): column_height까지 독립 Extrude.
@@ -353,10 +285,8 @@ def regions_from_clip_result(clip_result, column_height: float, beam_height: flo
             region_id=f"{clip_result.member_id}_intersection",
             vertices_2d=coords,
             height=beam_height,
-            z_base=z_base,
+            z_base=0.0,
             material="CONCRETE",
-            member_type="COLUMN",
-            is_external=is_external,
         ))
 
     if not remainder.is_empty:
@@ -368,10 +298,8 @@ def regions_from_clip_result(clip_result, column_height: float, beam_height: flo
                 region_id=f"{clip_result.member_id}_remainder_{i}",
                 vertices_2d=coords,
                 height=column_height,
-                z_base=z_base,
+                z_base=0.0,
                 material="CONCRETE",
-                member_type="COLUMN",
-                is_external=is_external,
             ))
 
     return regions

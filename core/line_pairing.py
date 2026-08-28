@@ -78,6 +78,7 @@ class WallPair:
     centerline_p1: tuple[float, float]  # 벽 중심선 시작
     centerline_p2: tuple[float, float]  # 벽 중심선 끝
     confidence: float
+    bypass_filter: bool = False
 
     @property
     def thickness(self) -> float:
@@ -289,7 +290,7 @@ def extract_grid_lines(lines: list[LineSeg],
 # 4. 통합 워크플로 — box_classifier 호환 출력
 # ---------------------------------------------------------------------------
 
-def run_adapter_2(lines: list[LineSeg]) -> dict:
+def run_adapter_2(lines: list[LineSeg], max_dist: float = 450.0) -> dict:
     """어댑터 ② 단일 호출 — 이천이 호출하는 엔트리.
 
     반환:
@@ -301,7 +302,7 @@ def run_adapter_2(lines: list[LineSeg]) -> dict:
         'stats': {...}
       }
     """
-    pairs = pair_walls(lines)
+    pairs = pair_walls(lines, max_dist=max_dist)
     paired_ids = set()
     for p in pairs:
         paired_ids.add(p.line_a_id)

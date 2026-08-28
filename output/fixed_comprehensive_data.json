@@ -1,0 +1,298 @@
+{
+  "beams_corrected": {
+    "B1F": {
+      "count": 53,
+      "dimensions": [
+        [
+          600,
+          900,
+          17
+        ],
+        [
+          500,
+          900,
+          12
+        ],
+        [
+          700,
+          900,
+          8
+        ],
+        [
+          500,
+          600,
+          5
+        ],
+        [
+          1000,
+          900,
+          3
+        ],
+        [
+          800,
+          900,
+          2
+        ],
+        [
+          1200,
+          900,
+          2
+        ],
+        [
+          900,
+          900,
+          2
+        ],
+        [
+          400,
+          900,
+          1
+        ],
+        [
+          500,
+          800,
+          1
+        ]
+      ]
+    },
+    "B2F": {
+      "count": 47,
+      "dimensions": [
+        [
+          500,
+          600,
+          36
+        ],
+        [
+          600,
+          600,
+          8
+        ],
+        [
+          700,
+          600,
+          2
+        ],
+        [
+          400,
+          600,
+          1
+        ]
+      ]
+    }
+  },
+  "parking_columns": [
+    {
+      "name": "-2~-1C1",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1C1A",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1C6",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1C6A",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1EC1",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1EC1A",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1EC2",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1EC2A",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1EC6",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1EC5",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1EC5A",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1EC7",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1TC1",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1C2",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1C2A",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1C7",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1C8",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "6-D22",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1C3",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1C4",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1EC9",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1EC8",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1TC2",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "6-D22",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "8-D22",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "1EC8",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "1EC9",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1C5",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-1C5A",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1AC1",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "-2~-1AC2",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "1EC11",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "1EC10",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "6-D22",
+      "source": "S40-111~112"
+    },
+    {
+      "name": "8-D22",
+      "source": "S40-111~112"
+    }
+  ],
+  "walls": [
+    {
+      "name": "W0",
+      "thickness": null,
+      "source": "S40_parking"
+    },
+    {
+      "name": "-2~-1W1",
+      "thickness": 200,
+      "source": "S40_parking"
+    },
+    {
+      "name": "-2~-1W2",
+      "thickness": 250,
+      "source": "S40_parking"
+    },
+    {
+      "name": "-2~-1W3",
+      "thickness": 200,
+      "source": "S40_parking"
+    },
+    {
+      "name": "-2~-1W10",
+      "thickness": 250,
+      "source": "S40_parking"
+    },
+    {
+      "name": "-2~-1W20",
+      "thickness": 250,
+      "source": "S40_parking"
+    },
+    {
+      "name": "PBW1",
+      "thickness": null,
+      "source": "S40_parking"
+    },
+    {
+      "name": "B1F",
+      "thickness": 400,
+      "source": "S40_parking"
+    },
+    {
+      "name": "B1F",
+      "thickness": null,
+      "source": "S40_parking"
+    },
+    {
+      "name": "B1F",
+      "thickness": null,
+      "source": "S40_parking"
+    },
+    {
+      "name": "B1F",
+      "thickness": null,
+      "source": "S40_parking"
+    },
+    {
+      "name": "B1F",
+      "thickness": null,
+      "source": "S40_parking"
+    },
+    {
+      "name": "B2F",
+      "thickness": null,
+      "source": "S40_parking"
+    },
+    {
+      "name": "B2F",
+      "thickness": null,
+      "source": "S40_parking"
+    }
+  ]
+}

@@ -26,15 +26,15 @@ from core.dxf_parser.entity_scanner import iter_all
 
 # 골조 레이어 (포함)
 _STRUCTURAL = re.compile(
-    r'(S[-_]기둥|S[-_]COL|STRUCT[-_]COL'         # 기둥
+    r'(S[-_]기둥|S[-_]COL|STRUCT[-_]COL|A[-_]COL|A[-_]ST[-_]COL'   # 기둥 (+A-COL, A-ST-COL 추가)
     r'|S[-_]GIRDER|S[-_]BEAM|00[-_]BEAM|GIRDER|00[-_]APT\)?BEAM'
     r'|S[-_]SLAB|S[-_]PC[-_]SLAB|00[-_]SLAB'     # 슬라브
     r'|S[-_]PC[-_]GIRDER|PC[-_]GIRDER'            # PC 보
     r'|00[-_]SHEAR|SHEAR[-_]WALL|전단벽|CORE'     # 전단벽·코어
     r'|00[-_]COLUMN|00[-_]UNDER'                   # 지하 기둥
     r'|S[-_]WALL|S[-_]전단|S[-_]코어'             # 구조 벽
-    r'|A[-_]WALL[-_]RC'                            # RC 벽 (콘크리트)
-    r'|^S[-_](?!Def)'                             # "S-" 접두사 레이어 (S-Defpoints 제외)
+    r'|A[-_]WALL[-_]RC|A[-_]ST[-_]CONC'            # RC 벽, 구조 콘크리트
+    r'|^S[-_](?!Defpoints)'                         # "S-" 접두사 레이어 (S-Defpoints 제외)
     r'|^00[-_]'                                    # "00_" 접두사 레이어 (지하 구조)
     r')',
     re.IGNORECASE,
@@ -51,8 +51,10 @@ _NON_STRUCTURAL = re.compile(
     r'|A[-_]SITE|SITE|지반|GROUND|대지'            # 지반·대지
     r'|PILE|파일|STEEL|강재'                        # 파일·강재
     r'|HATCH(?!.*SLAB)'                            # HATCH (슬라브 HATCH 제외)
-    r'|TEXT|DIM|ANNO|주석|치수'                    # 주석·치수
+    r'|TEXT|DIM|ANNO|주석|치수|NAME|SYMBOL|마크|기호'  # 주석·치수 (+NAME, SYMBOL 추가)
     r'|Defpoints|BORD|FRAME|BORDER'               # 도곽
+    r'|FOU|MAT|FOUNDATION|기초|기초판'             # 기초
+    r'|REBAR|철근|배근|잡배근'                      # 철근/배근
     r')',
     re.IGNORECASE,
 )

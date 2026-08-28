@@ -1,0 +1,12 @@
+{
+  "input": "output/skeleton_dong_b1f.dxf",
+  "output": "output/skeleton_dong_b1f_t2a.dxf",
+  "clean_lines": 48798,
+  "isolated_before": 5224,
+  "bridges_added": 7036,
+  "isolated_connected": 4471,
+  "isolated_remaining": 753,
+  "target_met": true,
+  "gap_max_mm": 800.0,
+  "angle_tol_deg": 5.0
+}

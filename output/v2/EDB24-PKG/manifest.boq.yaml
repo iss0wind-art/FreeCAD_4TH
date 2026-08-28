@@ -1,7 +1,7 @@
 version: '1.0'
 project:
   id: EDB24-PKG
-  name: EDB24-PKG with 일람표
+  name: EDB24-PKG v4.2 (진짜 SL + 콤마 RG)
   units: mm
 grid:
   origin:
@@ -107,12 +107,6 @@ grid:
     Y9: 54707.86044242047
 floors:
 - id: sheet_1
-  z_base: 0.0
-  height: 3500.0
-- id: sheet_2
-  z_base: 0.0
-  height: 3500.0
-- id: sheet_3
   z_base: 0.0
   height: 3500.0
 members:
@@ -5239,7 +5233,7 @@ members:
     - 1780410.696917949
     - -1071685.397941423
 - id: BM-sheet_1-0029
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5379,7 +5373,7 @@ members:
     - 1780410.696917956
     - -1071185.397941423
 - id: BM-sheet_1-0039
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5393,7 +5387,7 @@ members:
     - 1788410.696860169
     - -1071685.397941423
 - id: BM-sheet_1-0040
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5407,7 +5401,7 @@ members:
     - 1788010.696689567
     - -1062787.59919829
 - id: BM-sheet_1-0041
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5421,7 +5415,7 @@ members:
     - 1796210.696689592
     - -1062787.59919829
 - id: BM-sheet_1-0042
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5435,7 +5429,7 @@ members:
     - 1788010.69668956
     - -1063287.59919829
 - id: BM-sheet_1-0043
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5589,7 +5583,7 @@ members:
     - 1800972.988208246
     - -1089249.759599662
 - id: BM-sheet_1-0054
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5617,7 +5611,7 @@ members:
     - 1822154.140083651
     - -1138282.043571145
 - id: BM-sheet_1-0056
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5687,7 +5681,7 @@ members:
     - 1808750.232587399
     - -1086795.367976158
 - id: BM-sheet_1-0061
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5701,7 +5695,7 @@ members:
     - 1810830.760897623
     - -1095139.911253774
 - id: BM-sheet_1-0062
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5729,7 +5723,7 @@ members:
     - 1829918.796730291
     - -1171283.899271669
 - id: BM-sheet_1-0064
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5743,7 +5737,7 @@ members:
     - 1814895.04873612
     - -1111440.879423432
 - id: BM-sheet_1-0065
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5771,7 +5765,7 @@ members:
     - 1821887.333343859
     - -1139485.401207619
 - id: BM-sheet_1-0067
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5785,7 +5779,7 @@ members:
     - 1818862.56782426
     - -1127353.729334231
 - id: BM-sheet_1-0068
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5799,7 +5793,7 @@ members:
     - 1799160.537955536
     - -1115879.240386947
 - id: BM-sheet_1-0069
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5841,7 +5835,7 @@ members:
     - 1819080.56022945
     - -1127814.684537884
 - id: BM-sheet_1-0072
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5897,7 +5891,7 @@ members:
     - 1820386.938465786
     - -1133054.281459771
 - id: BM-sheet_1-0076
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5911,7 +5905,7 @@ members:
     - 1819396.230473683
     - -1127220.672291653
 - id: BM-sheet_1-0077
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5939,7 +5933,7 @@ members:
     - 1829797.835782482
     - -1170798.751408533
 - id: BM-sheet_1-0079
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5953,7 +5947,7 @@ members:
     - 1833028.974660478
     - -1162057.413059122
 - id: BM-sheet_1-0080
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5967,7 +5961,7 @@ members:
     - 1799039.577007727
     - -1115394.092523811
 - id: BM-sheet_1-0081
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -5995,7 +5989,7 @@ members:
     - 1822505.701521414
     - -1139485.401207619
 - id: BM-sheet_1-0083
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6037,7 +6031,7 @@ members:
     - 1827442.646643327
     - -1162820.406644684
 - id: BM-sheet_1-0086
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6051,7 +6045,7 @@ members:
     - 1781572.646665727
     - -1162320.406706857
 - id: BM-sheet_1-0087
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6065,7 +6059,7 @@ members:
     - 1788972.646660754
     - -1162820.406706857
 - id: BM-sheet_1-0088
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6107,7 +6101,7 @@ members:
     - 1774172.646660754
     - -1171620.406704228
 - id: BM-sheet_1-0091
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6135,7 +6129,7 @@ members:
     - 1763552.646758489
     - -1171620.406704228
 - id: BM-sheet_1-0093
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6177,7 +6171,7 @@ members:
     - 1755872.646705983
     - -1171620.406704228
 - id: BM-sheet_1-0096
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6205,7 +6199,7 @@ members:
     - 1795232.646674125
     - -1127465.406644686
 - id: BM-sheet_1-0098
-  spec: UNKNOWN-RG4
+  spec: RG4
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6247,7 +6241,7 @@ members:
     - 1795252.646674126
     - -1126965.406644686
 - id: BM-sheet_1-0101
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6275,7 +6269,7 @@ members:
     - 1769761.419950942
     - -1123209.268261478
 - id: BM-sheet_1-0103
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6289,7 +6283,7 @@ members:
     - 1789088.005163039
     - -1109578.862837493
 - id: BM-sheet_1-0104
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6317,7 +6311,7 @@ members:
     - 1761759.68722954
     - -1125217.985360081
 - id: BM-sheet_1-0106
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6345,7 +6339,7 @@ members:
     - 1781522.646665727
     - -1171620.406709481
 - id: BM-sheet_1-0108
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6429,7 +6423,7 @@ members:
     - 1706493.059700264
     - -1102474.029286493
 - id: BM-sheet_1-0114
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6457,7 +6451,7 @@ members:
     - 1746543.056760003
     - -1101974.025523126
 - id: BM-sheet_1-0116
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6471,7 +6465,7 @@ members:
     - 1788773.602975164
     - -1109141.945292414
 - id: BM-sheet_1-0117
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6709,7 +6703,7 @@ members:
     - 1714593.05970025
     - -1101974.029286493
 - id: BM-sheet_1-0134
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6737,7 +6731,7 @@ members:
     - 1680468.702702195
     - -1098074.02928661
 - id: BM-sheet_1-0136
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6793,7 +6787,7 @@ members:
     - 1755872.646705983
     - -1162820.406706857
 - id: BM-sheet_1-0140
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6821,7 +6815,7 @@ members:
     - 1698493.059700235
     - -1098574.02928661
 - id: BM-sheet_1-0142
-  spec: UNKNOWN-RG4
+  spec: RG4
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6877,7 +6871,7 @@ members:
     - 1693093.059700242
     - -1098074.02928661
 - id: BM-sheet_1-0146
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6891,7 +6885,7 @@ members:
     - 1781572.646660754
     - -1162820.406706857
 - id: BM-sheet_1-0147
-  spec: UNKNOWN-RG4
+  spec: RG4
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -6905,7 +6899,7 @@ members:
     - 1798842.623211843
     - -1162820.406706857
 - id: BM-sheet_1-0148
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7073,7 +7067,7 @@ members:
     - 1806582.646670562
     - -1170667.714916757
 - id: BM-sheet_1-0160
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7101,7 +7095,7 @@ members:
     - 1806582.646665537
     - -1171173.098368635
 - id: BM-sheet_1-0162
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7185,7 +7179,7 @@ members:
     - 1706093.059700256
     - -1079674.029286494
 - id: BM-sheet_1-0168
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7213,7 +7207,7 @@ members:
     - 1774622.646665725
     - -1171620.406704883
 - id: BM-sheet_1-0170
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7283,7 +7277,7 @@ members:
     - 1714443.056760014
     - -1084265.59102528
 - id: BM-sheet_1-0175
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7297,7 +7291,7 @@ members:
     - 1782022.646665727
     - -1162820.40671211
 - id: BM-sheet_1-0176
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7339,7 +7333,7 @@ members:
     - 1820823.569657798
     - -1132945.417076683
 - id: BM-sheet_1-0179
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7367,7 +7361,7 @@ members:
     - 1693343.048010849
     - -1054324.029286494
 - id: BM-sheet_1-0181
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7381,7 +7375,7 @@ members:
     - 1798792.623216815
     - -1162820.406708848
 - id: BM-sheet_1-0182
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7409,7 +7403,7 @@ members:
     - 1807092.679908928
     - -1171170.406646675
 - id: BM-sheet_1-0184
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7423,7 +7417,7 @@ members:
     - 1731093.059700244
     - -1080174.029286494
 - id: BM-sheet_1-0185
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7451,7 +7445,7 @@ members:
     - 1806592.679908928
     - -1171320.406642796
 - id: BM-sheet_1-0187
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7465,7 +7459,7 @@ members:
     - 1731093.05970025
     - -1079674.029286494
 - id: BM-sheet_1-0188
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7605,7 +7599,7 @@ members:
     - 1827971.189064075
     - -1163473.057181635
 - id: BM-sheet_1-0198
-  spec: UNKNOWN-RG4
+  spec: RG4
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7633,7 +7627,7 @@ members:
     - 1795732.646674125
     - -1127465.406644686
 - id: BM-sheet_1-0200
-  spec: UNKNOWN-RG4
+  spec: RG4
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7675,7 +7669,7 @@ members:
     - 1790132.646674125
     - -1127465.406644686
 - id: BM-sheet_1-0203
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7689,7 +7683,7 @@ members:
     - 1723043.048010853
     - -1054324.02928651
 - id: BM-sheet_1-0204
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7703,7 +7697,7 @@ members:
     - 1731093.059700344
     - -1062474.029286522
 - id: BM-sheet_1-0205
-  spec: UNKNOWN-RG4
+  spec: RG4
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7717,7 +7711,7 @@ members:
     - 1789632.646674125
     - -1117155.404970981
 - id: BM-sheet_1-0206
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7787,7 +7781,7 @@ members:
     - 1729843.246478935
     - -1046844.453388438
 - id: BM-sheet_1-0211
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7801,7 +7795,7 @@ members:
     - 1814442.646665725
     - -1162320.406706857
 - id: BM-sheet_1-0212
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7857,7 +7851,7 @@ members:
     - 1783482.64667412
     - -1127465.404970981
 - id: BM-sheet_1-0216
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7871,7 +7865,7 @@ members:
     - 1731539.308500394
     - -1062465.462063529
 - id: BM-sheet_1-0217
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7927,7 +7921,7 @@ members:
     - 1790232.646674125
     - -1116755.404970981
 - id: BM-sheet_1-0221
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7955,7 +7949,7 @@ members:
     - 1777547.699475639
     - -1120752.623923189
 - id: BM-sheet_1-0223
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -7983,7 +7977,7 @@ members:
     - 1777862.735014272
     - -1121189.383556188
 - id: BM-sheet_1-0225
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8025,7 +8019,7 @@ members:
     - 1769712.905439825
     - -1123221.364287645
 - id: BM-sheet_1-0228
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8067,7 +8061,7 @@ members:
     - 1733160.191703037
     - -1042620.69070624
 - id: BM-sheet_1-0231
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8095,7 +8089,7 @@ members:
     - 1758013.570739844
     - -1041329.560674928
 - id: BM-sheet_1-0233
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8109,7 +8103,7 @@ members:
     - 1789573.153026177
     - -1109457.901889687
 - id: BM-sheet_1-0234
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8123,7 +8117,7 @@ members:
     - 1799598.01275348
     - -1115770.165669275
 - id: BM-sheet_1-0235
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8151,7 +8145,7 @@ members:
     - 1748912.07745392
     - -1039335.670549131
 - id: BM-sheet_1-0237
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8165,7 +8159,7 @@ members:
     - 1797044.430118447
     - -1107595.103293483
 - id: BM-sheet_1-0238
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8193,7 +8187,7 @@ members:
     - 1740657.010208381
     - -1040794.72683252
 - id: BM-sheet_1-0240
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8263,7 +8257,7 @@ members:
     - 1765386.977965304
     - -1035924.299639651
 - id: BM-sheet_1-0245
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8305,7 +8299,7 @@ members:
     - 1741149.406379225
     - -1040707.859042556
 - id: BM-sheet_1-0248
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8333,7 +8327,7 @@ members:
     - 1796210.696689569
     - -1041585.401704662
 - id: BM-sheet_1-0250
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8361,7 +8355,7 @@ members:
     - 1749413.067822059
     - -1039248.638920611
 - id: BM-sheet_1-0252
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8375,7 +8369,7 @@ members:
     - 1797092.948249464
     - -1107583.006364774
 - id: BM-sheet_1-0253
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8487,7 +8481,7 @@ members:
     - 1738943.052385407
     - -1101974.025523124
 - id: BM-sheet_1-0261
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8515,7 +8509,7 @@ members:
     - 1738443.052385407
     - -1101974.025523124
 - id: BM-sheet_1-0263
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8557,7 +8551,7 @@ members:
     - 1788410.696689572
     - -1041435.401704666
 - id: BM-sheet_1-0266
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8571,7 +8565,7 @@ members:
     - 1796210.696518999
     - -1058985.405542578
 - id: BM-sheet_1-0267
-  spec: UNKNOWN-RG14A
+  spec: RG14A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8613,7 +8607,7 @@ members:
     - 1722693.05970025
     - -1101974.029286493
 - id: BM-sheet_1-0270
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8851,7 +8845,7 @@ members:
     - 1706093.059700253
     - -1080174.029286494
 - id: BM-sheet_1-0287
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -8907,7 +8901,7 @@ members:
     - 1702002.59318787
     - -1136140.402843341
 - id: BM-sheet_1-0291
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9061,7 +9055,7 @@ members:
     - 1723543.056760003
     - -1084274.029286572
 - id: BM-sheet_1-0302
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9089,7 +9083,7 @@ members:
     - 1731543.056760003
     - -1085798.565457745
 - id: BM-sheet_1-0304
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9131,7 +9125,7 @@ members:
     - 1693343.0523854
     - -1070974.029286495
 - id: BM-sheet_1-0307
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9159,7 +9153,7 @@ members:
     - 1693343.0523854
     - -1071474.029286495
 - id: BM-sheet_1-0309
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9229,7 +9223,7 @@ members:
     - 1693343.052385435
     - -1054774.025448627
 - id: BM-sheet_1-0314
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9271,7 +9265,7 @@ members:
     - 1705843.059700237
     - -1054774.025448628
 - id: BM-sheet_1-0317
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9299,7 +9293,7 @@ members:
     - 1693343.052385435
     - -1062474.029286497
 - id: BM-sheet_1-0319
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9327,7 +9321,7 @@ members:
     - 1693343.0523854
     - -1062974.029286497
 - id: BM-sheet_1-0321
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9453,7 +9447,7 @@ members:
     - 1697843.052385489
     - -1054324.029286501
 - id: BM-sheet_1-0330
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9467,7 +9461,7 @@ members:
     - 1714943.048010866
     - -1054324.029286513
 - id: BM-sheet_1-0331
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9607,7 +9601,7 @@ members:
     - 1723043.048010853
     - -1046574.029286515
 - id: BM-sheet_1-0341
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9635,7 +9629,7 @@ members:
     - 1723263.126735946
     - -1044365.810143312
 - id: BM-sheet_1-0343
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9649,7 +9643,7 @@ members:
     - 1723047.388520054
     - -1054274.029286516
 - id: BM-sheet_1-0344
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9663,7 +9657,7 @@ members:
     - 1759651.890124522
     - -1116557.3958417
 - id: BM-sheet_1-0345
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9677,7 +9671,7 @@ members:
     - 1759772.85107233
     - -1117042.543704836
 - id: BM-sheet_1-0346
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9719,7 +9713,7 @@ members:
     - 1759402.544149407
     - -1141045.406693128
 - id: BM-sheet_1-0349
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9733,7 +9727,7 @@ members:
     - 1731093.059700338
     - -1062974.029286522
 - id: BM-sheet_1-0350
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9761,7 +9755,7 @@ members:
     - 1734510.182377436
     - -1054308.089307844
 - id: BM-sheet_1-0352
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9803,7 +9797,7 @@ members:
     - 1741271.834215234
     - -1044281.578797954
 - id: BM-sheet_1-0355
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9957,7 +9951,7 @@ members:
     - 1737638.9758506
     - -1070612.601056293
 - id: BM-sheet_1-0366
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -9985,7 +9979,7 @@ members:
     - 1732667.787776484
     - -1042707.514511241
 - id: BM-sheet_1-0368
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10069,7 +10063,7 @@ members:
     - 1796210.696689569
     - -1042085.401704662
 - id: BM-sheet_1-0374
-  spec: UNKNOWN-RG14A
+  spec: RG14A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10083,7 +10077,7 @@ members:
     - 1788010.696689567
     - -1058485.405542578
 - id: BM-sheet_1-0375
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10125,7 +10119,7 @@ members:
     - 1777103.713341992
     - -1095201.038231833
 - id: BM-sheet_1-0378
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10139,7 +10133,7 @@ members:
     - 1787910.696689572
     - -1050135.401198854
 - id: BM-sheet_1-0379
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10153,7 +10147,7 @@ members:
     - 1787910.696689572
     - -1050085.405542527
 - id: BM-sheet_1-0380
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10181,7 +10175,7 @@ members:
     - 1779960.692485561
     - -1071698.035113436
 - id: BM-sheet_1-0382
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10195,7 +10189,7 @@ members:
     - 1780010.692485561
     - -1054265.401704778
 - id: BM-sheet_1-0383
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10209,7 +10203,7 @@ members:
     - 1780010.692485561
     - -1046234.316560435
 - id: BM-sheet_1-0384
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10223,7 +10217,7 @@ members:
     - 1780460.692485561
     - -1063287.59919829
 - id: BM-sheet_1-0385
-  spec: UNKNOWN-RG2C
+  spec: RG2C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10251,7 +10245,7 @@ members:
     - 1780460.692485561
     - -1071685.397941423
 - id: BM-sheet_1-0387
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10265,7 +10259,7 @@ members:
     - 1780510.692485561
     - -1054265.401704781
 - id: BM-sheet_1-0388
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10279,7 +10273,7 @@ members:
     - 1780510.692485561
     - -1046146.153070099
 - id: BM-sheet_1-0389
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10307,7 +10301,7 @@ members:
     - 1780777.622480974
     - -1034135.401704711
 - id: BM-sheet_1-0391
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10321,7 +10315,7 @@ members:
     - 1779911.634627008
     - -1045794.841158211
 - id: BM-sheet_1-0392
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10461,7 +10455,7 @@ members:
     - 1771992.70912527
     - -1073099.369875892
 - id: BM-sheet_1-0402
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10489,7 +10483,7 @@ members:
     - 1780010.696917949
     - -1071689.240799215
 - id: BM-sheet_1-0404
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10517,7 +10511,7 @@ members:
     - 1780010.696860161
     - -1062652.649089289
 - id: BM-sheet_1-0406
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10601,7 +10595,7 @@ members:
     - 1788410.696860134
     - -1076585.397941427
 - id: BM-sheet_1-0412
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10615,7 +10609,7 @@ members:
     - 1788460.689545314
     - -1062787.59919829
 - id: BM-sheet_1-0413
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10657,7 +10651,7 @@ members:
     - 1788460.689545314
     - -1076085.397941427
 - id: BM-sheet_1-0416
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -10671,7 +10665,7 @@ members:
     - 1787960.689545314
     - -1062787.59919829
 - id: BM-sheet_1-0417
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11497,7 +11491,7 @@ members:
     - 1752210.273103623
     - -1110272.02349844
 - id: BM-sheet_1-0476
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11651,7 +11645,7 @@ members:
     - 1765253.745550435
     - -1082102.726232591
 - id: BM-sheet_1-0487
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11679,7 +11673,7 @@ members:
     - 1749434.06987268
     - -1043350.070569142
 - id: BM-sheet_1-0489
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11721,7 +11715,7 @@ members:
     - 1693043.052385114
     - -1136340.399655827
 - id: BM-sheet_1-0492
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11735,7 +11729,7 @@ members:
     - 1816890.905430454
     - -1119445.823398454
 - id: BM-sheet_1-0493
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11749,7 +11743,7 @@ members:
     - 1815113.041141346
     - -1111901.834627075
 - id: BM-sheet_1-0494
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11791,7 +11785,7 @@ members:
     - 1698043.052385114
     - -1144335.752308747
 - id: BM-sheet_1-0497
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11861,7 +11855,7 @@ members:
     - 1791960.497053743
     - -1058985.405542578
 - id: BM-sheet_1-0502
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -11875,7 +11869,7 @@ members:
     - 1796210.696689567
     - -1050085.405542527
 - id: BM-sheet_1-0503
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12001,7 +11995,7 @@ members:
     - 1792460.497053743
     - -1058985.405542578
 - id: BM-sheet_1-0512
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12295,7 +12289,7 @@ members:
     - 1791960.497053743
     - -1050585.405542527
 - id: BM-sheet_1-0533
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12309,7 +12303,7 @@ members:
     - 1846089.279596098
     - -1181577.673327147
 - id: BM-sheet_1-0534
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12379,7 +12373,7 @@ members:
     - 1845660.696860161
     - -1057985.396150498
 - id: BM-sheet_1-0539
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12393,7 +12387,7 @@ members:
     - 1810060.696311813
     - -1020535.396225293
 - id: BM-sheet_1-0540
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12421,7 +12415,7 @@ members:
     - 1831510.696311808
     - -1025285.396150581
 - id: BM-sheet_1-0542
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12435,7 +12429,7 @@ members:
     - 1810110.696311709
     - -1025785.396150846
 - id: BM-sheet_1-0543
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12519,7 +12513,7 @@ members:
     - 1850628.233295247
     - -1050085.396150506
 - id: BM-sheet_1-0549
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12533,7 +12527,7 @@ members:
     - 1804410.696311702
     - -1025285.396150786
 - id: BM-sheet_1-0550
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12575,7 +12569,7 @@ members:
     - 1817510.696311807
     - -1025785.396150804
 - id: BM-sheet_1-0553
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12589,7 +12583,7 @@ members:
     - 1837410.696311817
     - -1057985.396150498
 - id: BM-sheet_1-0554
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12631,7 +12625,7 @@ members:
     - 1831510.696311804
     - -1025785.396150581
 - id: BM-sheet_1-0557
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12659,7 +12653,7 @@ members:
     - 1837010.696311792
     - -1025785.396150558
 - id: BM-sheet_1-0559
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12673,7 +12667,7 @@ members:
     - 1844960.696311817
     - -1041585.396150642
 - id: BM-sheet_1-0560
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12687,7 +12681,7 @@ members:
     - 1844760.696860165
     - -1042085.39615064
 - id: BM-sheet_1-0561
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12715,7 +12709,7 @@ members:
     - 1844960.696311817
     - -1034735.401704604
 - id: BM-sheet_1-0563
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12729,7 +12723,7 @@ members:
     - 1837010.696311813
     - -1042085.396150559
 - id: BM-sheet_1-0564
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12757,7 +12751,7 @@ members:
     - 1849860.697456695
     - -1050585.396150506
 - id: BM-sheet_1-0566
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12785,7 +12779,7 @@ members:
     - 1844960.696311817
     - -1035235.401704604
 - id: BM-sheet_1-0568
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12799,7 +12793,7 @@ members:
     - 1831510.696311826
     - -1058985.396150512
 - id: BM-sheet_1-0569
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12841,7 +12835,7 @@ members:
     - 1849860.696287654
     - -1035235.401704604
 - id: BM-sheet_1-0572
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12883,7 +12877,7 @@ members:
     - 1831460.696311811
     - -1022335.404711242
 - id: BM-sheet_1-0575
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12897,7 +12891,7 @@ members:
     - 1837460.696311819
     - -1035235.401704604
 - id: BM-sheet_1-0576
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -12939,7 +12933,7 @@ members:
     - 1818874.108593548
     - -1070770.162451407
 - id: BM-sheet_1-0579
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13023,7 +13017,7 @@ members:
     - 1844960.696311817
     - -1058435.396150505
 - id: BM-sheet_1-0585
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13051,7 +13045,7 @@ members:
     - 1844960.696311817
     - -1030611.479968838
 - id: BM-sheet_1-0587
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13065,7 +13059,7 @@ members:
     - 1796610.696312018
     - -1071185.396150686
 - id: BM-sheet_1-0588
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13135,7 +13129,7 @@ members:
     - 1850360.69628765
     - -1050085.396150507
 - id: BM-sheet_1-0593
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13149,7 +13143,7 @@ members:
     - 1810110.696311824
     - -1058485.396150512
 - id: BM-sheet_1-0594
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13219,7 +13213,7 @@ members:
     - 1817960.696311813
     - -1022335.404711242
 - id: BM-sheet_1-0599
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13261,7 +13255,7 @@ members:
     - 1804910.696311814
     - -1062785.396150675
 - id: BM-sheet_1-0602
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13289,7 +13283,7 @@ members:
     - 1844960.696311817
     - -1064781.352448461
 - id: BM-sheet_1-0604
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13317,7 +13311,7 @@ members:
     - 1838983.161502557
     - -1066271.719264849
 - id: BM-sheet_1-0606
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13331,7 +13325,7 @@ members:
     - 1811402.83250445
     - -1072632.960797539
 - id: BM-sheet_1-0607
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13345,7 +13339,7 @@ members:
     - 1810110.696311813
     - -1063285.396150675
 - id: BM-sheet_1-0608
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13359,7 +13353,7 @@ members:
     - 1804910.696311814
     - -1033085.396150563
 - id: BM-sheet_1-0609
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13429,7 +13423,7 @@ members:
     - 1825884.169197884
     - -1069537.664855657
 - id: BM-sheet_1-0614
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13499,7 +13493,7 @@ members:
     - 1810510.696311812
     - -1071685.396150686
 - id: BM-sheet_1-0619
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13513,7 +13507,7 @@ members:
     - 1804810.696311795
     - -1071185.396150686
 - id: BM-sheet_1-0620
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13527,7 +13521,7 @@ members:
     - 1804860.696311814
     - -1071185.396150687
 - id: BM-sheet_1-0621
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13541,7 +13535,7 @@ members:
     - 1804810.696311791
     - -1071685.396150686
 - id: BM-sheet_1-0622
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13555,7 +13549,7 @@ members:
     - 1796610.696312028
     - -1071685.396150686
 - id: BM-sheet_1-0623
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13569,7 +13563,7 @@ members:
     - 1814304.851994332
     - -1085925.751433077
 - id: BM-sheet_1-0624
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13583,7 +13577,7 @@ members:
     - 1804410.702539476
     - -1062787.597407553
 - id: BM-sheet_1-0625
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13653,7 +13647,7 @@ members:
     - 1837149.708846775
     - -1089093.166144623
 - id: BM-sheet_1-0630
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13667,7 +13661,7 @@ members:
     - 1804360.696311814
     - -1076085.397941427
 - id: BM-sheet_1-0631
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13709,7 +13703,7 @@ members:
     - 1809332.41241514
     - -1086650.213048033
 - id: BM-sheet_1-0634
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13737,7 +13731,7 @@ members:
     - 1842583.364913901
     - -1087738.403529195
 - id: BM-sheet_1-0636
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13751,7 +13745,7 @@ members:
     - 1817473.084202637
     - -1119300.664237059
 - id: BM-sheet_1-0637
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13765,7 +13759,7 @@ members:
     - 1815477.228563799
     - -1111295.724495315
 - id: BM-sheet_1-0638
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13793,7 +13787,7 @@ members:
     - 1839298.834634766
     - -1065677.706298534
 - id: BM-sheet_1-0640
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13821,7 +13815,7 @@ members:
     - 1812658.040452886
     - -1077460.646629497
 - id: BM-sheet_1-0642
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13849,7 +13843,7 @@ members:
     - 1812175.808905749
     - -1077593.304281912
 - id: BM-sheet_1-0644
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13863,7 +13857,7 @@ members:
     - 1810560.696311832
     - -1072842.928932583
 - id: BM-sheet_1-0645
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13891,7 +13885,7 @@ members:
     - 1821655.132463606
     - -1083577.813868657
 - id: BM-sheet_1-0647
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13905,7 +13899,7 @@ members:
     - 1810060.696311832
     - -1072967.592934015
 - id: BM-sheet_1-0648
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13919,7 +13913,7 @@ members:
     - 1823463.899921985
     - -1061483.921188231
 - id: BM-sheet_1-0649
-  spec: UNKNOWN-RG1A
+  spec: RG1A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13933,7 +13927,7 @@ members:
     - 1831460.696311812
     - -1059619.410252985
 - id: BM-sheet_1-0650
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13947,7 +13941,7 @@ members:
     - 1823584.874994223
     - -1061969.125701358
 - id: BM-sheet_1-0651
-  spec: UNKNOWN-RG1A
+  spec: RG1A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -13989,7 +13983,7 @@ members:
     - 1823536.17635801
     - -1061980.480140726
 - id: BM-sheet_1-0654
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14003,7 +13997,7 @@ members:
     - 1823342.12406343
     - -1059135.396150506
 - id: BM-sheet_1-0655
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14031,7 +14025,7 @@ members:
     - 1825728.826037619
     - -1071627.317467352
 - id: BM-sheet_1-0657
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14045,7 +14039,7 @@ members:
     - 1817439.289486279
     - -1063285.396150675
 - id: BM-sheet_1-0658
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14157,7 +14151,7 @@ members:
     - 1839637.358776976
     - -1068159.530776968
 - id: BM-sheet_1-0666
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14199,7 +14193,7 @@ members:
     - 1806766.735462227
     - -1078426.630946243
 - id: BM-sheet_1-0669
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14213,7 +14207,7 @@ members:
     - 1812103.362744217
     - -1077096.060324005
 - id: BM-sheet_1-0670
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14227,7 +14221,7 @@ members:
     - 1829783.743831531
     - -1116179.74137641
 - id: BM-sheet_1-0671
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14241,7 +14235,7 @@ members:
     - 1814183.891046523
     - -1085440.603569941
 - id: BM-sheet_1-0672
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14283,7 +14277,7 @@ members:
     - 1821507.561868795
     - -1082985.940541278
 - id: BM-sheet_1-0675
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14311,7 +14305,7 @@ members:
     - 1858719.901534758
     - -1083199.806265811
 - id: BM-sheet_1-0677
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14367,7 +14361,7 @@ members:
     - 1843076.795281452
     - -1112865.411406466
 - id: BM-sheet_1-0681
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14381,7 +14375,7 @@ members:
     - 1816385.380304562
     - -1094270.294710719
 - id: BM-sheet_1-0682
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14465,7 +14459,7 @@ members:
     - 1850442.760296717
     - -1085778.836174734
 - id: BM-sheet_1-0688
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14479,7 +14473,7 @@ members:
     - 1831130.380810616
     - -1153615.939875764
 - id: BM-sheet_1-0689
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14493,7 +14487,7 @@ members:
     - 1814256.337208049
     - -1085937.84752785
 - id: BM-sheet_1-0690
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14507,7 +14501,7 @@ members:
     - 1811572.308238613
     - -1073106.012565884
 - id: BM-sheet_1-0691
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14521,7 +14515,7 @@ members:
     - 1863901.734704764
     - -1107724.701531802
 - id: BM-sheet_1-0692
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14591,7 +14585,7 @@ members:
     - 1829803.62471125
     - -1080917.494254735
 - id: BM-sheet_1-0697
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14661,7 +14655,7 @@ members:
     - 1860370.979100677
     - -1091496.831527887
 - id: BM-sheet_1-0702
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14801,7 +14795,7 @@ members:
     - 1871383.206537948
     - -1097872.105473674
 - id: BM-sheet_1-0712
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14815,7 +14809,7 @@ members:
     - 1862026.840013731
     - -1100204.909653197
 - id: BM-sheet_1-0713
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14913,7 +14907,7 @@ members:
     - 1863889.638609985
     - -1107676.186745494
 - id: BM-sheet_1-0720
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14927,7 +14921,7 @@ members:
     - 1836654.266537445
     - -1143736.154745256
 - id: BM-sheet_1-0721
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14941,7 +14935,7 @@ members:
     - 1822384.912900741
     - -1118539.783930571
 - id: BM-sheet_1-0722
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14969,7 +14963,7 @@ members:
     - 1833194.842542433
     - -1129860.911121237
 - id: BM-sheet_1-0724
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -14997,7 +14991,7 @@ members:
     - 1864020.806481879
     - -1108158.789736632
 - id: BM-sheet_1-0726
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15011,7 +15005,7 @@ members:
     - 1838650.180094049
     - -1151741.043338569
 - id: BM-sheet_1-0727
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15039,7 +15033,7 @@ members:
     - 1822454.17323178
     - -1139485.399416882
 - id: BM-sheet_1-0729
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15067,7 +15061,7 @@ members:
     - 1820289.909680683
     - -1133078.47345298
 - id: BM-sheet_1-0731
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15137,7 +15131,7 @@ members:
     - 1832651.822818263
     - -1125616.195218227
 - id: BM-sheet_1-0736
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15165,7 +15159,7 @@ members:
     - 1838203.627163554
     - -1114595.735495587
 - id: BM-sheet_1-0738
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15179,7 +15173,7 @@ members:
     - 1824247.711496988
     - -1126011.061022865
 - id: BM-sheet_1-0739
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15193,7 +15187,7 @@ members:
     - 1804910.696492306
     - -1020535.396225293
 - id: BM-sheet_1-0740
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15207,7 +15201,7 @@ members:
     - 1870744.180361149
     - -1160589.679896228
 - id: BM-sheet_1-0741
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15235,7 +15229,7 @@ members:
     - 1834525.412968314
     - -1135197.537615693
 - id: BM-sheet_1-0743
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15249,7 +15243,7 @@ members:
     - 1825675.05068113
     - -1131735.805807887
 - id: BM-sheet_1-0744
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15277,7 +15271,7 @@ members:
     - 1833315.803490237
     - -1130346.058984374
 - id: BM-sheet_1-0746
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15291,7 +15285,7 @@ members:
     - 1819396.232865587
     - -1127220.670500917
 - id: BM-sheet_1-0747
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15319,7 +15313,7 @@ members:
     - 1820823.572049701
     - -1132945.415285947
 - id: BM-sheet_1-0749
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15347,7 +15341,7 @@ members:
     - 1822154.142475556
     - -1138282.041780409
 - id: BM-sheet_1-0751
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15375,7 +15369,7 @@ members:
     - 1882259.366692608
     - -1149731.365857844
 - id: BM-sheet_1-0753
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15389,7 +15383,7 @@ members:
     - 1869160.382046853
     - -1152997.315229883
 - id: BM-sheet_1-0754
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15403,7 +15397,7 @@ members:
     - 1810510.696311818
     - -1071185.396150686
 - id: BM-sheet_1-0755
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15417,7 +15411,7 @@ members:
     - 1840694.274958796
     - -1160146.237850105
 - id: BM-sheet_1-0756
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15445,7 +15439,7 @@ members:
     - 1834646.373916119
     - -1135682.68547883
 - id: BM-sheet_1-0758
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15515,7 +15509,7 @@ members:
     - 1870007.107345702
     - -1156393.344914485
 - id: BM-sheet_1-0763
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15529,7 +15523,7 @@ members:
     - 1887390.097973841
     - -1147988.354741045
 - id: BM-sheet_1-0764
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15543,7 +15537,7 @@ members:
     - 1831251.341758425
     - -1154101.087738899
 - id: BM-sheet_1-0765
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15571,7 +15565,7 @@ members:
     - 1867200.813363729
     - -1145137.91451758
 - id: BM-sheet_1-0767
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15585,7 +15579,7 @@ members:
     - 1839135.32836495
     - -1151620.119026756
 - id: BM-sheet_1-0768
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15627,7 +15621,7 @@ members:
     - 1876250.282589781
     - -1159732.161238734
 - id: BM-sheet_1-0771
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15641,7 +15635,7 @@ members:
     - 1848354.280459408
     - -1166687.415737488
 - id: BM-sheet_1-0772
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15655,7 +15649,7 @@ members:
     - 1846055.500822273
     - -1158294.227298043
 - id: BM-sheet_1-0773
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15669,7 +15663,7 @@ members:
     - 1848233.3195116
     - -1166202.267874352
 - id: BM-sheet_1-0774
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15683,7 +15677,7 @@ members:
     - 1876298.797376091
     - -1159720.065143955
 - id: BM-sheet_1-0775
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15725,7 +15719,7 @@ members:
     - 1867176.621167116
     - -1145040.884916662
 - id: BM-sheet_1-0778
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15753,7 +15747,7 @@ members:
     - 1856383.803612298
     - -1164170.123951238
 - id: BM-sheet_1-0780
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15767,7 +15761,7 @@ members:
     - 1854326.973908774
     - -1156747.224247409
 - id: BM-sheet_1-0781
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15837,7 +15831,7 @@ members:
     - 1837127.360174309
     - -1143566.66864294
 - id: BM-sheet_1-0786
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15865,7 +15859,7 @@ members:
     - 1838650.171878098
     - -1151741.045387035
 - id: BM-sheet_1-0788
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15879,7 +15873,7 @@ members:
     - 1840633.956307133
     - -1159697.500845786
 - id: BM-sheet_1-0789
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15893,7 +15887,7 @@ members:
     - 1880760.755011675
     - -1141653.979954551
 - id: BM-sheet_1-0790
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15907,7 +15901,7 @@ members:
     - 1885418.434524723
     - -1140080.44457205
 - id: BM-sheet_1-0791
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15921,7 +15915,7 @@ members:
     - 1872270.667406808
     - -1143770.796541233
 - id: BM-sheet_1-0792
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15935,7 +15929,7 @@ members:
     - 1841119.10417027
     - -1159576.539897977
 - id: BM-sheet_1-0793
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15963,7 +15957,7 @@ members:
     - 1882744.51455573
     - -1149610.404909978
 - id: BM-sheet_1-0795
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15977,7 +15971,7 @@ members:
     - 1874254.426950863
     - -1151727.221496661
 - id: BM-sheet_1-0796
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -15991,7 +15985,7 @@ members:
     - 1883410.482788961
     - -1132026.990044411
 - id: BM-sheet_1-0797
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16005,7 +15999,7 @@ members:
     - 1883531.443736761
     - -1132512.137907549
 - id: BM-sheet_1-0798
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16047,7 +16041,7 @@ members:
     - 1876087.423519115
     - -1124834.964530172
 - id: BM-sheet_1-0801
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16131,7 +16125,7 @@ members:
     - 1881414.627149163
     - -1124022.050302986
 - id: BM-sheet_1-0807
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16159,7 +16153,7 @@ members:
     - 1880712.502379547
     - -1141253.770926029
 - id: BM-sheet_1-0809
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16187,7 +16181,7 @@ members:
     - 1880227.354516425
     - -1141374.731873895
 - id: BM-sheet_1-0811
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16201,7 +16195,7 @@ members:
     - 1874145.562097834
     - -1151290.58841983
 - id: BM-sheet_1-0812
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16215,7 +16209,7 @@ members:
     - 1882271.462787383
     - -1149779.880644135
 - id: BM-sheet_1-0813
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16229,7 +16223,7 @@ members:
     - 1874266.523045641
     - -1151775.736282966
 - id: BM-sheet_1-0814
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16285,7 +16279,7 @@ members:
     - 1876735.430452918
     - -1159611.20029093
 - id: BM-sheet_1-0818
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16425,7 +16419,7 @@ members:
     - 1858925.157180955
     - -1172502.83191659
 - id: BM-sheet_1-0828
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16439,7 +16433,7 @@ members:
     - 1854963.694663072
     - -1156614.273582121
 - id: BM-sheet_1-0829
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16467,7 +16461,7 @@ members:
     - 1858440.009317818
     - -1172623.792864398
 - id: BM-sheet_1-0831
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16495,7 +16489,7 @@ members:
     - 1856456.249773809
     - -1164667.367909151
 - id: BM-sheet_1-0833
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16509,7 +16503,7 @@ members:
     - 1854478.546799935
     - -1156735.234529921
 - id: BM-sheet_1-0834
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16551,7 +16545,7 @@ members:
     - 1844180.60613122
     - -1150774.435419335
 - id: BM-sheet_1-0837
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16593,7 +16587,7 @@ members:
     - 1837643.139214336
     - -1114220.174021917
 - id: BM-sheet_1-0840
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16607,7 +16601,7 @@ members:
     - 1831712.306048658
     - -1153883.131777997
 - id: BM-sheet_1-0841
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16621,7 +16615,7 @@ members:
     - 1829728.546504603
     - -1145926.706822568
 - id: BM-sheet_1-0842
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16663,7 +16657,7 @@ members:
     - 1816999.771619909
     - -1119882.450451248
 - id: BM-sheet_1-0845
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16705,7 +16699,7 @@ members:
     - 1838678.352570512
     - -1183889.201094993
 - id: BM-sheet_1-0848
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16719,7 +16713,7 @@ members:
     - 1829243.398641467
     - -1146047.667770376
 - id: BM-sheet_1-0849
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16761,7 +16755,7 @@ members:
     - 1824356.576350015
     - -1126447.694099686
 - id: BM-sheet_1-0852
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16775,7 +16769,7 @@ members:
     - 1848788.120429125
     - -1188885.466061903
 - id: BM-sheet_1-0853
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16789,7 +16783,7 @@ members:
     - 1864386.8825679
     - -1107603.740583994
 - id: BM-sheet_1-0854
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16845,7 +16839,7 @@ members:
     - 1777653.79795388
     - -1189123.893857953
 - id: BM-sheet_1-0858
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16887,7 +16881,7 @@ members:
     - 1807853.79795388
     - -1189123.893857953
 - id: BM-sheet_1-0861
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16929,7 +16923,7 @@ members:
     - 1844680.609444895
     - -1119504.636948339
 - id: BM-sheet_1-0864
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -16971,7 +16965,7 @@ members:
     - 1769703.351449234
     - -1189623.893857953
 - id: BM-sheet_1-0867
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17069,7 +17063,7 @@ members:
     - 1807853.797953874
     - -1189623.893857953
 - id: BM-sheet_1-0874
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17083,7 +17077,7 @@ members:
     - 1816053.797953873
     - -1189623.893857953
 - id: BM-sheet_1-0875
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17097,7 +17091,7 @@ members:
     - 1824253.797953873
     - -1189623.893857953
 - id: BM-sheet_1-0876
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17139,7 +17133,7 @@ members:
     - 1853252.646158956
     - -1179791.645448262
 - id: BM-sheet_1-0879
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17475,7 +17469,7 @@ members:
     - 1836253.79795388
     - -1215185.436737487
 - id: BM-sheet_1-0903
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17503,7 +17497,7 @@ members:
     - 1808303.7841209
     - -1182685.404662733
 - id: BM-sheet_1-0905
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17531,7 +17525,7 @@ members:
     - 1807803.7841209
     - -1182685.404662733
 - id: BM-sheet_1-0907
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17587,7 +17581,7 @@ members:
     - 1824703.784120898
     - -1182685.404662733
 - id: BM-sheet_1-0911
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17615,7 +17609,7 @@ members:
     - 1824203.784120898
     - -1182685.404662733
 - id: BM-sheet_1-0913
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17629,7 +17623,7 @@ members:
     - 1824203.784120898
     - -1184585.39615069
 - id: BM-sheet_1-0914
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17867,7 +17861,7 @@ members:
     - 1881293.666201363
     - -1123536.902439848
 - id: BM-sheet_1-0931
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -17979,7 +17973,7 @@ members:
     - 1865603.797953877
     - -1183735.401704794
 - id: BM-sheet_1-0939
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18063,7 +18057,7 @@ members:
     - 1832403.797953893
     - -1215935.403004726
 - id: BM-sheet_1-0945
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18343,7 +18337,7 @@ members:
     - 1791853.797953887
     - -1214535.390133955
 - id: BM-sheet_1-0965
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18357,7 +18351,7 @@ members:
     - 1765253.797953881
     - -1214635.532626164
 - id: BM-sheet_1-0966
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18483,7 +18477,7 @@ members:
     - 1783703.797953852
     - -1223935.402939528
 - id: BM-sheet_1-0975
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18609,7 +18603,7 @@ members:
     - 1807803.797953877
     - -1219785.396150636
 - id: BM-sheet_1-0984
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18665,7 +18659,7 @@ members:
     - 1804632.672325178
     - -1220285.396150635
 - id: BM-sheet_1-0988
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18749,7 +18743,7 @@ members:
     - 1822153.798502226
     - -1233385.396150697
 - id: BM-sheet_1-0994
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18763,7 +18757,7 @@ members:
     - 1856308.774991787
     - -1233385.396150696
 - id: BM-sheet_1-0995
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18833,7 +18827,7 @@ members:
     - 1830253.798502231
     - -1233885.396150697
 - id: BM-sheet_1-1000
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18847,7 +18841,7 @@ members:
     - 1857453.797953877
     - -1219785.396225131
 - id: BM-sheet_1-1001
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18875,7 +18869,7 @@ members:
     - 1835853.798502231
     - -1233885.396150697
 - id: BM-sheet_1-1003
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18889,7 +18883,7 @@ members:
     - 1882003.804351747
     - -1206835.396150726
 - id: BM-sheet_1-1004
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18931,7 +18925,7 @@ members:
     - 1865653.79795388
     - -1228485.396150683
 - id: BM-sheet_1-1007
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -18987,7 +18981,7 @@ members:
     - 1868142.602414163
     - -1227985.396150683
 - id: BM-sheet_1-1011
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19001,7 +18995,7 @@ members:
     - 1857403.804351661
     - -1215135.396225182
 - id: BM-sheet_1-1012
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19015,7 +19009,7 @@ members:
     - 1857453.804351526
     - -1228485.396150683
 - id: BM-sheet_1-1013
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19029,7 +19023,7 @@ members:
     - 1857903.804351661
     - -1215135.396225182
 - id: BM-sheet_1-1014
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19141,7 +19135,7 @@ members:
     - 1873853.797953853
     - -1215135.396225182
 - id: BM-sheet_1-1022
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19197,7 +19191,7 @@ members:
     - 1878603.797953874
     - -1231755.401148505
 - id: BM-sheet_1-1026
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19211,7 +19205,7 @@ members:
     - 1857903.804351609
     - -1220285.396225131
 - id: BM-sheet_1-1027
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19281,7 +19275,7 @@ members:
     - 1890203.797953862
     - -1219785.396225131
 - id: BM-sheet_1-1032
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19337,7 +19331,7 @@ members:
     - 1865603.804351611
     - -1220285.396225131
 - id: BM-sheet_1-1036
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19365,7 +19359,7 @@ members:
     - 1874303.804351613
     - -1220285.396225131
 - id: BM-sheet_1-1038
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19407,7 +19401,7 @@ members:
     - 1873803.804351614
     - -1220285.396225131
 - id: BM-sheet_1-1041
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19421,7 +19415,7 @@ members:
     - 1882503.804351614
     - -1220285.396225131
 - id: BM-sheet_1-1042
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19435,7 +19429,7 @@ members:
     - 1882503.804351663
     - -1215185.396225182
 - id: BM-sheet_1-1043
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19449,7 +19443,7 @@ members:
     - 1890203.797953862
     - -1206335.396150709
 - id: BM-sheet_1-1044
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19463,7 +19457,7 @@ members:
     - 1882003.804351664
     - -1215135.396225182
 - id: BM-sheet_1-1045
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19477,7 +19471,7 @@ members:
     - 1882503.804351747
     - -1206835.396150726
 - id: BM-sheet_1-1046
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19505,7 +19499,7 @@ members:
     - 1835102.611254874
     - -1219785.436737435
 - id: BM-sheet_1-1048
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19603,7 +19597,7 @@ members:
     - 1836253.797953876
     - -1220285.436737435
 - id: BM-sheet_1-1055
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19617,7 +19611,7 @@ members:
     - 1890703.797953863
     - -1206335.396150714
 - id: BM-sheet_1-1056
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19631,7 +19625,7 @@ members:
     - 1851753.767741406
     - -1206835.39622522
 - id: BM-sheet_1-1057
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19659,7 +19653,7 @@ members:
     - 1835102.610576035
     - -1220285.436737435
 - id: BM-sheet_1-1059
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19701,7 +19695,7 @@ members:
     - 1890253.797953878
     - -1219785.396225131
 - id: BM-sheet_1-1062
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19757,7 +19751,7 @@ members:
     - 1873853.797953873
     - -1220285.396225131
 - id: BM-sheet_1-1066
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19771,7 +19765,7 @@ members:
     - 1857453.797953838
     - -1220285.396225131
 - id: BM-sheet_1-1067
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19785,7 +19779,7 @@ members:
     - 1865653.797953873
     - -1220285.396225131
 - id: BM-sheet_1-1068
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -19925,7 +19919,7 @@ members:
     - 1832853.818610083
     - -1215185.436737487
 - id: BM-sheet_1-1078
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20009,7 +20003,7 @@ members:
     - 1879103.797953874
     - -1231755.401148505
 - id: BM-sheet_1-1084
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20023,7 +20017,7 @@ members:
     - 1835853.797953881
     - -1206485.39622522
 - id: BM-sheet_1-1085
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20051,7 +20045,7 @@ members:
     - 1890203.797953862
     - -1227641.461105921
 - id: BM-sheet_1-1087
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20065,7 +20059,7 @@ members:
     - 1836303.797953849
     - -1242285.396150703
 - id: BM-sheet_1-1088
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20079,7 +20073,7 @@ members:
     - 1836303.797953849
     - -1254025.3961507
 - id: BM-sheet_1-1089
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20093,7 +20087,7 @@ members:
     - 1851752.646130404
     - -1254025.396150699
 - id: BM-sheet_1-1090
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20163,7 +20157,7 @@ members:
     - 1835382.599639637
     - -1304285.431566697
 - id: BM-sheet_1-1095
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20275,7 +20269,7 @@ members:
     - 1882053.797953854
     - -1206835.396150726
 - id: BM-sheet_1-1103
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20359,7 +20353,7 @@ members:
     - 1844053.797953855
     - -1287175.396150706
 - id: BM-sheet_1-1109
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20387,7 +20381,7 @@ members:
     - 1872153.804899665
     - -1301705.464060379
 - id: BM-sheet_1-1111
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20401,7 +20395,7 @@ members:
     - 1844031.567946817
     - -1206485.39622522
 - id: BM-sheet_1-1112
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20415,7 +20409,7 @@ members:
     - 1844053.797953881
     - -1206485.39622522
 - id: BM-sheet_1-1113
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20429,7 +20423,7 @@ members:
     - 1851744.266168429
     - -1206335.39622522
 - id: BM-sheet_1-1114
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20471,7 +20465,7 @@ members:
     - 1858453.804351312
     - -1316305.401148788
 - id: BM-sheet_1-1117
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20485,7 +20479,7 @@ members:
     - 1843803.798502207
     - -1241785.396150703
 - id: BM-sheet_1-1118
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20513,7 +20507,7 @@ members:
     - 1886453.797954029
     - -1245325.396150441
 - id: BM-sheet_1-1120
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20527,7 +20521,7 @@ members:
     - 1843803.798502207
     - -1245825.396150698
 - id: BM-sheet_1-1121
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20541,7 +20535,7 @@ members:
     - 1872103.804351328
     - -1311955.402865032
 - id: BM-sheet_1-1122
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20555,7 +20549,7 @@ members:
     - 1843803.798502204
     - -1253525.396150699
 - id: BM-sheet_1-1123
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20569,7 +20563,7 @@ members:
     - 1851752.637768225
     - -1253525.396150699
 - id: BM-sheet_1-1124
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20583,7 +20577,7 @@ members:
     - 1856152.637770822
     - -1253525.396150699
 - id: BM-sheet_1-1125
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20597,7 +20591,7 @@ members:
     - 1864553.798502245
     - -1253525.396150699
 - id: BM-sheet_1-1126
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20611,7 +20605,7 @@ members:
     - 1892153.804351239
     - -1312055.471255746
 - id: BM-sheet_1-1127
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20625,7 +20619,7 @@ members:
     - 1844152.646130404
     - -1254025.396150699
 - id: BM-sheet_1-1128
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20639,7 +20633,7 @@ members:
     - 1843552.646678749
     - -1261725.3961507
 - id: BM-sheet_1-1129
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20653,7 +20647,7 @@ members:
     - 1856452.646130404
     - -1254025.396150699
 - id: BM-sheet_1-1130
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20681,7 +20675,7 @@ members:
     - 1835853.798502204
     - -1266365.402864978
 - id: BM-sheet_1-1132
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20779,7 +20773,7 @@ members:
     - 1898503.804351254
     - -1311855.401074277
 - id: BM-sheet_1-1139
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20863,7 +20857,7 @@ members:
     - 1874642.602400065
     - -1286805.401074282
 - id: BM-sheet_1-1145
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -20975,7 +20969,7 @@ members:
     - 1885053.804351535
     - -1286775.399432584
 - id: BM-sheet_1-1153
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21269,7 +21263,7 @@ members:
     - 1852753.804351394
     - -1286305.152801303
 - id: BM-sheet_1-1174
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21423,7 +21417,7 @@ members:
     - 1892203.804351241
     - -1316305.401148834
 - id: BM-sheet_1-1185
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21507,7 +21501,7 @@ members:
     - 1907823.925225435
     - -1316305.401148856
 - id: BM-sheet_1-1191
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21521,7 +21515,7 @@ members:
     - 1858403.804351328
     - -1311855.401074274
 - id: BM-sheet_1-1192
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21549,7 +21543,7 @@ members:
     - 1867103.804351322
     - -1301705.403004726
 - id: BM-sheet_1-1194
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21605,7 +21599,7 @@ members:
     - 1880953.797953927
     - -1278125.396150695
 - id: BM-sheet_1-1198
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21619,7 +21613,7 @@ members:
     - 1884353.804351237
     - -1312055.471255718
 - id: BM-sheet_1-1199
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21633,7 +21627,7 @@ members:
     - 1877703.804351562
     - -1312055.471255745
 - id: BM-sheet_1-1200
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21871,7 +21865,7 @@ members:
     - 1866653.804351325
     - -1286305.401074282
 - id: BM-sheet_1-1217
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -21997,7 +21991,7 @@ members:
     - 1894753.797953881
     - -1253525.396150696
 - id: BM-sheet_1-1226
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22053,7 +22047,7 @@ members:
     - 1867910.965508973
     - -1125664.952470042
 - id: BM-sheet_1-1230
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22095,7 +22089,7 @@ members:
     - 1864503.79795389
     - -1243105.401148659
 - id: BM-sheet_1-1233
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22333,7 +22327,7 @@ members:
     - 1881403.804351702
     - -1278625.396150673
 - id: BM-sheet_1-1250
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22613,7 +22607,7 @@ members:
     - 1899453.797953875
     - -1269925.396150696
 - id: BM-sheet_1-1270
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22627,7 +22621,7 @@ members:
     - 1873803.797953861
     - -1206335.396150726
 - id: BM-sheet_1-1271
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22641,7 +22635,7 @@ members:
     - 1832903.784120903
     - -1184581.468526098
 - id: BM-sheet_1-1272
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22669,7 +22663,7 @@ members:
     - 1866653.804351312
     - -1316305.401148799
 - id: BM-sheet_1-1274
-  spec: UNKNOWN-RG1D
+  spec: RG1D
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22725,7 +22719,7 @@ members:
     - 1898503.80435124
     - -1316305.401148843
 - id: BM-sheet_1-1278
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22753,7 +22747,7 @@ members:
     - 1828420.049979285
     - -1163206.545850817
 - id: BM-sheet_1-1280
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22767,7 +22761,7 @@ members:
     - 1818417.52421981
     - -1102420.778779694
 - id: BM-sheet_1-1281
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22781,7 +22775,7 @@ members:
     - 1867103.804351322
     - -1312055.47062214
 - id: BM-sheet_1-1282
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22823,7 +22817,7 @@ members:
     - 1822505.703913318
     - -1139485.399416882
 - id: BM-sheet_1-1285
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22907,7 +22901,7 @@ members:
     - 1807710.696311708
     - -1050585.396150506
 - id: BM-sheet_1-1291
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22949,7 +22943,7 @@ members:
     - 1807210.696311708
     - -1042085.396150512
 - id: BM-sheet_1-1294
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -22963,7 +22957,7 @@ members:
     - 1844652.646130404
     - -1261585.401148724
 - id: BM-sheet_1-1295
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23005,7 +22999,7 @@ members:
     - 1813760.696311739
     - -1063285.396150675
 - id: BM-sheet_1-1298
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23033,7 +23027,7 @@ members:
     - 1808253.797953882
     - -1215035.390133954
 - id: BM-sheet_1-1300
-  spec: UNKNOWN-RG1D
+  spec: RG1D
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23075,7 +23069,7 @@ members:
     - 1807210.696311708
     - -1020535.396225366
 - id: BM-sheet_1-1303
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23103,7 +23097,7 @@ members:
     - 1818463.622996912
     - -1067320.449833
 - id: BM-sheet_1-1305
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23131,7 +23125,7 @@ members:
     - 1908218.235705765
     - -1315997.332038193
 - id: BM-sheet_1-1307
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23145,7 +23139,7 @@ members:
     - 1810110.696311817
     - -1041585.396150512
 - id: BM-sheet_1-1308
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23187,7 +23181,7 @@ members:
     - 1838344.078536246
     - -1061848.388742695
 - id: BM-sheet_1-1311
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23201,7 +23195,7 @@ members:
     - 1809860.696860005
     - -1050585.396150506
 - id: BM-sheet_1-1312
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23229,7 +23223,7 @@ members:
     - 1823110.69686016
     - -1033085.396150564
 - id: BM-sheet_1-1314
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23271,7 +23265,7 @@ members:
     - 1791403.797953885
     - -1222685.403004728
 - id: BM-sheet_1-1317
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23383,7 +23377,7 @@ members:
     - 1842252.524747852
     - -1077813.632961839
 - id: BM-sheet_1-1325
-  spec: UNKNOWN-RG1D
+  spec: RG1D
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23397,7 +23391,7 @@ members:
     - 1857953.807637471
     - -1214635.388961946
 - id: BM-sheet_1-1326
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23425,7 +23419,7 @@ members:
     - 1818477.10577973
     - -1084885.491729405
 - id: BM-sheet_1-1328
-  spec: UNKNOWN-RG1D
+  spec: RG1D
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23467,7 +23461,7 @@ members:
     - 1824703.794127623
     - -1216183.228905446
 - id: BM-sheet_1-1331
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23481,7 +23475,7 @@ members:
     - 1804410.696311808
     - -1050085.396150505
 - id: BM-sheet_1-1332
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23509,7 +23503,7 @@ members:
     - 1800760.696311824
     - -1020535.396225293
 - id: BM-sheet_1-1334
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23523,7 +23517,7 @@ members:
     - 1837010.696311812
     - -1035085.396150506
 - id: BM-sheet_1-1335
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -23551,7 +23545,7 @@ members:
     - 1807210.696311708
     - -1063285.396150675
 - id: BM-sheet_1-1337
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -24153,7 +24147,7 @@ members:
     - 1832538.46012115
     - -1170630.74263591
 - id: BM-sheet_1-1380
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -24503,7 +24497,7 @@ members:
     - 1830372.046859686
     - -1085264.088038475
 - id: BM-sheet_1-1405
-  spec: UNKNOWN-RG12
+  spec: RG12
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -24601,7 +24595,7 @@ members:
     - 1854246.849491356
     - -1079311.431179717
 - id: BM-sheet_1-1412
-  spec: UNKNOWN-RG1D
+  spec: RG1D
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -24615,7 +24609,7 @@ members:
     - 1865603.79794506
     - -1214635.396225182
 - id: BM-sheet_1-1413
-  spec: UNKNOWN-RG1D
+  spec: RG1D
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -24825,7 +24819,7 @@ members:
     - 1865222.656828857
     - -1093970.478599182
 - id: BM-sheet_1-1428
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -24923,7 +24917,7 @@ members:
     - 1857453.797953935
     - -1206835.396150726
 - id: BM-sheet_1-1435
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -25175,7 +25169,7 @@ members:
     - 1835084.009874175
     - -1153145.496252
 - id: BM-sheet_1-1453
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -25231,7 +25225,7 @@ members:
     - 1832336.026167131
     - -1126416.359797927
 - id: BM-sheet_1-1457
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -25343,7 +25337,7 @@ members:
     - 1849774.362856532
     - -1116786.599243092
 - id: BM-sheet_1-1465
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -25385,7 +25379,7 @@ members:
     - 1861003.222042127
     - -1278125.396150696
 - id: BM-sheet_1-1468
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -26085,7 +26079,7 @@ members:
     - 1843459.636988596
     - -1159456.755658049
 - id: BM-sheet_1-1518
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -26113,7 +26107,7 @@ members:
     - 1879372.796383903
     - -1172255.880027984
 - id: BM-sheet_1-1520
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -26729,7 +26723,7 @@ members:
     - 1879493.757331712
     - -1172741.02789112
 - id: BM-sheet_1-1564
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -26743,7 +26737,7 @@ members:
     - 1850492.876382678
     - -1140749.583614132
 - id: BM-sheet_1-1565
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -26757,7 +26751,7 @@ members:
     - 1872753.797953922
     - -1278625.396150696
 - id: BM-sheet_1-1566
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27303,7 +27297,7 @@ members:
     - 1886078.80435169
     - -1206885.396225205
 - id: BM-sheet_1-1605
-  spec: UNKNOWN-RG10A
+  spec: RG10A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27387,7 +27381,7 @@ members:
     - 1840278.797953858
     - -1287175.396150706
 - id: BM-sheet_1-1611
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27401,7 +27395,7 @@ members:
     - 1854206.012960973
     - -1156262.07638427
 - id: BM-sheet_1-1612
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27415,7 +27409,7 @@ members:
     - 1894603.788162496
     - -1269925.396150696
 - id: BM-sheet_1-1613
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27443,7 +27437,7 @@ members:
     - 1894718.071303103
     - -1281300.962507709
 - id: BM-sheet_1-1615
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27471,7 +27465,7 @@ members:
     - 1848378.801700973
     - -1311855.401074278
 - id: BM-sheet_1-1617
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27583,7 +27577,7 @@ members:
     - 1885746.768545649
     - -1282215.398612489
 - id: BM-sheet_1-1625
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27695,7 +27689,7 @@ members:
     - 1872622.650519406
     - -1286805.401074282
 - id: BM-sheet_1-1633
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27765,7 +27759,7 @@ members:
     - 1796110.696689588
     - -1050085.405542527
 - id: BM-sheet_1-1638
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27807,7 +27801,7 @@ members:
     - 1835853.79850224
     - -1262225.396150697
 - id: BM-sheet_1-1641
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27849,7 +27843,7 @@ members:
     - 1835803.797953849
     - -1262225.3961507
 - id: BM-sheet_1-1644
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27891,7 +27885,7 @@ members:
     - 1796660.69686018
     - -1077545.997880183
 - id: BM-sheet_1-1647
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -27905,7 +27899,7 @@ members:
     - 1796160.69686018
     - -1071185.397941423
 - id: BM-sheet_1-1648
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28017,7 +28011,7 @@ members:
     - 1822115.206071016
     - -1139985.406644684
 - id: BM-sheet_1-1656
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28031,7 +28025,7 @@ members:
     - 1821903.798502224
     - -1241785.396150698
 - id: BM-sheet_1-1657
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28059,7 +28053,7 @@ members:
     - 1870311.491291492
     - -1135292.935509008
 - id: BM-sheet_1-1659
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28073,7 +28067,7 @@ members:
     - 1821903.798502303
     - -1242285.396150698
 - id: BM-sheet_1-1660
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28101,7 +28095,7 @@ members:
     - 1844152.646130404
     - -1265865.402864978
 - id: BM-sheet_1-1662
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28115,7 +28109,7 @@ members:
     - 1835853.798502208
     - -1254025.399988556
 - id: BM-sheet_1-1663
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28129,7 +28123,7 @@ members:
     - 1821903.798502304
     - -1245825.396150687
 - id: BM-sheet_1-1664
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28143,7 +28137,7 @@ members:
     - 1821903.798502224
     - -1253525.399988556
 - id: BM-sheet_1-1665
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28171,7 +28165,7 @@ members:
     - 1848910.73260023
     - -1149698.143826367
 - id: BM-sheet_1-1667
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28255,7 +28249,7 @@ members:
     - 1830203.79357927
     - -1265865.402864978
 - id: BM-sheet_1-1673
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28283,7 +28277,7 @@ members:
     - 1835803.797953849
     - -1266365.402864978
 - id: BM-sheet_1-1675
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -28311,7 +28305,7 @@ members:
     - 1869703.804351662
     - -1215135.396225182
 - id: BM-sheet_1-1677
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29207,7 +29201,7 @@ members:
     - 1815713.121198704
     - -1075866.537819122
 - id: BM-sheet_1-1741
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29221,7 +29215,7 @@ members:
     - 1852500.826787462
     - -1148803.032812609
 - id: BM-sheet_1-1742
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29305,7 +29299,7 @@ members:
     - 1775113.774250905
     - -1064021.548005463
 - id: BM-sheet_1-1748
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29543,7 +29537,7 @@ members:
     - 1748596.425207343
     - -1083969.870574912
 - id: BM-sheet_1-1765
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29571,7 +29565,7 @@ members:
     - 1710743.061134613
     - -1091174.029286497
 - id: BM-sheet_1-1767
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29613,7 +29607,7 @@ members:
     - 1710243.061134613
     - -1091174.029286497
 - id: BM-sheet_1-1770
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29627,7 +29621,7 @@ members:
     - 1718743.06113461
     - -1084274.029286573
 - id: BM-sheet_1-1771
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -29655,7 +29649,7 @@ members:
     - 1718743.06113461
     - -1089768.565475931
 - id: BM-sheet_1-1773
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -30327,7 +30321,7 @@ members:
     - 1894718.071303103
     - -1282715.398612489
 - id: BM-sheet_1-1821
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -30383,7 +30377,7 @@ members:
     - 1830253.798502238
     - -1233385.396150697
 - id: BM-sheet_1-1825
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -30495,7 +30489,7 @@ members:
     - 1862845.561919806
     - -1128703.374147824
 - id: BM-sheet_1-1833
-  spec: UNKNOWN-RG2C
+  spec: RG2C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -30551,7 +30545,7 @@ members:
     - 1705575.707659231
     - -1046681.960468911
 - id: BM-sheet_1-1837
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -30579,7 +30573,7 @@ members:
     - 1727543.048010936
     - -1054345.444059962
 - id: BM-sheet_1-1839
-  spec: UNKNOWN-RG2C
+  spec: RG2C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -30649,7 +30643,7 @@ members:
     - 1737021.325180347
     - -1089568.565520271
 - id: BM-sheet_1-1844
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -30803,7 +30797,7 @@ members:
     - 1752672.646720546
     - -1136140.402448102
 - id: BM-sheet_1-1855
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31111,7 +31105,7 @@ members:
     - 1810390.204446622
     - -1129985.402929661
 - id: BM-sheet_1-1877
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31125,7 +31119,7 @@ members:
     - 1793581.148534113
     - -1108465.918082591
 - id: BM-sheet_1-1878
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31475,7 +31469,7 @@ members:
     - 1827442.646643327
     - -1162820.406644684
 - id: BM-sheet_1-1903
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31517,7 +31511,7 @@ members:
     - 1835853.794127611
     - -1295575.392312845
 - id: BM-sheet_1-1906
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31587,7 +31581,7 @@ members:
     - 1836303.797953854
     - -1295575.396150705
 - id: BM-sheet_1-1911
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31629,7 +31623,7 @@ members:
     - 1835803.797953854
     - -1295575.392312845
 - id: BM-sheet_1-1914
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31657,7 +31651,7 @@ members:
     - 1830703.797953854
     - -1295575.396150706
 - id: BM-sheet_1-1916
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31685,7 +31679,7 @@ members:
     - 1830203.797953854
     - -1295575.392312847
 - id: BM-sheet_1-1918
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31727,7 +31721,7 @@ members:
     - 1822603.797953848
     - -1295525.401704788
 - id: BM-sheet_1-1921
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -31783,7 +31777,7 @@ members:
     - 1822103.797953848
     - -1295525.401704784
 - id: BM-sheet_1-1925
-  spec: UNKNOWN-RG14
+  spec: RG14
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32175,7 +32169,7 @@ members:
     - 1833503.797953853
     - -1245825.396150687
 - id: BM-sheet_1-1953
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32441,7 +32435,7 @@ members:
     - 1767328.801396594
     - -1189623.893857953
 - id: BM-sheet_1-1972
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32455,7 +32449,7 @@ members:
     - 1820002.646671953
     - -1154951.242827939
 - id: BM-sheet_1-1973
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32469,7 +32463,7 @@ members:
     - 1820002.646671953
     - -1146395.106630658
 - id: BM-sheet_1-1974
-  spec: UNKNOWN-RG1A
+  spec: RG1A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32483,7 +32477,7 @@ members:
     - 1820002.646671953
     - -1139985.471272049
 - id: BM-sheet_1-1975
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32497,7 +32491,7 @@ members:
     - 1819502.646671953
     - -1154951.242721042
 - id: BM-sheet_1-1976
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32511,7 +32505,7 @@ members:
     - 1819502.646671953
     - -1146251.242721045
 - id: BM-sheet_1-1977
-  spec: UNKNOWN-RG1A
+  spec: RG1A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32553,7 +32547,7 @@ members:
     - 1818452.646757145
     - -1157930.406937342
 - id: BM-sheet_1-1980
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32567,7 +32561,7 @@ members:
     - 1819502.646671953
     - -1146275.716422357
 - id: BM-sheet_1-1981
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -32581,7 +32575,7 @@ members:
     - 1823948.069082372
     - -1147337.196237485
 - id: BM-sheet_1-1982
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -33239,7 +33233,7 @@ members:
     - 1759402.542206618
     - -1136140.402448103
 - id: BM-sheet_1-2029
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -33253,7 +33247,7 @@ members:
     - 1856452.646130404
     - -1261585.401148724
 - id: BM-sheet_1-2030
-  spec: UNKNOWN-RG1B
+  spec: RG1B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -94671,7 +94665,7 @@ members:
     - 1740892.646707277
     - -1137585.471272042
 - id: BM-sheet_1-6417
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -101055,7 +101049,7 @@ members:
     - 1790282.707135194
     - -1117155.46959834
 - id: BM-sheet_1-6873
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -103729,7 +103723,7 @@ members:
     - 1818643.241086725
     - -1071497.693363064
 - id: BM-sheet_1-7064
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -103757,7 +103751,7 @@ members:
     - 1811366.544768491
     - -1072487.486620048
 - id: BM-sheet_1-7066
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -103771,7 +103765,7 @@ members:
     - 1810978.426477981
     - -1072584.255378288
 - id: BM-sheet_1-7067
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -103813,7 +103807,7 @@ members:
     - 1812455.193298765
     - -1076853.817388272
 - id: BM-sheet_1-7070
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -105129,7 +105123,7 @@ members:
     - 1876339.295153862
     - -1115893.60551858
 - id: BM-sheet_1-7164
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -105143,7 +105137,7 @@ members:
     - 1823960.89067608
     - -1061823.884013265
 - id: BM-sheet_1-7165
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -105157,7 +105151,7 @@ members:
     - 1823767.3531596
     - -1061047.647432244
 - id: BM-sheet_1-7166
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -105171,7 +105165,7 @@ members:
     - 1823379.23486909
     - -1061144.416190485
 - id: BM-sheet_1-7167
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106081,7 +106075,7 @@ members:
     - 1804410.696860169
     - -1071835.466332136
 - id: BM-sheet_1-7232
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106277,7 +106271,7 @@ members:
     - 1892603.804899578
     - -1316005.471255767
 - id: BM-sheet_1-7246
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106333,7 +106327,7 @@ members:
     - 1884303.804899571
     - -1316005.471255767
 - id: BM-sheet_1-7250
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106347,7 +106341,7 @@ members:
     - 1883903.804899571
     - -1316005.471255767
 - id: BM-sheet_1-7251
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106389,7 +106383,7 @@ members:
     - 1878153.804899889
     - -1316005.471255299
 - id: BM-sheet_1-7254
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106403,7 +106397,7 @@ members:
     - 1877753.804899889
     - -1316005.471255299
 - id: BM-sheet_1-7255
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106445,7 +106439,7 @@ members:
     - 1872553.80489965
     - -1316005.471255299
 - id: BM-sheet_1-7258
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106459,7 +106453,7 @@ members:
     - 1872153.80489965
     - -1316005.471255299
 - id: BM-sheet_1-7259
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106501,7 +106495,7 @@ members:
     - 1867053.80489965
     - -1316005.471255299
 - id: BM-sheet_1-7262
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106515,7 +106509,7 @@ members:
     - 1866653.80489965
     - -1316005.471255299
 - id: BM-sheet_1-7263
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106557,7 +106551,7 @@ members:
     - 1858853.80489965
     - -1316005.471255299
 - id: BM-sheet_1-7266
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106571,7 +106565,7 @@ members:
     - 1858453.80489965
     - -1316005.471255299
 - id: BM-sheet_1-7267
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106711,7 +106705,7 @@ members:
     - 1836253.798502195
     - -1245975.466332142
 - id: BM-sheet_1-7277
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106725,7 +106719,7 @@ members:
     - 1836253.798502195
     - -1245175.466332142
 - id: BM-sheet_1-7278
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -106739,7 +106733,7 @@ members:
     - 1835853.798502195
     - -1245175.466332142
 - id: BM-sheet_1-7279
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -111569,7 +111563,7 @@ members:
     - 1790282.6895808
     - -1117155.469598341
 - id: BM-sheet_1-7624
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -112479,7 +112473,7 @@ members:
     - 1817653.798502236
     - -1254175.46633215
 - id: BM-sheet_1-7689
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -112535,7 +112529,7 @@ members:
     - 1817653.798502239
     - -1245975.466332137
 - id: BM-sheet_1-7693
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -112591,7 +112585,7 @@ members:
     - 1817653.798502239
     - -1242435.46633215
 - id: BM-sheet_1-7697
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -112745,7 +112739,7 @@ members:
     - 1807178.564574448
     - -1114139.031596378
 - id: BM-sheet_1-7708
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -112759,7 +112753,7 @@ members:
     - 1799584.945585871
     - -1115928.08484839
 - id: BM-sheet_1-7709
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -112787,7 +112781,7 @@ members:
     - 1799003.289778882
     - -1115248.61702561
 - id: BM-sheet_1-7711
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -114775,7 +114769,7 @@ members:
     - 1731493.059700251
     - -1084124.093913885
 - id: BM-sheet_1-7853
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -115307,7 +115301,7 @@ members:
     - 1780010.69686014
     - -1071835.466332151
 - id: BM-sheet_1-7891
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -115363,7 +115357,7 @@ members:
     - 1693993.059700226
     - -1071424.093913857
 - id: BM-sheet_1-7895
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -115923,7 +115917,7 @@ members:
     - 1780777.62162684
     - -1046099.150812032
 - id: BM-sheet_1-7935
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -115965,7 +115959,7 @@ members:
     - 1780310.696860156
     - -1041435.466331971
 - id: BM-sheet_1-7938
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -116007,7 +116001,7 @@ members:
     - 1788410.69686016
     - -1062635.466331973
 - id: BM-sheet_1-7941
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -117043,7 +117037,7 @@ members:
     - 1837410.696860138
     - -1025935.466331897
 - id: BM-sheet_1-8015
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -117057,7 +117051,7 @@ members:
     - 1799196.82729537
     - -1116024.853606633
 - id: BM-sheet_1-8016
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -117085,7 +117079,7 @@ members:
     - 1799391.408069384
     - -1115151.848267367
 - id: BM-sheet_1-8018
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -117463,7 +117457,7 @@ members:
     - 1812067.075008222
     - -1076950.586146528
 - id: BM-sheet_1-8045
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -117603,7 +117597,7 @@ members:
     - 1831910.696860158
     - -1033735.466331968
 - id: BM-sheet_1-8055
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -117617,7 +117611,7 @@ members:
     - 1780310.696689555
     - -1042235.466332024
 - id: BM-sheet_1-8056
-  spec: UNKNOWN-RG1C
+  spec: RG1C
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -123273,7 +123267,7 @@ members:
     - 1731493.059700254
     - -1063124.093913881
 - id: BM-sheet_1-8460
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -123287,7 +123281,7 @@ members:
     - 1731493.059700254
     - -1062324.093913881
 - id: BM-sheet_1-8461
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -124099,7 +124093,7 @@ members:
     - 1778829.960724151
     - -1063501.74313547
 - id: BM-sheet_1-8519
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -124113,7 +124107,7 @@ members:
     - 1777765.239132957
     - -1055159.898739107
 - id: BM-sheet_1-8520
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -124127,7 +124121,7 @@ members:
     - 1777626.320590823
     - -1054372.052536697
 - id: BM-sheet_1-8521
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -124141,7 +124135,7 @@ members:
     - 1777232.397489618
     - -1054441.511807764
 - id: BM-sheet_1-8522
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -124211,7 +124205,7 @@ members:
     - 1736206.35195559
     - -1062487.851835229
 - id: BM-sheet_1-8527
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -129811,7 +129805,7 @@ members:
     - 1856953.798502212
     - -1233837.386336209
 - id: BM-sheet_1-8927
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -131043,7 +131037,7 @@ members:
     - 1835853.79850223
     - -1207135.466332158
 - id: BM-sheet_1-9015
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -131057,7 +131051,7 @@ members:
     - 1832853.798502241
     - -1207135.466332166
 - id: BM-sheet_1-9016
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -131071,7 +131065,7 @@ members:
     - 1832853.798502241
     - -1206335.466332166
 - id: BM-sheet_1-9017
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -131085,7 +131079,7 @@ members:
     - 1832453.798502241
     - -1206335.466332166
 - id: BM-sheet_1-9018
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -131995,7 +131989,7 @@ members:
     - 1882053.798502225
     - -1189735.466332179
 - id: BM-sheet_1-9083
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -132009,7 +132003,7 @@ members:
     - 1840453.798502225
     - -1189735.466332158
 - id: BM-sheet_1-9084
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -132023,7 +132017,7 @@ members:
     - 1840453.798502225
     - -1188935.466332158
 - id: BM-sheet_1-9085
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -132037,7 +132031,7 @@ members:
     - 1840053.798502225
     - -1188935.466332158
 - id: BM-sheet_1-9086
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -132079,7 +132073,7 @@ members:
     - 1832853.798502239
     - -1188935.466332163
 - id: BM-sheet_1-9089
-  spec: UNKNOWN-RG15
+  spec: RG15
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -132135,7 +132129,7 @@ members:
     - 1824653.798502228
     - -1188935.466332142
 - id: BM-sheet_1-9093
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -132191,7 +132185,7 @@ members:
     - 1816453.798502232
     - -1188935.466332151
 - id: BM-sheet_1-9097
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -132247,7 +132241,7 @@ members:
     - 1808253.798502233
     - -1188935.466332148
 - id: BM-sheet_1-9101
-  spec: UNKNOWN-RG2B
+  spec: RG2B
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -134291,7 +134285,7 @@ members:
     - 1845610.696860159
     - -1058435.466331961
 - id: BM-sheet_1-9247
-  spec: UNKNOWN-RG2A
+  spec: RG2A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -205621,7 +205615,7 @@ members:
     - 1790132.646674125
     - -1117255.404970981
 - id: BM-sheet_1-14342
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -205663,7 +205657,7 @@ members:
     - 1783982.646674117
     - -1117255.404970981
 - id: BM-sheet_1-14345
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -205677,7 +205671,7 @@ members:
     - 1820002.646671953
     - -1154484.269746258
 - id: BM-sheet_1-14346
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -205691,7 +205685,7 @@ members:
     - 1818452.646757144
     - -1154396.214196615
 - id: BM-sheet_1-14347
-  spec: UNKNOWN-RG13
+  spec: RG13
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -205705,7 +205699,7 @@ members:
     - 1820002.646671953
     - -1154985.075941331
 - id: BM-sheet_1-14348
-  spec: UNKNOWN-RG3
+  spec: RG3
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -205733,7 +205727,7 @@ members:
     - 1814342.646702257
     - -1162820.406708847
 - id: BM-sheet_1-14350
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -205761,7 +205755,7 @@ members:
     - 1788922.64666573
     - -1170320.471280702
 - id: BM-sheet_1-14352
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -206055,7 +206049,7 @@ members:
     - 1750893.054315108
     - -1118455.034530214
 - id: BM-sheet_1-14373
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -206111,7 +206105,7 @@ members:
     - 1751393.054315108
     - -1127574.025448645
 - id: BM-sheet_1-14377
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207021,7 +207015,7 @@ members:
     - 1743716.056327188
     - -1087389.348520482
 - id: BM-sheet_1-14442
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207035,7 +207029,7 @@ members:
     - 1857953.797953859
     - -1206585.397103126
 - id: BM-sheet_1-14443
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207049,7 +207043,7 @@ members:
     - 1857453.797953858
     - -1206585.397103126
 - id: BM-sheet_1-14444
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207091,7 +207085,7 @@ members:
     - 1865639.653344812
     - -1202885.46655566
 - id: BM-sheet_1-14447
-  spec: UNKNOWN-RG12A
+  spec: RG12A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207707,7 +207701,7 @@ members:
     - 1783877.880639836
     - -1106995.451526677
 - id: BM-sheet_1-14491
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207721,7 +207715,7 @@ members:
     - 1850338.02404561
     - -1174643.84467165
 - id: BM-sheet_1-14492
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207945,7 +207939,7 @@ members:
     - 1130009.655204979
     - -1154330.471272048
 - id: BM-sheet_1-14508
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207959,7 +207953,7 @@ members:
     - 1698493.059700267
     - -1118978.246235766
 - id: BM-sheet_1-14509
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207973,7 +207967,7 @@ members:
     - 1738893.059700268
     - -1118978.246235766
 - id: BM-sheet_1-14510
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -207987,7 +207981,7 @@ members:
     - 1722693.059700268
     - -1118978.246235766
 - id: BM-sheet_1-14511
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208001,7 +207995,7 @@ members:
     - 1714593.059700267
     - -1118978.246235766
 - id: BM-sheet_1-14512
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208015,7 +208009,7 @@ members:
     - 1730793.059700285
     - -1118978.246235766
 - id: BM-sheet_1-14513
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208029,7 +208023,7 @@ members:
     - 1706493.059700285
     - -1118978.246235766
 - id: BM-sheet_1-14514
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208043,7 +208037,7 @@ members:
     - 1738893.059700263
     - -1119478.246235766
 - id: BM-sheet_1-14515
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208057,7 +208051,7 @@ members:
     - 1730793.059700281
     - -1119478.246235766
 - id: BM-sheet_1-14516
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208071,7 +208065,7 @@ members:
     - 1722693.059700263
     - -1119478.246235766
 - id: BM-sheet_1-14517
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208085,7 +208079,7 @@ members:
     - 1714593.059700259
     - -1119478.246235766
 - id: BM-sheet_1-14518
-  spec: UNKNOWN-RG2
+  spec: RG2
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208099,7 +208093,7 @@ members:
     - 1706493.059700281
     - -1119478.246235766
 - id: BM-sheet_1-14519
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208113,7 +208107,7 @@ members:
     - 1698493.059700262
     - -1119478.246235766
 - id: BM-sheet_1-14520
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208127,7 +208121,7 @@ members:
     - 1706043.059700264
     - -1119478.246235766
 - id: BM-sheet_1-14521
-  spec: UNKNOWN-RG11
+  spec: RG11
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208141,7 +208135,7 @@ members:
     - 1706543.059700264
     - -1119478.246235766
 - id: BM-sheet_1-14522
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208155,7 +208149,7 @@ members:
     - 1714143.059700265
     - -1119478.246235768
 - id: BM-sheet_1-14523
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208169,7 +208163,7 @@ members:
     - 1714643.059700265
     - -1119478.246235768
 - id: BM-sheet_1-14524
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208183,7 +208177,7 @@ members:
     - 1722243.059700265
     - -1119478.246235766
 - id: BM-sheet_1-14525
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208197,7 +208191,7 @@ members:
     - 1722743.059700265
     - -1119478.246235766
 - id: BM-sheet_1-14526
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208211,7 +208205,7 @@ members:
     - 1730343.059700261
     - -1119478.246235766
 - id: BM-sheet_1-14527
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208225,7 +208219,7 @@ members:
     - 1730843.059700261
     - -1119478.246235766
 - id: BM-sheet_1-14528
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208239,7 +208233,7 @@ members:
     - 1738443.059700265
     - -1119478.246235775
 - id: BM-sheet_1-14529
-  spec: UNKNOWN-RG10
+  spec: RG10
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -208715,7 +208709,7 @@ members:
     - 1135253.824451554
     - -1215135.532626162
 - id: BM-sheet_1-14563
-  spec: UNKNOWN-RG13A
+  spec: RG13A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -209037,7 +209031,7 @@ members:
     - 1228453.804899528
     - -1290455.444999389
 - id: BM-sheet_1-14586
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -209051,7 +209045,7 @@ members:
     - 1858453.804899673
     - -1290455.444999389
 - id: BM-sheet_1-14587
-  spec: UNKNOWN-RG15A
+  spec: RG15A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -209499,7 +209493,7 @@ members:
     - 1803807.652344647
     - -1127465.473328233
 - id: BM-sheet_1-14619
-  spec: UNKNOWN-RG11A
+  spec: RG11A
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -210549,7 +210543,7 @@ members:
     - 1201371.328586925
     - -1038235.466334561
 - id: BM-sheet_1-14694
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0
@@ -210563,7 +210557,7 @@ members:
     - 1831510.696860156
     - -1041585.466406477
 - id: BM-sheet_1-14695
-  spec: UNKNOWN-RG1
+  spec: RG1
   type: beam
   floor: sheet_1
   rotation: 0.0

@@ -57,8 +57,6 @@ def _execute_pair(pair: dict) -> BOQItem:
                     beam_height=first_beam_height,
                     column_polygon=col_poly,
                     beam_polygon=first_beam_poly,
-                    z_base=pair.get("z_base", 0.0),
-                    is_external=pair.get("is_external", False),
                 )
                 mesh_results = extrude_regions(regions)
                 GLTF_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

@@ -114,7 +114,7 @@ def _mode_of_diffs(diffs: List[float], tolerance: float) -> float:
 # ─────────────────────────────────────────────────────────────
 
 # 시트 검출 임계값 — 함수 인자 기본값
-DEFAULT_GRID_BIN_SIZE = 200_000.0    # 격자 라벨 X 클러스터링 (mm)
+DEFAULT_GRID_BIN_SIZE = 50_000.0     # 격자 라벨 X 클러스터링 (mm) - 시트 간 간격 고려하여 축소
 DEFAULT_SHEET_HALF_SPAN = 100_000.0  # 시트 중심 ± 반쪽폭
 
 
@@ -139,46 +139,30 @@ def segment_sheets(
 
     sheets: List[SheetMeta] = []
 
-    # ── 전략 A: 격자 X 라벨 ALL 클러스터링 ──
-    if grid_x:
-        x_clusters = cluster_x_positions(
-            [g.x for g in grid_x], bin_size=grid_bin_size,
-        )
-        # Y 클러스터링 (각 시트의 Y축)
-        if grid_y:
-            y_clusters = cluster_x_positions(
-                [g.y for g in grid_y], bin_size=grid_bin_size,
-            )
-        else:
-            y_clusters = []
+    # ── 전략 A: 시트 코드 클러스터링 (가장 확실함) ──
+    if sheet_codes:
+        seen_ids = set()
+        for i, sc in enumerate(sheet_codes):
+            sid = sc.text
+            if sid in seen_ids:
+                sid = f"{sc.text}_{int(sc.x/1000)}_{int(sc.y/1000)}"
+            seen_ids.add(sid)
+            
+            sheets.append(SheetMeta(
+                sheet_id=sid,
+                floor_label=None,
+                bbox=(sc.x - sheet_half_span, sc.y - sheet_half_span,
+                      sc.x + sheet_half_span, sc.y + sheet_half_span),
+                sw_corner=(sc.x - sheet_half_span, sc.y - sheet_half_span),
+                confidence=0.8,
+                grid_x_labels=[(g.text, g.x, g.y) for g in grid_x
+                               if abs(g.x - sc.x) < sheet_half_span and abs(g.y - sc.y) < sheet_half_span],
+                grid_y_labels=[(g.text, g.x, g.y) for g in grid_y
+                               if abs(g.x - sc.x) < sheet_half_span and abs(g.y - sc.y) < sheet_half_span],
+            ))
 
-        if y_clusters:
-            for i, (cx, cnt_x) in enumerate(x_clusters):
-                # 각 X 클러스터마다 시트 1개
-                # Y 범위는 가장 가까운 Y 클러스터 또는 전체 Y 범위
-                ys_in_cluster = [g.y for g in grid_y
-                                 if abs(g.y - y_clusters[0][0]) < grid_bin_size * 5]
-                if not ys_in_cluster:
-                    ys_in_cluster = [g.y for g in grid_y]
-
-                ymin, ymax = min(ys_in_cluster), max(ys_in_cluster)
-                xs_in = [g.x for g in grid_x if abs(g.x - cx) < grid_bin_size]
-                xmin, xmax = min(xs_in), max(xs_in)
-
-                sheets.append(SheetMeta(
-                    sheet_id=f"sheet_{i+1}",
-                    floor_label=None,
-                    bbox=(xmin, ymin, xmax, ymax),
-                    sw_corner=(xmin, ymin),
-                    confidence=0.7,
-                    grid_x_labels=[(g.text, g.x, g.y) for g in grid_x
-                                   if abs(g.x - cx) < grid_bin_size],
-                    grid_y_labels=[(g.text, g.x, g.y) for g in grid_y
-                                   if ymin <= g.y <= ymax],
-                ))
-
-    # ── 전략 B: 시트 코드 클러스터링 (격자 미검출 도면용) ──
-    if not sheets and sheet_codes:
+    # ── 전략 B: 격자 X 라벨 클러스터링 (시트 코드가 없을 때만 폴백) ──
+    if not sheets and grid_x:
         # 시트 코드 X·Y 클러스터링 (시트 1장당 코드 1개 가정)
         # 각 시트 코드가 곧 하나의 시트
         for i, sc in enumerate(sheet_codes):

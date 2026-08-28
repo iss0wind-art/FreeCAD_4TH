@@ -1,0 +1,8 @@
+C1:
+  width_mm: 400.0
+  height_mm: 800.0
+  member_type: column
+C2:
+  width_mm: 700.0
+  height_mm: 700.0
+  member_type: column

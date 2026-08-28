@@ -29,25 +29,32 @@ class SheetTransform:
 
 def align_sheets_within_drawing(
     anchors: Dict[str, Anchor],
+    sl_per_sheet: Optional[Dict[str, float]] = None,
 ) -> Dict[str, SheetTransform]:
-    """기준 시트(SW)를 (0,0)으로 두고 나머지 시트 오프셋 계산."""
+    """기준 시트(SW)를 (0,0)으로 두고 나머지 시트 오프셋 계산 + Z축 높이 반영."""
     if not anchors:
         return {}
 
     # 기준 시트: 앵커 X 가장 작은 시트
     ref_anchor = min(anchors.values(), key=lambda a: (a.x, a.y))
+    sls = sl_per_sheet or {}
 
     result: Dict[str, SheetTransform] = {}
     for sheet_id, anchor in anchors.items():
+        # X, Y 정렬: 앵커 일치화
         tx = ref_anchor.x - anchor.x
         ty = ref_anchor.y - anchor.y
+        
+        # Z 정렬: SL 값 반영 (없으면 0.0)
+        tz = sls.get(sheet_id, 0.0)
+        
         result[sheet_id] = SheetTransform(
             sheet_id=sheet_id,
             tx=tx,
             ty=ty,
-            tz=0.0,
+            tz=tz,
             rot_deg=0.0,
             scale=1.0,
-            derivation=[anchor.method, f"ref={ref_anchor.sheet_id}"],
+            derivation=[anchor.method, f"ref={ref_anchor.sheet_id}", f"sl={tz}"],
         )
     return result

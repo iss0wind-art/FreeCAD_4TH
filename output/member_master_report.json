@@ -1,0 +1,146 @@
+{
+  "101동": {
+    "status": "OK",
+    "wall_count_std": 665,
+    "beam_count_std": 318,
+    "wall_pct_std": 99.0,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "102동": {
+    "status": "OK",
+    "wall_count_std": 640,
+    "beam_count_std": 314,
+    "wall_pct_std": 98.0,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "103동": {
+    "status": "OK",
+    "wall_count_std": 646,
+    "beam_count_std": 315,
+    "wall_pct_std": 98.0,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "104동": {
+    "status": "OK",
+    "wall_count_std": 413,
+    "beam_count_std": 204,
+    "wall_pct_std": 97.5,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "105동": {
+    "status": "OK",
+    "wall_count_std": 630,
+    "beam_count_std": 312,
+    "wall_pct_std": 97.7,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "106동": {
+    "status": "OK",
+    "wall_count_std": 643,
+    "beam_count_std": 312,
+    "wall_pct_std": 98.2,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "107동": {
+    "status": "OK",
+    "wall_count_std": 199,
+    "beam_count_std": 113,
+    "wall_pct_std": 98.5,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "108동": {
+    "status": "OK",
+    "wall_count_std": 294,
+    "beam_count_std": 167,
+    "wall_pct_std": 98.5,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "109동": {
+    "status": "OK",
+    "wall_count_std": 602,
+    "beam_count_std": 315,
+    "wall_pct_std": 98.9,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "110동": {
+    "status": "OK",
+    "wall_count_std": 621,
+    "beam_count_std": 338,
+    "wall_pct_std": 99.8,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "111동": {
+    "status": "OK",
+    "wall_count_std": 408,
+    "beam_count_std": 219,
+    "wall_pct_std": 98.8,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "112동": {
+    "status": "OK",
+    "wall_count_std": 609,
+    "beam_count_std": 320,
+    "wall_pct_std": 99.0,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "113동": {
+    "status": "OK",
+    "wall_count_std": 621,
+    "beam_count_std": 335,
+    "wall_pct_std": 99.8,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "114동": {
+    "status": "OK",
+    "wall_count_std": 636,
+    "beam_count_std": 331,
+    "wall_pct_std": 98.7,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "115동": {
+    "status": "OK",
+    "wall_count_std": 456,
+    "beam_count_std": 259,
+    "wall_pct_std": 98.6,
+    "warnings": [
+      "기준미달"
+    ]
+  },
+  "116동": {
+    "status": "OK",
+    "wall_count_std": 403,
+    "beam_count_std": 212,
+    "wall_pct_std": 99.8,
+    "warnings": [
+      "기준미달"
+    ]
+  }
+}

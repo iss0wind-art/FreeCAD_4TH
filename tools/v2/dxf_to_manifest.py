@@ -74,15 +74,17 @@ def main():
         } for sym, e in cat_entries.items()}
         print(f"  심볼-단면: {len(catalog)}개 (예: {list(catalog.keys())[:5]})")
 
+    # 5. 부재 추출
     print("[extract] 부재 추출")
     result = extract_all_members(meta, section_catalog=catalog)
-    print(f"  COL={len(result.columns)} BEAM={len(result.beams)} "
-          f"WALL={len(result.walls)} SLAB={len(result.slabs)} "
-          f"FND={len(result.foundations)}")
-
-    floor_id = args.floor if args.floor else manifest.floors[0].id
-    members = to_manifest_members(result, floor_id=floor_id,
-                                  project_id=args.project_id)
+    
+    # ExtractionResult -> Manifest (Z-Stacking 적용)
+    members = to_manifest_members(
+        result, 
+        floor_id_default=meta.sheets[0].sheet_id if meta.sheets else "F1",
+        project_id=args.project_id,
+        transforms=coord.transforms
+    )
     manifest.members = members
     print(f"  members={len(members)}")
 
@@ -93,6 +95,15 @@ def main():
     )
     out_path.write_text(yaml_text, encoding="utf-8")
     print(f"\n저장: {out_path} ({out_path.stat().st_size//1024} KB)")
+
+    # 카탈로그도 함께 저장 (STEP 빌드 시 spec_lookup에 활용)
+    if catalog:
+        cat_out = out_path.parent / "catalog.yaml"
+        cat_out.write_text(
+            yaml.safe_dump(catalog, allow_unicode=True, sort_keys=False),
+            encoding="utf-8",
+        )
+        print(f"카탈로그 저장: {cat_out} ({len(catalog)}건)")
 
 
 if __name__ == "__main__":

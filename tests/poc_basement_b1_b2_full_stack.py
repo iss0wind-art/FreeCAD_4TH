@@ -214,7 +214,7 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
         except Exception:
             pass
 
-    a2 = run_adapter_2(line_segs)
+    a2 = run_adapter_2(line_segs, max_dist=850.0)
     wall_pairs = a2['wall_pairs']
 
     # 격자 라벨 자력 (TEXT 기반) — 게이트 5의 핵심 신호
@@ -244,6 +244,7 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
 
     # ===== NON-PC 폐합 박스 → 분류 → codex (정사 순서 4단) =====
     boxes = []
+    # 1) 기존 LWPOLYLINE 기반 수집
     for eid, e, et, ly in raw_meta:
         if et != 'LWPOLYLINE':
             continue
@@ -270,6 +271,97 @@ def process_sheet(msp, sid, sheet, all_texts, column_codex, girder_codex):
             })
         except Exception:
             pass
+
+    # 2) 낱개 LINE 기반 기둥 사각형 복원 (B1 층 등 LINE으로 그려진 기둥 복구)
+    from collections import defaultdict
+    col_lines = []
+    for eid, e, et, ly in raw_meta:
+        if et != 'LINE':
+            continue
+        if pc_kind_by_id.get(eid) != PCKind.NON_PC:
+            continue
+        ly_upper = ly.upper()
+        if 'COL' in ly_upper or '기둥' in ly_upper:
+            try:
+                s = e.dxf.start; ed = e.dxf.end
+                col_lines.append((s.x, s.y, ed.x, ed.y, ly))
+            except Exception:
+                pass
+
+    if col_lines:
+        def snap(val):
+            return round(val / 5.0) * 5.0
+        
+        adj = defaultdict(set)
+        edges = set()
+        line_layers = {}
+        for x1, y1, x2, y2, ly in col_lines:
+            u = (snap(x1), snap(y1))
+            v = (snap(x2), snap(y2))
+            if u == v:
+                continue
+            edge = tuple(sorted([u, v]))
+            if edge not in edges:
+                edges.add(edge)
+                adj[u].add(v)
+                adj[v].add(u)
+                line_layers[edge] = ly
+
+        visited = set()
+        components = []
+        for node in adj.keys():
+            if node in visited:
+                continue
+            comp = []
+            queue = [node]
+            visited.add(node)
+            while queue:
+                curr = queue.pop(0)
+                comp.append(curr)
+                for nxt in adj[curr]:
+                    if nxt not in visited:
+                        visited.add(nxt)
+                        queue.append(nxt)
+            components.append(comp)
+
+        for comp in components:
+            if len(comp) == 4:
+                deg_ok = True
+                for node in comp:
+                    comp_deg = len(adj[node].intersection(comp))
+                    if comp_deg != 2:
+                        deg_ok = False
+                        break
+                if deg_ok:
+                    xs = [p[0] for p in comp]
+                    ys = [p[1] for p in comp]
+                    xmin, xmax = min(xs), max(xs)
+                    ymin, ymax = min(ys), max(ys)
+                    bw = xmax - xmin
+                    bh = ymax - ymin
+                    if 400 <= bw <= 3000 and 400 <= bh <= 3000:
+                        cx_norm = (xmin + xmax) / 2 - sw[0]
+                        cy_norm = (ymin + ymax) / 2 - sw[1]
+                        # 중복 제거 (기존 LWPOLYLINE으로 찾은 박스와의 중복 체크)
+                        dup = False
+                        for b in boxes:
+                            if math.hypot(b['cx'] - cx_norm, b['cy'] - cy_norm) < 100.0:
+                                dup = True
+                                break
+                        if not dup:
+                            edge_ly = '00_COLUMN'
+                            for i in range(4):
+                                u = comp[i]
+                                v = comp[(i+1)%4]
+                                e_key = tuple(sorted([u, v]))
+                                if e_key in line_layers:
+                                    edge_ly = line_layers[e_key]
+                                    break
+                            boxes.append({
+                                'cx': cx_norm, 'cy': cy_norm, 'w': bw, 'h': bh,
+                                'box_id': f'{sid}_box_{len(boxes):03d}',
+                                'layer': edge_ly,
+                            })
 
     batch_input = [(b['box_id'], b['cx'], b['cy'], b['w'], b['h']) for b in boxes]
     # grid=None: 자력 채굴 격자가 단지 규모 큼 (X≥20). 격자 매칭 비활성.

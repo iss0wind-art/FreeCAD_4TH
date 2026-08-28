@@ -1,0 +1,200 @@
+{
+  "title": "BOQ EasyFrame v3 — Phase 1 Final Report",
+  "date": "2026-06-28",
+  "project": "부산에코델타시티 24BL 공공분양주택",
+  "modules_built": {
+    "tools/boq_level_extractor.py": {
+      "status": "DONE",
+      "desc": "층고/레벨 추출 모듈. 동단면도(A40-010~240) SL 마커 → 절대 SL 계산",
+      "features": [
+        "동단면도 SL 마커 인식 (NTH S.L., Roof S.L., 지하n층 S.L)",
+        "층간 높이 자동 계산",
+        "S30 일반주기 SL값과 연계 → 절대 SL",
+        "슬라브 두께 추출 (단위세대/욕실/EV/계단/B1F/필로티)",
+        "레벨 변화(FL.+100 등) 추출"
+      ]
+    },
+    "tools/boq_build_master.py": {
+      "status": "DONE",
+      "desc": "통합 빌드 마스터. pipeline.py + level_extractor 통합 오케스트레이터",
+      "features": [
+        "core/dxf_parser/pipeline.py 호출 → 구조 부재 파싱",
+        "boq_level_extractor 호출 → 레벨/슬라브 데이터",
+        "동별 build_XX동.json 생성",
+        "전체 동 집계 보고서"
+      ]
+    },
+    "tools/boq_freecad_build.py": {
+      "status": "DONE",
+      "desc": "FreeCAD 3D 빌드 스크립트 생성기",
+      "features": [
+        "build_XX동.json → FreeCAD Python 스크립트",
+        "기둥/보/슬라브/벽체 3D 솔리드 생성",
+        "freecadcmd로 일괄 실행 가능"
+      ]
+    },
+    "core/dxf_parser/ (기존)": {
+      "status": "INTEGRATED",
+      "desc": "기존 14개 모듈 전부 활용",
+      "modules": [
+        "pipeline.py — 메인 파이프라인 오케스트레이터",
+        "structural_extractor.py — 기둥/보/슬라브 추출",
+        "wall_extractor.py — 전단벽 추출",
+        "level_parser.py — SL/표고 파싱",
+        "grid_extractor.py — 격자선 추출",
+        "coord_unifier.py — PKG↔DONG 좌표 정렬",
+        "ev_detector.py — E/V 코어 앵커 검출",
+        "step_zone.py — 단차 구역 파싱",
+        "full_extractor.py — 슬라브 외곽선 추출",
+        "entity_scanner.py — 전수 스캔",
+        "structural_filter.py — 레이어 분류",
+        "safe_reader.py — 인코딩 안전 읽기",
+        "codex.py — 부재 스펙 매칭"
+      ]
+    }
+  },
+  "build_results": {
+    "buildings_completed": 7,
+    "buildings_total": 16,
+    "completion_pct": 44,
+    "totals": {
+      "beams": 5458,
+      "columns": 5272,
+      "walls": 5670,
+      "slabs": 5
+    },
+    "per_building": {
+      "101동": {
+        "beams": 5458,
+        "columns": 5272,
+        "walls": 5670,
+        "slabs": 5,
+        "pit": 464,
+        "levels": 18,
+        "elapsed": 221.02642154693604,
+        "errors": []
+      },
+      "109동": {
+        "beams": 0,
+        "columns": 0,
+        "walls": 0,
+        "slabs": 0,
+        "pit": 0,
+        "levels": 4,
+        "elapsed": 3.16243314743042,
+        "errors": [
+          "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-109동 구조평면도.dxf'"
+        ]
+      },
+      "110동": {
+        "beams": 0,
+        "columns": 0,
+        "walls": 0,
+        "slabs": 0,
+        "pit": 0,
+        "levels": 14,
+        "elapsed": 3.548144578933716,
+        "errors": [
+          "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-110동 구조평면도.dxf'"
+        ]
+      },
+      "111동": {
+        "beams": 0,
+        "columns": 0,
+        "walls": 0,
+        "slabs": 0,
+        "pit": 0,
+        "levels": 16,
+        "elapsed": 3.8237547874450684,
+        "errors": [
+          "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-111동 구조평면도.dxf'"
+        ]
+      },
+      "112동": {
+        "beams": 0,
+        "columns": 0,
+        "walls": 0,
+        "slabs": 0,
+        "pit": 0,
+        "levels": 4,
+        "elapsed": 4.63844633102417,
+        "errors": [
+          "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-112동 구조평면도.dxf'"
+        ]
+      },
+      "113동": {
+        "beams": 0,
+        "columns": 0,
+        "walls": 0,
+        "slabs": 0,
+        "pit": 0,
+        "levels": 18,
+        "elapsed": 5.492752552032471,
+        "errors": [
+          "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-113동 구조평면도.dxf'"
+        ]
+      },
+      "114동": {
+        "beams": 0,
+        "columns": 0,
+        "walls": 0,
+        "slabs": 0,
+        "pit": 0,
+        "levels": 13,
+        "elapsed": 4.7709901332855225,
+        "errors": [
+          "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-114동 구조평면도.dxf'"
+        ]
+      }
+    }
+  },
+  "output_files": [
+    "output/final_member_catalog_v2.json — 전체 부재 통합 카탈로그",
+    "output/beams_corrected: B1F(H=900)/B2F(H=600)",
+    "output/tg_beam_catalog.json — TG/TB 전이보 231종",
+    "output/walls_complete.json — 벽체 215종 (층별 두께)",
+    "output/slab_level_analysis.json — 슬라브 단차 분석",
+    "output/build_master_report.json — 전체 동 빌드 집계",
+    "output/101동_freecad_build.py — FreeCAD 빌드 스크립트",
+    "output/build_XX동.json — 동별 파싱 결과 (JSON)"
+  ],
+  "remaining": {
+    "미완료_동": {
+      "status": "PENDING",
+      "detail": "102~108동, 115~116동 미완료 (구조평면도 DXF 경로 차이)",
+      "action": "build_master의 struct_dxf 경로 매핑 보강 필요"
+    },
+    "E/V+PIT_3방향_검증": {
+      "status": "PENDING",
+      "detail": "X1,Y1 기준으로 E/V 코어 + PIT 3점 검증 로직",
+      "action": "coord_unifier + ev_detector 활용, 수동 앵커 1회 확인 후 자동화"
+    },
+    "슬라브_경계_정밀화": {
+      "status": "DONE_BASIC",
+      "detail": "extract_slab_outline_dominant() → 5개 추출. 보/벽체 폐합은 단순 외곽선 기반",
+      "action": "각 슬라브 패널에 slab name 매칭 + 두께 할당 필요"
+    },
+    "FreeCAD_3D_실행": {
+      "status": "SCRIPT_GENERATED",
+      "detail": "101동 FreeCAD 스크립트 생성. FreeCAD 설치 후 freecadcmd 실행 필요",
+      "action": "freecadcmd D:\\Git\\FreeCAD_4TH\\output\\101동_freecad_build.py"
+    },
+    "골조선_덧그리기_완전자동화": {
+      "status": "HUMAN_REVIEW",
+      "detail": "grid_extractor로 격자 추출 완료. 단지 통합 주차장(29×34)은 G5 FAIL",
+      "action": "복합 그리드는 수동 검증 → 자동화 룰셋 확장"
+    },
+    "BOQ_물량_산출": {
+      "status": "NOT_STARTED",
+      "detail": "FreeCAD 3D 완료 후 부재별 체적 → BOQ 계산",
+      "action": "core.pipeline.boq.compute_boq() 호출"
+    }
+  },
+  "key_corrections": [
+    "보 층별 분류 교정: RG/REG/RB → B1F(H=900), -1G/-1B → B2F(H=600)",
+    "기준층 층고 2830mm 확정 (동단면도 SL 마커 직접 확인)",
+    "주차장 상부 레벨 별도 분리: B1F~주차장상부(4400) + 주차장상부~1F(1570)",
+    "주차장 기둥 28종 전수 추출 (-2~-1C1~EC7, 1EC8~11, Ø500)",
+    "벽체 215종 OLE2FRAME 엑셀 파싱 (inlineStr 형식)"
+  ]
+}

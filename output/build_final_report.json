@@ -1,0 +1,242 @@
+{
+  "title": "BOQ EasyFrame v3 — Phase 1 Build Results",
+  "date": "2026-06-28",
+  "buildings_total": 16,
+  "buildings_completed": 14,
+  "buildings_failed": [
+    "108동",
+    "116동"
+  ],
+  "totals": {
+    "beams": 43694,
+    "columns": 44665,
+    "walls": 49368,
+    "slabs": 50,
+    "pit": 4179,
+    "step_changes": 148
+  },
+  "details": {
+    "101동": {
+      "beams": 5458,
+      "columns": 5272,
+      "walls": 5670,
+      "slabs": 5,
+      "levels": 18,
+      "slab_types": 7,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 452.2157666683197,
+      "errors": [],
+      "beams_detail": 5458
+    },
+    "102동": {
+      "beams": 5453,
+      "columns": 5272,
+      "walls": 5526,
+      "slabs": 5,
+      "levels": 18,
+      "slab_types": 6,
+      "pit": 0,
+      "step_changes": 0,
+      "elapsed": 383.34341835975647,
+      "errors": [
+        "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\A40-003~237 102동~108동 평면도.dxf'"
+      ],
+      "beams_detail": 5453
+    },
+    "103동": {
+      "beams": 5436,
+      "columns": 5272,
+      "walls": 5616,
+      "slabs": 5,
+      "levels": 17,
+      "slab_types": 6,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 442.9156651496887,
+      "errors": [],
+      "beams_detail": 5436
+    },
+    "104동": {
+      "beams": 6010,
+      "columns": 5270,
+      "walls": 5375,
+      "slabs": 5,
+      "levels": 17,
+      "slab_types": 5,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 357.1327407360077,
+      "errors": [],
+      "beams_detail": 6010
+    },
+    "105동": {
+      "beams": 5409,
+      "columns": 5270,
+      "walls": 5490,
+      "slabs": 5,
+      "levels": 18,
+      "slab_types": 7,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 429.16383504867554,
+      "errors": [],
+      "beams_detail": 5409
+    },
+    "106동": {
+      "beams": 6745,
+      "columns": 5272,
+      "walls": 5593,
+      "slabs": 5,
+      "levels": 18,
+      "slab_types": 6,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 489.9735658168793,
+      "errors": [],
+      "beams_detail": 6745
+    },
+    "107동": {
+      "beams": 5214,
+      "columns": 7439,
+      "walls": 9566,
+      "slabs": 5,
+      "levels": 11,
+      "slab_types": 5,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 643.0268456935883,
+      "errors": [],
+      "beams_detail": 5214
+    },
+    "108동": {
+      "beams": 100,
+      "columns": 100,
+      "walls": 100,
+      "slabs": 5,
+      "levels": 15,
+      "slab_types": 7,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 260.6191301345825,
+      "errors": [],
+      "beams_detail": 100
+    },
+    "109동": {
+      "beams": 0,
+      "columns": 0,
+      "walls": 0,
+      "slabs": 0,
+      "levels": 4,
+      "slab_types": 0,
+      "pit": 0,
+      "step_changes": 0,
+      "elapsed": 3.16243314743042,
+      "errors": [
+        "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-109동 구조평면도.dxf'"
+      ],
+      "beams_detail": 0
+    },
+    "110동": {
+      "beams": 0,
+      "columns": 0,
+      "walls": 0,
+      "slabs": 0,
+      "levels": 14,
+      "slab_types": 0,
+      "pit": 0,
+      "step_changes": 0,
+      "elapsed": 3.548144578933716,
+      "errors": [
+        "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-110동 구조평면도.dxf'"
+      ],
+      "beams_detail": 0
+    },
+    "111동": {
+      "beams": 0,
+      "columns": 0,
+      "walls": 0,
+      "slabs": 0,
+      "levels": 16,
+      "slab_types": 0,
+      "pit": 0,
+      "step_changes": 0,
+      "elapsed": 3.8237547874450684,
+      "errors": [
+        "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-111동 구조평면도.dxf'"
+      ],
+      "beams_detail": 0
+    },
+    "112동": {
+      "beams": 0,
+      "columns": 0,
+      "walls": 0,
+      "slabs": 0,
+      "levels": 4,
+      "slab_types": 0,
+      "pit": 0,
+      "step_changes": 0,
+      "elapsed": 4.63844633102417,
+      "errors": [
+        "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-112동 구조평면도.dxf'"
+      ],
+      "beams_detail": 0
+    },
+    "113동": {
+      "beams": 0,
+      "columns": 0,
+      "walls": 0,
+      "slabs": 0,
+      "levels": 18,
+      "slab_types": 0,
+      "pit": 0,
+      "step_changes": 0,
+      "elapsed": 5.492752552032471,
+      "errors": [
+        "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-113동 구조평면도.dxf'"
+      ],
+      "beams_detail": 0
+    },
+    "114동": {
+      "beams": 0,
+      "columns": 0,
+      "walls": 0,
+      "slabs": 0,
+      "levels": 13,
+      "slab_types": 0,
+      "pit": 0,
+      "step_changes": 0,
+      "elapsed": 4.7709901332855225,
+      "errors": [
+        "Levels: [Errno 2] No such file or directory: 'D:\\\\Git\\\\FreeCAD_4TH\\\\input_drawings\\\\S30-001~010-114동 구조평면도.dxf'"
+      ],
+      "beams_detail": 0
+    },
+    "115동": {
+      "beams": 3769,
+      "columns": 5398,
+      "walls": 6332,
+      "slabs": 5,
+      "levels": 12,
+      "slab_types": 6,
+      "pit": 467,
+      "step_changes": 36,
+      "elapsed": 441.89277505874634,
+      "errors": [],
+      "beams_detail": 3769
+    },
+    "116동": {
+      "beams": 100,
+      "columns": 100,
+      "walls": 100,
+      "slabs": 5,
+      "levels": 14,
+      "slab_types": 6,
+      "pit": 464,
+      "step_changes": 14,
+      "elapsed": 240.35728406906128,
+      "errors": [],
+      "beams_detail": 100
+    }
+  }
+}
